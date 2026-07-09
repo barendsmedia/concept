@@ -2,7 +2,6 @@ name: Deploy concepts
 on:
   push:
     branches: [main]
-    paths: ['concept/**']
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,5 +13,11 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           protocol: ftps
-          local-dir: ./concept/
+          local-dir: ./
           server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            CLAUDE.md
+            README.md
