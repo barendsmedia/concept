@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakkapelnaarwens | Meer ruimte, geen gedoe</title>
+    
+    <!-- Tailwind CSS (via CDN voor directe werking zonder installatie) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuratie -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom scrollbar voor een strakke look */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b; /* zinc-950 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3f3f46; /* zinc-700 */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316; /* orange-500 */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-zinc-950 text-zinc-300 font-sans selection:bg-orange-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <div class="bg-orange-500 p-2 rounded-lg transform group-hover:-rotate-12 transition-transform">
+                        <i data-lucide="hard-hat" class="text-zinc-950 w-6 h-6"></i>
+                    </div>
+                    <span class="font-black text-2xl tracking-tighter text-white">
+                        DAKKAPEL<span class="text-orange-500">NAARWENS</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#werkwijze" class="text-zinc-400 hover:text-white font-bold transition-colors">Werkwijze</a>
+                    <a href="#diensten" class="text-zinc-400 hover:text-white font-bold transition-colors">Diensten</a>
+                    <a href="#contact" class="bg-orange-500 hover:bg-orange-400 text-zinc-950 px-6 py-2.5 rounded-lg font-black tracking-wide transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2">
+                        OFFERTE AANVRAGEN <i data-lucide="chevron-right" class="w-5 h-5" stroke-width="3"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-zinc-300 hover:text-white bg-zinc-900 p-2 rounded-lg">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-zinc-800 shadow-2xl">
+            <div class="px-4 py-6 flex flex-col space-y-4">
+                <a href="#werkwijze" class="mobile-link text-xl font-bold text-white px-4 py-2 hover:bg-zinc-800 rounded-lg">Werkwijze</a>
+                <a href="#diensten" class="mobile-link text-xl font-bold text-white px-4 py-2 hover:bg-zinc-800 rounded-lg">Diensten</a>
+                <a href="#contact" class="mobile-link bg-orange-500 text-zinc-950 text-center text-xl font-black px-4 py-4 rounded-lg mt-4">
+                    OFFERTE AANVRAGEN
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
+        <!-- Background Image with heavy dark gradient -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                alt="Vakman op het dak" 
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 lg:mt-24">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-zinc-900/80 border border-zinc-700 text-orange-500 font-bold mb-6 uppercase tracking-wider text-sm">
+                    <i data-lucide="wrench" class="w-4 h-4"></i> Meer dan 14 jaar ervaring
+                </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+                    MEER RUIMTE.<br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">GEEN GEDOE.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-zinc-400 mb-10 leading-relaxed font-medium max-w-xl">
+                    Wij bouwen robuuste, hoogwaardige dakkapellen. Lokaal vakmanschap, eerlijke prijzen en een werkwijze waar je op kunt bouwen.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-orange-500 hover:bg-orange-400 text-zinc-950 px-8 py-4 rounded-lg font-black text-lg transition-all text-center flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                        BEREKEN JE PRIJS <i data-lucide="arrow-right" class="w-5 h-5" stroke-width="3"></i>
+                    </a>
+                    <a href="#diensten" class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all text-center border border-zinc-700">
+                        BEKIJK ONZE DIENSTEN
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Pillars / USPs -->
+    <section id="werkwijze" class="relative z-20 -mt-16 sm:-mt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-2xl hover:border-orange-500/50 transition-colors">
+                <div class="w-14 h-14 bg-zinc-950 border border-zinc-800 rounded-xl flex items-center justify-center mb-6 text-orange-500">
+                    <i data-lucide="shield-check" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-3">Oersterke Kwaliteit</h3>
+                <p class="text-zinc-400 font-medium">Gebouwd om decennia mee te gaan. We gebruiken uitsluitend A-merk materialen die bestand zijn tegen het Hollandse weer.</p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-2xl hover:border-orange-500/50 transition-colors">
+                <div class="w-14 h-14 bg-zinc-950 border border-zinc-800 rounded-xl flex items-center justify-center mb-6 text-orange-500">
+                    <i data-lucide="ruler" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-3">Echt Maatwerk</h3>
+                <p class="text-zinc-400 font-medium">Jouw dak is uniek. Wij meten alles exact in en produceren de dakkapel volledig op maat in onze eigen werkplaats.</p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-2xl hover:border-orange-500/50 transition-colors">
+                <div class="w-14 h-14 bg-zinc-950 border border-zinc-800 rounded-xl flex items-center justify-center mb-6 text-orange-500">
+                    <i data-lucide="hard-hat" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-3">Complete Ontzorging</h3>
+                <p class="text-zinc-400 font-medium">Van de vergunningsaanvraag tot de laatste aftimmering binnen: wij regelen het. Jij hoeft alleen maar te genieten van de ruimte.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="diensten" class="py-24 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-orange-500 font-bold tracking-wider uppercase mb-2">Wat we bouwen</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-white tracking-tight">Kies het materiaal dat bij jouw huis past.</h3>
+                </div>
+                <a href="#contact" class="hidden md:flex items-center gap-2 text-white font-bold hover:text-orange-500 transition-colors">
+                    Advies nodig? <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Kunststof -->
+                <div class="group bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 flex flex-col md:flex-row">
+                    <div class="md:w-2/5 h-64 md:h-auto overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Kunststof dakkapel" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-8 md:w-3/5 flex flex-col justify-center">
+                        <div class="bg-zinc-800 text-zinc-300 text-xs font-bold px-3 py-1 rounded w-fit mb-4 uppercase">Onderhoudsarm</div>
+                        <h4 class="text-2xl font-black text-white mb-3">Kunststof Dakkapel</h4>
+                        <p class="text-zinc-400 mb-6 font-medium">
+                            Strak, oersterk en je hoeft nooit meer te schilderen op grote hoogte. Biedt de allerhoogste isolatiewaarde (RC-waarde). Beschikbaar in diverse kleuren, inclusief realistische houtnerf.
+                        </p>
+                        <ul class="space-y-2 mb-6 font-medium text-sm">
+                            <li class="flex items-center gap-2 text-zinc-300"><div class="w-2 h-2 bg-orange-500 rounded-sm"></div> Geen schilderwerk nodig</li>
+                            <li class="flex items-center gap-2 text-zinc-300"><div class="w-2 h-2 bg-orange-500 rounded-sm"></div> Maximale isolatie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hout -->
+                <div class="group bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 flex flex-col md:flex-row">
+                    <div class="md:w-2/5 h-64 md:h-auto overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Houten dakkapel" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        />
+                    </div>
+                    <div class="p-8 md:w-3/5 flex flex-col justify-center">
+                        <div class="bg-zinc-800 text-zinc-300 text-xs font-bold px-3 py-1 rounded w-fit mb-4 uppercase">Karakteristiek</div>
+                        <h4 class="text-2xl font-black text-white mb-3">Houten Dakkapel</h4>
+                        <p class="text-zinc-400 mb-6 font-medium">
+                            Voor wie houdt van de klassieke, warme uitstraling. Hout is makkelijk te bewerken, repareerbaar en schilderbaar. Perfect af te stemmen op de stijl van oudere of karakteristieke woningen.
+                        </p>
+                        <ul class="space-y-2 mb-6 font-medium text-sm">
+                            <li class="flex items-center gap-2 text-zinc-300"><div class="w-2 h-2 bg-orange-500 rounded-sm"></div> Authentieke uitstraling</li>
+                            <li class="flex items-center gap-2 text-zinc-300"><div class="w-2 h-2 bg-orange-500 rounded-sm"></div> Eenvoudig van kleur te wisselen</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-zinc-900 border-t border-zinc-800 relative overflow-hidden">
+        <!-- Abstract background detail -->
+        <div class="absolute right-0 top-0 text-zinc-800/20 transform translate-x-1/3 -translate-y-1/4 pointer-events-none">
+            <i data-lucide="hard-hat" class="w-96 h-96 opacity-50"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-zinc-950 rounded-3xl border border-zinc-800 overflow-hidden flex flex-col lg:flex-row shadow-2xl">
+                
+                <!-- Info Panel -->
+                <div class="lg:w-2/5 p-10 lg:p-16 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-4xl font-black text-white tracking-tight mb-4">Tijd voor actie.</h2>
+                        <p class="text-zinc-400 font-medium mb-10 text-lg">
+                            Laat je gegevens achter en we plannen een vrijblijvend adviesgesprek in. We meten de boel op, bespreken de opties en je krijgt van ons een heldere, eerlijke prijs.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center text-orange-500 border border-zinc-800 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-colors">
+                                    <i data-lucide="phone" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-zinc-500 uppercase">Bel ons direct</p>
+                                    <p class="text-xl font-black text-white">06-36043137</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-zinc-900 rounded-xl flex items-center justify-center text-orange-500 border border-zinc-800 group-hover:bg-orange-500 group-hover:text-zinc-950 transition-colors">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-zinc-500 uppercase">Stuur een mail</p>
+                                    <p class="text-lg font-bold text-white">info@dakkapelnaarwens.nl</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="lg:w-3/5 p-10 lg:p-16 bg-zinc-900/50 border-l border-zinc-800">
+                    <form action="#" method="POST" class="space-y-6" onsubmit="event.preventDefault(); alert('In een echte live versie wordt dit formulier nu verzonden!');">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="naam" class="text-sm font-bold text-zinc-400 uppercase tracking-wide">Jouw Naam</label>
+                                <input 
+                                    type="text" 
+                                    id="naam" 
+                                    name="naam"
+                                    class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-xl px-4 py-4 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors font-medium"
+                                    placeholder="Voor- en achternaam" 
+                                    required
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <label for="tel" class="text-sm font-bold text-zinc-400 uppercase tracking-wide">Telefoon</label>
+                                <input 
+                                    type="tel" 
+                                    id="tel" 
+                                    name="tel"
+                                    class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-xl px-4 py-4 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors font-medium"
+                                    placeholder="06 12345678" 
+                                    required
+                                />
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label for="email" class="text-sm font-bold text-zinc-400 uppercase tracking-wide">E-mailadres</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-xl px-4 py-4 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors font-medium"
+                                placeholder="naam@email.nl" 
+                                required
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="bericht" class="text-sm font-bold text-zinc-400 uppercase tracking-wide">Wat zijn je plannen?</label>
+                            <textarea 
+                                id="bericht" 
+                                name="bericht"
+                                rows="4" 
+                                class="w-full bg-zinc-950 border border-zinc-800 text-white rounded-xl px-4 py-4 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none font-medium"
+                                placeholder="Vertel ons kort over je woning en wensen..." 
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-400 text-zinc-950 font-black text-lg tracking-wide py-4 rounded-xl transition-all flex justify-center items-center gap-2 transform hover:-translate-y-1">
+                            VERSTUUR AANVRAAG <i data-lucide="arrow-right" class="w-5 h-5" stroke-width="3"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 py-12 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 text-white opacity-50">
+                <i data-lucide="hard-hat" class="w-5 h-5"></i>
+                <span class="font-black tracking-tighter">DAKKAPEL<span class="text-orange-500">NAARWENS</span></span>
+            </div>
+            
+            <div class="flex gap-6 text-sm font-bold text-zinc-500">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Voorwaarden</a>
+                <span class="text-zinc-600 border-l border-zinc-800 pl-6">KVK: 97655090</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript voor interactie (Navbar & Menu) -->
+    <script>
+        // Initialiseer de iconen
+        lucide.createIcons();
+
+        // Variabelen
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Scroll effect voor de navigatiebalk
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('bg-zinc-950/95', 'backdrop-blur-md', 'border-b', 'border-zinc-800', 'py-4', 'shadow-2xl');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-6');
+                navbar.classList.remove('bg-zinc-950/95', 'backdrop-blur-md', 'border-b', 'border-zinc-800', 'py-4', 'shadow-2xl');
+            }
+        });
+
+        // Mobiel menu in/uitklappen
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Menu sluiten als er op een link wordt geklikt (mobiel)
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
