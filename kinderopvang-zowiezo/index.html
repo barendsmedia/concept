@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zowiezo Kinderopvang Heerhugowaard — Kinderdagverblijf & BSO</title>
+<meta name="description" content="Kinderdagverblijf en buitenschoolse opvang van Zowiezo in Heerhugowaard. Betrokken, flexibel en betaalbaar — al 17,5 jaar. Vraag een rondleiding aan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2B2E83;
+    --navy-dark:#1E2060;
+    --magenta:#E5127E;
+    --yellow:#FFC94D;
+    --mint:#4CC0A0;
+    --ink:#262A3B;
+    --paper:#FDFBF8;
+    --paper-tint:#F3F1FB;
+    --white:#FFFFFF;
+    --radius-lg:2rem;
+    --radius-md:1.25rem;
+    --shadow: 0 20px 45px -25px rgba(43,46,131,0.35);
+    --maxw:1160px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  body{
+    margin:0;
+    font-family:"Figtree", sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:"Fredoka", sans-serif;
+    color:var(--navy);
+    line-height:1.15;
+    margin:0 0 .5em;
+  }
+
+  p{ margin:0 0 1em; }
+  a{ color:var(--navy); }
+  img{ max-width:100%; display:block; }
+
+  .container{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+
+  a.skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--navy); color:#fff; padding:.75rem 1.25rem;
+    border-radius:0 0 .5rem 0; z-index:1000; font-weight:600;
+  }
+  a.skip-link:focus{ left:0; }
+
+  :focus-visible{
+    outline:3px solid var(--magenta);
+    outline-offset:3px;
+  }
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(253,251,248,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(43,46,131,0.08);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:.75rem 0;
+    gap:1rem;
+  }
+  .logo-link{ display:flex; align-items:center; }
+  .logo-link img{ height:42px; width:auto; }
+  nav.primary-nav{ display:flex; align-items:center; gap:1.75rem; }
+  nav.primary-nav a{
+    text-decoration:none; font-weight:600; color:var(--ink);
+    font-size:.95rem;
+    position:relative;
+  }
+  nav.primary-nav a::after{
+    content:""; position:absolute; left:0; bottom:-4px; height:2px; width:0;
+    background:var(--magenta); transition:width .2s ease;
+  }
+  nav.primary-nav a:hover::after{ width:100%; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:.85rem 1.6rem;
+    border-radius:999px;
+    font-weight:700;
+    font-family:"Fredoka", sans-serif;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    font-size:1rem;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--magenta); color:#fff; box-shadow:0 12px 25px -10px rgba(229,18,126,0.55); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 30px -10px rgba(229,18,126,0.6); }
+  .btn-ghost{ background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-ghost:hover{ background:var(--navy); color:#fff; }
+  .btn-small{ padding:.6rem 1.2rem; font-size:.9rem; }
+
+  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:.4rem; }
+  .menu-toggle svg{ width:28px; height:28px; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:4.5rem 0 5rem;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(255,201,77,0.25), transparent 55%),
+      radial-gradient(circle at 5% 90%, rgba(76,192,160,0.2), transparent 45%),
+      var(--paper);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:3rem; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:var(--paper-tint); color:var(--navy);
+    font-weight:700; font-size:.85rem; letter-spacing:.02em;
+    padding:.45rem 1rem; border-radius:999px; margin-bottom:1.25rem;
+  }
+  .eyebrow::before{ content:"♥"; color:var(--magenta); }
+  .hero h1{ font-size:clamp(2.1rem, 4.2vw, 3.2rem); }
+  .hero .lead{ font-size:1.15rem; max-width:46ch; color:var(--ink); }
+  .hero-ctas{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.75rem; }
+  .hero-media{ position:relative; }
+  .hero-media img{
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    aspect-ratio:4/5; object-fit:cover; width:100%;
+  }
+  .hero-badge{
+    position:absolute; bottom:-1.25rem; left:-1.25rem;
+    background:#fff; border-radius:var(--radius-md);
+    padding:1rem 1.25rem; box-shadow:var(--shadow);
+    display:flex; align-items:center; gap:.75rem;
+    max-width:230px;
+  }
+  .hero-badge .num{ font-family:"Fredoka",sans-serif; font-size:1.6rem; color:var(--magenta); font-weight:700; }
+  .hero-badge .txt{ font-size:.8rem; color:var(--ink); line-height:1.25; }
+
+  /* ---------- Sections generic ---------- */
+  section{ padding:5rem 0; }
+  .section-head{ max-width:640px; margin:0 auto 3rem; text-align:center; }
+  .section-head .tag{
+    display:inline-block; color:var(--magenta); font-weight:700;
+    text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; margin-bottom:.75rem;
+  }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.4rem); }
+  .section-head p{ color:#565b73; }
+
+  .reveal{ opacity:0; transform:translateY(28px); }
+  .reveal.is-visible{ opacity:1; transform:none; transition:opacity .7s ease, transform .7s ease; }
+
+  /* ---------- USPs ---------- */
+  .usp-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
+  }
+  .usp-card{
+    background:#fff; border-radius:var(--radius-md);
+    padding:1.75rem 1.5rem; box-shadow:0 15px 35px -25px rgba(38,42,59,0.35);
+    border:1px solid rgba(43,46,131,0.06);
+  }
+  .usp-card .icon{
+    width:48px; height:48px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--paper-tint); color:var(--navy); margin-bottom:1rem;
+    font-size:1.4rem;
+  }
+  .usp-card h3{ font-size:1.05rem; margin-bottom:.4rem; }
+  .usp-card p{ font-size:.92rem; color:#565b73; margin:0; }
+
+  /* ---------- Diensten ---------- */
+  .services{ background:var(--paper-tint); }
+  .service-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+  }
+  .service-card{
+    background:#fff; border-radius:var(--radius-lg);
+    overflow:hidden; box-shadow:var(--shadow);
+    display:flex; flex-direction:column;
+  }
+  .service-card img{ width:100%; height:220px; object-fit:cover; }
+  .service-card .body{ padding:2rem; display:flex; flex-direction:column; gap:.85rem; flex:1; }
+  .service-card .age-badge{
+    align-self:flex-start; background:var(--yellow); color:var(--navy-dark);
+    font-weight:700; font-size:.8rem; padding:.3rem .8rem; border-radius:999px;
+    font-family:"Fredoka",sans-serif;
+  }
+  .service-meta{ list-style:none; margin:.25rem 0 0; padding:0; font-size:.9rem; color:#565b73; display:grid; gap:.35rem; }
+  .service-meta li{ display:flex; gap:.5rem; }
+  .service-meta li strong{ color:var(--ink); min-width:6.5rem; }
+  .service-card .cta{ margin-top:auto; }
+
+  .service-note{
+    margin-top:2.5rem; text-align:center; font-size:.95rem; color:#565b73;
+    background:#fff; border:1px dashed rgba(43,46,131,0.25);
+    border-radius:var(--radius-md); padding:1.25rem 1.5rem;
+  }
+  .service-note a{ font-weight:700; }
+
+  /* ---------- Dagritme (signature) ---------- */
+  .dagritme{ overflow:hidden; }
+  .timeline{
+    position:relative;
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:minmax(190px,1fr);
+    gap:1.25rem;
+    overflow-x:auto;
+    padding:2rem .25rem 1.5rem;
+    scroll-snap-type:x proximity;
+  }
+  .timeline::before{
+    content:""; position:absolute; top:2.6rem; left:0; right:0; height:3px;
+    background:linear-gradient(90deg, var(--mint), var(--yellow), var(--magenta));
+    border-radius:3px;
+  }
+  .timeline-item{
+    position:relative; scroll-snap-align:start;
+    background:#fff; border-radius:var(--radius-md);
+    padding:1.5rem 1.15rem 1.25rem; box-shadow:0 15px 35px -28px rgba(38,42,59,0.4);
+  }
+  .timeline-item .time{
+    display:inline-block; font-family:"Fredoka",sans-serif; font-weight:700;
+    color:#fff; background:var(--navy); padding:.3rem .7rem; border-radius:999px;
+    font-size:.85rem; margin-bottom:.85rem;
+  }
+  .timeline-item h4{ font-size:1rem; margin-bottom:.3rem; }
+  .timeline-item p{ font-size:.85rem; color:#565b73; margin:0; }
+
+  /* ---------- Tarieven ---------- */
+  .tarieven-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .price-card{
+    background:var(--navy); color:#fff; border-radius:var(--radius-lg);
+    padding:2rem; box-shadow:var(--shadow);
+  }
+  .price-card h3{ color:#fff; font-size:1.3rem; }
+  .price-card .rates{ display:flex; gap:1.5rem; margin:1.5rem 0; }
+  .price-card .rate{ flex:1; background:rgba(255,255,255,0.08); border-radius:var(--radius-md); padding:1rem; text-align:center; }
+  .price-card .rate .amount{ font-family:"Fredoka",sans-serif; font-size:1.6rem; font-weight:700; color:var(--yellow); }
+  .price-card .rate .label{ font-size:.8rem; opacity:.85; }
+  .price-card p.fine{ font-size:.82rem; opacity:.8; }
+
+  /* ---------- Social proof ---------- */
+  .stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; text-align:center;
+  }
+  .stat .num{ font-family:"Fredoka",sans-serif; font-size:2.4rem; color:var(--magenta); font-weight:700; }
+  .stat .label{ font-size:.9rem; color:#565b73; }
+
+  /* ---------- CTA section ---------- */
+  .cta-section{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff; border-radius:var(--radius-lg);
+    margin:0 1.5rem; padding:3.5rem 2.5rem;
+    text-align:center;
+  }
+  .cta-section h2{ color:#fff; }
+  .cta-section p{ color:rgba(255,255,255,0.85); max-width:50ch; margin-inline:auto; }
+  .cta-section .hero-ctas{ justify-content:center; }
+  .cta-section .btn-ghost{ color:#fff; border-color:#fff; }
+  .cta-section .btn-ghost:hover{ background:#fff; color:var(--navy); }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer{
+    background:var(--ink); color:#cfd2e3; padding:3.5rem 0 2rem; margin-top:5rem;
+  }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:2rem; }
+  .footer-grid h4{ color:#fff; font-size:1rem; margin-bottom:.9rem; }
+  .footer-grid p, .footer-grid address{ font-size:.9rem; font-style:normal; color:#b7bad0; margin:0 0 .5rem; }
+  .footer-grid a{ color:#cfd2e3; text-decoration:none; }
+  .footer-grid a:hover{ text-decoration:underline; }
+  .footer-logo img{ height:36px; filter:brightness(0) invert(1); margin-bottom:1rem; }
+  .footer-bottom{
+    max-width:var(--maxw); margin:2.5rem auto 0; padding:1.5rem 1.5rem 0; border-top:1px solid rgba(255,255,255,0.1);
+    font-size:.8rem; color:#8b8ea6; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-media{ order:-1; }
+    .usp-grid{ grid-template-columns:repeat(2,1fr); }
+    .service-grid{ grid-template-columns:1fr; }
+    .tarieven-grid{ grid-template-columns:1fr; }
+    .stats{ grid-template-columns:repeat(2,1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 640px){
+    nav.primary-nav{
+      position:fixed; inset:64px 0 auto 0; background:var(--paper);
+      flex-direction:column; align-items:flex-start; padding:1.5rem;
+      box-shadow:0 15px 30px -20px rgba(0,0,0,0.3);
+      transform:translateY(-130%); transition:transform .25s ease;
+    }
+    nav.primary-nav.open{ transform:translateY(0); }
+    .menu-toggle{ display:block; }
+    .usp-grid{ grid-template-columns:1fr; }
+    .stats{ grid-template-columns:1fr 1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    .cta-section{ margin:0 1rem; padding:2.5rem 1.5rem; }
+    section{ padding:3.5rem 0; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Naar hoofdinhoud</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#top" class="logo-link" aria-label="Zowiezo — voor het hele gezin, terug naar boven">
+      <img src="https://zowiezo.nu/wp-content/themes/newfish/images/zowiezo-logo-header.png" alt="Zowiezo — voor het hele gezin">
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu openen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Hoofdnavigatie">
+      <a href="#diensten">Kinderdagverblijf</a>
+      <a href="#bso">BSO</a>
+      <a href="#dagritme">Dagritme</a>
+      <a href="#tarieven">Tarieven</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary btn-small">Plan een rondleiding</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Kinderopvang in Heerhugowaard</span>
+        <h1>Uw kind veilig, vrolijk en dichtbij opgevangen — al 17,5 jaar Zowiezo</h1>
+        <p class="lead">Kinderdagverblijf en buitenschoolse opvang op loopafstand van elkaar in Heerhugowaard. Betrokken, flexibel en betaalbaar, met een vast en hecht team dat uw kind écht kent.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Plan een rondleiding</a>
+          <a href="#tarieven" class="btn btn-ghost">Bekijk de tarieven</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1631512700356-574da7748a44?w=900&q=80&auto=format&fit=crop" alt="Kind speelt op een glijbaan in de buitenlucht">
+        <div class="hero-badge">
+          <span class="num">17,5</span>
+          <span class="txt">jaar ervaring in kinderopvang bij Zowiezo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USPs -->
+  <section id="usps">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Waarom Zowiezo</span>
+        <h2 class="reveal">Opvang waar ouders én kinderen zich thuis voelen</h2>
+      </div>
+      <div class="usp-grid">
+        <div class="usp-card reveal">
+          <div class="icon">✓</div>
+          <h3>Vast, hecht team</h3>
+          <p>Continuïteit staat voorop: uw kind ziet steeds dezelfde vertrouwde gezichten.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="icon">✓</div>
+          <h3>Uk &amp; Puk VE-programma</h3>
+          <p>Voor- en vroegschoolse educatie voor taal, sociaal-emotionele en motorische ontwikkeling.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="icon">✓</div>
+          <h3>Flexibel &amp; betaalbaar</h3>
+          <p>Regulier of flexibel opvanguur, passend bij het ritme van uw gezin.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="icon">✓</div>
+          <h3>LRK-geregistreerd</h3>
+          <p>Erkend en gecontroleerd kindercentrum, veilig en volgens de richtlijnen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="services" id="diensten">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Onze opvang in Heerhugowaard</span>
+        <h2 class="reveal">Kinderdagverblijf en BSO, dichtbij huis</h2>
+        <p class="reveal">Twee eigen locaties in Heerhugowaard, elk met een eigen sfeer maar dezelfde warme aanpak.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal" id="kdv">
+          <img src="https://images.unsplash.com/photo-1758598737505-90a3084105ac?w=900&q=80&auto=format&fit=crop" alt="Kind tekent samen met een volwassene aan tafel">
+          <div class="body">
+            <span class="age-badge">0 – 4 jaar</span>
+            <h3>Kinderdagverblijf Heerhugowaard</h3>
+            <p>Een warme, huiselijke omgeving met binnen- en buitenspeelruimte, waar uw kind speels leert en ontdekt — inclusief het VE-programma Uk &amp; Puk.</p>
+            <ul class="service-meta">
+              <li><strong>Adres</strong> Deimoslaan 4, 1702 CK Heerhugowaard</li>
+              <li><strong>Telefoon</strong> <a href="tel:0728888305">072 – 888 83 05</a></li>
+              <li><strong>Openingstijden</strong> ma–vr 06:30–18:30 uur</li>
+              <li><strong>LRK-nummer</strong> 463773652</li>
+            </ul>
+            <a href="#tarieven" class="btn btn-ghost btn-small cta">Bekijk tarieven</a>
+          </div>
+        </article>
+        <article class="service-card reveal" id="bso">
+          <img src="https://images.unsplash.com/photo-1779881259467-ee4b804f8c6a?w=900&q=80&auto=format&fit=crop" alt="Kind klimt in een klimnet op een buitenspeelplaats">
+          <div class="body">
+            <span class="age-badge">4 – 13 jaar</span>
+            <h3>BSO Heerhugowaard</h3>
+            <p>Woonkeuken, atelier en een speelcaravan: na school heerlijk ravotten of ontspannen. Met taxidienst vanaf 11+ basisscholen in de buurt.</p>
+            <ul class="service-meta">
+              <li><strong>Adres</strong> Hectorlaan 3, 1702 CL Heerhugowaard</li>
+              <li><strong>Telefoon</strong> <a href="tel:0651856061">06 – 51 85 60 61</a></li>
+              <li><strong>Openingstijden</strong> voorschools 06:30–08:30, naschools tot 18:30</li>
+              <li><strong>Vakanties</strong> op schoolvrije dagen 06:30–18:30</li>
+            </ul>
+            <a href="#tarieven" class="btn btn-ghost btn-small cta">Bekijk tarieven</a>
+          </div>
+        </article>
+      </div>
+      <p class="service-note reveal">Zoekt u <strong>gastouderopvang</strong> of <strong>kraamzorg</strong>? Ook dat verzorgt Zowiezo, vanuit het hoofdkantoor in Wognum. <a href="tel:0229574885">Bel 0229 – 574 885</a> voor de mogelijkheden.</p>
+    </div>
+  </section>
+
+  <!-- DAGRITME (signature) -->
+  <section class="dagritme" id="dagritme">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Een dag bij Zowiezo</span>
+        <h2 class="reveal">Zo ziet de dag van uw kind eruit in Heerhugowaard</h2>
+        <p class="reveal">Van het eerste "hoi" tot het ophalen aan het eind van de middag — een concreet beeld in plaats van een vage belofte.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="time">06:30</span>
+          <h4>Deuren open</h4>
+          <p>KDV en BSO ontvangen de eerste kinderen, vrij spelen bij binnenkomst.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">06:30–09:00</span>
+          <h4>Breng-tijd</h4>
+          <p>Rustig moment van overdracht tussen ouder en pedagogisch medewerker.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">09:15</span>
+          <h4>Kring met Uk &amp; Puk</h4>
+          <p>Taal, muziek en samen ontdekken via het VE-programma.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">12:00</span>
+          <h4>Lunch aan tafel</h4>
+          <p>Samen eten, samen gezellig — vast onderdeel van elke dag.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">13:00</span>
+          <h4>Middagrust</h4>
+          <p>Slapen of een rustig boekje voor wie niet meer hoeft te slapen.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">±15:00</span>
+          <h4>BSO: instroom na school</h4>
+          <p>Kinderen komen aan, sommigen met de taxi vanaf hun basisschool.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">15:30</span>
+          <h4>Woonkeuken, atelier of buiten</h4>
+          <p>Vrij kiezen: knutselen, koken in de woonkeuken of spelen in de speelcaravan.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="time">18:30</span>
+          <h4>Deuren sluiten</h4>
+          <p>Alle kinderen zijn opgehaald — tot morgen weer!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIEVEN -->
+  <section id="tarieven">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Tarieven 2026</span>
+        <h2 class="reveal">Transparant en betaalbaar</h2>
+        <p class="reveal">Prijs per opvanguur, regulier of flexibel — zonder verrassingen achteraf.</p>
+      </div>
+      <div class="tarieven-grid">
+        <div class="price-card reveal">
+          <h3>Kinderdagverblijf (0–4 jaar)</h3>
+          <div class="rates">
+            <div class="rate">
+              <div class="amount">€ 11,23</div>
+              <div class="label">per uur, regulier</div>
+            </div>
+            <div class="rate">
+              <div class="amount">€ 13,92</div>
+              <div class="label">per uur, flexibel</div>
+            </div>
+          </div>
+          <p class="fine">Inclusief het VE-programma Uk &amp; Puk. Vraag naar de mogelijkheden voor kinderopvangtoeslag.</p>
+        </div>
+        <div class="price-card reveal">
+          <h3>BSO (4–13 jaar)</h3>
+          <div class="rates">
+            <div class="rate">
+              <div class="amount">€ 9,98</div>
+              <div class="label">per uur, regulier</div>
+            </div>
+            <div class="rate">
+              <div class="amount">€ 11,80</div>
+              <div class="label">per uur, flexibel</div>
+            </div>
+          </div>
+          <p class="fine">Warme maaltijd tijdens vakantieweken mogelijk voor € 3,- per kind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section id="cijfers">
+    <div class="container">
+      <div class="stats">
+        <div class="stat reveal">
+          <div class="num">17,5</div>
+          <div class="label">jaar ervaring</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num">4</div>
+          <div class="label">locaties: Wognum, Hoorn, Noord-Scharwoude &amp; Heerhugowaard</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num">0–13</div>
+          <div class="label">jaar, van dagopvang tot BSO</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num">11+</div>
+          <div class="label">basisscholen bereikbaar via BSO-taxi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="rondleiding">
+    <div class="container">
+      <div class="cta-section reveal">
+        <h2>Kom een keer kijken op Deimoslaan 4 of Hectorlaan 3</h2>
+        <p>Een rondleiding zegt meer dan duizend woorden. Plan een moment dat u uitkomt, of bel direct voor de mogelijkheden.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Plan een rondleiding</a>
+          <a href="tel:0728888305" class="btn btn-ghost">Bel 072 – 888 83 05</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-logo">
+        <img src="https://zowiezo.nu/wp-content/themes/newfish/images/zowiezo-logo-header.png" alt="Zowiezo — voor het hele gezin">
+      </div>
+      <p>Betrokken, flexibele én betaalbare kinderopvang. Al 17,5 jaar hét vertrouwde adres voor gezinnen in Heerhugowaard en omstreken.</p>
+    </div>
+    <div>
+      <h4>Kinderdagverblijf</h4>
+      <address>
+        Deimoslaan 4<br>
+        1702 CK Heerhugowaard<br>
+        <a href="tel:0728888305">072 – 888 83 05</a><br>
+        LRK 463773652
+      </address>
+    </div>
+    <div>
+      <h4>BSO</h4>
+      <address>
+        Hectorlaan 3<br>
+        1702 CL Heerhugowaard<br>
+        <a href="tel:0651856061">06 – 51 85 60 61</a>
+      </address>
+    </div>
+    <div>
+      <h4>Hoofdkantoor</h4>
+      <address>
+        Kerkstraat 35<br>
+        1687 AL Wognum<br>
+        <a href="tel:0229574885">0229 – 574 885</a><br>
+        <a href="mailto:info@zowiezo.nu">info@zowiezo.nu</a>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Zowiezo Kinderopvang</span>
+    <span>Onderdeel van Zowiezo — <a href="https://zowiezo.nu">zowiezo.nu</a></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  // Mobiel menu
+  const menuToggle = document.querySelector('.menu-toggle');
+  const primaryNav = document.querySelector('.primary-nav');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = primaryNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+  primaryNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      primaryNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+
+  if (prefersReducedMotion || typeof gsap === 'undefined') {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  } else {
+    gsap.registerPlugin(ScrollTrigger);
+    revealEls.forEach((el, i) => {
+      gsap.to(el, {
+        opacity:1, y:0, duration:0.7, ease:'power2.out',
+        delay: (i % 4) * 0.06,
+        scrollTrigger:{ trigger: el, start:'top 88%' },
+        onStart: () => el.classList.add('is-visible')
+      });
+    });
+  }
+</script>
+</body>
+</html>
