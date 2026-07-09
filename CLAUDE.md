@@ -14,7 +14,8 @@ Kijk naar 2–3 directe concurrenten in dezelfde branche om te bepalen wat "bete
 2. Stijlbepaling (vastleggen vóór het coderen)
 
 Maak eerst een kort stijlplan en leg dit vast in STYLE.md in de projectmap:
-Kleuren: 4–6 hexwaarden, afgeleid van de branche en (waar bruikbaar) het bestaande logo/merk/website. Niet zomaar een generiek palet.
+Kleuren: 4–6 hexwaarden, afgeleid van de branche en het bestaande logo/merk/website. Niet zomaar een generiek palet.
+Gebruik altijd het huidige logo in de website uitwerking, omdat dit voor deze fase nog heel vertrouwd en herkenbaar is.
 Typografie: een karaktervolle display-font + complementaire body-font (Google Fonts). Kies bewust per project, niet standaard Inter/Poppins op elke demo.
 Layout-concept: één zin die de opbouw beschrijft.
 Signatuur-element: het ene onderdeel waardoor deze demo blijft hangen (bijv. een interactieve configurator-teaser, een before/after-slider, een opvallende hero-behandeling). Eén gedurfd element, de rest rustig en strak.
@@ -28,7 +29,7 @@ Techniek:
 Eén zelfstandig index.html-bestand per klant: HTML, CSS en JS embedded. Geen build-steps. Zo is de demo direct te openen en te delen.
 Volledig responsive (mobile-first testen, inclusief de nodige breakpoints inbegrepen).
 Semantische HTML, zichtbare keyboard-focus, prefers-reduced-motion respecteren.
-Afbeeldingen: gebruik van stock foto's (unsplash, pexels), CSS-gradients, SVG-illustraties of neutrale placeholders met duidelijke labels ("[Foto: dakkapel plaatsing]").
+Afbeeldingen: gebruik bij voorkeur bestaande foto's van de huidige website. Anders graag stock foto's (unsplash, pexels) om het persoonlijk te maken, maar ook om de juiste feeling af te geven. Gebruik hierbij vooral foto's die slaan op Nederlandse / Europeese situaties. Het mag niet te buitenlands voelen. Een mix van bestaande foto's en stock foto's mag ook als dat het design ten goede komt.
 
 
 Voorstel voor opbouw qua secties (aanpassen per branche, niet klakkeloos overnemen):
@@ -65,7 +66,6 @@ Eventuele aannames die gecheckt moeten worden bij de klant
 Checklist vóór oplevering
 
 Responsive gecontroleerd (mobiel, tablet, desktop)
-Geen gebroken externe resources
 Copy is Nederlands, foutloos en branchespecifiek
 Stijl wijkt zichtbaar af van eerdere demo's in demos/ (check bestaande mappen)
 STYLE.md aanwezig met palet, fonts en onderbouwing
