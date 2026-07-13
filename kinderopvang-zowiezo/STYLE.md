@@ -24,18 +24,20 @@ Afgeleid van het bestaande logo (`zowiezo-logo-header.png`): het beeldmerk zelf 
 | Inktblauw-grijs | `#262A3B` | Hoofdtekst, koppen |
 | Warm wit | `#FDFBF8` | Basis-achtergrond |
 
-## Typografie
+## Typografie (herzien — premium-versie)
 
-- **Display:** [Fredoka](https://fonts.google.com/specimen/Fredoka) — rond, vriendelijk, karaktervol; past bij kinderopvang zonder kinderachtig te worden.
-- **Body:** [Figtree](https://fonts.google.com/specimen/Figtree) — rustige, goed leesbare grotesk als complement, houdt de pagina volwassen en vertrouwd voor ouders.
+- **Display:** [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque) — een eigentijdse, karaktervolle grotesk met optisch formaat. Bewust weg van het eerdere Fredoka: dat voelde té kinderlijk voor het niveau dat we bij de klant willen laten zien. Bricolage geeft grote, zelfverzekerde koppen die "van het beeld afspringen" en tegelijk warm en menselijk blijven — passend voor een merk dat ouders vertrouwen moet geven.
+- **Body:** [Figtree](https://fonts.google.com/specimen/Figtree) — rustige, goed leesbare grotesk die de pagina volwassen en vertrouwd houdt.
+
+De typografie is dus doelbewust een stap volwassener: speelsheid komt nu uit kleur, vorm en de dag-tijdlijn, niet uit een kinderlijk lettertype.
 
 ## Layout-concept
 
-De pagina bouwt op als een dagritme bij Zowiezo Heerhugowaard: rustige, golvende sectie-overgangen (geen harde randen) die van binnenkomst (hero) via een dag op de opvang naar praktische informatie (tarieven, contact) lopen.
+Rijker en met meer "body" dan de eerste versie: afwisselende sectie-achtergronden (warm wit ↔ diep marineblauw drama-paneel ↔ magenta quote-band) geven ritme en diepte, in plaats van veel witruimte. De pagina vertelt een verhaal — van de belofte (hero), via de drie pijlers (betrokken/flexibel/betaalbaar) en de opvangvormen, naar het signatuur-dagritme, social proof, tarieven en FAQ.
 
-## Signatuur-element
+## Signatuur-element (herontworpen)
 
-**"Een dag bij Zowiezo Heerhugowaard"** — een horizontale tijdlijn gebaseerd op de échte openingstijden van de KDV- en BSO-locatie (06:30 open, brengtijden tot 09:00, Uk & Puk-programma, lunch, middagrust, BSO voor- en naschools tot 18:30). De tijdlijn onthult zich stap voor stap tijdens het scrollen, zodat ouders in één oogopslag zien hoe de dag van hun kind eruitziet — geen abstracte belofte maar een concreet dagschema.
+**"Een dag bij Zowiezo"** — nu een **verticale dag-tijdlijn met een meelopende zon**. Een centrale lijn kleurt van ochtendblauw via middaggeel naar avond-magenta, met een zonnetje dat tijdens het scrollen langs de lijn zakt en de momenten één voor één laat oplichten. Uitgebreid van 8 naar 9 rijkere momenten (welkom & wennen, Uk & Puk-kring, fruitmoment, buiten spelen, lunch, middagrust, BSO-instroom met taxi, woonkeuken/atelier, ophaaltijd), elk met een eigen icoon en KDV/BSO-label. Op mobiel klapt de tijdlijn netjes in tot een verticale linkerrail. Geeft ouders een concreet, filmisch beeld van de dag van hun kind — het onderdeel dat blijft hangen.
 
 ## Bronnen
 
