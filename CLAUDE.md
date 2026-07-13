@@ -35,16 +35,16 @@ Afbeeldingen: gebruik bij voorkeur bestaande foto's van de huidige website. Ande
 - Elke index.html bevat in de <head> altijd:
   <meta name="robots" content="noindex, nofollow">
 
-Voorstel voor opbouw qua secties (aanpassen per branche, niet klakkeloos overnemen):
+De opbouw en vulling van de website mag je zelf verzinnen. Wees creatief en denk hierbij out of the box. Breng het ontwerp/indeling van de homepage in lijn met de branch en het bedrijf. Er zijn wel een aantal dingen die ik terug wil zien, omdat dat qua gebruikerservaring fijn is:
 
-Sticky navigatie met logo(tekst) + CTA-knop
-Hero met sterke kop, subregel en primaire CTA — de hero is de thesis van het concept
-USP's / waarom-dit-bedrijf (3–4 punten)
-Diensten of producten
+Duidelijke navigatie met logo + CTA-knop
+Hero sectie met sterke kop, subregel en primaire CTA — de hero is de thesis van het concept. Dit moet pakkend zijn.
+USP's van het bedrijf. Vul dit ook weer creatief in.
+Vertel duidelijk watvoor diensten of producten dit bedrijf aanbied
 Proces / werkwijze (alleen als de branche dit vraagt)
 Social proof: reviews, cijfers, keurmerken
 CTA-sectie (offerte aanvragen / contact)
-Footer met contactgegevens en NAP-data
+Footer met contactgegevens, locatie en andere handige footer informatie
 
 Subtiele animaties: scroll-reveals en hover-states zijn prima, maar georchestreerd en spaarzaam. Overdaad voelt AI-gegenereerd. Groot voorstander van minimale gsap animaties waarbij elementen bijvoorbeeld in beeld faden als je er naartoe scrollt.
 
@@ -76,8 +76,7 @@ Responsive gecontroleerd (mobiel, tablet, desktop)
 Copy is Nederlands, foutloos en branchespecifiek
 Stijl wijkt zichtbaar af van eerdere demo's in demos/ (check bestaande mappen)
 STYLE.md aanwezig met palet, fonts en onderbouwing
-Contactgegevens/NAP kloppen of zijn duidelijk als placeholder gemarkeerd
-
+Contactgegevens of zijn duidelijk als placeholder gemarkeerd
 
 Voorbeeldprompt: "Maak een demo voor https://www.voorbeeldklant.nl"
 
