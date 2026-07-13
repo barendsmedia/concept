@@ -31,6 +31,9 @@ Volledig responsive (mobile-first testen, inclusief de nodige breakpoints inbegr
 Semantische HTML, zichtbare keyboard-focus, prefers-reduced-motion respecteren.
 Afbeeldingen: gebruik bij voorkeur bestaande foto's van de huidige website. Anders graag stock foto's (unsplash, pexels) om het persoonlijk te maken, maar ook om de juiste feeling af te geven. Gebruik hierbij vooral foto's die slaan op Nederlandse / Europeese situaties. Het mag niet te buitenlands voelen. Een mix van bestaande foto's en stock foto's mag ook als dat het design ten goede komt.
 
+## Verplicht in elke demo
+- Elke index.html bevat in de <head> altijd:
+  <meta name="robots" content="noindex, nofollow">
 
 Voorstel voor opbouw qua secties (aanpassen per branche, niet klakkeloos overnemen):
 
@@ -55,12 +58,16 @@ Echte contactgegevens van het bedrijf overnemen indien bekend; anders duidelijke
 
 5. Opleveren
 
-Bestandsstructuur: het resultaat moet geplaatst worden in een map /concepts/{bedrijfsnaam-slug}/index.html
+Bestandsstructuur: het resultaat moet geplaatst worden in een map /{bedrijfsnaam-slug}/index.html
+Op deze manier maak je dus een map aan voor het desbetreffende bedrijf met daarin de index.html. De map /concept/ bestaat al op de server en de bedrijfsnaam map wordt in de map /concept/ geplaatst.
+URL structuur: dit wordt gedeployed met FTP en dan wordt de URL structuur dus https://barendsmedia.nl/concept/{bedrijfsnaam-slug}/
+
 Sluit af met een korte samenvatting voor Michael:
 
 De gekozen stijlrichting en waarom (2–3 zinnen, bruikbaar in het klantgesprek)
 Het signatuur-element
 Eventuele aannames die gecheckt moeten worden bij de klant
+Als ik in Github de branch merge naar main dan wordt de nieuwe URL beschikbaar. Deel de nieuwe URL direct in deze samenvatting, dan hoef ik niet te zoeken.
 
 
 Checklist vóór oplevering
