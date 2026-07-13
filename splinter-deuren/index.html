@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splinter Deuren — Deuren op maat, gemeten en gemonteerd door één vast team</title>
+<meta name="description" content="Splinter Deuren in Heerhugowaard: voor-, achter- en binnendeuren, kozijnen en deurbeslag op maat. Bestel online of laat op maat maken — wij meten, maken én monteren zelf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pine: #1E3229;
+    --pine-dark: #142219;
+    --amber: #D98B3D;
+    --amber-light: #F0AE6C;
+    --copper: #B8814B;
+    --walnut: #6B4A34;
+    --ivory: #F5F1E8;
+    --ivory-dim: #EDE7D8;
+    --ink: #171F1A;
+    --white: #FFFFFF;
+    --radius: 14px;
+    --max: 1300px;
+    font-size: 16px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    background: var(--ivory);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--pine-dark);
+  }
+
+  p { margin: 0 0 1em; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--amber); color: var(--pine-dark); }
+  .btn-primary:hover { background: var(--amber-light); }
+  .btn-ghost { background: transparent; color: var(--ivory); border-color: rgba(245,241,232,0.4); }
+  .btn-ghost:hover { border-color: var(--ivory); background: rgba(245,241,232,0.08); }
+  .btn-dark { background: var(--pine); color: var(--ivory); }
+  .btn-dark:hover { background: var(--pine-dark); }
+
+  /* ---------- Service bar ---------- */
+  .service-bar {
+    background: var(--pine-dark);
+    color: rgba(245,241,232,0.72);
+    font-size: 0.8rem;
+  }
+  .service-bar .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 8px 24px;
+    flex-wrap: wrap;
+  }
+  .service-bar span { display: inline-flex; align-items: center; gap: 7px; }
+  .service-bar svg { width: 14px; height: 14px; color: var(--amber-light); }
+  @media (max-width: 760px) {
+    .service-bar .wrap { gap: 18px; }
+    .service-bar span:nth-child(n+3) { display: none; }
+  }
+
+  /* ---------- Header / Nav ---------- */
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--pine);
+    border-bottom: 1px solid rgba(245,241,232,0.08);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 24px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+  .nav .brand { flex-shrink: 0; display: inline-flex; }
+  .nav img.logo { height: 34px; width: auto; }
+
+  /* centered primary categories */
+  .primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .primary-nav > li { position: static; }
+  .primary-nav > li > a,
+  .primary-nav > li > button {
+    color: var(--ivory);
+    background: none;
+    border: none;
+    font-family: 'Public Sans', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0.92;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    padding: 6px 0;
+  }
+  .primary-nav > li > a:hover,
+  .primary-nav > li > button:hover { opacity: 1; }
+  .primary-nav .caret { width: 12px; height: 12px; transition: transform 0.2s ease; }
+  .primary-nav li.has-mega:hover .caret,
+  .primary-nav li.open .caret { transform: rotate(180deg); }
+
+  /* right-side webshop actions */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  .icon-btn {
+    background: none;
+    border: none;
+    color: var(--ivory);
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    opacity: 0.92;
+    text-decoration: none;
+  }
+  .icon-btn:hover { opacity: 1; color: var(--amber-light); }
+  .icon-btn svg { width: 22px; height: 22px; }
+  .icon-btn .keurmerk { width: 24px; height: 24px; color: var(--amber-light); }
+  .cart-badge {
+    position: absolute;
+    top: -7px; right: -9px;
+    background: var(--amber);
+    color: var(--pine-dark);
+    font-size: 0.66rem;
+    font-weight: 700;
+    min-width: 18px; height: 18px;
+    border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 4px;
+    font-family: 'Public Sans', sans-serif;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--ivory);
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-toggle svg { width: 26px; height: 26px; }
+
+  /* ---------- Mega menu ---------- */
+  .mega {
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    margin: 0 auto;
+    width: min(1180px, 95vw);
+    background: var(--white);
+    color: var(--ink);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 32px 60px rgba(0,0,0,0.22);
+    padding: 34px 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 34px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 120;
+  }
+  .primary-nav li.has-mega:hover .mega,
+  .primary-nav li.has-mega:focus-within .mega,
+  .primary-nav li.has-mega.open .mega {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .mega.mega-sm { width: min(760px, 92vw); grid-template-columns: repeat(2, 1fr); }
+  .mega-col h4 {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--pine);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding-bottom: 12px;
+    margin: 0 0 14px;
+    border-bottom: 2px solid rgba(30,50,41,0.14);
+  }
+  .mega-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .mega-col a { color: #33403a; text-decoration: none; font-size: 0.93rem; }
+  .mega-col a:hover { color: var(--amber); }
+
+  /* ---------- Search bar (toggle) ---------- */
+  .search-panel {
+    background: var(--pine-dark);
+    border-bottom: 1px solid rgba(245,241,232,0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .search-panel.open { max-height: 90px; }
+  .search-panel form {
+    display: flex;
+    gap: 10px;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+  .search-panel input {
+    flex: 1;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.95rem;
+    background: var(--white);
+    color: var(--ink);
+  }
+  .search-panel button {
+    border: none;
+    border-radius: 999px;
+    background: var(--amber);
+    color: var(--pine-dark);
+    font-weight: 700;
+    padding: 0 22px;
+    cursor: pointer;
+    font-family: 'Public Sans', sans-serif;
+  }
+
+  @media (max-width: 1040px) {
+    .primary-nav, .nav-actions .icon-search, .nav-actions .icon-account { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .nav { gap: 16px; }
+    .primary-nav { margin: 0; }
+  }
+
+  /* ---------- Mobile slide panel ---------- */
+  .mobile-panel {
+    display: none;
+    background: var(--pine);
+    border-top: 1px solid rgba(245,241,232,0.08);
+    padding: 12px 24px 26px;
+  }
+  header.site.open .mobile-panel { display: block; }
+  .mobile-panel .m-item { border-bottom: 1px solid rgba(245,241,232,0.1); }
+  .mobile-panel .m-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    color: var(--ivory);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    padding: 15px 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .mobile-panel .m-head svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+  .mobile-panel .m-item.open .m-head svg { transform: rotate(180deg); }
+  .mobile-panel .m-sub {
+    display: none;
+    padding: 0 0 14px 6px;
+  }
+  .mobile-panel .m-item.open .m-sub { display: block; }
+  .mobile-panel .m-sub h5 { color: var(--amber-light); font-family: 'Public Sans', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 12px 0 6px; }
+  .mobile-panel .m-sub a { display: block; color: rgba(245,241,232,0.82); text-decoration: none; padding: 6px 0; font-size: 0.94rem; }
+  .mobile-panel .m-cta { margin-top: 20px; }
+  .mobile-panel .m-cta .btn { width: 100%; justify-content: center; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--pine);
+    color: var(--ivory);
+    padding: 60px 0 84px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .hero-kicker::before {
+    content: '';
+    width: 22px; height: 2px;
+    background: var(--amber-light);
+    display: inline-block;
+  }
+  .hero h1 {
+    color: var(--ivory);
+    font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+    max-width: 14ch;
+  }
+  .hero h1 em { color: var(--amber-light); font-style: normal; }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(245,241,232,0.82);
+    max-width: 46ch;
+    margin: 20px 0 30px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 30px; }
+  .hero-trust {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: rgba(245,241,232,0.75);
+  }
+  .hero-trust strong { display: block; color: var(--ivory); font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 600; }
+
+  /* category quicklinks */
+  .quicklinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+  }
+  .quicklinks a {
+    background: rgba(245,241,232,0.08);
+    border: 1px solid rgba(245,241,232,0.16);
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .quicklinks a:hover { background: rgba(240,174,108,0.16); border-color: var(--amber); }
+
+  /* Before/after slider */
+  .compare {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    user-select: none;
+    touch-action: pan-y;
+  }
+  .compare img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .compare .after-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: inset(0 0 0 50%);
+  }
+  .compare .after-layer img { width: 100%; height: 100%; }
+  .compare-label {
+    position: absolute;
+    top: 16px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(23,31,26,0.65);
+    color: var(--ivory);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .compare-label.before { left: 16px; }
+  .compare-label.after { right: 16px; }
+  .compare-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .compare-handle::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: -1px;
+    width: 3px;
+    background: var(--ivory);
+  }
+  .compare-grip {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--ivory);
+    color: var(--pine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+  .compare-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .compare-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(245,241,232,0.65);
+    margin-top: 12px;
+  }
+  .compare:focus-within {
+    outline: 3px solid var(--amber);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .compare { aspect-ratio: 4 / 3; max-width: 480px; margin: 0 auto; }
+  }
+
+  /* ---------- Sections generic ---------- */
+  section { padding: 84px 0; }
+  .section-head { max-width: 640px; margin: 0 0 48px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--copper);
+    margin-bottom: 12px;
+  }
+  .section-head h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
+  .section-head p { color: #4a544c; font-size: 1.05rem; margin-top: 14px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+  .reveal { opacity: 0; transform: translateY(26px); }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+
+  /* ---------- USPs ---------- */
+  .usp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .usp-card {
+    background: var(--white);
+    border: 1px solid rgba(30,50,41,0.08);
+    border-top: 3px solid var(--copper);
+    border-radius: var(--radius);
+    padding: 30px 24px;
+  }
+  .usp-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    color: var(--amber);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .usp-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+  .usp-card p { color: #4a544c; font-size: 0.95rem; margin: 0; }
+
+  @media (max-width: 980px) {
+    .usp-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .usp-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Product grid (webshop) ---------- */
+  .shop-bg { background: var(--ivory-dim); }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .product-card {
+    background: var(--white);
+    border: 1px solid rgba(30,50,41,0.09);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(20,34,25,0.12); }
+  .product-media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--ivory);
+    overflow: hidden;
+  }
+  .product-media img { width: 100%; height: 100%; object-fit: cover; }
+  .product-tag {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--pine);
+    color: var(--ivory);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 999px;
+  }
+  .wish-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--pine);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .wish-btn svg { width: 19px; height: 19px; }
+  .wish-btn.active { background: var(--amber); color: var(--white); }
+  .wish-btn.active svg { fill: currentColor; }
+  .product-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+  .product-sku { font-size: 0.74rem; color: var(--copper); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .product-body h3 { font-size: 1.1rem; margin: 6px 0 4px; }
+  .product-body .p-desc { color: #4a544c; font-size: 0.88rem; margin: 0 0 16px; }
+  .product-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .product-price { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: var(--pine-dark); }
+  .product-price small { display: block; font-family: 'Public Sans', sans-serif; font-size: 0.7rem; color: #6a7369; font-weight: 500; }
+  .add-btn {
+    background: var(--pine);
+    color: var(--ivory);
+    border: none;
+    border-radius: 999px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 11px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .add-btn:hover { background: var(--amber); color: var(--pine-dark); transform: translateY(-2px); }
+  .add-btn svg { width: 16px; height: 16px; }
+
+  @media (max-width: 1080px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .product-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Categorie tegels ---------- */
+  .diensten-bg { background: var(--white); }
+  .diensten-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .dienst-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background: var(--pine);
+    text-decoration: none;
+  }
+  .dienst-card img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  .dienst-card:hover img { transform: scale(1.06); opacity: 0.95; }
+  .dienst-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(23,31,26,0) 35%, rgba(20,34,25,0.92) 100%);
+  }
+  .dienst-text {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 20px;
+    color: var(--ivory);
+  }
+  .dienst-text h3 { color: var(--ivory); font-size: 1.15rem; margin-bottom: 6px; }
+  .dienst-text p { color: rgba(245,241,232,0.78); font-size: 0.86rem; margin: 0; }
+
+  @media (max-width: 980px) {
+    .diensten-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .diensten-grid { grid-template-columns: 1fr; }
+    .dienst-card { aspect-ratio: 16/10; }
+  }
+
+  /* ---------- Werkwijze ---------- */
+  .werkwijze {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .werkwijze-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+  .werkwijze-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .steps li {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    padding: 0 0 32px 0;
+    position: relative;
+  }
+  .steps li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 21px; top: 44px; bottom: 4px;
+    width: 2px;
+    background: rgba(30,50,41,0.15);
+  }
+  .step-num {
+    counter-increment: step;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--pine);
+    color: var(--amber-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+  .step-num::before { content: counter(step); }
+  .steps h3 { font-size: 1.15rem; margin-bottom: 6px; }
+  .steps p { color: #4a544c; font-size: 0.95rem; margin: 0; }
+
+  @media (max-width: 900px) {
+    .werkwijze { grid-template-columns: 1fr; gap: 34px; }
+    .werkwijze-photo { max-width: 420px; margin: 0 auto; }
+  }
+
+  /* ---------- Social proof ---------- */
+  .proof-bg { background: var(--pine); color: var(--ivory); }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    text-align: center;
+  }
+  .proof-card {
+    border: 1px solid rgba(245,241,232,0.12);
+    border-radius: var(--radius);
+    padding: 34px 24px;
+  }
+  .proof-card .stars { color: var(--amber-light); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 12px; }
+  .proof-card h3 { color: var(--ivory); font-size: 1.3rem; margin-bottom: 8px; }
+  .proof-card p { color: rgba(245,241,232,0.75); font-size: 0.9rem; margin: 0; }
+  .proof-bg .section-head p { color: rgba(245,241,232,0.75); }
+  .proof-bg .eyebrow { color: var(--amber-light); }
+  .proof-bg .section-head h2 { color: var(--ivory); }
+
+  @media (max-width: 860px) {
+    .proof-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- CTA / contact ---------- */
+  .cta-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .cta-copy h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 18px; }
+  .cta-copy p { color: #4a544c; font-size: 1.05rem; }
+  .cta-info {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .cta-info a { text-decoration: none; font-weight: 600; color: var(--pine-dark); }
+  .cta-info span { display: block; font-size: 0.8rem; color: var(--copper); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 2px; }
+
+  form.offerte {
+    background: var(--white);
+    border: 1px solid rgba(30,50,41,0.1);
+    border-radius: var(--radius);
+    padding: 34px;
+    display: grid;
+    gap: 18px;
+  }
+  form.offerte .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  form.offerte label { font-size: 0.85rem; font-weight: 700; color: var(--pine-dark); display: block; margin-bottom: 6px; }
+  form.offerte input, form.offerte select, form.offerte textarea {
+    width: 100%;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(30,50,41,0.2);
+    background: var(--ivory);
+    color: var(--ink);
+  }
+  form.offerte textarea { resize: vertical; min-height: 90px; }
+  form.offerte .btn { justify-content: center; width: 100%; margin-top: 4px; }
+  .form-note { font-size: 0.78rem; color: #6a7369; margin: 0; }
+
+  @media (max-width: 900px) {
+    .cta-section { grid-template-columns: 1fr; }
+    form.offerte .row2 { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site {
+    background: var(--pine-dark);
+    color: rgba(245,241,232,0.75);
+    padding: 56px 0 28px;
+    font-size: 0.9rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+    gap: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(245,241,232,0.1);
+  }
+  .footer-grid img.logo { height: 30px; margin-bottom: 16px; }
+  .footer-grid h4 { color: var(--ivory); font-family: 'Public Sans', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+  .footer-grid ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .footer-grid a { text-decoration: none; color: rgba(245,241,232,0.75); }
+  .footer-grid a:hover { color: var(--amber-light); }
+
+  .pay-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .pay-row span {
+    background: var(--white);
+    color: var(--pine-dark);
+    font-size: 0.66rem;
+    font-weight: 700;
+    padding: 5px 9px;
+    border-radius: 5px;
+    letter-spacing: 0.02em;
+  }
+  .keurmerk-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(245,241,232,0.06);
+    border: 1px solid rgba(245,241,232,0.12);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .keurmerk-block svg { width: 34px; height: 34px; color: var(--amber-light); flex-shrink: 0; }
+  .keurmerk-block strong { color: var(--ivory); display: block; font-family: 'Public Sans', sans-serif; font-size: 0.9rem; }
+  .keurmerk-block span { font-size: 0.78rem; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 24px;
+    font-size: 0.8rem;
+    color: rgba(245,241,232,0.5);
+  }
+
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Toast ---------- */
+  .toast {
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(120%);
+    background: var(--pine-dark);
+    color: var(--ivory);
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    display: flex; align-items: center; gap: 10px;
+    z-index: 300;
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  .toast svg { width: 18px; height: 18px; color: var(--amber-light); }
+</style>
+</head>
+<body>
+
+<!-- SERVICE BAR -->
+<div class="service-bar">
+  <div class="wrap">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Gratis & vrijblijvend advies</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Bezorging & montage door heel Nederland</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Veilig betalen met iDEAL</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site" id="siteHeader">
+  <nav class="nav">
+    <a href="#top" class="brand" aria-label="Splinter Deuren — home">
+      <img class="logo" src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2023/05/lichtlogo-1024x309.png" alt="Splinter Deuren logo">
+    </a>
+
+    <ul class="primary-nav">
+      <li class="has-mega">
+        <button type="button" aria-haspopup="true" aria-expanded="false">Deuren
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega" role="menu" aria-label="Deuren categorieën">
+          <div class="mega-col">
+            <h4>Voordeuren</h4>
+            <ul>
+              <li><a href="#assortiment">Klassiek</a></li>
+              <li><a href="#assortiment">Modern</a></li>
+              <li><a href="#assortiment">Freeslijn</a></li>
+              <li><a href="#assortiment">Roosters</a></li>
+              <li><a href="#assortiment">Hoog isolerend</a></li>
+              <li><a href="#assortiment">Glas-in-lood</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Achterdeuren</h4>
+            <ul>
+              <li><a href="#assortiment">Hoog isolerend</a></li>
+              <li><a href="#assortiment">Klassiek</a></li>
+              <li><a href="#assortiment">Modern</a></li>
+              <li><a href="#assortiment">Freeslijnen</a></li>
+              <li><a href="#assortiment">Balkon- &amp; tuindeuren</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Binnendeuren</h4>
+            <ul>
+              <li><a href="#assortiment">Modern</a></li>
+              <li><a href="#assortiment">Freeslijn</a></li>
+              <li><a href="#assortiment">Industrieel</a></li>
+              <li><a href="#assortiment">Eiken</a></li>
+              <li><a href="#assortiment">Klassiek</a></li>
+              <li><a href="#assortiment">Glas-in-lood</a></li>
+              <li><a href="#assortiment">Barn-look</a></li>
+              <li><a href="#assortiment">Board</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Utiliteitsdeuren</h4>
+            <ul>
+              <li><a href="#assortiment">Standaard</a></li>
+              <li><a href="#assortiment">Geluidswerend</a></li>
+              <li><a href="#assortiment">Inbraakwerend</a></li>
+              <li><a href="#assortiment">Rookwerend</a></li>
+              <li><a href="#assortiment">Brandwerend</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-mega">
+        <button type="button" aria-haspopup="true" aria-expanded="false">Deurbeslag
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega mega-sm" role="menu" aria-label="Deurbeslag categorieën">
+          <div class="mega-col">
+            <h4>Grepen &amp; krukken</h4>
+            <ul>
+              <li><a href="#assortiment">Deurkrukken</a></li>
+              <li><a href="#assortiment">Voordeurgrepen</a></li>
+              <li><a href="#assortiment">Kom- &amp; schuifgrepen</a></li>
+              <li><a href="#assortiment">Rozetten &amp; schilden</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Sloten &amp; cilinders</h4>
+            <ul>
+              <li><a href="#assortiment">Insteeksloten</a></li>
+              <li><a href="#assortiment">Meerpuntssluitingen</a></li>
+              <li><a href="#assortiment">Cilinders (SKG)</a></li>
+              <li><a href="#assortiment">Elektrisch &amp; smart</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Veiligheidsbeslag</h4>
+            <ul>
+              <li><a href="#assortiment">Inbraakwerend SKG**</a></li>
+              <li><a href="#assortiment">Kerntrekbeveiliging</a></li>
+              <li><a href="#assortiment">Anti-inbraakstrips</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Toebehoren</h4>
+            <ul>
+              <li><a href="#assortiment">Scharnieren</a></li>
+              <li><a href="#assortiment">Brievenbussen</a></li>
+              <li><a href="#assortiment">Deurbellen &amp; huisnummers</a></li>
+              <li><a href="#assortiment">Drangers &amp; tochtwering</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-mega">
+        <button type="button" aria-haspopup="true" aria-expanded="false">Kozijnen
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mega mega-sm" role="menu" aria-label="Kozijnen categorieën">
+          <div class="mega-col">
+            <h4>Op materiaal</h4>
+            <ul>
+              <li><a href="#assortiment">Hardhouten kozijnen</a></li>
+              <li><a href="#assortiment">Kunststof kozijnen</a></li>
+              <li><a href="#assortiment">Aluminium kozijnen</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Op toepassing</h4>
+            <ul>
+              <li><a href="#assortiment">Voordeurkozijnen</a></li>
+              <li><a href="#assortiment">Draai-kiepramen</a></li>
+              <li><a href="#assortiment">Vast glas &amp; puien</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#assortiment">Artikelen</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="icon-btn icon-search" id="searchToggle" aria-label="Zoeken" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a class="icon-btn" href="#" id="wishlistBtn" aria-label="Verlanglijst">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="cart-badge" id="wishBadge" style="display:none">0</span>
+      </a>
+      <a class="icon-btn" href="#" aria-label="Winkelmand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+      </a>
+      <a class="icon-btn icon-account" href="#" aria-label="Mijn account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a class="icon-btn" href="#" aria-label="Webshop Keurmerk">
+        <svg class="keurmerk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V5l7-3z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Menu openen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Search panel -->
+  <div class="search-panel" id="searchPanel">
+    <form onsubmit="event.preventDefault();">
+      <input type="search" placeholder="Zoek op product, SKU of categorie…" aria-label="Zoeken in de webshop">
+      <button type="submit">Zoeken</button>
+    </form>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="m-item">
+      <button class="m-head" type="button">Deuren
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="m-sub">
+        <h5>Voordeuren</h5>
+        <a href="#assortiment">Klassiek · Modern · Freeslijn · Hoog isolerend · Glas-in-lood</a>
+        <h5>Achterdeuren</h5>
+        <a href="#assortiment">Klassiek · Modern · Freeslijnen · Balkon- &amp; tuindeuren</a>
+        <h5>Binnendeuren</h5>
+        <a href="#assortiment">Modern · Industrieel · Eiken · Barn-look · Board</a>
+        <h5>Utiliteitsdeuren</h5>
+        <a href="#assortiment">Geluid- · Inbraak- · Rook- &amp; brandwerend</a>
+      </div>
+    </div>
+    <div class="m-item">
+      <button class="m-head" type="button">Deurbeslag
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="m-sub">
+        <h5>Grepen &amp; krukken</h5>
+        <a href="#assortiment">Deurkrukken · Voordeurgrepen · Rozetten &amp; schilden</a>
+        <h5>Sloten &amp; cilinders</h5>
+        <a href="#assortiment">Insteeksloten · Meerpuntssluitingen · SKG-cilinders</a>
+        <h5>Veiligheid &amp; toebehoren</h5>
+        <a href="#assortiment">Veiligheidsbeslag · Scharnieren · Brievenbussen · Drangers</a>
+      </div>
+    </div>
+    <div class="m-item">
+      <button class="m-head" type="button">Kozijnen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="m-sub">
+        <a href="#assortiment">Hardhout · Kunststof · Aluminium — op maat gemaakt</a>
+      </div>
+    </div>
+    <div class="m-item"><a class="m-head" href="#assortiment">Artikelen</a></div>
+    <div class="m-item"><a class="m-head" href="#contact">Contact</a></div>
+    <div class="m-cta"><a class="btn btn-primary" href="#contact">Gratis offerte aanvragen</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-kicker">Deurspecialist &amp; webshop in Heerhugowaard</span>
+        <h1>Uw oude deur verdient een <em>opvolger</em></h1>
+        <p class="hero-sub">Bestel online uit ons brede assortiment óf laat uw voor-, achter- of binnendeur op maat maken. Wij meten, maken én monteren met één vast team — voor één transparante prijs.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop">Bekijk de webshop</a>
+          <a class="btn btn-ghost" href="#contact">Vraag gratis offerte aan</a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>Meten · Maken · Monteren</strong>alles door eigen personeel</div>
+          <div><strong>Eén vaste prijs</strong>vooraf helder, geen verrassingen</div>
+          <div><strong>Veilig betalen</strong>iDEAL, achteraf &amp; meer</div>
+        </div>
+        <div class="quicklinks">
+          <a href="#assortiment">Voordeuren</a>
+          <a href="#assortiment">Achterdeuren &amp; schuifpuien</a>
+          <a href="#assortiment">Binnendeuren</a>
+          <a href="#assortiment">Deurbeslag</a>
+          <a href="#assortiment">Kozijnen</a>
+          <a href="#assortiment">Utiliteitsdeuren</a>
+        </div>
+      </div>
+      <div>
+        <div class="compare" id="compareSlider">
+          <img src="https://images.unsplash.com/photo-1763236606235-6c38750f12b0?q=80&w=1200&auto=format&fit=crop" alt="Verweerde, gedateerde voordeur" class="before-img">
+          <div class="after-layer" id="afterLayer">
+            <img src="https://plus.unsplash.com/premium_photo-1755742204261-b19d85b5bffe?q=80&w=1200&auto=format&fit=crop" alt="Strakke, moderne voordeur van Splinter Deuren">
+          </div>
+          <span class="compare-label before">Voor</span>
+          <span class="compare-label after">Na</span>
+          <div class="compare-handle" id="compareHandle">
+            <div class="compare-grip">&#8596;</div>
+          </div>
+          <input class="compare-input" id="compareInput" type="range" min="0" max="100" value="50" aria-label="Sleep om oude en nieuwe deur te vergelijken">
+        </div>
+        <p class="compare-caption">Sleep om het verschil te zien</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USPs -->
+  <section id="waarom">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Waarom Splinter Deuren</span>
+        <h2>Eén aanspreekpunt, van meetlint tot montage</h2>
+        <p>Geen onderaannemers en geen doorverwijzen — bij Splinter Deuren regelt hetzelfde team uw hele deurproject.</p>
+      </div>
+      <div class="usp-grid">
+        <div class="usp-card reveal">
+          <span class="usp-num">01</span>
+          <h3>Eigen meet- en montagedienst</h3>
+          <p>Onze eigen monteurs meten op, maken de deur op maat en plaatsen 'm — zonder tussenpartijen.</p>
+        </div>
+        <div class="usp-card reveal">
+          <span class="usp-num">02</span>
+          <h3>Transparante vaste prijs</h3>
+          <p>Eén prijs voor opmeten, maken en monteren samen. Vooraf helder, geen verrassingen achteraf.</p>
+        </div>
+        <div class="usp-card reveal">
+          <span class="usp-num">03</span>
+          <h3>Bestel online of op maat</h3>
+          <p>Direct uit voorraad via de webshop, of volledig op maat gemaakt in onze eigen werkplaats.</p>
+        </div>
+        <div class="usp-card reveal">
+          <span class="usp-num">04</span>
+          <h3>Gratis &amp; vrijblijvend advies</h3>
+          <p>Persoonlijk advies aan huis of straks in onze nieuwe showroom aan het Nijverheidsplein.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP / PRODUCTEN -->
+  <section id="shop" class="shop-bg">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Populair in de webshop</span>
+        <h2>Direct te bestellen of op maat te maken</h2>
+        <p>Een greep uit ons assortiment. Prijzen zijn inclusief onze vakkundige montage-optie — kies bij het bestellen zelf voor levering of montage aan huis.</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card reveal">
+          <div class="product-media">
+            <span class="product-tag">Voordeur</span>
+            <button class="wish-btn" type="button" aria-label="Aan verlanglijst toevoegen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2024/04/JAVA-9431blank.png" alt="JAVA 9431 voordeur">
+          </div>
+          <div class="product-body">
+            <span class="product-sku">JV9431</span>
+            <h3>JAVA voordeur 9431</h3>
+            <p class="p-desc">Hoog isolerende voordeur, strak paneelontwerp met glasstrook.</p>
+            <div class="product-foot">
+              <div class="product-price">Op aanvraag<small>Op maat samengesteld</small></div>
+              <button class="add-btn" type="button" data-name="JAVA voordeur 9431"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Offerte</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <span class="product-tag">Binnendeur</span>
+            <button class="wish-btn" type="button" aria-label="Aan verlanglijst toevoegen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2024/04/JAVA-5254blank-1.png" alt="JAVA 5254 binnendeur">
+          </div>
+          <div class="product-body">
+            <span class="product-sku">JV5254</span>
+            <h3>JAVA binnendeur 5254</h3>
+            <p class="p-desc">Moderne binnendeur met verticale groeflijnen, incl. montage.</p>
+            <div class="product-foot">
+              <div class="product-price">&euro;&nbsp;2.420<small>incl. btw &amp; montage</small></div>
+              <button class="add-btn" type="button" data-name="JAVA binnendeur 5254"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>In winkelmand</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <span class="product-tag">Schuifpui</span>
+            <button class="wish-btn" type="button" aria-label="Aan verlanglijst toevoegen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2024/10/CanDo_Capital_sfeer_schuif-e1736761006350-1024x761.jpg" alt="CanDo Capital schuifpui">
+          </div>
+          <div class="product-body">
+            <span class="product-sku">CD-CAP</span>
+            <h3>CanDo Capital schuifpui</h3>
+            <p class="p-desc">Veel lichtinval en een vloeiende overgang naar de tuin.</p>
+            <div class="product-foot">
+              <div class="product-price">Op aanvraag<small>Maatwerk incl. montage</small></div>
+              <button class="add-btn" type="button" data-name="CanDo Capital schuifpui"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Offerte</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <span class="product-tag">Deurbeslag</span>
+            <button class="wish-btn" type="button" aria-label="Aan verlanglijst toevoegen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2025/09/Productfoto_COV1BA02_Crystal_White.png" alt="Cando Cover COV1-BA02 deurbeslag">
+          </div>
+          <div class="product-body">
+            <span class="product-sku">COV1-BA02</span>
+            <h3>Cando Cover COV1-BA02</h3>
+            <p class="p-desc">Strak afdekbeslag in Crystal White voor een verzorgde afwerking.</p>
+            <div class="product-foot">
+              <div class="product-price">vanaf &euro;&nbsp;300<small>incl. btw</small></div>
+              <button class="add-btn" type="button" data-name="Cando Cover COV1-BA02"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>In winkelmand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIE TEGELS -->
+  <section id="assortiment" class="diensten-bg">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Assortiment</span>
+        <h2>Een deur voor elke ruimte, in elke stijl</h2>
+        <p>Van een warme, klassieke voordeur tot een strakke schuifpui — alles online te vinden en op maat te maken in onze eigen werkplaats.</p>
+      </div>
+      <div class="diensten-grid">
+        <a class="dienst-card reveal" href="#shop">
+          <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2024/04/JAVA-9431blank.png" alt="Moderne voordeur, JAVA-serie">
+          <div class="dienst-overlay"></div>
+          <div class="dienst-text"><h3>Voordeuren</h3><p>Klassiek, modern of vrijstaand — hoog isolerend en op maat.</p></div>
+        </a>
+        <a class="dienst-card reveal" href="#shop">
+          <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2024/10/CanDo_Capital_sfeer_schuif-e1736761006350-1024x761.jpg" alt="Achterdeur en schuifpui in een woonkamer">
+          <div class="dienst-overlay"></div>
+          <div class="dienst-text"><h3>Achterdeuren &amp; schuifpuien</h3><p>Veel lichtinval en een vloeiende overgang naar de tuin.</p></div>
+        </a>
+        <a class="dienst-card reveal" href="#shop">
+          <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2024/04/JAVA-5254blank-1.png" alt="Binnendeur in industriële stijl">
+          <div class="dienst-overlay"></div>
+          <div class="dienst-text"><h3>Binnendeuren</h3><p>Modern, industrieel, eiken of klassiek — voor elk interieur.</p></div>
+        </a>
+        <a class="dienst-card reveal" href="#shop">
+          <img src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2025/09/Productfoto_COV1BA02_Crystal_White.png" alt="Utiliteitsdeur in een zakelijke omgeving">
+          <div class="dienst-overlay"></div>
+          <div class="dienst-text"><h3>Kozijnen &amp; deurbeslag</h3><p>Geluid-, inbraak- en brandwerende opties, incl. beslag.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERKWIJZE -->
+  <section id="werkwijze" class="shop-bg">
+    <div class="wrap">
+      <div class="werkwijze">
+        <div class="werkwijze-photo reveal">
+          <img src="https://plus.unsplash.com/premium_photo-1663013470139-9bc103e5c52c?q=80&w=1200&auto=format&fit=crop" alt="Vakman werkt met hout in de werkplaats">
+        </div>
+        <div>
+          <div class="section-head reveal" style="margin-bottom:36px;">
+            <span class="eyebrow">Werkwijze</span>
+            <h2>Van eerste bezoek tot montage in drie stappen</h2>
+          </div>
+          <ol class="steps">
+            <li class="reveal">
+              <span class="step-num"></span>
+              <div><h3>Gratis opmeten</h3><p>Onze eigen meetdienst komt bij u thuis, denkt mee over stijl en materiaal en meet exact op.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="step-num"></span>
+              <div><h3>Op maat gemaakt</h3><p>Uw deur wordt in onze eigen werkplaats vervaardigd — precies passend, geen standaardmaten.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="step-num"></span>
+              <div><h3>Vakkundig gemonteerd</h3><p>Onze eigen monteurs plaatsen de deur, meestal binnen één dag, netjes afgewerkt.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof-bg">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Vertrouwd door klanten in de regio</span>
+        <h2>Wat klanten in Noord-Holland van ons vinden</h2>
+        <p>Wij werken met een Webshop Keurmerk en verzamelen reviews via Google — hieronder een greep uit de reacties.</p>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card reveal">
+          <div class="stars">★★★★★</div>
+          <h3>"Precies zoals besproken"</h3>
+          <p>"Netjes opgemeten, duidelijke prijs vooraf en binnen een dag geplaatst. Geen gedoe met meerdere partijen."</p>
+        </div>
+        <div class="proof-card reveal">
+          <div class="stars">★★★★★</div>
+          <h3>"Persoonlijk en vakkundig"</h3>
+          <p>"Goed advies gekregen over het model dat bij onze woning past. Het eindresultaat overtreft de verwachting."</p>
+        </div>
+        <div class="proof-card reveal">
+          <div class="stars">★★★★★</div>
+          <h3>"Eén aanspreekpunt, top"</h3>
+          <p>"Fijn dat dezelfde mensen meten, maken én monteren. Alles verliep in nauw overleg en zonder verrassingen."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section id="contact">
+    <div class="wrap cta-section">
+      <div class="cta-copy reveal">
+        <span class="eyebrow">Offerte aanvragen</span>
+        <h2>Klaar voor een nieuwe deur?</h2>
+        <p>Vul het formulier in en we nemen binnen één werkdag contact met u op voor een gratis en vrijblijvend adviesgesprek.</p>
+        <div class="cta-info">
+          <div><span>Telefoon</span><a href="tel:+31854014717">085 - 40 14 717</a></div>
+          <div><span>E-mail</span><a href="mailto:contact@splinterdeuren.nl">contact@splinterdeuren.nl</a></div>
+          <div><span>WhatsApp</span><a href="https://wa.me/31631790700">06 31 79 07 00</a></div>
+          <div><span>Bezoekadres</span><span style="text-transform:none;font-weight:400;color:#4a544c;letter-spacing:normal;">Nijverheidsplein 57, 1704 RB Heerhugowaard (showroom in aanbouw)</span></div>
+        </div>
+      </div>
+      <form class="offerte reveal" onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Bedankt! Dit is een demo-formulier — er is niets verstuurd.';">
+        <div class="row2">
+          <div>
+            <label for="naam">Naam</label>
+            <input id="naam" name="naam" type="text" required autocomplete="name">
+          </div>
+          <div>
+            <label for="telefoon">Telefoon</label>
+            <input id="telefoon" name="telefoon" type="tel" required autocomplete="tel">
+          </div>
+        </div>
+        <div>
+          <label for="type">Type deur</label>
+          <select id="type" name="type">
+            <option>Voordeur</option>
+            <option>Achterdeur / schuifpui</option>
+            <option>Binnendeur</option>
+            <option>Kozijn</option>
+            <option>Deurbeslag</option>
+            <option>Anders / weet ik nog niet</option>
+          </select>
+        </div>
+        <div>
+          <label for="bericht">Bericht</label>
+          <textarea id="bericht" name="bericht" placeholder="Vertel kort iets over uw project..."></textarea>
+        </div>
+        <button class="btn btn-dark" type="submit">Vraag gratis offerte aan</button>
+        <p class="form-note">Demo-formulier — er wordt niets verzonden.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="logo" src="https://usercontent.one/wp/www.splinterdeuren.nl/wp-content/uploads/2023/05/lichtlogo-1024x309.png" alt="Splinter Deuren logo">
+        <p style="max-width:34ch;">Deurspecialist &amp; webshop in Heerhugowaard. Wij meten, maken en monteren voor-, achter- en binnendeuren, kozijnen en deurbeslag op maat.</p>
+        <div class="pay-row">
+          <span>iDEAL</span><span>Apple Pay</span><span>Google Pay</span><span>PayPal</span><span>Mastercard</span><span>VISA</span>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Nijverheidsplein 57</li>
+          <li>1704 RB Heerhugowaard</li>
+          <li><a href="tel:+31854014717">085 - 40 14 717</a></li>
+          <li><a href="mailto:contact@splinterdeuren.nl">contact@splinterdeuren.nl</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Splinter Deuren</h4>
+        <ul>
+          <li>Ma t/m vrij: 09:00 – 17:00</li>
+          <li>KVK 96228482</li>
+          <li>BTW NL867521648B01</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Veilig winkelen</h4>
+        <div class="keurmerk-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V5l7-3z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <div>
+            <strong>Webshop Keurmerk</strong>
+            <span>Veilig betalen &amp; kopen met garantie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Splinter Deuren B.V. — Alle rechten voorbehouden</span>
+      <span>Demo-concept door Barends Media</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastText">Toegevoegd aan winkelmand</span>
+</div>
+
+<script>
+  // Mobile menu toggle
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('navToggle');
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile accordion
+    document.querySelectorAll('.mobile-panel .m-item > button.m-head').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+    // Close menu when a mobile link is tapped
+    document.querySelectorAll('.mobile-panel a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        header.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Search panel toggle
+  (function () {
+    var btn = document.getElementById('searchToggle');
+    var panel = document.getElementById('searchPanel');
+    btn.addEventListener('click', function () {
+      var open = panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) { var input = panel.querySelector('input'); if (input) input.focus(); }
+    });
+  })();
+
+  // Desktop mega-menu: close on Escape
+  (function () {
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.primary-nav li.open').forEach(function (li) { li.classList.remove('open'); });
+      }
+    });
+  })();
+
+  // Cart + wishlist demo interaction
+  (function () {
+    var cartCount = 0, wishCount = 0;
+    var cartBadge = document.getElementById('cartBadge');
+    var wishBadge = document.getElementById('wishBadge');
+    var toast = document.getElementById('toast');
+    var toastText = document.getElementById('toastText');
+    var toastTimer;
+
+    function showToast(msg) {
+      toastText.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2200);
+    }
+    function bump(badge, count) {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'flex' : 'none';
+    }
+
+    document.querySelectorAll('.add-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        cartCount++;
+        bump(cartBadge, cartCount);
+        showToast((btn.getAttribute('data-name') || 'Product') + ' toegevoegd');
+      });
+    });
+
+    document.querySelectorAll('.wish-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var active = btn.classList.toggle('active');
+        wishCount += active ? 1 : -1;
+        if (wishCount < 0) wishCount = 0;
+        bump(wishBadge, wishCount);
+        showToast(active ? 'Toegevoegd aan verlanglijst' : 'Verwijderd van verlanglijst');
+      });
+    });
+  })();
+
+  // Before/after compare slider
+  (function () {
+    var input = document.getElementById('compareInput');
+    var afterLayer = document.getElementById('afterLayer');
+    var handle = document.getElementById('compareHandle');
+    function update(val) {
+      afterLayer.style.clipPath = 'inset(0 0 0 ' + val + '%)';
+      handle.style.left = val + '%';
+    }
+    input.addEventListener('input', function () { update(input.value); });
+    update(input.value);
+  })();
+
+  // Scroll reveal (respects prefers-reduced-motion)
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { observer.observe(el); });
+  })();
+</script>
+</body>
+</html>
