@@ -3,30 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Zowiezo Kinderopvang Heerhugowaard — Kinderdagverblijf & BSO</title>
-<meta name="description" content="Kinderdagverblijf en buitenschoolse opvang van Zowiezo in Heerhugowaard. Betrokken, flexibel en betaalbaar — al 17,5 jaar. Vraag een rondleiding aan.">
+<meta name="description" content="Kleinschalige, warme kinderopvang in Heerhugowaard. Kinderdagverblijf (0–4) en BSO (4–13) van Zowiezo — betrokken, flexibel en betaalbaar, al 17,5 jaar. Plan een rondleiding.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#2B2E83;
-    --navy-dark:#1E2060;
+    --navy-2:#20225F;
+    --navy-3:#171A4A;
     --magenta:#E5127E;
-    --yellow:#FFC94D;
-    --mint:#4CC0A0;
-    --ink:#262A3B;
-    --paper:#FDFBF8;
-    --paper-tint:#F3F1FB;
+    --magenta-soft:#FF5BA8;
+    --yellow:#FFC23C;
+    --mint:#3FC29B;
+    --sky:#5AB6E8;
+    --ink:#1C1E33;
+    --muted:#5B5F80;
+    --paper:#FBFAFF;
+    --paper-2:#F1EFFB;
+    --line:rgba(43,46,131,0.10);
     --white:#FFFFFF;
-    --radius-lg:2rem;
-    --radius-md:1.25rem;
-    --shadow: 0 20px 45px -25px rgba(43,46,131,0.35);
-    --maxw:1160px;
+    --r-xl:2.4rem;
+    --r-lg:1.6rem;
+    --r-md:1.1rem;
+    --shadow-sm:0 12px 30px -22px rgba(28,30,51,0.45);
+    --shadow:0 30px 60px -32px rgba(43,46,131,0.40);
+    --shadow-lg:0 45px 90px -40px rgba(43,46,131,0.55);
+    --maxw:1200px;
+    --ease:cubic-bezier(.22,.61,.36,1);
   }
 
   *,*::before,*::after{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     *,*::before,*::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
@@ -34,312 +44,477 @@
 
   body{
     margin:0;
-    font-family:"Figtree", sans-serif;
+    font-family:"Figtree", system-ui, sans-serif;
     color:var(--ink);
     background:var(--paper);
-    line-height:1.6;
+    line-height:1.65;
+    font-size:1.02rem;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
 
   h1,h2,h3,h4{
-    font-family:"Fredoka", sans-serif;
+    font-family:"Bricolage Grotesque", system-ui, sans-serif;
     color:var(--navy);
-    line-height:1.15;
-    margin:0 0 .5em;
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin:0 0 .55em;
+    font-weight:700;
   }
 
-  p{ margin:0 0 1em; }
+  p{ margin:0 0 1.1em; }
   a{ color:var(--navy); }
   img{ max-width:100%; display:block; }
+  strong{ font-weight:700; }
 
-  .container{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:0 1.5rem;
-  }
+  .container{ max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; }
+  .container-wide{ max-width:1340px; margin:0 auto; padding:0 1.5rem; }
 
   a.skip-link{
     position:absolute; left:-999px; top:0;
     background:var(--navy); color:#fff; padding:.75rem 1.25rem;
-    border-radius:0 0 .5rem 0; z-index:1000; font-weight:600;
+    border-radius:0 0 .5rem 0; z-index:1000; font-weight:700;
   }
   a.skip-link:focus{ left:0; }
+  :focus-visible{ outline:3px solid var(--magenta); outline-offset:3px; border-radius:4px; }
 
-  :focus-visible{
-    outline:3px solid var(--magenta);
-    outline-offset:3px;
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:"Figtree", sans-serif; font-weight:700;
+    font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--magenta);
   }
+  .eyebrow::before{
+    content:""; width:1.5rem; height:2px; border-radius:2px;
+    background:var(--magenta);
+  }
+  .eyebrow.light{ color:var(--yellow); }
+  .eyebrow.light::before{ background:var(--yellow); }
+  .eyebrow.center{ justify-content:center; }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+    padding:.95rem 1.75rem; border-radius:999px;
+    font-family:"Figtree", sans-serif; font-weight:700; font-size:1rem;
+    text-decoration:none; border:2px solid transparent; cursor:pointer;
+    transition:transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), color .2s var(--ease);
+    white-space:nowrap;
+  }
+  .btn svg{ width:1.05em; height:1.05em; }
+  .btn-primary{ background:var(--magenta); color:#fff; box-shadow:0 16px 30px -14px rgba(229,18,126,0.65); }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 22px 40px -14px rgba(229,18,126,0.7); }
+  .btn-navy{ background:var(--navy); color:#fff; box-shadow:0 16px 30px -16px rgba(43,46,131,0.6); }
+  .btn-navy:hover{ transform:translateY(-3px); box-shadow:0 22px 40px -16px rgba(43,46,131,0.65); }
+  .btn-ghost{ background:transparent; color:var(--navy); border-color:rgba(43,46,131,0.28); }
+  .btn-ghost:hover{ background:var(--navy); color:#fff; border-color:var(--navy); transform:translateY(-3px); }
+  .btn-light{ background:#fff; color:var(--navy); }
+  .btn-light:hover{ transform:translateY(-3px); box-shadow:0 22px 40px -18px rgba(0,0,0,0.4); }
+  .btn-outline-light{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.5); }
+  .btn-outline-light:hover{ background:#fff; color:var(--navy); border-color:#fff; }
+  .btn-sm{ padding:.65rem 1.25rem; font-size:.9rem; }
 
   /* ---------- Header ---------- */
   header.site-header{
     position:sticky; top:0; z-index:100;
-    background:rgba(253,251,248,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(43,46,131,0.08);
+    background:rgba(251,250,255,0.82);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, box-shadow .3s ease, background .3s ease;
   }
-  .nav-row{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:.75rem 0;
-    gap:1rem;
-  }
+  header.site-header.scrolled{ border-bottom-color:var(--line); box-shadow:0 10px 30px -24px rgba(43,46,131,0.5); }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; padding:.7rem 0; gap:1rem; }
   .logo-link{ display:flex; align-items:center; }
-  .logo-link img{ height:42px; width:auto; }
-  nav.primary-nav{ display:flex; align-items:center; gap:1.75rem; }
-  nav.primary-nav a{
-    text-decoration:none; font-weight:600; color:var(--ink);
-    font-size:.95rem;
-    position:relative;
+  .logo-link img{ height:46px; width:auto; }
+  nav.primary-nav{ display:flex; align-items:center; gap:2rem; }
+  nav.primary-nav a:not(.btn){
+    text-decoration:none; font-weight:600; color:var(--ink); font-size:.96rem; position:relative;
   }
-  nav.primary-nav a::after{
-    content:""; position:absolute; left:0; bottom:-4px; height:2px; width:0;
-    background:var(--magenta); transition:width .2s ease;
+  nav.primary-nav a:not(.btn)::after{
+    content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0;
+    background:var(--magenta); border-radius:2px; transition:width .25s var(--ease);
   }
-  nav.primary-nav a:hover::after{ width:100%; }
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-    padding:.85rem 1.6rem;
-    border-radius:999px;
-    font-weight:700;
-    font-family:"Fredoka", sans-serif;
-    text-decoration:none;
-    border:2px solid transparent;
-    cursor:pointer;
-    font-size:1rem;
-    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    white-space:nowrap;
-  }
-  .btn-primary{ background:var(--magenta); color:#fff; box-shadow:0 12px 25px -10px rgba(229,18,126,0.55); }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 30px -10px rgba(229,18,126,0.6); }
-  .btn-ghost{ background:transparent; color:var(--navy); border-color:var(--navy); }
-  .btn-ghost:hover{ background:var(--navy); color:#fff; }
-  .btn-small{ padding:.6rem 1.2rem; font-size:.9rem; }
-
-  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:.4rem; }
-  .menu-toggle svg{ width:28px; height:28px; }
+  nav.primary-nav a:not(.btn):hover::after{ width:100%; }
+  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:.4rem; color:var(--navy); }
+  .menu-toggle svg{ width:30px; height:30px; }
 
   /* ---------- Hero ---------- */
   .hero{
-    position:relative;
-    padding:4.5rem 0 5rem;
-    overflow:hidden;
+    position:relative; padding:3.5rem 0 5.5rem; overflow:hidden;
     background:
-      radial-gradient(circle at 85% 15%, rgba(255,201,77,0.25), transparent 55%),
-      radial-gradient(circle at 5% 90%, rgba(76,192,160,0.2), transparent 45%),
+      radial-gradient(1100px 620px at 82% -8%, rgba(90,182,232,0.20), transparent 60%),
+      radial-gradient(900px 620px at 8% 108%, rgba(63,194,155,0.18), transparent 55%),
+      radial-gradient(700px 500px at 60% 120%, rgba(255,194,60,0.16), transparent 60%),
       var(--paper);
   }
-  .hero-grid{
-    display:grid; grid-template-columns:1.1fr 1fr; gap:3rem; align-items:center;
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:3.5rem; align-items:center; }
+  .hero h1{ font-size:clamp(2.5rem, 5.4vw, 4.15rem); font-weight:800; letter-spacing:-0.035em; }
+  .hero h1 .hl{ position:relative; color:var(--magenta); white-space:nowrap; }
+  .hero h1 .hl::after{
+    content:""; position:absolute; left:-2%; right:-2%; bottom:.08em; height:.32em; z-index:-1;
+    background:rgba(255,194,60,0.55); border-radius:.2em; transform:rotate(-1.2deg);
   }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:.5rem;
-    background:var(--paper-tint); color:var(--navy);
-    font-weight:700; font-size:.85rem; letter-spacing:.02em;
-    padding:.45rem 1rem; border-radius:999px; margin-bottom:1.25rem;
+  .hero .lead{ font-size:1.2rem; max-width:47ch; color:var(--muted); font-weight:500; }
+  .hero-ctas{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
+  .hero-trust{
+    display:flex; gap:1.75rem; flex-wrap:wrap; align-items:center;
+    margin-top:2.5rem; padding-top:1.75rem; border-top:1px solid var(--line);
   }
-  .eyebrow::before{ content:"♥"; color:var(--magenta); }
-  .hero h1{ font-size:clamp(2.1rem, 4.2vw, 3.2rem); }
-  .hero .lead{ font-size:1.15rem; max-width:46ch; color:var(--ink); }
-  .hero-ctas{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.75rem; }
+  .hero-trust .ht{ display:flex; flex-direction:column; }
+  .hero-trust .ht .n{ font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:1.5rem; color:var(--navy); line-height:1; }
+  .hero-trust .ht .l{ font-size:.82rem; color:var(--muted); font-weight:600; }
+  .hero-trust .divider{ width:1px; height:38px; background:var(--line); }
+
+  /* Hero media collage */
   .hero-media{ position:relative; }
-  .hero-media img{
-    border-radius:var(--radius-lg);
-    box-shadow:var(--shadow);
-    aspect-ratio:4/5; object-fit:cover; width:100%;
+  .hero-media .blob{
+    position:absolute; inset:-14% -8% -10% -6%; z-index:0;
+    background:conic-gradient(from 200deg at 50% 50%, var(--sky), var(--mint), var(--yellow), var(--magenta-soft), var(--sky));
+    filter:blur(10px); opacity:.28;
+    border-radius:44% 56% 62% 38% / 52% 44% 56% 48%;
+    animation:blobmorph 16s ease-in-out infinite;
   }
-  .hero-badge{
-    position:absolute; bottom:-1.25rem; left:-1.25rem;
-    background:#fff; border-radius:var(--radius-md);
-    padding:1rem 1.25rem; box-shadow:var(--shadow);
-    display:flex; align-items:center; gap:.75rem;
-    max-width:230px;
+  @keyframes blobmorph{
+    0%,100%{ border-radius:44% 56% 62% 38% / 52% 44% 56% 48%; }
+    50%{ border-radius:60% 40% 42% 58% / 42% 58% 42% 58%; }
   }
-  .hero-badge .num{ font-family:"Fredoka",sans-serif; font-size:1.6rem; color:var(--magenta); font-weight:700; }
-  .hero-badge .txt{ font-size:.8rem; color:var(--ink); line-height:1.25; }
+  .hero-photo{
+    position:relative; z-index:1; border-radius:2.2rem; overflow:hidden;
+    box-shadow:var(--shadow-lg); border:6px solid #fff;
+    aspect-ratio:4/4.4;
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; }
+  .hero-photo-2{
+    position:absolute; z-index:2; right:-1.5rem; bottom:-2rem;
+    width:44%; aspect-ratio:1/1; border-radius:1.6rem; overflow:hidden;
+    border:5px solid #fff; box-shadow:var(--shadow);
+  }
+  .hero-photo-2 img{ width:100%; height:100%; object-fit:cover; }
+  .hero-chip{
+    position:absolute; z-index:3; background:#fff; border-radius:1.1rem;
+    padding:.75rem 1rem; box-shadow:var(--shadow); display:flex; align-items:center; gap:.7rem;
+    font-weight:700; font-size:.9rem; color:var(--navy);
+  }
+  .hero-chip .dot{ width:12px; height:12px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 4px rgba(63,194,155,0.22); }
+  .hero-chip.c1{ top:1.5rem; left:-1.5rem; }
+  .hero-chip.c2{ top:8.5rem; right:-1rem; }
+  .hero-chip.c2 .dot{ background:var(--magenta); box-shadow:0 0 0 4px rgba(229,18,126,0.2); }
 
-  /* ---------- Sections generic ---------- */
-  section{ padding:5rem 0; }
-  .section-head{ max-width:640px; margin:0 auto 3rem; text-align:center; }
-  .section-head .tag{
-    display:inline-block; color:var(--magenta); font-weight:700;
-    text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; margin-bottom:.75rem;
+  /* Marquee logos strip */
+  .badge-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#fff; }
+  .badge-strip .inner{
+    display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;
+    padding:1.3rem 0; font-weight:700; color:var(--muted); font-size:.9rem;
   }
-  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.4rem); }
-  .section-head p{ color:#565b73; }
+  .badge-strip .b{ display:flex; align-items:center; gap:.55rem; }
+  .badge-strip .b svg{ width:20px; height:20px; color:var(--mint); flex:none; }
 
-  .reveal{ opacity:0; transform:translateY(28px); }
-  .reveal.is-visible{ opacity:1; transform:none; transition:opacity .7s ease, transform .7s ease; }
+  /* ---------- Section scaffolding ---------- */
+  section{ padding:5.5rem 0; position:relative; }
+  .section-head{ max-width:660px; margin:0 auto 3.25rem; text-align:center; }
+  .section-head h2{ font-size:clamp(2rem, 3.6vw, 2.9rem); font-weight:800; margin-top:.5rem; }
+  .section-head p{ color:var(--muted); font-size:1.12rem; }
+  .section-head.left{ text-align:left; margin-left:0; }
+  .section-head.left .eyebrow{ justify-content:flex-start; }
 
-  /* ---------- USPs ---------- */
-  .usp-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
+  .reveal{ opacity:0; transform:translateY(34px); }
+  .reveal.is-visible{ opacity:1; transform:none; transition:opacity .8s var(--ease), transform .8s var(--ease); }
+
+  /* ---------- Pijlers (navy drama panel) ---------- */
+  .pillars{
+    background:
+      radial-gradient(700px 480px at 88% 6%, rgba(229,18,126,0.28), transparent 60%),
+      radial-gradient(680px 500px at 4% 96%, rgba(90,182,232,0.24), transparent 58%),
+      linear-gradient(160deg, var(--navy-2), var(--navy-3));
+    color:#fff; overflow:hidden;
   }
+  .pillars::before{
+    content:""; position:absolute; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size:22px 22px; opacity:.5; pointer-events:none;
+  }
+  .pillars h2, .pillars h3{ color:#fff; }
+  .pillars .section-head p{ color:rgba(255,255,255,0.78); }
+  .pillar-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; position:relative; }
+  .pillar{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--r-lg); padding:2.1rem 1.85rem; backdrop-filter:blur(4px);
+    transition:transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease);
+  }
+  .pillar:hover{ transform:translateY(-6px); background:rgba(255,255,255,0.09); border-color:rgba(255,255,255,0.22); }
+  .pillar .pnum{
+    font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:1rem;
+    width:2.4rem; height:2.4rem; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    color:var(--navy-3); margin-bottom:1.1rem;
+  }
+  .pillar:nth-child(1) .pnum{ background:var(--yellow); }
+  .pillar:nth-child(2) .pnum{ background:var(--mint); }
+  .pillar:nth-child(3) .pnum{ background:var(--magenta-soft); }
+  .pillar h3{ font-size:1.35rem; margin-bottom:.5rem; }
+  .pillar p{ color:rgba(255,255,255,0.8); font-size:.98rem; margin:0; }
+
+  /* ---------- USP grid ---------- */
+  .usp-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
   .usp-card{
-    background:#fff; border-radius:var(--radius-md);
-    padding:1.75rem 1.5rem; box-shadow:0 15px 35px -25px rgba(38,42,59,0.35);
-    border:1px solid rgba(43,46,131,0.06);
+    background:#fff; border-radius:var(--r-lg); padding:1.9rem 1.75rem;
+    box-shadow:var(--shadow-sm); border:1px solid var(--line);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
   }
+  .usp-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
   .usp-card .icon{
-    width:48px; height:48px; border-radius:14px;
-    display:flex; align-items:center; justify-content:center;
-    background:var(--paper-tint); color:var(--navy); margin-bottom:1rem;
-    font-size:1.4rem;
+    width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+    margin-bottom:1.2rem; color:#fff;
   }
-  .usp-card h3{ font-size:1.05rem; margin-bottom:.4rem; }
-  .usp-card p{ font-size:.92rem; color:#565b73; margin:0; }
+  .usp-card .icon svg{ width:26px; height:26px; }
+  .usp-card:nth-child(6n+1) .icon{ background:linear-gradient(140deg,var(--magenta),var(--magenta-soft)); }
+  .usp-card:nth-child(6n+2) .icon{ background:linear-gradient(140deg,var(--sky),#3f9fd6); }
+  .usp-card:nth-child(6n+3) .icon{ background:linear-gradient(140deg,var(--mint),#2fa583); }
+  .usp-card:nth-child(6n+4) .icon{ background:linear-gradient(140deg,var(--yellow),#f0a51f); }
+  .usp-card:nth-child(6n+5) .icon{ background:linear-gradient(140deg,var(--navy),#3a3ea8); }
+  .usp-card:nth-child(6n+6) .icon{ background:linear-gradient(140deg,var(--magenta-soft),var(--yellow)); }
+  .usp-card h3{ font-size:1.18rem; margin-bottom:.4rem; }
+  .usp-card p{ font-size:.96rem; color:var(--muted); margin:0; }
 
   /* ---------- Diensten ---------- */
-  .services{ background:var(--paper-tint); }
-  .service-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:2rem;
-  }
+  .services{ background:var(--paper-2); }
+  .service-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
   .service-card{
-    background:#fff; border-radius:var(--radius-lg);
-    overflow:hidden; box-shadow:var(--shadow);
-    display:flex; flex-direction:column;
+    background:#fff; border-radius:var(--r-xl); overflow:hidden;
+    box-shadow:var(--shadow); display:flex; flex-direction:column; position:relative;
+    transition:transform .3s var(--ease);
   }
-  .service-card img{ width:100%; height:220px; object-fit:cover; }
-  .service-card .body{ padding:2rem; display:flex; flex-direction:column; gap:.85rem; flex:1; }
-  .service-card .age-badge{
-    align-self:flex-start; background:var(--yellow); color:var(--navy-dark);
-    font-weight:700; font-size:.8rem; padding:.3rem .8rem; border-radius:999px;
-    font-family:"Fredoka",sans-serif;
+  .service-card:hover{ transform:translateY(-6px); }
+  .service-media{ position:relative; height:250px; overflow:hidden; }
+  .service-media img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+  .service-card:hover .service-media img{ transform:scale(1.05); }
+  .service-media .age-badge{
+    position:absolute; top:1.1rem; left:1.1rem;
+    background:#fff; color:var(--navy); font-family:"Bricolage Grotesque",sans-serif; font-weight:700;
+    font-size:.85rem; padding:.4rem .95rem; border-radius:999px; box-shadow:var(--shadow-sm);
   }
-  .service-meta{ list-style:none; margin:.25rem 0 0; padding:0; font-size:.9rem; color:#565b73; display:grid; gap:.35rem; }
-  .service-meta li{ display:flex; gap:.5rem; }
-  .service-meta li strong{ color:var(--ink); min-width:6.5rem; }
-  .service-card .cta{ margin-top:auto; }
+  .service-body{ padding:2.1rem; display:flex; flex-direction:column; gap:1rem; flex:1; }
+  .service-body h3{ font-size:1.6rem; margin:0; }
+  .service-body > p{ margin:0; color:var(--muted); }
+  .service-meta{ list-style:none; margin:.2rem 0 0; padding:0; font-size:.94rem; display:grid; gap:.55rem; }
+  .service-meta li{ display:flex; gap:.7rem; align-items:flex-start; color:var(--muted); }
+  .service-meta li svg{ width:18px; height:18px; color:var(--mint); flex:none; margin-top:.15rem; }
+  .service-meta li strong{ color:var(--ink); }
+  .service-body .cta{ margin-top:auto; align-self:flex-start; }
 
   .service-note{
-    margin-top:2.5rem; text-align:center; font-size:.95rem; color:#565b73;
-    background:#fff; border:1px dashed rgba(43,46,131,0.25);
-    border-radius:var(--radius-md); padding:1.25rem 1.5rem;
+    margin-top:2.25rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap; justify-content:center;
+    text-align:center; font-size:1rem; color:var(--muted);
+    background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); padding:1.4rem 1.75rem;
   }
-  .service-note a{ font-weight:700; }
+  .service-note strong{ color:var(--navy); }
 
-  /* ---------- Dagritme (signature) ---------- */
-  .dagritme{ overflow:hidden; }
-  .timeline{
-    position:relative;
-    display:grid;
-    grid-auto-flow:column;
-    grid-auto-columns:minmax(190px,1fr);
-    gap:1.25rem;
-    overflow-x:auto;
-    padding:2rem .25rem 1.5rem;
-    scroll-snap-type:x proximity;
+  /* ---------- Signature: Een dag bij Zowiezo ---------- */
+  .day{ background:linear-gradient(180deg,#fff, var(--paper)); overflow:hidden; }
+  .day-wrap{ position:relative; max-width:940px; margin:0 auto; padding:1rem 0 0; }
+  .day-track{
+    position:absolute; top:0; bottom:0; left:50%; width:4px; transform:translateX(-50%);
+    background:var(--paper-2); border-radius:4px; overflow:hidden; z-index:0;
   }
-  .timeline::before{
-    content:""; position:absolute; top:2.6rem; left:0; right:0; height:3px;
-    background:linear-gradient(90deg, var(--mint), var(--yellow), var(--magenta));
-    border-radius:3px;
+  .day-progress{
+    position:absolute; top:0; left:0; width:100%; height:0%;
+    background:linear-gradient(180deg, var(--sky) 0%, var(--mint) 30%, var(--yellow) 60%, var(--magenta) 100%);
+    border-radius:4px;
   }
-  .timeline-item{
-    position:relative; scroll-snap-align:start;
-    background:#fff; border-radius:var(--radius-md);
-    padding:1.5rem 1.15rem 1.25rem; box-shadow:0 15px 35px -28px rgba(38,42,59,0.4);
+  .day-sun{
+    position:absolute; left:50%; top:0; width:34px; height:34px; transform:translate(-50%,-50%);
+    border-radius:50%; background:radial-gradient(circle at 35% 35%, #FFE59B, var(--yellow));
+    box-shadow:0 0 0 8px rgba(255,194,60,0.22), 0 0 26px rgba(255,194,60,0.6); z-index:5;
+    display:flex; align-items:center; justify-content:center;
   }
-  .timeline-item .time{
-    display:inline-block; font-family:"Fredoka",sans-serif; font-weight:700;
-    color:#fff; background:var(--navy); padding:.3rem .7rem; border-radius:999px;
-    font-size:.85rem; margin-bottom:.85rem;
+  .moment{
+    position:relative; width:50%; padding:0 3rem 3rem 0; z-index:1; margin-left:0;
   }
-  .timeline-item h4{ font-size:1rem; margin-bottom:.3rem; }
-  .timeline-item p{ font-size:.85rem; color:#565b73; margin:0; }
+  .moment:nth-child(even){ margin-left:50%; padding:0 0 3rem 3rem; }
+  .moment .card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--r-lg);
+    padding:1.5rem 1.6rem; box-shadow:var(--shadow-sm);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .moment .card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+  .moment .node{
+    position:absolute; top:.3rem; width:52px; height:52px; border-radius:50%;
+    background:#fff; border:3px solid var(--line); z-index:4;
+    display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm);
+    transition:border-color .4s var(--ease), transform .4s var(--ease), background .4s var(--ease);
+  }
+  .moment .node svg{ width:24px; height:24px; color:var(--navy); transition:color .4s var(--ease); }
+  .moment:nth-child(odd) .node{ right:-26px; }
+  .moment:nth-child(even) .node{ left:-26px; }
+  .moment.lit .node{ border-color:var(--mint); transform:scale(1.08); }
+  .moment.lit .node svg{ color:var(--mint); }
+  .moment .time{
+    display:inline-flex; align-items:center; gap:.4rem;
+    font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:.88rem;
+    color:var(--magenta); margin-bottom:.35rem;
+  }
+  .moment .tag-pill{
+    display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    padding:.18rem .55rem; border-radius:999px; margin-left:.4rem; vertical-align:middle;
+    background:var(--paper-2); color:var(--navy);
+  }
+  .moment .tag-pill.bso{ background:rgba(63,194,155,0.16); color:#227a60; }
+  .moment .tag-pill.kdv{ background:rgba(90,182,232,0.16); color:#276a92; }
+  .moment h4{ font-size:1.22rem; margin:0 0 .35rem; }
+  .moment p{ margin:0; color:var(--muted); font-size:.95rem; }
+  .day-cta{ text-align:center; margin-top:1rem; }
+
+  /* ---------- Quote band ---------- */
+  .quote-band{
+    background:linear-gradient(150deg, var(--magenta) 0%, #c60f6c 55%, var(--navy) 140%);
+    color:#fff; overflow:hidden;
+  }
+  .quote-band .container{ position:relative; text-align:center; max-width:900px; }
+  .quote-mark{ font-family:"Bricolage Grotesque",sans-serif; font-size:6rem; line-height:.4; color:rgba(255,255,255,0.28); }
+  .quote-band blockquote{
+    font-family:"Bricolage Grotesque",sans-serif; font-weight:600; font-size:clamp(1.5rem,3vw,2.15rem);
+    line-height:1.28; margin:.5rem 0 1.5rem; letter-spacing:-0.01em;
+  }
+  .quote-band cite{ font-style:normal; font-weight:600; opacity:.9; font-size:1rem; }
 
   /* ---------- Tarieven ---------- */
-  .tarieven-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .tarieven-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.75rem; align-items:stretch; }
   .price-card{
-    background:var(--navy); color:#fff; border-radius:var(--radius-lg);
-    padding:2rem; box-shadow:var(--shadow);
+    background:#fff; border:1px solid var(--line); border-radius:var(--r-xl);
+    padding:2.25rem; box-shadow:var(--shadow-sm); display:flex; flex-direction:column;
+    position:relative; overflow:hidden;
   }
-  .price-card h3{ color:#fff; font-size:1.3rem; }
-  .price-card .rates{ display:flex; gap:1.5rem; margin:1.5rem 0; }
-  .price-card .rate{ flex:1; background:rgba(255,255,255,0.08); border-radius:var(--radius-md); padding:1rem; text-align:center; }
-  .price-card .rate .amount{ font-family:"Fredoka",sans-serif; font-size:1.6rem; font-weight:700; color:var(--yellow); }
-  .price-card .rate .label{ font-size:.8rem; opacity:.85; }
-  .price-card p.fine{ font-size:.82rem; opacity:.8; }
-
-  /* ---------- Social proof ---------- */
-  .stats{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; text-align:center;
+  .price-card.feature{ background:linear-gradient(160deg,var(--navy),var(--navy-3)); color:#fff; border-color:transparent; box-shadow:var(--shadow); }
+  .price-card.feature h3, .price-card.feature .amount{ color:#fff; }
+  .price-card .ribbon{
+    position:absolute; top:1.4rem; right:1.4rem; background:var(--yellow); color:var(--navy-3);
+    font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:.75rem;
+    padding:.3rem .8rem; border-radius:999px;
   }
-  .stat .num{ font-family:"Fredoka",sans-serif; font-size:2.4rem; color:var(--magenta); font-weight:700; }
-  .stat .label{ font-size:.9rem; color:#565b73; }
+  .price-card h3{ font-size:1.4rem; margin-bottom:.35rem; }
+  .price-card .sub{ font-size:.92rem; color:var(--muted); margin-bottom:1.5rem; }
+  .price-card.feature .sub{ color:rgba(255,255,255,0.75); }
+  .rates{ display:flex; gap:1rem; margin-bottom:1.5rem; }
+  .rate{ flex:1; background:var(--paper-2); border-radius:var(--r-md); padding:1.1rem; text-align:center; }
+  .price-card.feature .rate{ background:rgba(255,255,255,0.08); }
+  .rate .amount{ font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:1.75rem; color:var(--navy); line-height:1; }
+  .price-card.feature .rate .amount{ color:var(--yellow); }
+  .rate .label{ font-size:.78rem; color:var(--muted); margin-top:.35rem; }
+  .price-card.feature .rate .label{ color:rgba(255,255,255,0.75); }
+  .price-feats{ list-style:none; margin:0 0 1.5rem; padding:0; display:grid; gap:.6rem; font-size:.94rem; }
+  .price-feats li{ display:flex; gap:.6rem; align-items:flex-start; }
+  .price-feats li svg{ width:18px; height:18px; color:var(--mint); flex:none; margin-top:.18rem; }
+  .price-card .cta{ margin-top:auto; }
+  .price-note{ text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.75rem; }
 
-  /* ---------- CTA section ---------- */
+  /* ---------- Stats ---------- */
+  .stats-band{ background:var(--paper-2); }
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; text-align:center; }
+  .stat .num{ font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:clamp(2.4rem,4vw,3.2rem); color:var(--magenta); line-height:1; letter-spacing:-0.03em; }
+  .stat .label{ font-size:.95rem; color:var(--muted); margin-top:.5rem; }
+
+  /* ---------- FAQ ---------- */
+  .faq-grid{ max-width:820px; margin:0 auto; display:grid; gap:1rem; }
+  .faq-item{
+    background:#fff; border:1px solid var(--line); border-radius:var(--r-md);
+    overflow:hidden; transition:box-shadow .3s var(--ease), border-color .3s var(--ease);
+  }
+  .faq-item[open]{ box-shadow:var(--shadow-sm); border-color:rgba(43,46,131,0.18); }
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:1.25rem 1.5rem;
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    font-family:"Bricolage Grotesque",sans-serif; font-weight:600; font-size:1.1rem; color:var(--navy);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary .chev{ flex:none; width:26px; height:26px; border-radius:50%; background:var(--paper-2); display:flex; align-items:center; justify-content:center; transition:transform .3s var(--ease), background .3s var(--ease); }
+  .faq-item summary .chev svg{ width:16px; height:16px; color:var(--magenta); }
+  .faq-item[open] summary .chev{ transform:rotate(180deg); background:var(--magenta); }
+  .faq-item[open] summary .chev svg{ color:#fff; }
+  .faq-item .answer{ padding:0 1.5rem 1.35rem; color:var(--muted); font-size:.98rem; }
+
+  /* ---------- CTA ---------- */
   .cta-section{
-    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-    color:#fff; border-radius:var(--radius-lg);
-    margin:0 1.5rem; padding:3.5rem 2.5rem;
-    text-align:center;
+    position:relative; overflow:hidden; color:#fff; border-radius:var(--r-xl);
+    background:
+      radial-gradient(600px 400px at 12% 10%, rgba(255,194,60,0.28), transparent 60%),
+      radial-gradient(700px 460px at 92% 100%, rgba(90,182,232,0.3), transparent 60%),
+      linear-gradient(150deg, var(--magenta), #b60d63 60%, var(--navy) 150%);
+    padding:4rem 3rem; text-align:center;
   }
-  .cta-section h2{ color:#fff; }
-  .cta-section p{ color:rgba(255,255,255,0.85); max-width:50ch; margin-inline:auto; }
+  .cta-section h2{ color:#fff; font-size:clamp(2rem,3.6vw,2.9rem); }
+  .cta-section p{ color:rgba(255,255,255,0.9); max-width:52ch; margin-inline:auto; font-size:1.12rem; }
   .cta-section .hero-ctas{ justify-content:center; }
-  .cta-section .btn-ghost{ color:#fff; border-color:#fff; }
-  .cta-section .btn-ghost:hover{ background:#fff; color:var(--navy); }
 
   /* ---------- Footer ---------- */
-  footer.site-footer{
-    background:var(--ink); color:#cfd2e3; padding:3.5rem 0 2rem; margin-top:5rem;
-  }
-  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:2rem; }
-  .footer-grid h4{ color:#fff; font-size:1rem; margin-bottom:.9rem; }
-  .footer-grid p, .footer-grid address{ font-size:.9rem; font-style:normal; color:#b7bad0; margin:0 0 .5rem; }
-  .footer-grid a{ color:#cfd2e3; text-decoration:none; }
-  .footer-grid a:hover{ text-decoration:underline; }
-  .footer-logo img{ height:36px; filter:brightness(0) invert(1); margin-bottom:1rem; }
+  footer.site-footer{ background:var(--navy-3); color:#c6c8e6; padding:4rem 0 2rem; margin-top:5.5rem; }
+  .footer-grid{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:2rem; }
+  .footer-grid h4{ color:#fff; font-size:1.02rem; margin-bottom:1rem; }
+  .footer-grid p, .footer-grid address{ font-size:.92rem; font-style:normal; color:#a9abd0; margin:0 0 .5rem; line-height:1.7; }
+  .footer-grid a{ color:#c6c8e6; text-decoration:none; }
+  .footer-grid a:hover{ color:#fff; text-decoration:underline; }
+  .footer-logo img{ height:40px; filter:brightness(0) invert(1); margin-bottom:1.1rem; }
+  .footer-tag{ display:inline-flex; align-items:center; gap:.5rem; margin-top:.5rem; font-size:.85rem; color:#8a8cb8; }
   .footer-bottom{
-    max-width:var(--maxw); margin:2.5rem auto 0; padding:1.5rem 1.5rem 0; border-top:1px solid rgba(255,255,255,0.1);
-    font-size:.8rem; color:#8b8ea6; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+    max-width:var(--maxw); margin:3rem auto 0; padding:1.5rem 1.5rem 0;
+    border-top:1px solid rgba(255,255,255,0.1); font-size:.82rem; color:#8a8cb8;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 900px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .hero-media{ order:-1; }
-    .usp-grid{ grid-template-columns:repeat(2,1fr); }
+  @media (max-width: 980px){
+    .hero-grid{ grid-template-columns:1fr; gap:4rem; }
+    .hero-media{ max-width:460px; margin:0 auto; }
+    .pillar-grid{ grid-template-columns:1fr; }
+    .usp-grid{ grid-template-columns:1fr 1fr; }
     .service-grid{ grid-template-columns:1fr; }
     .tarieven-grid{ grid-template-columns:1fr; }
-    .stats{ grid-template-columns:repeat(2,1fr); }
+    .stats{ grid-template-columns:1fr 1fr; }
     .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 760px){
+    /* Timeline becomes single-column left rail */
+    .day-track{ left:22px; transform:none; }
+    .day-sun{ left:22px; }
+    .moment, .moment:nth-child(even){ width:100%; margin-left:0; padding:0 0 2.5rem 3.4rem; }
+    .moment:nth-child(odd) .node, .moment:nth-child(even) .node{ left:-4px; right:auto; }
   }
   @media (max-width: 640px){
     nav.primary-nav{
-      position:fixed; inset:64px 0 auto 0; background:var(--paper);
-      flex-direction:column; align-items:flex-start; padding:1.5rem;
-      box-shadow:0 15px 30px -20px rgba(0,0,0,0.3);
-      transform:translateY(-130%); transition:transform .25s ease;
+      position:fixed; inset:66px 0 auto 0; background:var(--paper);
+      flex-direction:column; align-items:flex-start; padding:1.5rem; gap:1.25rem;
+      box-shadow:0 18px 34px -22px rgba(0,0,0,0.35); border-bottom:1px solid var(--line);
+      transform:translateY(-135%); transition:transform .3s var(--ease);
     }
     nav.primary-nav.open{ transform:translateY(0); }
+    nav.primary-nav .btn{ width:100%; }
     .menu-toggle{ display:block; }
     .usp-grid{ grid-template-columns:1fr; }
     .stats{ grid-template-columns:1fr 1fr; }
     .footer-grid{ grid-template-columns:1fr; }
-    .cta-section{ margin:0 1rem; padding:2.5rem 1.5rem; }
-    section{ padding:3.5rem 0; }
+    .cta-section{ padding:2.75rem 1.5rem; }
+    section{ padding:4rem 0; }
+    .hero-trust .divider{ display:none; }
+    .service-note{ text-align:center; }
   }
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Naar hoofdinhoud</a>
 
-<header class="site-header">
+<header class="site-header" id="top">
   <div class="container nav-row">
     <a href="#top" class="logo-link" aria-label="Zowiezo — voor het hele gezin, terug naar boven">
       <img src="https://zowiezo.nu/wp-content/themes/newfish/images/zowiezo-logo-header.png" alt="Zowiezo — voor het hele gezin">
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu openen">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
     </button>
     <nav class="primary-nav" id="primary-nav" aria-label="Hoofdnavigatie">
-      <a href="#diensten">Kinderdagverblijf</a>
-      <a href="#bso">BSO</a>
-      <a href="#dagritme">Dagritme</a>
+      <a href="#waarom">Waarom Zowiezo</a>
+      <a href="#diensten">Opvang</a>
+      <a href="#dagritme">Een dag bij ons</a>
       <a href="#tarieven">Tarieven</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-primary btn-small">Plan een rondleiding</a>
+      <a href="#rondleiding" class="btn btn-primary btn-sm">Plan een rondleiding</a>
     </nav>
   </div>
 </header>
@@ -347,54 +522,116 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero">
     <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Kinderopvang in Heerhugowaard</span>
-        <h1>Uw kind veilig, vrolijk en dichtbij opgevangen — al 17,5 jaar Zowiezo</h1>
-        <p class="lead">Kinderdagverblijf en buitenschoolse opvang op loopafstand van elkaar in Heerhugowaard. Betrokken, flexibel en betaalbaar, met een vast en hecht team dat uw kind écht kent.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Plan een rondleiding</a>
-          <a href="#tarieven" class="btn btn-ghost">Bekijk de tarieven</a>
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Kinderdagverblijf &amp; BSO · Heerhugowaard</span>
+        <h1 class="reveal">Een plek waar uw kind zich <span class="hl">meteen thuis</span> voelt</h1>
+        <p class="lead reveal">Kleinschalige, warme opvang in Heerhugowaard — kinderdagverblijf en buitenschoolse opvang op loopafstand van elkaar. Betrokken, flexibel en betaalbaar, met een vast team dat uw kind écht kent. Al 17,5 jaar.</p>
+        <div class="hero-ctas reveal">
+          <a href="#rondleiding" class="btn btn-primary">Plan een rondleiding
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#dagritme" class="btn btn-ghost">Bekijk een dag bij ons</a>
+        </div>
+        <div class="hero-trust reveal">
+          <div class="ht"><span class="n">17,5 jr</span><span class="l">ervaring in opvang</span></div>
+          <div class="divider"></div>
+          <div class="ht"><span class="n">0–13 jr</span><span class="l">van dagopvang tot BSO</span></div>
+          <div class="divider"></div>
+          <div class="ht"><span class="n">LRK</span><span class="l">erkend &amp; gecontroleerd</span></div>
         </div>
       </div>
-      <div class="hero-media">
-        <img src="https://images.unsplash.com/photo-1631512700356-574da7748a44?w=900&q=80&auto=format&fit=crop" alt="Kind speelt op een glijbaan in de buitenlucht">
-        <div class="hero-badge">
-          <span class="num">17,5</span>
-          <span class="txt">jaar ervaring in kinderopvang bij Zowiezo</span>
+      <div class="hero-media reveal">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1631512700356-574da7748a44?w=900&q=80&auto=format&fit=crop" alt="Kind speelt vrolijk buiten op een speeltoestel">
+        </div>
+        <div class="hero-photo-2">
+          <img src="https://images.unsplash.com/photo-1758598737505-90a3084105ac?w=700&q=80&auto=format&fit=crop" alt="Kind knutselt en tekent samen aan tafel">
+        </div>
+        <div class="hero-chip c1"><span class="dot"></span> Vast, hecht team</div>
+        <div class="hero-chip c2"><span class="dot"></span> Uk &amp; Puk VE-programma</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BADGE STRIP -->
+  <div class="badge-strip">
+    <div class="container inner">
+      <span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Kleinschalig &amp; huiselijk</span>
+      <span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Flexibele opvanguren</span>
+      <span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Taxidienst naar 11+ scholen</span>
+      <span class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Open 06:30 – 18:30 uur</span>
+    </div>
+  </div>
+
+  <!-- PIJLERS (navy) -->
+  <section class="pillars" id="waarom">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow light center">Waar Zowiezo voor staat</span>
+        <h2 class="reveal">Betrokken. Flexibel. Betaalbaar.</h2>
+        <p class="reveal">Geen grote, anonieme groepen, maar een knusse plek waar uw kind gezien wordt. Drie beloftes die we elke dag opnieuw waarmaken in Heerhugowaard.</p>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar reveal">
+          <div class="pnum">1</div>
+          <h3>Betrokken</h3>
+          <p>Een klein, vast team dat uw kind bij naam kent en dagelijks persoonlijk contact houdt bij het brengen en halen. Continuïteit en vertrouwde gezichten staan voorop.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pnum">2</div>
+          <h3>Flexibel</h3>
+          <p>Reguliere of flexibele opvanguren die meebewegen met het ritme van uw gezin — en extra opvang op studiedagen wanneer school dicht is.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pnum">3</div>
+          <h3>Betaalbaar</h3>
+          <p>Transparante uurtarieven zonder verrassingen achteraf, met heldere begeleiding bij het aanvragen van kinderopvangtoeslag.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- USPs -->
+  <!-- USP's -->
   <section id="usps">
     <div class="container">
       <div class="section-head">
-        <span class="tag">Waarom Zowiezo</span>
-        <h2 class="reveal">Opvang waar ouders én kinderen zich thuis voelen</h2>
+        <span class="eyebrow center">Waarom ouders voor ons kiezen</span>
+        <h2 class="reveal">Alles voor een fijne, veilige speeldag</h2>
+        <p class="reveal">Van het VE-programma tot de speelotheek om de hoek — bij Zowiezo Heerhugowaard is aan alles gedacht.</p>
       </div>
       <div class="usp-grid">
         <div class="usp-card reveal">
-          <div class="icon">✓</div>
-          <h3>Vast, hecht team</h3>
-          <p>Continuïteit staat voorop: uw kind ziet steeds dezelfde vertrouwde gezichten.</p>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5 8.5 5 10 6 12 8c2-2 3.5-3 5.5-3C21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
+          <h3>Kleinschalig &amp; huiselijk</h3>
+          <p>Knusse, overzichtelijke groepen waarin kinderen zich direct thuis voelen — geen grote drukte, wel volop persoonlijke aandacht.</p>
         </div>
         <div class="usp-card reveal">
-          <div class="icon">✓</div>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14 2 9l10-5 10 5-10 5z"/><path d="M6 10.5V16c0 1 2.7 3 6 3s6-2 6-3v-5.5"/></svg></div>
           <h3>Uk &amp; Puk VE-programma</h3>
-          <p>Voor- en vroegschoolse educatie voor taal, sociaal-emotionele en motorische ontwikkeling.</p>
+          <p>Voor- en vroegschoolse educatie die spelenderwijs taal, sociaal-emotionele en motorische ontwikkeling stimuleert.</p>
         </div>
         <div class="usp-card reveal">
-          <div class="icon">✓</div>
-          <h3>Flexibel &amp; betaalbaar</h3>
-          <p>Regulier of flexibel opvanguur, passend bij het ritme van uw gezin.</p>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+          <h3>Vast, hecht team</h3>
+          <p>Dezelfde vertrouwde pedagogisch medewerkers, dag in dag uit. Uw kind bouwt een echte band op met de groep.</p>
         </div>
         <div class="usp-card reveal">
-          <div class="icon">✓</div>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="11" rx="2"/><path d="M16 9h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
+          <h3>Taxidienst naar school</h3>
+          <p>De BSO haalt kinderen op bij 11+ basisscholen in de buurt — u hoeft zich geen zorgen te maken over het vervoer.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3>Speelotheek De Zusjes</h3>
+          <p>Dankzij onze samenwerking wisselt het speelgoed regelmatig — altijd iets nieuws om te ontdekken en te leren.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>LRK-geregistreerd</h3>
-          <p>Erkend en gecontroleerd kindercentrum, veilig en volgens de richtlijnen.</p>
+          <p>Erkend en gecontroleerd kindercentrum (LRK 463773652) dat volgens de landelijke richtlijnen werkt. Veilig en betrouwbaar.</p>
         </div>
       </div>
     </div>
@@ -404,39 +641,43 @@
   <section class="services" id="diensten">
     <div class="container">
       <div class="section-head">
-        <span class="tag">Onze opvang in Heerhugowaard</span>
-        <h2 class="reveal">Kinderdagverblijf en BSO, dichtbij huis</h2>
-        <p class="reveal">Twee eigen locaties in Heerhugowaard, elk met een eigen sfeer maar dezelfde warme aanpak.</p>
+        <span class="eyebrow center">Onze opvang in Heerhugowaard</span>
+        <h2 class="reveal">Twee vertrouwde locaties, dichtbij huis</h2>
+        <p class="reveal">Het kinderdagverblijf en de BSO liggen op loopafstand van elkaar — elk met een eigen sfeer, maar dezelfde warme aanpak.</p>
       </div>
       <div class="service-grid">
         <article class="service-card reveal" id="kdv">
-          <img src="https://images.unsplash.com/photo-1758598737505-90a3084105ac?w=900&q=80&auto=format&fit=crop" alt="Kind tekent samen met een volwassene aan tafel">
-          <div class="body">
+          <div class="service-media">
+            <img src="https://images.unsplash.com/photo-1758598737505-90a3084105ac?w=900&q=80&auto=format&fit=crop" alt="Peuter is aan het knutselen en ontdekken aan tafel">
             <span class="age-badge">0 – 4 jaar</span>
-            <h3>Kinderdagverblijf Heerhugowaard</h3>
-            <p>Een warme, huiselijke omgeving met binnen- en buitenspeelruimte, waar uw kind speels leert en ontdekt — inclusief het VE-programma Uk &amp; Puk.</p>
+          </div>
+          <div class="service-body">
+            <h3>Kinderdagverblijf</h3>
+            <p>Een warme, huiselijke omgeving met ruime binnen- én buitenspeelruimte, waar uw kind spelenderwijs leert en ontdekt — inclusief het VE-programma Uk &amp; Puk.</p>
             <ul class="service-meta">
-              <li><strong>Adres</strong> Deimoslaan 4, 1702 CK Heerhugowaard</li>
-              <li><strong>Telefoon</strong> <a href="tel:0728888305">072 – 888 83 05</a></li>
-              <li><strong>Openingstijden</strong> ma–vr 06:30–18:30 uur</li>
-              <li><strong>LRK-nummer</strong> 463773652</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <span><strong>Deimoslaan 4</strong>, 1702 CK Heerhugowaard</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:0728888305">072 – 888 83 05</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Ma t/m vr · 06:30 – 18:30 uur</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> LRK-nummer 463773652</li>
             </ul>
-            <a href="#tarieven" class="btn btn-ghost btn-small cta">Bekijk tarieven</a>
+            <a href="#tarieven" class="btn btn-ghost btn-sm cta">Bekijk tarieven</a>
           </div>
         </article>
         <article class="service-card reveal" id="bso">
-          <img src="https://images.unsplash.com/photo-1779881259467-ee4b804f8c6a?w=900&q=80&auto=format&fit=crop" alt="Kind klimt in een klimnet op een buitenspeelplaats">
-          <div class="body">
+          <div class="service-media">
+            <img src="https://images.unsplash.com/photo-1631512700356-574da7748a44?w=900&q=80&auto=format&fit=crop" alt="Kinderen spelen en klimmen buiten op de BSO">
             <span class="age-badge">4 – 13 jaar</span>
-            <h3>BSO Heerhugowaard</h3>
-            <p>Woonkeuken, atelier en een speelcaravan: na school heerlijk ravotten of ontspannen. Met taxidienst vanaf 11+ basisscholen in de buurt.</p>
+          </div>
+          <div class="service-body">
+            <h3>Buitenschoolse opvang</h3>
+            <p>Woonkeuken, atelier en een eigen speelcaravan: na school lekker ravotten of ontspannen. Met taxidienst vanaf 11+ basisscholen in de buurt.</p>
             <ul class="service-meta">
-              <li><strong>Adres</strong> Hectorlaan 3, 1702 CL Heerhugowaard</li>
-              <li><strong>Telefoon</strong> <a href="tel:0651856061">06 – 51 85 60 61</a></li>
-              <li><strong>Openingstijden</strong> voorschools 06:30–08:30, naschools tot 18:30</li>
-              <li><strong>Vakanties</strong> op schoolvrije dagen 06:30–18:30</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <span><strong>Hectorlaan 3</strong>, 1702 CL Heerhugowaard</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:0651856061">06 – 51 85 60 61</a></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Voor- &amp; naschools · tot 18:30 uur</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="11" rx="2"/><path d="M16 9h4l3 3v5h-7z"/></svg> Op schoolvrije dagen 06:30 – 18:30</li>
             </ul>
-            <a href="#tarieven" class="btn btn-ghost btn-small cta">Bekijk tarieven</a>
+            <a href="#tarieven" class="btn btn-ghost btn-sm cta">Bekijk tarieven</a>
           </div>
         </article>
       </div>
@@ -444,56 +685,119 @@
     </div>
   </section>
 
-  <!-- DAGRITME (signature) -->
-  <section class="dagritme" id="dagritme">
+  <!-- SIGNATURE: Een dag bij Zowiezo -->
+  <section class="day" id="dagritme">
     <div class="container">
       <div class="section-head">
-        <span class="tag">Een dag bij Zowiezo</span>
-        <h2 class="reveal">Zo ziet de dag van uw kind eruit in Heerhugowaard</h2>
-        <p class="reveal">Van het eerste "hoi" tot het ophalen aan het eind van de middag — een concreet beeld in plaats van een vage belofte.</p>
+        <span class="eyebrow center">Ons signatuur · Een dag bij Zowiezo</span>
+        <h2 class="reveal">Zo ziet de dag van uw kind eruit</h2>
+        <p class="reveal">Van het eerste "hoi" tot het ophalen aan het eind van de middag. Scroll mee door een complete speeldag in Heerhugowaard — een concreet beeld in plaats van een vage belofte.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <span class="time">06:30</span>
-          <h4>Deuren open</h4>
-          <p>KDV en BSO ontvangen de eerste kinderen, vrij spelen bij binnenkomst.</p>
+
+      <div class="day-wrap">
+        <div class="day-track" aria-hidden="true">
+          <div class="day-progress" id="dayProgress"></div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">06:30–09:00</span>
-          <h4>Breng-tijd</h4>
-          <p>Rustig moment van overdracht tussen ouder en pedagogisch medewerker.</p>
+        <div class="day-sun" id="daySun" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#8a5b00" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">09:15</span>
-          <h4>Kring met Uk &amp; Puk</h4>
-          <p>Taal, muziek en samen ontdekken via het VE-programma.</p>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+          <div class="card">
+            <span class="time">06:30 – 09:00</span>
+            <h4>Welkom &amp; rustig wennen</h4>
+            <p>De deuren gaan open. Een warm onthaal, even samen kletsen met papa of mama en dan lekker vrij spelen. Rustige overdracht van thuis naar de groep.</p>
+          </div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">12:00</span>
-          <h4>Lunch aan tafel</h4>
-          <p>Samen eten, samen gezellig — vast onderdeel van elke dag.</p>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6c0 2 1 3 1 5h10c0-2 1-3 1-5a6 6 0 0 0-6-6z"/><path d="M9 18h6M10 21h4"/></svg></span>
+          <div class="card">
+            <span class="time">09:15 <span class="tag-pill kdv">KDV</span></span>
+            <h4>Kring met Uk &amp; Puk</h4>
+            <p>Samen in de kring: een liedje, een verhaal en een thema van het VE-programma. Spelenderwijs werken we aan taal, woordenschat en samen delen.</p>
+          </div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">13:00</span>
-          <h4>Middagrust</h4>
-          <p>Slapen of een rustig boekje voor wie niet meer hoeft te slapen.</p>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 12l4-4M8 8l4 4"/></svg></span>
+          <div class="card">
+            <span class="time">10:00</span>
+            <h4>Fruit- en drinkmoment</h4>
+            <p>Aan tafel een stukje fruit en wat drinken, met aandacht voor gezonde gewoontes. Een gezellig rustpunt tussen het spelen door.</p>
+          </div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">±15:00</span>
-          <h4>BSO: instroom na school</h4>
-          <p>Kinderen komen aan, sommigen met de taxi vanaf hun basisschool.</p>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span>
+          <div class="card">
+            <span class="time">10:30</span>
+            <h4>Buiten spelen &amp; ontdekken</h4>
+            <p>Naar de ruime buitenruimte: zandbak, glijbaan en rennen. Bewegen en de natuur ontdekken hoort er elke dag bij, weer of geen weer.</p>
+          </div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">15:30</span>
-          <h4>Woonkeuken, atelier of buiten</h4>
-          <p>Vrij kiezen: knutselen, koken in de woonkeuken of spelen in de speelcaravan.</p>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M12 14v4M8 22h8"/></svg></span>
+          <div class="card">
+            <span class="time">12:00</span>
+            <h4>Samen lunchen</h4>
+            <p>Met de hele groep aan tafel voor een gezonde broodmaaltijd. Samen eten, samen praten — een vast en gezellig moment op de dag.</p>
+          </div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="time">18:30</span>
-          <h4>Deuren sluiten</h4>
-          <p>Alle kinderen zijn opgehaald — tot morgen weer!</p>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+          <div class="card">
+            <span class="time">13:00 <span class="tag-pill kdv">KDV</span></span>
+            <h4>Middagrust</h4>
+            <p>Even bijtanken: slapen voor wie dat nog nodig heeft, of een rustig boekje en zacht spel voor de grotere kinderen.</p>
+          </div>
+        </div>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="11" rx="2"/><path d="M16 9h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></span>
+          <div class="card">
+            <span class="time">±15:00 <span class="tag-pill bso">BSO</span></span>
+            <h4>Uit school, welkom op de BSO</h4>
+            <p>Kinderen stromen binnen — een deel opgehaald met onze taxidienst vanaf hun basisschool. Eerst even ontspannen met wat te drinken.</p>
+          </div>
+        </div>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
+          <div class="card">
+            <span class="time">15:30 <span class="tag-pill bso">BSO</span></span>
+            <h4>Woonkeuken, atelier of buiten</h4>
+            <p>Vrij kiezen: koken in de woonkeuken, knutselen in het atelier, spelen in de speelcaravan of lekker naar buiten. Ieder kind z'n eigen middag.</p>
+          </div>
+        </div>
+
+        <div class="moment reveal">
+          <span class="node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5 8.5 5 10 6 12 8c2-2 3.5-3 5.5-3C21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg></span>
+          <div class="card">
+            <span class="time">17:00 – 18:30</span>
+            <h4>Ophaaltijd &amp; tot morgen</h4>
+            <p>Papa's en mama's komen langs voor een korte overdracht: wat heeft uw kind vandaag beleefd? Met een voldaan gevoel weer naar huis.</p>
+          </div>
         </div>
       </div>
+
+      <div class="day-cta reveal">
+        <a href="#rondleiding" class="btn btn-navy">Ervaar het zelf — plan een rondleiding
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BAND -->
+  <section class="quote-band">
+    <div class="container">
+      <div class="quote-mark reveal" aria-hidden="true">&ldquo;</div>
+      <blockquote class="reveal">Bij ons voelen kinderen zich direct thuis dankzij onze knusse en kleinschalige opzet.</blockquote>
+      <cite class="reveal">— Team Zowiezo Kinderdagverblijf Heerhugowaard</cite>
     </div>
   </section>
 
@@ -501,63 +805,85 @@
   <section id="tarieven">
     <div class="container">
       <div class="section-head">
-        <span class="tag">Tarieven 2026</span>
+        <span class="eyebrow center">Tarieven 2026</span>
         <h2 class="reveal">Transparant en betaalbaar</h2>
-        <p class="reveal">Prijs per opvanguur, regulier of flexibel — zonder verrassingen achteraf.</p>
+        <p class="reveal">Een eerlijke prijs per opvanguur, regulier of flexibel — zonder verrassingen achteraf. Wij helpen u graag met het aanvragen van kinderopvangtoeslag.</p>
       </div>
       <div class="tarieven-grid">
-        <div class="price-card reveal">
-          <h3>Kinderdagverblijf (0–4 jaar)</h3>
+        <div class="price-card feature reveal">
+          <span class="ribbon">Incl. Uk &amp; Puk</span>
+          <h3>Kinderdagverblijf</h3>
+          <p class="sub">Voor kinderen van 0 tot 4 jaar</p>
           <div class="rates">
-            <div class="rate">
-              <div class="amount">€ 11,23</div>
-              <div class="label">per uur, regulier</div>
-            </div>
-            <div class="rate">
-              <div class="amount">€ 13,92</div>
-              <div class="label">per uur, flexibel</div>
-            </div>
+            <div class="rate"><div class="amount">€ 11,23</div><div class="label">per uur · regulier</div></div>
+            <div class="rate"><div class="amount">€ 13,92</div><div class="label">per uur · flexibel</div></div>
           </div>
-          <p class="fine">Inclusief het VE-programma Uk &amp; Puk. Vraag naar de mogelijkheden voor kinderopvangtoeslag.</p>
+          <ul class="price-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Inclusief het VE-programma Uk &amp; Puk</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ruime binnen- én buitenspeelruimte</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wisselend speelgoed via Speelotheek De Zusjes</li>
+          </ul>
+          <a href="#rondleiding" class="btn btn-light cta">Vraag de mogelijkheden</a>
         </div>
         <div class="price-card reveal">
-          <h3>BSO (4–13 jaar)</h3>
+          <h3>Buitenschoolse opvang</h3>
+          <p class="sub">Voor kinderen van 4 tot 13 jaar</p>
           <div class="rates">
-            <div class="rate">
-              <div class="amount">€ 9,98</div>
-              <div class="label">per uur, regulier</div>
-            </div>
-            <div class="rate">
-              <div class="amount">€ 11,80</div>
-              <div class="label">per uur, flexibel</div>
-            </div>
+            <div class="rate"><div class="amount">€ 9,98</div><div class="label">per uur · regulier</div></div>
+            <div class="rate"><div class="amount">€ 11,80</div><div class="label">per uur · flexibel</div></div>
           </div>
-          <p class="fine">Warme maaltijd tijdens vakantieweken mogelijk voor € 3,- per kind.</p>
+          <ul class="price-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Taxidienst vanaf 11+ basisscholen</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Woonkeuken, atelier &amp; speelcaravan</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Warme maaltijd in vakanties (€ 3,- p.k.)</li>
+          </ul>
+          <a href="#rondleiding" class="btn btn-navy cta">Vraag de mogelijkheden</a>
         </div>
+      </div>
+      <p class="price-note reveal">Tarieven per opvanguur, prijspeil 2026. Vraag ons naar de exacte kosten voor uw situatie en het aanvragen van kinderopvangtoeslag.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-band" id="cijfers">
+    <div class="container">
+      <div class="stats">
+        <div class="stat reveal"><div class="num" data-count="17,5">17,5</div><div class="label">jaar ervaring in kinderopvang</div></div>
+        <div class="stat reveal"><div class="num" data-count="4">4</div><div class="label">locaties in de regio West-Friesland</div></div>
+        <div class="stat reveal"><div class="num" data-count="11">11+</div><div class="label">basisscholen bereikbaar via BSO-taxi</div></div>
+        <div class="stat reveal"><div class="num" data-count="5">5</div><div class="label">dagen per week open · 06:30–18:30</div></div>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
-  <section id="cijfers">
+  <!-- FAQ -->
+  <section id="faq">
     <div class="container">
-      <div class="stats">
-        <div class="stat reveal">
-          <div class="num">17,5</div>
-          <div class="label">jaar ervaring</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">4</div>
-          <div class="label">locaties: Wognum, Hoorn, Noord-Scharwoude &amp; Heerhugowaard</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">0–13</div>
-          <div class="label">jaar, van dagopvang tot BSO</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">11+</div>
-          <div class="label">basisscholen bereikbaar via BSO-taxi</div>
-        </div>
+      <div class="section-head">
+        <span class="eyebrow center">Goed om te weten</span>
+        <h2 class="reveal">Veelgestelde vragen van ouders</h2>
+      </div>
+      <div class="faq-grid">
+        <details class="faq-item reveal">
+          <summary>Kan mijn kind eerst een keer komen wennen?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Zeker. Voor de eerste opvangdag plannen we altijd wenmomenten, zodat uw kind rustig kan kennismaken met de groep en de pedagogisch medewerkers. Zo start iedereen met een vertrouwd gevoel.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Bieden jullie flexibele opvanguren aan?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Ja. Naast reguliere opvang bieden we flexibele opvang aan die meebeweegt met wisselende werktijden. Ook op studiedagen van school kunt u bij ons terecht voor extra opvang.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Helpen jullie met de kinderopvangtoeslag?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">We leggen graag uit hoe de kinderopvangtoeslag werkt en welke gegevens u nodig heeft, zodat u weet wat de opvang netto kost voor uw gezin. U staat er niet alleen voor.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Vanaf en tot welke leeftijd kan mijn kind terecht?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Het kinderdagverblijf is er voor kinderen van 0 tot 4 jaar. Zodra uw kind naar de basisschool gaat, kan het doorstromen naar onze buitenschoolse opvang voor kinderen van 4 tot 13 jaar — een vertrouwd vervolg binnen dezelfde organisatie.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Haalt de BSO mijn kind op van school?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+          <div class="answer">Ja. Onze taxidienst haalt kinderen op bij meer dan 11 basisscholen in de omgeving van Heerhugowaard. Zo komt uw kind veilig en op tijd op de BSO aan.</div>
+        </details>
       </div>
     </div>
   </section>
@@ -566,11 +892,15 @@
   <section id="rondleiding">
     <div class="container">
       <div class="cta-section reveal">
-        <h2>Kom een keer kijken op Deimoslaan 4 of Hectorlaan 3</h2>
-        <p>Een rondleiding zegt meer dan duizend woorden. Plan een moment dat u uitkomt, of bel direct voor de mogelijkheden.</p>
+        <span class="eyebrow light center">Zin om kennis te maken?</span>
+        <h2>Kom eens langs op Deimoslaan 4 of Hectorlaan 3</h2>
+        <p>Een rondleiding zegt meer dan duizend woorden. Plan een moment dat u uitkomt en ervaar de warme, kleinschalige sfeer zelf — of bel ons direct voor de mogelijkheden.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Plan een rondleiding</a>
-          <a href="tel:0728888305" class="btn btn-ghost">Bel 072 – 888 83 05</a>
+          <a href="#contact" class="btn btn-light">Plan een rondleiding</a>
+          <a href="tel:0728888305" class="btn btn-outline-light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Bel 072 – 888 83 05
+          </a>
         </div>
       </div>
     </div>
@@ -585,6 +915,10 @@
         <img src="https://zowiezo.nu/wp-content/themes/newfish/images/zowiezo-logo-header.png" alt="Zowiezo — voor het hele gezin">
       </div>
       <p>Betrokken, flexibele én betaalbare kinderopvang. Al 17,5 jaar hét vertrouwde adres voor gezinnen in Heerhugowaard en omstreken.</p>
+      <span class="footer-tag">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        LRK-geregistreerd kindercentrum
+      </span>
     </div>
     <div>
       <h4>Kinderdagverblijf</h4>
@@ -622,7 +956,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-  // Mobiel menu
+  // ---- Mobiel menu ----
   const menuToggle = document.querySelector('.menu-toggle');
   const primaryNav = document.querySelector('.primary-nav');
   menuToggle.addEventListener('click', () => {
@@ -636,19 +970,78 @@
     });
   });
 
+  // ---- Header schaduw bij scrollen ----
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealEls = document.querySelectorAll('.reveal');
 
   if (prefersReducedMotion || typeof gsap === 'undefined') {
     revealEls.forEach(el => el.classList.add('is-visible'));
+    document.querySelectorAll('.moment').forEach(m => m.classList.add('lit'));
+    const dp = document.getElementById('dayProgress'); if (dp) dp.style.height = '100%';
+    const ds = document.getElementById('daySun'); if (ds) ds.style.top = '100%';
   } else {
     gsap.registerPlugin(ScrollTrigger);
-    revealEls.forEach((el, i) => {
+
+    // Scroll-reveals
+    revealEls.forEach((el) => {
       gsap.to(el, {
-        opacity:1, y:0, duration:0.7, ease:'power2.out',
-        delay: (i % 4) * 0.06,
+        opacity:1, y:0, duration:0.8, ease:'power2.out',
         scrollTrigger:{ trigger: el, start:'top 88%' },
         onStart: () => el.classList.add('is-visible')
+      });
+    });
+
+    // Signature dag-tijdlijn: laat de dag-lijn en zon meelopen met scroll
+    const dayWrap = document.querySelector('.day-wrap');
+    const dayProgress = document.getElementById('dayProgress');
+    const daySun = document.getElementById('daySun');
+    const moments = gsap.utils.toArray('.moment');
+
+    if (dayWrap) {
+      ScrollTrigger.create({
+        trigger: dayWrap,
+        start: 'top 55%',
+        end: 'bottom 75%',
+        scrub: 0.6,
+        onUpdate: (self) => {
+          const p = self.progress;
+          dayProgress.style.height = (p * 100) + '%';
+          daySun.style.top = (p * 100) + '%';
+        }
+      });
+
+      // Nodes lichten op zodra ze gepasseerd zijn
+      moments.forEach((m) => {
+        ScrollTrigger.create({
+          trigger: m,
+          start: 'top 62%',
+          onEnter: () => m.classList.add('lit'),
+          onLeaveBack: () => m.classList.remove('lit')
+        });
+      });
+    }
+
+    // Tel-animatie voor cijfers
+    document.querySelectorAll('.stat .num').forEach((el) => {
+      const raw = el.getAttribute('data-count');
+      if (!raw) return;
+      const suffix = el.textContent.includes('+') ? '+' : '';
+      const isDecimal = raw.includes(',');
+      const target = parseFloat(raw.replace(',', '.'));
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 90%', once: true,
+        onEnter: () => gsap.to(obj, {
+          v: target, duration: 1.4, ease: 'power2.out',
+          onUpdate: () => {
+            el.textContent = (isDecimal ? obj.v.toFixed(1).replace('.', ',') : Math.round(obj.v)) + suffix;
+          }
+        })
       });
     });
   }
