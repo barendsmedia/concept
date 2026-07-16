@@ -87,6 +87,16 @@ header.nav.scrolled{background:rgba(12,35,64,.92);backdrop-filter:blur(10px);box
 }
 .nav-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2.4s ease-out infinite}
 
+/* Mobile hamburger */
+.nav-toggle{
+  display:none;width:44px;height:44px;padding:0;border:none;cursor:pointer;
+  background:transparent;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex:0 0 auto;
+}
+.nav-toggle span{display:block;width:24px;height:2px;border-radius:2px;background:#fff;transition:transform .3s ease,opacity .25s ease}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
 /* HERO */
 .hero{
   min-height:100vh;display:flex;align-items:center;color:#fff;
@@ -180,13 +190,31 @@ footer p,footer li{font-size:.94rem;margin-bottom:.5rem;list-style:none}
   .logo-grid{grid-template-columns:repeat(3,1fr)}
   .foot-grid{grid-template-columns:1fr;gap:2rem}
 }
+@media(max-width:640px){
+  .nav-toggle{display:flex}
+  .nav.menu-open{background:rgba(12,35,64,.96);backdrop-filter:blur(10px);box-shadow:0 8px 30px -18px rgba(0,0,0,.6)}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(12,35,64,.98);backdrop-filter:blur(12px);
+    box-shadow:0 22px 44px -22px rgba(0,0,0,.7);
+    padding:.4rem 0;
+    max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+    transition:max-height .35s ease,opacity .3s ease,visibility .3s ease;
+  }
+  .nav-links.open{max-height:220px;opacity:1;visibility:visible}
+  .nav-links a{
+    padding:.95rem 24px;font-size:1rem;color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.09);
+  }
+  .nav-links a:last-of-type{border-bottom:none}
+}
 @media(max-width:560px){
   .hero-content{padding:120px 0 150px}
   .logo-grid{grid-template-columns:repeat(2,1fr)}
   .boat{display:none}
   .foot-bottom{flex-direction:column}
   body{padding-bottom:104px}
-  .nav-links a{font-size:.85rem}
   .regbar-inner{gap:.7rem;padding-top:.75rem;padding-bottom:.75rem;flex-wrap:wrap}
   .regbar-text{font-size:.85rem;gap:.6rem;text-align:center;justify-content:center}
   .regbar-badge{padding:.26rem .6rem;font-size:.62rem}
@@ -196,6 +224,7 @@ footer p,footer li{font-size:.94rem;margin-bottom:.5rem;list-style:none}
   .regbar-badge::before,.nav-status::before{animation:none}
   .regbar{transform:none;transition:none}
   .rv{opacity:1;transform:none;transition:none}
+  .nav-links,.nav-toggle span{transition:none}
   html{scroll-behavior:auto}
 }
 </style>
@@ -209,11 +238,14 @@ footer p,footer li{font-size:.94rem;margin-bottom:.5rem;list-style:none}
       <span class="logo-badge"><img src="https://zeilrelatiedag.nl/wp-content/uploads/2020/03/cropped-Kleur-2.png" alt="Logo Zeilrelatiedag" onerror="this.parentNode.innerHTML='&#9973;';this.parentNode.style.fontSize='22px'"></span>
       <span><b>Zeilrelatiedag</b><span>Vrienden van de Zeilrelatiedag</span></span>
     </a>
-    <nav class="nav-links" aria-label="Hoofdmenu">
+    <nav class="nav-links" id="navLinks" aria-label="Hoofdmenu">
       <a href="#deelnemers">Deelnemers</a>
       <a href="#contact">Contact</a>
       <span class="nav-status">Editie 2026 volgeboekt</span>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -316,6 +348,27 @@ footer p,footer li{font-size:.94rem;margin-bottom:.5rem;list-style:none}
   var nav = document.getElementById('nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* Mobile menu toggle */
+  var toggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  function closeMenu(){
+    navLinks.classList.remove('open');
+    nav.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Menu openen');
+  }
+  if(toggle && navLinks){
+    toggle.addEventListener('click', function(){
+      var open = !navLinks.classList.contains('open');
+      navLinks.classList.toggle('open', open);
+      nav.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+  }
 
   /* Deelnemers logos */
   var deelnemers = [
