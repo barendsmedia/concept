@@ -223,6 +223,7 @@ section{position:relative}
 /* ---------- signature: refit journey (horizontal) ---------- */
 .journey{background:var(--petrol);color:#fff;overflow:hidden}
 .journey .sec-head h2{color:#fff}
+.journey .sec-head p{color:#fff}
 .journey .sec-head h2 em,.on-dark .sec-head h2 em{color:var(--aqua)}
 .jpin{padding:44px 0 46px}
 .journey .sec-head{padding:0 24px;max-width:var(--wrap);margin-left:auto;margin-right:auto;margin-bottom:30px}
@@ -275,8 +276,7 @@ section{position:relative}
 .stats{background:var(--ink);color:#fff}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .stat{padding:30px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(14,69,83,.5),rgba(8,43,51,.2))}
-.stat b{font-family:'Big Shoulders Display';font-weight:900;font-size:clamp(2.6rem,5vw,3.6rem);color:var(--aqua);line-height:.9;display:block}
-.stat b .brass{color:var(--brass)}
+.stat b.dec{line-height:1.05;white-space:nowrap}
 .stat span{display:block;margin-top:8px;color:#bcd8d4;font-weight:600;font-size:.98rem}
 @media(max-width:820px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -500,32 +500,26 @@ footer .contact svg{width:18px;height:18px;color:var(--aqua);flex:none;margin-to
     <div class="services-grid">
       <article class="svc feature reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/SEAFIT-FOTO-768x512-1.jpg')">
         <span class="tag">Meest gevraagd</span>
-        <span class="num">01 — SPECIALISME</span>
         <h3>Complete refit &amp; restauratie</h3>
         <p>Een verweerde boot in ere hersteld. Casco, gelcoat, techniek en afwerking — wij geven uw sloep of motorboot een tweede leven.</p>
       </article>
       <article class="svc wide reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/01/seafit-image-01-855x525-1.jpg')">
-        <span class="num">02</span>
         <h3>Polyester &amp; gelcoat</h3>
         <p>Grote en kleine polyesterschades vakkundig hersteld, met een naadloze gelcoat-afwerking.</p>
       </article>
       <article class="svc small reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/20180120_183005-1-1920x400-1.jpg')">
-        <span class="num">03</span>
         <h3>Motor &amp; techniek</h3>
         <p>Onderhoud en reparatie van Mercruiser, Mercury, Vetus, Yammer en meer.</p>
       </article>
       <article class="svc small reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/Ceramic-Pro-SEAFIT.jpg')">
-        <span class="num">04</span>
         <h3>Poetsen &amp; Ceramic Pro</h3>
         <p>Machinaal polijsten en een keramische coating voor jarenlange glans en bescherming.</p>
       </article>
       <article class="svc small reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/seafit-slider-01-1920x400-1.jpg')">
-        <span class="num">05</span>
         <h3>Boegschroef &amp; techniek</h3>
         <p>Installatie van boegschroeven, navigatie en audio — vakkundig ingebouwd.</p>
       </article>
       <article class="svc wide reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2023/03/Seafit-bootvloeren.jpg')">
-        <span class="num">06</span>
         <h3>Antifouling, vloeren &amp; winterstalling</h3>
         <p>Antifouling-behandeling, maatwerk bootvloeren en een veilige stalling voor de winter.</p>
       </article>
@@ -637,7 +631,7 @@ footer .contact svg{width:18px;height:18px;color:var(--aqua);flex:none;margin-to
     <div class="stats-grid">
       <div class="stat reveal"><b data-count="10">0</b><span>jaar dé refit-werkplaats van Heerhugowaard</span></div>
       <div class="stat reveal"><b data-count="30" data-suffix="+">0</b><span>jaar ervaring in de watersport</span></div>
-      <div class="stat reveal"><b>4,<span class="brass">8</span></b><span>gemiddeld uit klantbeoordelingen</span></div>
+      <div class="stat reveal"><b class="dec">4,<span class="brass">8</span></b><span>gemiddeld uit klantbeoordelingen</span></div>
       <div class="stat reveal"><b data-count="9" data-suffix="+">0</b><span>topmerken waarmee wij werken</span></div>
     </div>
   </div>
