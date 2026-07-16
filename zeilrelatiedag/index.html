@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Zeilrelatiedag 2026 — Netwerken onder zeil op de Friese meren</title>
+<meta name="description" content="Al 30+ jaar hét relatie-evenement van de duurzame energiesector. Eén dag zeilen, netwerken en verbinden op de Friese meren. Vrijdag 18 september 2026.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0C2340;
+  --navy-2:#16385C;
+  --horizon:#3E7CA6;
+  --gold:#E7A23B;
+  --gold-soft:#F4CF8E;
+  --sail:#F5F1E8;
+  --ink:#0A1726;
+  --white:#ffffff;
+  --shadow:0 24px 60px -28px rgba(10,23,38,.55);
+  --radius:18px;
+  --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Mulish',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--sail);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  padding-bottom:72px;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:.01em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:'Mulish',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:.22em;font-size:.72rem;color:var(--gold);
+}
+section{position:relative}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:'Mulish',sans-serif;font-weight:700;font-size:.98rem;
+  padding:.95rem 1.7rem;border-radius:999px;cursor:pointer;border:none;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 12px 30px -12px rgba(231,162,59,.7)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(231,162,59,.85)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{transform:translateY(-2px);background:var(--navy-2)}
+.btn svg{width:18px;height:18px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* NAV */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+  padding:18px 0;
+}
+header.nav.scrolled{background:rgba(12,35,64,.92);backdrop-filter:blur(10px);box-shadow:0 8px 30px -18px rgba(0,0,0,.6);padding:10px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.7rem;color:#fff}
+.brand .logo-badge{
+  width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 20px -10px rgba(0,0,0,.5);overflow:hidden;flex:0 0 auto;
+}
+.brand .logo-badge img{width:34px;height:34px;object-fit:contain}
+.brand b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.35rem;letter-spacing:.01em;line-height:1}
+.brand span{display:block;font-family:'Mulish';font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);font-weight:700}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{color:rgba(255,255,255,.85);font-weight:600;font-size:.92rem;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-status{
+  display:inline-flex;align-items:center;gap:.5rem;color:var(--gold-soft);
+  font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid rgba(231,162,59,.4);background:rgba(231,162,59,.14);
+  border-radius:999px;padding:.4rem .9rem;white-space:nowrap;
+}
+.nav-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2.4s ease-out infinite}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;color:#fff;
+  background:linear-gradient(180deg,rgba(12,35,64,.62) 0%,rgba(12,35,64,.42) 40%,rgba(12,35,64,.86) 100%),var(--navy);
+  background-size:cover;background-position:center;position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 500px at 80% 10%,rgba(231,162,59,.28),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative;z-index:3}
+.hero-content{padding:130px 0 180px;max-width:720px}
+.hero .eyebrow{margin-bottom:1.2rem;display:inline-flex;align-items:center;gap:.6rem}
+.hero .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(2.9rem,7vw,5.4rem);margin-bottom:1.3rem}
+.hero h1 .it{font-style:italic;color:var(--gold-soft)}
+.hero p.lead{font-size:clamp(1.05rem,2.2vw,1.35rem);color:rgba(255,255,255,.9);max-width:560px;margin-bottom:2rem;font-weight:400}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:.4rem}
+.hero-meta div{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.95rem;color:rgba(255,255,255,.92)}
+.hero-meta svg{width:20px;height:20px;color:var(--gold)}
+.reveal-line{display:block;overflow:hidden}
+
+/* animated waves */
+.waves{position:absolute;left:0;right:0;bottom:-2px;z-index:2;line-height:0;pointer-events:none}
+.waves svg{width:100%;height:120px}
+.wave-a{opacity:.5}
+.wave-b{opacity:.85}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.wave-move{animation:drift 18s linear infinite}
+.wave-move.slow{animation-duration:28s;opacity:.4}
+.boat{position:absolute;z-index:2;bottom:120px;right:8%;width:120px;opacity:.9;animation:bob 6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+
+/* generic section spacing */
+.section-pad{padding:clamp(5rem,10vw,8rem) 0}
+.center{text-align:center}
+.section-head{max-width:640px;margin:0 auto 3.5rem}
+.section-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:.7rem 0 1rem;color:var(--navy)}
+.section-head p{color:#42566b;font-size:1.08rem}
+
+/* DEELNEMERS */
+.deelnemers{background:var(--sail)}
+.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem;margin-top:.5rem}
+.logo-cell{
+  background:#fff;border-radius:14px;aspect-ratio:3/2;display:grid;place-items:center;padding:1.4rem;
+  border:1px solid rgba(12,35,64,.07);box-shadow:0 10px 30px -22px rgba(10,23,38,.5);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.logo-cell:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.logo-cell img{max-height:56px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter .3s ease,opacity .3s ease}
+.logo-cell:hover img{filter:grayscale(0);opacity:1}
+.logo-fallback{font-weight:800;color:var(--navy-2);font-size:.9rem;text-align:center;letter-spacing:.02em}
+.deelnemers .note{text-align:center;margin-top:2.4rem;color:#5b6b7c;font-size:.92rem}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+footer .brand b{color:#fff}
+footer h4{font-family:'Mulish';font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--gold-soft);margin-bottom:1.1rem}
+footer a:hover{color:#fff}
+footer p,footer li{font-size:.94rem;margin-bottom:.5rem;list-style:none}
+.foot-contact li{display:flex;gap:.6rem;align-items:flex-start}
+.foot-contact svg{width:17px;height:17px;color:var(--gold);flex:0 0 auto;margin-top:3px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.5)}
+
+/* Fixed "inschrijving vol" bar (info-only) */
+.regbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:linear-gradient(90deg,var(--navy),var(--navy-2));
+  border-top:1px solid rgba(244,207,142,.28);
+  box-shadow:0 -14px 40px -24px rgba(0,0,0,.7);
+  transform:translateY(110%);transition:transform .6s cubic-bezier(.16,1,.3,1);
+}
+.regbar.in{transform:none}
+.regbar-inner{display:flex;align-items:center;justify-content:center;gap:1.2rem;padding-top:.85rem;padding-bottom:.85rem}
+.regbar-text{color:rgba(255,255,255,.9);font-size:.98rem;font-weight:500;display:flex;align-items:center;gap:.85rem;margin:0}
+.regbar-text strong{color:var(--gold-soft);font-weight:800}
+.regbar-badge{
+  display:inline-flex;align-items:center;gap:.5rem;background:rgba(231,162,59,.16);
+  color:var(--gold-soft);border:1px solid rgba(231,162,59,.4);border-radius:999px;
+  padding:.32rem .8rem;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+}
+.regbar-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(231,162,59,.55)}70%{box-shadow:0 0 0 8px rgba(231,162,59,0)}100%{box-shadow:0 0 0 rgba(231,162,59,0)}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:960px){
+  .nav-links{gap:1.2rem}
+  .nav-status{display:none}
+  .logo-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:560px){
+  .hero-content{padding:120px 0 150px}
+  .logo-grid{grid-template-columns:repeat(2,1fr)}
+  .boat{display:none}
+  .foot-bottom{flex-direction:column}
+  body{padding-bottom:104px}
+  .nav-links a{font-size:.85rem}
+  .regbar-inner{gap:.7rem;padding-top:.75rem;padding-bottom:.75rem;flex-wrap:wrap}
+  .regbar-text{font-size:.85rem;gap:.6rem;text-align:center;justify-content:center}
+  .regbar-badge{padding:.26rem .6rem;font-size:.62rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .wave-move,.boat{animation:none}
+  .regbar-badge::before,.nav-status::before{animation:none}
+  .regbar{transform:none;transition:none}
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Zeilrelatiedag home">
+      <span class="logo-badge"><img src="https://zeilrelatiedag.nl/wp-content/uploads/2020/03/cropped-Kleur-2.png" alt="Logo Zeilrelatiedag" onerror="this.parentNode.innerHTML='&#9973;';this.parentNode.style.fontSize='22px'"></span>
+      <span><b>Zeilrelatiedag</b><span>Vrienden van de Zeilrelatiedag</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#deelnemers">Deelnemers</a>
+      <a href="#contact">Contact</a>
+      <span class="nav-status">Editie 2026 volgeboekt</span>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="background-image:linear-gradient(180deg,rgba(12,35,64,.62) 0%,rgba(12,35,64,.42) 40%,rgba(12,35,64,.86) 100%),url('https://images.pexels.com/photos/5993727/pexels-photo-5993727.jpeg?auto=compress&cs=tinysrgb&w=1900')">
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="eyebrow reveal-el">Vrijdag 18 september 2026 · Friese meren</span>
+      <h1>
+        <span class="reveal-line"><span class="reveal-el">Netwerken waar</span></span>
+        <span class="reveal-line"><span class="reveal-el"><span class="it">zon en wind</span> samenkomen</span></span>
+      </h1>
+      <p class="lead reveal-el">Al ruim dertig jaar hét ontmoetingsmoment van de duurzame energiesector. Eén dag zeilen, verbinden en zaken doen op het open water van Friesland.</p>
+      <div class="hero-meta reveal-el">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 18 september 2026</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Friese meren</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg> 25+ relaties aan boord</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- boat + waves -->
+  <svg class="boat" viewBox="0 0 100 110" fill="none" aria-hidden="true">
+    <path d="M50 6 L50 78" stroke="#fff" stroke-width="2"/>
+    <path d="M50 12 C74 26 78 54 76 70 L50 70 Z" fill="rgba(255,255,255,.92)"/>
+    <path d="M50 20 C34 32 30 56 32 70 L50 70 Z" fill="rgba(244,207,142,.9)"/>
+    <path d="M26 74 L74 74 L66 90 L34 90 Z" fill="#0C2340" stroke="#F4CF8E" stroke-width="1.5"/>
+  </svg>
+  <div class="waves" aria-hidden="true">
+    <svg class="wave-a" viewBox="0 0 1440 120" preserveAspectRatio="none"><g class="wave-move slow"><path d="M0 60 Q180 20 360 60 T720 60 T1080 60 T1440 60 V120 H0 Z" fill="#3E7CA6"/><path d="M1440 60 Q1620 20 1800 60 T2160 60 T2520 60 T2880 60 V120 H1440 Z" fill="#3E7CA6"/></g></svg>
+    <svg class="wave-b" viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute;bottom:0;left:0"><g class="wave-move"><path d="M0 70 Q180 40 360 70 T720 70 T1080 70 T1440 70 V120 H0 Z" fill="#F5F1E8"/><path d="M1440 70 Q1620 40 1800 70 T2160 70 T2520 70 T2880 70 V120 H1440 Z" fill="#F5F1E8"/></g></svg>
+  </div>
+</section>
+
+<!-- DEELNEMERS -->
+<section class="deelnemers section-pad" id="deelnemers">
+  <div class="wrap">
+    <div class="section-head center rv">
+      <span class="eyebrow">In goed gezelschap</span>
+      <h2>De deelnemers</h2>
+      <p>Toonaangevende organisaties uit de duurzame energiesector varen mee. Samen vormen zij het kloppend hart van de Zeilrelatiedag.</p>
+    </div>
+    <div class="logo-grid" id="logoGrid"></div>
+    <p class="note">Ook aan boord dit jaar? Neem contact op om uw organisatie toe te voegen aan de vloot.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand" style="margin-bottom:1.2rem">
+          <span class="logo-badge"><img src="https://zeilrelatiedag.nl/wp-content/uploads/2020/03/cropped-Kleur-2.png" alt="Logo Zeilrelatiedag" onerror="this.parentNode.innerHTML='&#9973;';this.parentNode.style.fontSize='22px'"></span>
+          <span><b>Zeilrelatiedag</b><span>Sinds 1993</span></span>
+        </a>
+        <p style="max-width:34ch;margin-top:1rem">Al ruim dertig jaar het relatie-evenement van de duurzame energiesector, op het water van de Friese meren.</p>
+      </div>
+      <div>
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="#deelnemers">Deelnemers</a></li>
+          <li><a href="mailto:info@zeilrelatiedag.nl">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="foot-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/></svg> <a href="mailto:info@zeilrelatiedag.nl">info@zeilrelatiedag.nl</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Friese meren, Friesland</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.83 2.83 0 014 4L7.5 20.5 2 22l1.5-5.5z"/></svg> Stichting Vrienden van de Zeilrelatiedag</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stichting Vrienden van de Zeilrelatiedag. Alle rechten voorbehouden.</span>
+      <span>Conceptvoorstel — Barends Media</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Fixed "inschrijving vol" bar (info-only) -->
+<div class="regbar" id="regbar">
+  <div class="wrap regbar-inner">
+    <p class="regbar-text">
+      <span class="regbar-badge">Volgeboekt</span>
+      <span>De inschrijving voor <strong>editie 2026</strong> is vol — volgend jaar kunt u zich weer inschrijven.</span>
+    </p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* NAV scroll state */
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* Deelnemers logos */
+  var deelnemers = [
+    ["TenneT","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/TenneT-Logo-1.png"],
+    ["Akira Energy","https://zeilrelatiedag.nl/wp-content/uploads/2024/05/AKIRA-LOGO_-big.png"],
+    ["Porthos CO2","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/Porthos_RGB.png"],
+    ["RG Projecten","https://zeilrelatiedag.nl/wp-content/uploads/2020/03/RG-projecten-logo-linkedin-e1586264300687.png"],
+    ["Siemens","https://zeilrelatiedag.nl/wp-content/uploads/2020/05/Siemens-logo-e1589272201991.png"],
+    ["CrossWind","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/CrossWind-1.jpg"],
+    ["Eneco","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/Eneco_logo.png"],
+    ["Vattenfall","https://zeilrelatiedag.nl/wp-content/uploads/2025/09/Vattenfall.png"],
+    ["TAQA","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/taqa_logo.png"],
+    ["TotalEnergies","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/TotalEnergies-e1724395764836.png"],
+    ["Wintershall Noordzee","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/WINZ-Logo.png"],
+    ["Clarksons","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/Clarkson-Logo.png"],
+    ["Jack-up Barge","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/JU-B-Logo.jpg"],
+    ["EQUANS","https://zeilrelatiedag.nl/wp-content/uploads/2023/02/EQUANS_Blocmarque_RGB-004-1.jpg"],
+    ["Peterson Logistics","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/OEGR_Logo_NEW_logo.jpg"],
+    ["DeepBV","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/DeepBV.png"],
+    ["Marine Sampling Holland","https://zeilrelatiedag.nl/wp-content/uploads/2020/04/Marine-Sampling-Holland-e1586263974395.png"],
+    ["AYOP","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/AYOP-logo_verticaal_PMS_2024.webp"],
+    ["DDC BV","https://zeilrelatiedag.nl/wp-content/uploads/2024/09/ddcbv.png"],
+    ["Z-Bridge","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/ZBridge-logo-fc.webp"],
+    ["Bilfinger","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/Bilfinger-logo.jpg"],
+    ["Sima Shipbrokers","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/SimaShipbrokers-round.png"],
+    ["Sarutech","https://zeilrelatiedag.nl/wp-content/uploads/2024/08/Logo-Sarutech-e1724743217965.png"],
+    ["Bruin PM","https://zeilrelatiedag.nl/wp-content/uploads/2025/08/BPM.png"],
+    ["Unique Lights","https://zeilrelatiedag.nl/wp-content/uploads/2026/07/Unique.jpg"]
+  ];
+  var grid = document.getElementById('logoGrid');
+  deelnemers.forEach(function(d){
+    var cell = document.createElement('div');
+    cell.className = 'logo-cell rv';
+    var img = document.createElement('img');
+    img.src = d[1]; img.alt = 'Logo ' + d[0]; img.loading = 'lazy';
+    img.onerror = function(){
+      var span = document.createElement('span');
+      span.className = 'logo-fallback'; span.textContent = d[0];
+      cell.innerHTML = ''; cell.appendChild(span);
+    };
+    cell.appendChild(img);
+    grid.appendChild(cell);
+  });
+
+  /* Reveal fixed bar */
+  var regbar = document.getElementById('regbar');
+  if(reduce){ regbar.classList.add('in'); }
+  else { setTimeout(function(){ regbar.classList.add('in'); }, 900); }
+
+  /* Reveal animations */
+  var revEls = document.querySelectorAll('.rv');
+  if(reduce || !window.gsap){
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    if(window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+    revEls.forEach(function(el){
+      gsap.fromTo(el, {y:30, autoAlpha:0}, {
+        y:0, autoAlpha:1, duration:.9, ease:'power3.out',
+        scrollTrigger:{ trigger:el, start:'top 88%' }
+      });
+    });
+    /* Hero staged reveal */
+    var heroEls = document.querySelectorAll('.hero .reveal-el');
+    gsap.set(heroEls, {y:24, autoAlpha:0});
+    gsap.to(heroEls, {y:0, autoAlpha:1, duration:1, ease:'power3.out', stagger:.12, delay:.15});
+  }
+})();
+</script>
+</body>
+</html>
