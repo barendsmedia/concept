@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>SEAFIT — Refit, onderhoud & restauratie van uw boot | Heerhugowaard</title>
+<meta name="description" content="SEAFIT in Heerhugowaard: refit, polyester- en gelcoatreparatie, motoronderhoud en poetsen met Ceramic Pro. Geen standaard poetsbedrijf. 4,8/5 sterren.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --petrol:#082B33;
+  --petrol-2:#0E4553;
+  --aqua:#0F85C4;
+  --aqua-deep:#0A6699;
+  --brass:#C79A4B;
+  --foam:#F2F7F6;
+  --ink:#04171C;
+  --line:rgba(255,255,255,.12);
+  --shadow:0 30px 70px -30px rgba(4,23,28,.55);
+  --wrap:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:var(--foam);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:'Big Shoulders Display',system-ui,sans-serif;line-height:.92;letter-spacing:.01em;text-transform:uppercase;font-weight:800}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--aqua);color:var(--petrol)}
+:focus-visible{outline:3px solid var(--aqua);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-weight:700;font-size:1rem;
+  padding:16px 28px;border-radius:100px;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,color .25s;
+  cursor:pointer;border:0;white-space:nowrap;
+}
+.btn svg{width:1.15em;height:1.15em;stroke-width:2.4}
+.btn-primary{background:var(--aqua);color:#fff;box-shadow:0 12px 30px -8px rgba(15,133,196,.6)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 44px -10px rgba(15,133,196,.75)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--aqua);color:var(--aqua);transform:translateY(-3px)}
+.btn-dark{background:var(--petrol);color:#fff}
+.btn-dark:hover{background:var(--petrol-2);transform:translateY(-3px)}
+
+/* ---------- nav ---------- */
+.topbar{background:var(--ink);color:#cfe7e4;font-size:.82rem;font-weight:500}
+.topbar .wrap{display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:center;padding-top:9px;padding-bottom:9px}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar svg{width:15px;height:15px;color:var(--aqua)}
+.topbar .sep{opacity:.35}
+@media(max-width:720px){.topbar .hide-sm{display:none}}
+
+nav.main{position:sticky;top:0;z-index:60;background:rgba(8,43,51,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .3s}
+nav.main .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:11px;color:#fff}
+.logo img.logo-img{height:38px;width:auto}
+.logo b{font-family:'Big Shoulders Display';font-weight:900;font-size:1.85rem;letter-spacing:.12em;line-height:1}
+.logo b i{color:var(--aqua);font-style:normal}
+.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks a{color:#dcefec;font-weight:600;font-size:.98rem;position:relative;padding:4px 0}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--aqua);transition:width .28s}
+.navlinks a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.burger svg{width:30px;height:30px}
+@media(max-width:960px){
+  .navlinks{display:none}
+  .nav-cta .btn-ghost{display:none}
+  .burger{display:block}
+}
+
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:70;background:var(--petrol);display:flex;flex-direction:column;padding:28px 24px;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.mobile-menu .top img{height:34px;width:auto}
+.mobile-menu a.ml{color:#fff;font-family:'Big Shoulders Display';font-size:2.4rem;font-weight:700;padding:14px 0;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:28px;justify-content:center}
+.mobile-menu button.x{background:none;border:0;color:#fff;cursor:pointer}
+.mobile-menu button.x svg{width:34px;height:34px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--petrol);color:#fff;overflow:hidden;padding:70px 0 0}
+.hero-bg-word{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-family:'Big Shoulders Display';font-weight:900;font-size:min(30vw,420px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;user-select:none;z-index:0}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center;min-height:min(78vh,760px)}
+.hero-copy{padding:30px 0 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;color:var(--aqua);margin-bottom:22px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--aqua)}
+.hero h1{font-size:clamp(3rem,7.4vw,6.6rem);font-weight:900;color:#fff}
+.hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--aqua)}
+.hero h1 .aq{color:var(--aqua)}
+.hero p.lead{font-size:1.2rem;max-width:33ch;color:#d6e9e6;margin:26px 0 34px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-rating{display:flex;align-items:center;gap:12px;margin-top:30px;color:#cfe7e4;font-weight:600;font-size:.95rem}
+.stars{display:inline-flex;gap:2px;color:var(--brass)}
+.stars svg{width:18px;height:18px;fill:var(--brass);stroke:none}
+
+/* hero visual */
+.hero-visual{position:relative;height:100%;min-height:420px}
+.hero-photo{position:absolute;inset:0;border-radius:26px 26px 0 0;overflow:hidden;box-shadow:var(--shadow);
+  background:linear-gradient(150deg,#0E4553,#082B33)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;opacity:.96}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,23,28,.05),rgba(4,23,28,.35))}
+/* play button on the hero photo */
+.hero-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;background:none;border:0;cursor:pointer;display:grid;place-items:center}
+.hero-play .ring{position:relative;width:76px;height:76px;border-radius:50%;background:rgba(15,133,196,.94);color:var(--petrol);display:grid;place-items:center;box-shadow:0 14px 36px -8px rgba(4,23,28,.6);transition:transform .25s}
+.hero-play .ring svg{width:30px;height:30px;margin-left:4px}
+.hero-play .ring::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(15,133,196,.65);animation:pulsering 2.6s ease-out infinite}
+@keyframes pulsering{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+.hero-play:hover .ring{transform:scale(1.08)}
+/* boat "breaking out" chip cards */
+.float-card{position:absolute;background:rgba(255,255,255,.96);color:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;z-index:6}
+.float-card .ic{width:40px;height:40px;border-radius:12px;background:var(--petrol);color:var(--aqua);display:grid;place-items:center;flex:none}
+.float-card .ic svg{width:22px;height:22px;stroke-width:2.2}
+.float-card b{display:block;font-family:'Big Shoulders Display';font-size:1.5rem;font-weight:800;line-height:1}
+.float-card span{font-size:.78rem;color:#5a6f6d;font-weight:600}
+.fc-1{left:-46px;top:24%}
+.fc-2{right:-30px;bottom:20%}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding-top:8px}
+  .hero-visual{min-height:340px;margin:0 -8px}
+  .hero-photo{border-radius:22px}
+  .fc-1{left:-8px}.fc-2{right:-8px}
+}
+@media(max-width:520px){
+  .float-card b{font-size:1.25rem}.float-card{padding:11px 13px}
+  .fc-1{top:10%}
+  .hero-play .ring{width:64px;height:64px}
+}
+
+/* wave divider */
+.wave{display:block;width:100%;height:auto;line-height:0}
+
+/* ---------- marquee ---------- */
+.brands{background:var(--ink);color:#6f9691;padding:26px 0;overflow:hidden}
+.brands-track{display:flex;gap:56px;align-items:center;width:max-content;animation:marq 32s linear infinite}
+.brands-track span{font-family:'Big Shoulders Display';font-weight:700;font-size:1.5rem;letter-spacing:.06em;color:#6f9691;white-space:nowrap;text-transform:uppercase}
+.brands:hover .brands-track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.brands-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}}
+
+/* ---------- section base ---------- */
+section{position:relative}
+.pad{padding:clamp(70px,10vw,130px) 0}
+.sec-head{max-width:720px;margin-bottom:56px}
+.sec-head .eyebrow{color:var(--aqua-deep)}
+.sec-head .eyebrow::before{background:var(--aqua-deep)}
+.sec-head h2{font-size:clamp(2.3rem,5.4vw,4rem);color:var(--petrol)}
+.sec-head h2 em{font-style:normal;color:var(--aqua-deep)}
+.sec-head p{margin-top:18px;font-size:1.12rem;color:#3c5551;max-width:60ch}
+.on-dark{background:var(--petrol);color:#fff}
+.on-dark .sec-head h2{color:#fff}
+.on-dark .sec-head p{color:#c6ddd9}
+.on-dark .sec-head .eyebrow,.on-dark .sec-head .eyebrow::before{color:var(--aqua);background:transparent}
+.on-dark .sec-head .eyebrow::before{background:var(--aqua)}
+
+/* ---------- intro "geen standaard poetsbedrijf" ---------- */
+.intro{background:var(--foam)}
+.intro-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.intro-grid .big{font-size:clamp(2.1rem,4.6vw,3.5rem);font-family:'Big Shoulders Display';font-weight:800;color:var(--petrol);text-transform:uppercase;line-height:.96}
+.intro-grid .big u{text-decoration:none;color:var(--aqua-deep)}
+.intro-grid p{margin-top:22px;color:#3c5551;font-size:1.08rem;max-width:52ch}
+.intro-sign{margin-top:26px;display:flex;align-items:center;gap:14px}
+.intro-sign .avatar{width:52px;height:52px;border-radius:50%;background:var(--petrol);color:var(--aqua);display:grid;place-items:center;font-family:'Big Shoulders Display';font-weight:800;font-size:1.4rem}
+.intro-sign b{display:block;color:var(--petrol)}
+.intro-sign span{font-size:.9rem;color:#5a6f6d}
+.pillars{display:grid;gap:16px}
+.pillar{display:flex;gap:16px;background:#fff;border:1px solid #e2ecea;border-radius:18px;padding:20px;box-shadow:0 20px 40px -34px rgba(4,23,28,.5);transition:transform .3s,box-shadow .3s}
+.pillar:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(4,23,28,.5)}
+.pillar .ic{width:50px;height:50px;flex:none;border-radius:14px;background:linear-gradient(140deg,var(--aqua),var(--aqua-deep));color:var(--petrol);display:grid;place-items:center}
+.pillar .ic svg{width:26px;height:26px;stroke-width:2.2}
+.pillar h4{font-family:'Big Shoulders Display';font-weight:700;text-transform:uppercase;font-size:1.3rem;color:var(--petrol);letter-spacing:.02em}
+.pillar p{margin-top:2px;font-size:.96rem;color:#4b6360}
+@media(max-width:900px){.intro-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.svc{position:relative;border-radius:22px;overflow:hidden;min-height:270px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;background:var(--petrol-2);isolation:isolate;transition:transform .35s}
+.svc::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;transition:transform .6s}
+.svc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,43,51,.15),rgba(8,43,51,.92))}
+.svc:hover{transform:translateY(-6px)}
+.svc:hover::before{transform:scale(1.07)}
+.svc .num{font-family:'Big Shoulders Display';font-weight:700;color:var(--aqua);font-size:.95rem;letter-spacing:.15em;margin-bottom:auto}
+.svc h3{font-size:1.75rem;margin-bottom:8px}
+.svc p{font-size:.95rem;color:#d3e6e3;max-width:34ch}
+.svc .tag{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.14);backdrop-filter:blur(4px);border:1px solid var(--line);color:#fff;font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:100px;letter-spacing:.05em}
+.svc.wide{grid-column:span 6}
+.svc.tall{grid-column:span 4}
+.svc.small{grid-column:span 4}
+.svc.feature{grid-column:span 6;min-height:340px}
+/* filler tile so the grid never leaves an empty slot */
+.svc.fill{grid-column:span 6;min-height:270px;justify-content:center;padding:34px;background:linear-gradient(150deg,var(--petrol-2),var(--petrol));border:1px solid rgba(15,133,196,.22)}
+.svc.fill::before,.svc.fill::after{display:none}
+.svc.fill .kicker{font-family:'Big Shoulders Display';font-weight:700;color:var(--aqua);font-size:.95rem;letter-spacing:.15em;margin-bottom:12px}
+.svc.fill .big{font-family:'Big Shoulders Display';font-weight:900;font-size:clamp(2.8rem,5vw,3.6rem);color:var(--brass);line-height:.9}
+.svc.fill p{color:#cfe7e4;max-width:38ch;margin-top:10px}
+.svc.fill a.more{margin-top:18px;display:inline-flex;align-items:center;gap:8px;color:var(--aqua);font-weight:700}
+.svc.fill a.more svg{width:1.1em;height:1.1em;stroke-width:2.4}
+@media(max-width:900px){
+  .svc.wide,.svc.tall,.svc.small,.svc.feature,.svc.fill{grid-column:span 12}
+}
+@media(min-width:901px){
+  .svc.small{grid-column:span 4}
+}
+
+/* ---------- signature: refit journey (horizontal) ---------- */
+.journey{background:var(--petrol);color:#fff;overflow:hidden}
+.journey .sec-head h2{color:#fff}
+.journey .sec-head h2 em,.on-dark .sec-head h2 em{color:var(--aqua)}
+.jpin{padding:44px 0 46px}
+.journey .sec-head{padding:0 24px;max-width:var(--wrap);margin-left:auto;margin-right:auto;margin-bottom:30px}
+.track-outer{position:relative}
+.hpin{display:flex;gap:28px;padding:0 24px;will-change:transform}
+.station{position:relative;flex:0 0 min(78vw,560px);background:var(--petrol-2);border:1px solid var(--line);border-radius:24px;padding:34px;min-height:400px;display:flex;flex-direction:column;overflow:hidden}
+.station .step{font-family:'Big Shoulders Display';font-weight:900;font-size:5rem;color:transparent;-webkit-text-stroke:1.5px rgba(15,133,196,.5);line-height:.8}
+.station h3{font-size:2.1rem;margin:14px 0 12px;color:#fff}
+.station p{color:#cbe1de;font-size:1.02rem;max-width:42ch}
+.station ul{list-style:none;margin-top:auto;padding-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.station ul li{font-size:.82rem;font-weight:600;color:var(--aqua);border:1px solid rgba(15,133,196,.35);padding:6px 12px;border-radius:100px}
+.station .glow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(15,133,196,.22),transparent 70%);right:-60px;top:-60px;pointer-events:none}
+.progress-rail{max-width:var(--wrap);margin:30px auto 0;padding:0 24px;display:flex;align-items:center;gap:14px}
+.progress-rail .bar{flex:1;height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.progress-rail .bar i{display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--aqua),var(--brass));border-radius:4px;transition:width .1s linear}
+.progress-rail small{color:#9fc0bc;font-weight:600;white-space:nowrap}
+.journey .hint{max-width:var(--wrap);margin:16px auto 0;padding:0 24px;color:#8fb0ac;font-size:.85rem;display:flex;align-items:center;gap:8px}
+.journey .hint svg{width:16px;height:16px;color:var(--aqua)}
+@media(max-width:820px){
+  .jpin{padding:70px 0 40px}
+  .hpin{flex-direction:column;transform:none!important}
+  .station{flex:0 0 auto;min-height:auto}
+  .progress-rail,.journey .hint{display:none}
+}
+
+/* ---------- before / after ---------- */
+.ba{background:var(--foam)}
+.ba-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.ba-copy .stars{margin-bottom:14px}
+.ba-copy h2{font-size:clamp(2.1rem,4.6vw,3.4rem);color:var(--petrol)}
+.ba-copy p{margin-top:16px;color:#3c5551;font-size:1.08rem;max-width:46ch}
+.ba-copy .mini{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.ba-copy .mini div b{font-family:'Big Shoulders Display';font-size:2.2rem;color:var(--aqua-deep);display:block;line-height:1}
+.ba-copy .mini div span{font-size:.85rem;color:#5a6f6d;font-weight:600}
+.ba-stage{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;user-select:none;touch-action:none;cursor:ew-resize;background:linear-gradient(150deg,#0E4553,#082B33)}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-after{filter:saturate(1.16) contrast(1.06) brightness(1.05)}
+.ba-before-layer{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+.ba-before-layer .ba-before{filter:saturate(.5) brightness(.9) contrast(.9) sepia(.14)}
+/* realistic chalky/oxidised veil over the 'before' side only */
+.ba-before-layer::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(228,214,190,.30),rgba(150,150,140,.20));mix-blend-mode:multiply;pointer-events:none}
+.ba-label{position:absolute;top:16px;z-index:4;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:100px;color:#fff;background:rgba(4,23,28,.6);backdrop-filter:blur(4px)}
+.ba-label.l{left:16px}.ba-label.r{right:16px;background:rgba(15,133,196,.9);color:var(--petrol)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;transform:translateX(-50%);background:var(--aqua);display:grid;place-items:center;pointer-events:none;z-index:5}
+.ba-handle .knob{width:44px;height:44px;border-radius:50%;background:var(--aqua);color:var(--petrol);display:grid;place-items:center;box-shadow:0 8px 24px rgba(4,23,28,.5)}
+.ba-handle .knob svg{width:24px;height:24px;stroke-width:2.6}
+@media(max-width:900px){.ba-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- stats ---------- */
+.stats{background:var(--ink);color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{padding:30px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(14,69,83,.5),rgba(8,43,51,.2))}
+.stat b{font-family:'Big Shoulders Display';font-weight:900;font-size:clamp(2.6rem,5vw,3.6rem);color:var(--aqua);line-height:.9;display:block}
+.stat b .brass{color:var(--brass)}
+.stat span{display:block;margin-top:8px;color:#bcd8d4;font-weight:600;font-size:.98rem}
+@media(max-width:820px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- reviews ---------- */
+.reviews{background:var(--foam)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border:1px solid #e2ecea;border-radius:20px;padding:28px;display:flex;flex-direction:column;box-shadow:0 24px 44px -38px rgba(4,23,28,.55)}
+.rev .stars{margin-bottom:14px}
+.rev p{color:#243f3b;font-size:1.04rem;flex:1}
+.rev .who{margin-top:20px;display:flex;align-items:center;gap:12px}
+.rev .who .a{width:44px;height:44px;border-radius:50%;background:var(--petrol);color:var(--aqua);display:grid;place-items:center;font-family:'Big Shoulders Display';font-weight:800;flex:none}
+.rev .who b{color:var(--petrol);display:block;font-size:.98rem}
+.rev .who span{font-size:.82rem;color:#5a6f6d}
+.rev.feat{background:var(--petrol);color:#fff;grid-column:span 1}
+.rev.feat p{color:#eaf6f4}
+.rev.feat .who b{color:#fff}
+.rev.feat .who span{color:#a9cbc7}
+@media(max-width:920px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.rev-grid{grid-template-columns:1fr}}
+
+/* ---------- cta ---------- */
+.cta{position:relative;background:linear-gradient(150deg,var(--petrol-2),var(--petrol));color:#fff;overflow:hidden}
+.cta::before{content:"";position:absolute;right:-8%;top:-30%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(15,133,196,.22),transparent 68%)}
+.cta .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.cta h2{font-size:clamp(2.4rem,5.5vw,4.4rem)}
+.cta h2 em{font-style:normal;color:var(--aqua)}
+.cta p{margin-top:18px;color:#cbe1de;font-size:1.14rem;max-width:44ch}
+.cta-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.cta-card{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:22px;padding:30px}
+.cta-card h4{font-family:'Big Shoulders Display';text-transform:uppercase;font-size:1.4rem;color:#fff;margin-bottom:18px}
+.cta-card a{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);color:#e7f4f2;font-weight:600}
+.cta-card a:last-child{border-bottom:0}
+.cta-card a .ic{width:42px;height:42px;border-radius:12px;background:var(--aqua);color:var(--petrol);display:grid;place-items:center;flex:none}
+.cta-card a .ic svg{width:20px;height:20px;stroke-width:2.3}
+.cta-card a small{display:block;color:#9fc0bc;font-weight:500}
+@media(max-width:900px){.cta .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#bcd8d4;padding:70px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px}
+.foot-grid img.flogo{height:40px;width:auto;margin-bottom:18px}
+footer p.about{margin-top:0;font-size:.95rem;color:#8fb0ac;max-width:34ch}
+footer h5{color:#fff;font-family:'Big Shoulders Display';text-transform:uppercase;letter-spacing:.05em;font-size:1.15rem;margin-bottom:16px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer ul a,footer ul li{color:#a9cbc7;font-size:.95rem}
+footer ul a:hover{color:var(--aqua)}
+footer .contact li{display:flex;gap:10px;align-items:flex-start}
+footer .contact svg{width:18px;height:18px;color:var(--aqua);flex:none;margin-top:2px}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:#fff;transition:.25s}
+.socials a:hover{background:var(--aqua);color:var(--petrol);border-color:var(--aqua)}
+.socials svg{width:20px;height:20px}
+.foot-bottom{margin-top:50px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem;color:#7fa39f}
+.foot-bottom .demo{color:var(--brass);font-weight:600}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- video modal ---------- */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,23,28,.9);backdrop-filter:blur(6px)}
+.modal.open{display:flex;animation:fade .3s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal-box{position:relative;width:min(960px,100%);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);background:#000}
+.modal-box video{width:100%;height:auto;display:block;max-height:80vh;background:#000}
+.modal-close{position:absolute;top:-14px;right:-14px;width:44px;height:44px;border-radius:50%;background:var(--aqua);border:0;cursor:pointer;display:grid;place-items:center;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.modal-close svg{width:22px;height:22px;color:var(--petrol);stroke-width:2.4}
+@media(max-width:560px){.modal-close{top:10px;right:10px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3a2 2 0 0 0-2 2v1a16 16 0 0 0 16 16h1a2 2 0 0 0 2-2 2 2 0 0 0-2-2 12 12 0 0 1-2-.2 2 2 0 0 0-2 .5l-1 1a12 12 0 0 1-5-5l1-1a2 2 0 0 0 .5-2A12 12 0 0 1 9 5a2 2 0 0 0-2-2z"/></svg>0722 340 004</span>
+    <span class="sep hide-sm">·</span>
+    <span class="hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>info@seafit.nl</span>
+    <span class="sep hide-sm">·</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Celsiusstraat 22, Heerhugowaard</span>
+    <span class="sep hide-sm">·</span>
+    <span class="hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Haal- &amp; brengservice in Noord-Holland</span>
+  </div>
+</div>
+
+<!-- nav -->
+<nav class="main" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="SEAFIT home">
+      <img class="logo-img" src="https://seafit.nl/wp-content/uploads/2021/01/logo-seafit.png" alt="SEAFIT" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<b>SEA<i>FIT</i></b>')">
+    </a>
+    <div class="navlinks">
+      <a href="#diensten">Diensten</a>
+      <a href="#refit">Refit-reis</a>
+      <a href="#verschil">Voor &amp; na</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:0722340004" class="btn btn-ghost">Bel direct</a>
+      <a href="#contact" class="btn btn-primary">Plan je refit</a>
+      <button class="burger" id="burger" aria-label="Menu openen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="top">
+    <img src="https://seafit.nl/wp-content/uploads/2021/01/logo-seafit.png" alt="SEAFIT" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=&quot;font-family:Big Shoulders Display;font-weight:900;color:#fff;font-size:1.7rem&quot;>SEA<span style=&quot;color:#0F85C4&quot;>FIT</span></span>')">
+    <button class="x" id="closeMenu" aria-label="Menu sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <a class="ml" href="#diensten">Diensten</a>
+  <a class="ml" href="#refit">Refit-reis</a>
+  <a class="ml" href="#verschil">Voor &amp; na</a>
+  <a class="ml" href="#reviews">Reviews</a>
+  <a class="ml" href="#contact">Contact</a>
+  <a class="btn btn-primary" href="#contact">Plan je refit</a>
+</div>
+
+<span id="top"></span>
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="hero-bg-word" aria-hidden="true">SEAFIT</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Refit · Onderhoud · Restauratie</span>
+        <h1>Uw boot<br><span class="aq">weer</span> als<br><span class="out">nieuw.</span></h1>
+        <p class="lead">Geen standaard poetsbedrijf, maar een echte werkplaats. Van polyesterschade tot complete refit — wij brengen uw sloep of motorboot terug in topconditie.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Vraag gratis inspectie aan
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#refit" class="btn btn-ghost">Bekijk de refit-reis</a>
+        </div>
+        <div class="hero-rating">
+          <span class="stars" aria-label="4,8 van 5 sterren">
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+          </span>
+          <span><b style="color:#fff">4,8/5</b> — beoordeeld door bootbezitters in de regio</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="https://seafit.nl/wp-content/uploads/2021/02/seafit-image-02.jpg" alt="Boot van SEAFIT terug in topconditie op het water" loading="eager" onerror="this.style.display='none'">
+        </div>
+        <button class="hero-play" id="openVideo" aria-haspopup="dialog" aria-label="Bekijk de werkplaatsvideo van SEAFIT">
+          <span class="ring"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+        <div class="float-card fc-1 reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><b>Mercury</b><span>gecertificeerd vakwerk</span></div>
+        </div>
+        <div class="float-card fc-2 reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
+          <div><b>30+ jaar</b><span>ervaring in de watersport</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- wave divider into brands -->
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#04171C" d="M0 40c180 40 360 40 540 20s360-60 540-40 300 60 360 60v10H0z"/></svg>
+</header>
+
+<!-- ===================== BRAND MARQUEE ===================== -->
+<div class="brands" aria-label="Merken waarmee wij werken">
+  <div class="brands-track" id="brandsTrack">
+    <span>Mercury</span><span>·</span><span>Mercruiser</span><span>·</span><span>Vetus</span><span>·</span><span>Yanmar</span><span>·</span><span>Volvo Penta</span><span>·</span><span>Honda Marine</span><span>·</span><span>Suzuki</span><span>·</span><span>Yamaha</span><span>·</span><span>Sole</span><span>·</span><span>VW-Marine</span><span>·</span><span>Ceramic Pro</span><span>·</span>
+    <span>Mercury</span><span>·</span><span>Mercruiser</span><span>·</span><span>Vetus</span><span>·</span><span>Yammer</span><span>·</span><span>Volvo Penta</span><span>·</span><span>Honda Marine</span><span>·</span><span>Suzuki</span><span>·</span><span>Yamaha</span><span>·</span><span>Sole</span><span>·</span><span>VW-Marine</span><span>·</span><span>Ceramic Pro</span><span>·</span>
+  </div>
+</div>
+
+<!-- ===================== INTRO ===================== -->
+<section class="intro pad" id="over">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--aqua-deep)"><span></span>Over SEAFIT</span>
+        <div class="big">Geen standaard<br>poetsbedrijf.<br><u>Echt vakwerk.</u></div>
+        <p>SEAFIT is een full-service werkplaats voor boten in Heerhugowaard. Wat begon vanuit een passie voor de watersport, groeide uit tot dé plek in Noord-Holland waar sloepen en motorboten worden opgebouwd, onderhouden, gerepareerd en compleet gerestaureerd — altijd met originele onderdelen van de bootbouwers.</p>
+        <p>Duidelijke afspraken, eerlijk advies en een resultaat waar u op kunt vertrouwen. Grote of kleine polyesterschade, een frisse gelcoat of een nieuwe motor: u vaart de zomer in met een boot die weer als nieuw aanvoelt.</p>
+        <div class="intro-sign">
+          <div class="avatar">RV</div>
+          <div><b>Rob van der Valk</b><span>Eigenaar SEAFIT · ruim 30 jaar in de watersport</span></div>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2 4 14h6l-1 8 11-14h-7z"/></svg></div>
+          <div><h4>Haal- &amp; brengservice</h4><p>Wij halen uw boot op en brengen hem terug — in heel Noord-Holland en omstreken.</p></div>
+        </div>
+        <div class="pillar reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div><h4>Originele onderdelen</h4><p>Mercury-gecertificeerd. Wij werken uitsluitend met originele producten van de fabrikanten.</p></div>
+        </div>
+        <div class="pillar reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div><h4>Eerlijk &amp; transparant</h4><p>Vooraf duidelijke afspraken en een heldere prijs. Geen verrassingen achteraf.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="on-dark pad" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span></span>Wat wij doen</span>
+      <h2>Alles voor uw boot, <em>onder één dak</em></h2>
+      <p>Van een kras in de gelcoat tot een complete opbouw: bij SEAFIT komt uw boot binnen als klus en gaat naar buiten als pronkstuk.</p>
+    </div>
+    <div class="services-grid">
+      <article class="svc feature reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/SEAFIT-FOTO-768x512-1.jpg')">
+        <span class="tag">Meest gevraagd</span>
+        <span class="num">01 — SPECIALISME</span>
+        <h3>Complete refit &amp; restauratie</h3>
+        <p>Een verweerde boot in ere hersteld. Casco, gelcoat, techniek en afwerking — wij geven uw sloep of motorboot een tweede leven.</p>
+      </article>
+      <article class="svc wide reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/01/seafit-image-01-855x525-1.jpg')">
+        <span class="num">02</span>
+        <h3>Polyester &amp; gelcoat</h3>
+        <p>Grote en kleine polyesterschades vakkundig hersteld, met een naadloze gelcoat-afwerking.</p>
+      </article>
+      <article class="svc small reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/20180120_183005-1-1920x400-1.jpg')">
+        <span class="num">03</span>
+        <h3>Motor &amp; techniek</h3>
+        <p>Onderhoud en reparatie van Mercruiser, Mercury, Vetus, Yammer en meer.</p>
+      </article>
+      <article class="svc small reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/Ceramic-Pro-SEAFIT.jpg')">
+        <span class="num">04</span>
+        <h3>Poetsen &amp; Ceramic Pro</h3>
+        <p>Machinaal polijsten en een keramische coating voor jarenlange glans en bescherming.</p>
+      </article>
+      <article class="svc small reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2021/02/seafit-slider-01-1920x400-1.jpg')">
+        <span class="num">05</span>
+        <h3>Boegschroef &amp; techniek</h3>
+        <p>Installatie van boegschroeven, navigatie en audio — vakkundig ingebouwd.</p>
+      </article>
+      <article class="svc wide reveal" style="--bg:url('https://seafit.nl/wp-content/uploads/2023/03/Seafit-bootvloeren.jpg')">
+        <span class="num">06</span>
+        <h3>Antifouling, vloeren &amp; winterstalling</h3>
+        <p>Antifouling-behandeling, maatwerk bootvloeren en een veilige stalling voor de winter.</p>
+      </article>
+      <article class="svc fill reveal">
+        <span class="kicker">Klaar in één dag</span>
+        <div class="big">1 dag</div>
+        <p>Voor een complete poets- &amp; beschermbeurt — uw boot vaart hetzelfde seizoen weer spiegelend uit.</p>
+        <a class="more" href="#contact">Plan een poetsbeurt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SIGNATURE: REFIT JOURNEY ===================== -->
+<section class="journey" id="refit">
+  <div class="jpin" id="jpin">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span></span>De signatuur van SEAFIT</span>
+      <h2>De refit-reis — <em>scroll mee</em></h2>
+      <p>Volg uw boot door de werkplaats. Vijf stations, één missie: terug het water op alsof hij net van de werf komt.</p>
+    </div>
+    <div class="track-outer" id="trackOuter">
+      <div class="hpin" id="hpin">
+        <article class="station">
+          <span class="glow"></span>
+          <span class="step">01</span>
+          <h3>Binnenkomst &amp; inspectie</h3>
+          <p>Wij halen uw boot op en nemen hem grondig onder de loep. Samen bepalen we wat er nodig is — met een eerlijke, heldere offerte vooraf.</p>
+          <ul><li>Haal- &amp; brengservice</li><li>Gratis inspectie</li><li>Vaste prijsafspraak</li></ul>
+        </article>
+        <article class="station">
+          <span class="glow"></span>
+          <span class="step">02</span>
+          <h3>Polyester &amp; gelcoat</h3>
+          <p>Scheuren, osmose of stootschade? Wij herstellen het polyester tot in de kern en werken de gelcoat naadloos en kleurvast af.</p>
+          <ul><li>Structureel herstel</li><li>Osmose-behandeling</li><li>Kleur op maat</li></ul>
+        </article>
+        <article class="station">
+          <span class="glow"></span>
+          <span class="step">03</span>
+          <h3>Motor &amp; techniek</h3>
+          <p>Grote beurt of nieuwe motor? Als Mercury-gecertificeerd bedrijf monteren en onderhouden wij met originele onderdelen.</p>
+          <ul><li>Mercury / Mercruiser</li><li>Boegschroef</li><li>Navigatie &amp; audio</li></ul>
+        </article>
+        <article class="station">
+          <span class="glow"></span>
+          <span class="step">04</span>
+          <h3>Poets &amp; Ceramic Pro</h3>
+          <p>Machinaal polijsten tot een spiegelende glans, afgesloten met een keramische coating die uw boot jarenlang beschermt.</p>
+          <ul><li>Machinaal polijsten</li><li>Ceramic Pro-coating</li><li>Antifouling</li></ul>
+        </article>
+        <article class="station">
+          <span class="glow"></span>
+          <span class="step">05</span>
+          <h3>Te water</h3>
+          <p>Gecontroleerd, gepoetst en vaarklaar. Wij brengen uw boot terug — u vaart weg met een pronkstuk waar u trots op bent.</p>
+          <ul><li>Eindcontrole</li><li>Terugbezorgd</li><li>Zorgeloos varen</li></ul>
+        </article>
+      </div>
+    </div>
+    <div class="progress-rail" aria-hidden="true">
+      <small>Binnenkomst</small>
+      <div class="bar"><i id="journeyBar"></i></div>
+      <small>Te water</small>
+    </div>
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg> Scroll om de reis te volgen</p>
+  </div>
+</section>
+
+<!-- ===================== BEFORE / AFTER ===================== -->
+<section class="ba pad" id="verschil">
+  <div class="wrap">
+    <div class="ba-grid">
+      <div class="ba-copy reveal">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+        </span>
+        <h2>Sleep en zie<br>het verschil</h2>
+        <p>Dof, verweerd en verkleurd — of spiegelend en beschermd. Sleep de knop en zie wat een SEAFIT-behandeling met een boot doet. Dit is precies waarom onze klanten terugkomen.</p>
+        <div class="mini">
+          <div><b>1 dag</b><span>voor een complete poetsbeurt</span></div>
+          <div><b>4,8/5</b><span>gemiddelde klantbeoordeling</span></div>
+        </div>
+        <a href="#contact" class="btn btn-dark" style="margin-top:28px">Plan een poetsbeurt
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ba-stage" id="baStage" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <img class="ba-img ba-after" src="https://seafit.nl/wp-content/uploads/2021/02/Ceramic-Pro-SEAFIT.jpg" alt="Boot na een SEAFIT-behandeling: spiegelende glans" onerror="this.style.display='none'">
+        <span class="ba-label r">Na</span>
+        <div class="ba-before-layer" id="baBeforeWrap">
+          <img class="ba-img ba-before" src="https://seafit.nl/wp-content/uploads/2021/02/Ceramic-Pro-SEAFIT.jpg" alt="Boot voor de behandeling: dof en verweerd gelcoat" onerror="this.style.display='none'">
+          <span class="ba-label l">Voor</span>
+        </div>
+        <div class="ba-handle" id="baHandle">
+          <div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats pad">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><b data-count="10">0</b><span>jaar dé refit-werkplaats van Heerhugowaard</span></div>
+      <div class="stat reveal"><b data-count="30" data-suffix="+">0</b><span>jaar ervaring in de watersport</span></div>
+      <div class="stat reveal"><b>4,<span class="brass">8</span></b><span>gemiddeld uit klantbeoordelingen</span></div>
+      <div class="stat reveal"><b data-count="9" data-suffix="+">0</b><span>topmerken waarmee wij werken</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews pad" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span></span>Wat klanten zeggen</span>
+      <h2>4,8 sterren, <em>en dat voelt u</em></h2>
+      <p>Bootbezitters uit de hele regio vertrouwen hun pronkstuk aan SEAFIT toe.</p>
+    </div>
+    <div class="rev-grid">
+      <article class="rev reveal">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+        </span>
+        <p>"De schade aan mijn polyester boot is netjes en vakkundig gerepareerd door SEAFIT. Ziet er weer als nieuw uit."</p>
+        <div class="who"><div class="a">PP</div><div><b>Peter Pardoel</b><span>Polyesterreparatie</span></div></div>
+      </article>
+      <article class="rev feat reveal">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+        </span>
+        <p>"Binnen drie weken kwam onze boot als nieuw terug. Duidelijke afspraken, geen verrassingen achteraf en absoluut niet duur. Een aanrader."</p>
+        <div class="who"><div class="a">WK</div><div><b>Windkracht 5 B.V.</b><span>Zeilbotenverhuur · vlootonderhoud</span></div></div>
+      </article>
+      <article class="rev reveal">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5 4.9 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.9 7-.8z"/></svg>
+        </span>
+        <p>"Dit bedrijf is zeer aan te bevelen. Uiterst vakkundig en netjes, en fijn zakendoen met Rob. Prettig in de omgang."</p>
+        <div class="who"><div class="a">JW</div><div><b>Jack Welman</b><span>Onderhoud &amp; poets</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA / CONTACT ===================== -->
+<section class="cta pad" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Klaar voor het water?</span>
+      <h2>Vaar de zomer in<br>met een <em>topboot</em></h2>
+      <p>Vraag vrijblijvend een inspectie aan. Wij bekijken uw boot, geven eerlijk advies en een heldere prijs — inclusief haal- &amp; brengservice.</p>
+      <div class="cta-actions">
+        <a href="tel:0722340004" class="btn btn-primary">Bel 0722 340 004
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 3a2 2 0 0 0-2 2v1a16 16 0 0 0 16 16h1a2 2 0 0 0 2-2 2 2 0 0 0-2-2 12 12 0 0 1-2-.2 2 2 0 0 0-2 .5l-1 1a12 12 0 0 1-5-5l1-1a2 2 0 0 0 .5-2A12 12 0 0 1 9 5a2 2 0 0 0-2-2z"/></svg></a>
+        <a href="mailto:info@seafit.nl" class="btn btn-ghost">Mail ons</a>
+      </div>
+    </div>
+    <div class="cta-card reveal">
+      <h4>Direct contact</h4>
+      <a href="tel:0722340004"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 3a2 2 0 0 0-2 2v1a16 16 0 0 0 16 16h1a2 2 0 0 0 2-2 2 2 0 0 0-2-2 12 12 0 0 1-2-.2 2 2 0 0 0-2 .5l-1 1a12 12 0 0 1-5-5l1-1a2 2 0 0 0 .5-2A12 12 0 0 1 9 5a2 2 0 0 0-2-2z"/></svg></span><span>0722 340 004<small>Ma–vr 08:00–17:00</small></span></a>
+      <a href="mailto:info@seafit.nl"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></span><span>info@seafit.nl<small>Reactie binnen 1 werkdag</small></span></a>
+      <a href="https://maps.google.com/?q=Celsiusstraat+22+Heerhugowaard" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Celsiusstraat 22, Heerhugowaard<small>Bekijk op de kaart</small></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="flogo" src="https://seafit.nl/wp-content/uploads/2021/01/logo-seafit.png" alt="SEAFIT" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;font-family:Big Shoulders Display;font-weight:900;font-size:1.7rem;color:#fff;margin-bottom:18px&quot;>SEA<span style=&quot;color:#0F85C4&quot;>FIT</span></div>')">
+        <p class="about">Refit, onderhoud en restauratie van uw boot. Geen standaard poetsbedrijf — echt vakwerk uit Heerhugowaard.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/seafit.nl/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h2.5l.5-3H13v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://www.instagram.com/seafit.nl/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Diensten</h5>
+        <ul>
+          <li><a href="#diensten">Refit &amp; restauratie</a></li>
+          <li><a href="#diensten">Polyester &amp; gelcoat</a></li>
+          <li><a href="#diensten">Motoronderhoud</a></li>
+          <li><a href="#diensten">Poetsen &amp; Ceramic Pro</a></li>
+          <li><a href="#diensten">Antifouling &amp; winterstalling</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>SEAFIT</h5>
+        <ul>
+          <li><a href="#over">Over ons</a></li>
+          <li><a href="#refit">De refit-reis</a></li>
+          <li><a href="#verschil">Voor &amp; na</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact &amp; offerte</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Celsiusstraat 22<br>1704 RW Heerhugowaard</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3a2 2 0 0 0-2 2v1a16 16 0 0 0 16 16h1a2 2 0 0 0 2-2 2 2 0 0 0-2-2 12 12 0 0 1-2-.2 2 2 0 0 0-2 .5l-1 1a12 12 0 0 1-5-5l1-1a2 2 0 0 0 .5-2A12 12 0 0 1 9 5a2 2 0 0 0-2-2z"/></svg><a href="tel:0722340004">0722 340 004</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg><a href="mailto:info@seafit.nl">info@seafit.nl</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Ma–vr 08:00–17:00<br>Za op afspraak</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 SEAFIT Heerhugowaard · Alle rechten voorbehouden</span>
+      <span class="demo">Demo-concept door Barends Media — nog niet live</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== VIDEO MODAL ===================== -->
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video van de werkplaats van SEAFIT">
+  <div class="modal-box">
+    <button class="modal-close" id="closeVideo" aria-label="Sluit video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <video id="heroVideo" controls playsinline preload="none" poster="https://seafit.nl/wp-content/uploads/2021/03/seafit-video-placeholder.jpg">
+      <source src="https://seafit.nl/wp-content/uploads/2026/01/20250923_111232-1.mp4" type="video/mp4">
+      Je browser ondersteunt geen video.
+    </video>
+  </div>
+</div>
+
+<!-- GSAP for the horizontal refit journey (progressive enhancement) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* set service background images from the inline --bg custom property */
+  var style = document.createElement('style');
+  style.textContent = '.svc::before{background-image:var(--bg)}';
+  document.head.appendChild(style);
+
+  /* mobile menu */
+  var burger=document.getElementById('burger'), menu=document.getElementById('mobileMenu'), closeBtn=document.getElementById('closeMenu');
+  function openM(){menu.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){menu.classList.remove('open');document.body.style.overflow='';}
+  burger&&burger.addEventListener('click',openM);
+  closeBtn&&closeBtn.addEventListener('click',closeM);
+  menu&&menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM);});
+
+  /* video modal */
+  var modal=document.getElementById('videoModal'), video=document.getElementById('heroVideo'),
+      openV=document.getElementById('openVideo'), closeV=document.getElementById('closeVideo');
+  if(openV&&modal){
+    function openModal(){modal.classList.add('open');try{video.play();}catch(e){}}
+    function closeModal(){modal.classList.remove('open');try{video.pause();}catch(e){}}
+    openV.addEventListener('click',openModal);
+    closeV.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
+  }
+
+  /* nav bg on scroll */
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>40){nav.style.background='rgba(8,43,51,.97)';}
+    else{nav.style.background='rgba(8,43,51,.86)';}
+  },{passive:true});
+
+  /* reveal on scroll */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* count up stats */
+  var counters=document.querySelectorAll('[data-count]');
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, target=+el.getAttribute('data-count'), suf=el.getAttribute('data-suffix')||'', start=null;
+      if(reduce){el.textContent=target+suf;cio.unobserve(el);return;}
+      function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/1200,1); el.textContent=Math.round(p*target)+suf; if(p<1)requestAnimationFrame(step); }
+      requestAnimationFrame(step); cio.unobserve(el);
+    });
+  },{threshold:.5});
+  counters.forEach(function(el){cio.observe(el);});
+
+  /* before / after slider */
+  (function(){
+    var stage=document.getElementById('baStage');
+    if(!stage) return;
+    var wrap=document.getElementById('baBeforeWrap'), handle=document.getElementById('baHandle');
+    function setPos(x){
+      var r=stage.getBoundingClientRect();
+      var pct=Math.max(0,Math.min(100,((x-r.left)/r.width)*100));
+      wrap.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
+      handle.style.left=pct+'%';
+      stage.setAttribute('aria-valuenow',Math.round(pct));
+    }
+    var dragging=false;
+    function down(e){dragging=true;move(e);}
+    function up(){dragging=false;}
+    function move(e){ if(!dragging)return; var x=e.touches?e.touches[0].clientX:e.clientX; setPos(x); if(e.cancelable)e.preventDefault(); }
+    stage.addEventListener('mousedown',down); window.addEventListener('mousemove',move); window.addEventListener('mouseup',up);
+    stage.addEventListener('touchstart',down,{passive:true}); window.addEventListener('touchmove',move,{passive:false}); window.addEventListener('touchend',up);
+    stage.addEventListener('keydown',function(e){
+      var cur=+stage.getAttribute('aria-valuenow'); var r=stage.getBoundingClientRect();
+      if(e.key==='ArrowLeft'){setPos(r.left+r.width*(cur-4)/100);}
+      if(e.key==='ArrowRight'){setPos(r.left+r.width*(cur+4)/100);}
+    });
+  })();
+
+  /* signature: horizontal refit journey — pins the whole block (title stays in view)
+     and starts as soon as the section reaches the top, so the horizontal motion
+     no longer kicks in late. */
+  (function(){
+    if(reduce || !window.gsap || !window.ScrollTrigger) return;
+    if(window.matchMedia('(max-width:820px)').matches) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var track=document.getElementById('hpin');
+    var pin=document.getElementById('jpin');
+    var bar=document.getElementById('journeyBar');
+    function amount(){ return track.scrollWidth - window.innerWidth + 48; }
+    gsap.to(track,{
+      x:function(){return -amount();},
+      ease:'none',
+      scrollTrigger:{
+        trigger:pin,
+        start:'top 84px',
+        end:function(){return '+='+amount();},
+        pin:true,
+        scrub:1,
+        anticipatePin:1,
+        invalidateOnRefresh:true,
+        onUpdate:function(self){ if(bar) bar.style.width=(20+self.progress*80)+'%'; }
+      }
+    });
+    window.addEventListener('load',function(){ScrollTrigger.refresh();});
+  })();
+})();
+</script>
+</body>
+</html>
