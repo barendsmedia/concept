@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WTW Ventilatietechniek — Revisie van ventilatiemotoren & WTW-units, vaak retour dezelfde dag</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="WTW Ventilatietechniek in Alkmaar reviseert en repareert ventilatiemotoren, WTW-units, dak- en warmtepompventilatoren. 10+ jaar ervaring, 2 jaar garantie op kogellagers, vaak retour dezelfde dag. Plan direct een afspraak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1B2E;
+    --navy-2: #0D2338;
+    --steel: #163B57;
+    --sky: #2BB0D6;
+    --sky-dark: #1E93B6;
+    --air: #5FE3D0;
+    --mist: #EEF4F8;
+    --mist-2: #E2ECF3;
+    --ink: #0E1922;
+    --muted: #5A6B78;
+    --line: #D5E1EA;
+    --white: #FFFFFF;
+    --radius: 16px;
+    --max: 1240px;
+    font-size: 16px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  p { margin: 0 0 1em; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
+    outline: 3px solid var(--air);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--sky-dark);
+  }
+  .eyebrow::before {
+    content: ""; width: 26px; height: 2px; background: var(--sky); display: inline-block;
+  }
+  .eyebrow.light { color: var(--air); }
+  .eyebrow.light::before { background: var(--air); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    font-family: 'IBM Plex Sans', sans-serif; font-weight: 600; font-size: 0.98rem;
+    padding: 15px 28px; border-radius: 999px; border: 2px solid transparent;
+    cursor: pointer; transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--sky); color: var(--navy); box-shadow: 0 8px 24px -8px rgba(43,176,214,0.7); }
+  .btn-primary:hover { background: var(--air); }
+  .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.28); }
+  .btn-ghost:hover { border-color: var(--air); background: rgba(95,227,208,0.08); }
+  .btn-dark { background: var(--navy); color: var(--white); }
+  .btn-dark:hover { background: var(--steel); }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    background: var(--navy); color: rgba(255,255,255,0.72);
+    font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 9px; padding-bottom: 9px; flex-wrap: wrap; }
+  .topbar a { color: var(--air); font-weight: 500; }
+  .topbar .tb-item { display: inline-flex; align-items: center; gap: 7px; }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,27,46,0.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { height: 40px; width: auto; background: #fff; border-radius: 9px; padding: 5px 8px; }
+  .brand .bname { color: var(--white); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.02rem; line-height: 1.05; }
+  .brand .bname span { display: block; font-family: 'IBM Plex Sans'; font-weight: 400; font-size: 0.72rem; color: var(--air); letter-spacing: 0.04em; }
+  .navlinks { display: flex; align-items: center; gap: 28px; }
+  .navlinks a { color: rgba(255,255,255,0.82); font-size: 0.95rem; font-weight: 500; transition: color .2s; }
+  .navlinks a:hover { color: var(--air); }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-cta .phone { color: var(--white); font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 7px; }
+  .burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .burger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; transition: .3s; }
+
+  @media (max-width: 940px) {
+    .navlinks, .nav-cta .phone { display: none; }
+    .burger { display: block; }
+    .navlinks.open {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
+      position: absolute; top: 100%; left: 0; right: 0; background: var(--navy);
+      padding: 22px 24px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    background: radial-gradient(120% 120% at 80% -10%, #12406B 0%, var(--navy-2) 45%, var(--navy) 100%);
+    color: var(--white); padding: 84px 0 96px;
+  }
+  .airflow { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .airflow svg { width: 100%; height: 100%; }
+  .airflow path {
+    fill: none; stroke: url(#flowgrad); stroke-width: 1.4;
+    stroke-dasharray: 8 340; opacity: 0.55;
+    animation: flow 7s linear infinite;
+  }
+  .airflow path:nth-child(2) { animation-duration: 9s; animation-delay: -2s; opacity: 0.4; }
+  .airflow path:nth-child(3) { animation-duration: 6s; animation-delay: -1s; opacity: 0.5; }
+  .airflow path:nth-child(4) { animation-duration: 8.5s; animation-delay: -3.5s; opacity: 0.35; }
+  .airflow path:nth-child(5) { animation-duration: 10s; animation-delay: -4s; opacity: 0.3; }
+  @keyframes flow { to { stroke-dashoffset: -348; } }
+
+  .hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(2.3rem, 5vw, 3.7rem); margin: 18px 0 20px; }
+  .hero h1 .hl { color: var(--air); }
+  .hero p.lead { font-size: 1.14rem; color: rgba(255,255,255,0.86); max-width: 34ch; margin-bottom: 30px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-trust { display: flex; gap: 26px; margin-top: 34px; flex-wrap: wrap; }
+  .hero-trust div { display: flex; flex-direction: column; }
+  .hero-trust b { font-family: 'Space Grotesk'; font-size: 1.5rem; color: var(--white); }
+  .hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+
+  /* Hero card (spec panel) */
+  .spec {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 20px; padding: 26px; backdrop-filter: blur(4px);
+  }
+  .spec h3 { font-size: 1.05rem; color: var(--white); margin-bottom: 16px; display: flex; align-items: center; gap: 9px; }
+  .spec .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px dashed rgba(255,255,255,0.12); }
+  .spec .row:last-child { border-bottom: 0; }
+  .spec .row span { color: rgba(255,255,255,0.78); font-size: 0.92rem; }
+  .spec .row b { color: var(--air); font-weight: 600; font-size: 0.92rem; }
+  .spec .gauge { margin-top: 14px; height: 8px; border-radius: 99px; background: rgba(255,255,255,0.12); overflow: hidden; }
+  .spec .gauge i { display: block; height: 100%; width: 86%; background: linear-gradient(90deg, var(--sky), var(--air)); border-radius: 99px; }
+  .spec small { color: rgba(255,255,255,0.6); font-size: 0.76rem; }
+
+  /* ---------- Logos / merken strip ---------- */
+  .brands { background: var(--navy); padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+  .brands .wrap { display: flex; align-items: center; gap: 18px 40px; flex-wrap: wrap; justify-content: center; }
+  .brands span.lbl { color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .brands b { color: rgba(255,255,255,0.82); font-family: 'Space Grotesk'; font-weight: 600; font-size: 1.05rem; opacity: 0.85; }
+
+  /* ---------- Section shell ---------- */
+  section { padding: 88px 0; }
+  .sec-head { max-width: 640px; margin-bottom: 46px; }
+  .sec-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin: 14px 0 14px; color: var(--navy); }
+  .sec-head p { color: var(--muted); font-size: 1.05rem; }
+  .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+  /* ---------- USP grid ---------- */
+  .usp { background: var(--mist); }
+  .usp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .usp-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: transform .25s ease, box-shadow .25s ease; }
+  .usp-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px -22px rgba(10,27,46,0.4); }
+  .usp-ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, var(--sky), var(--steel)); margin-bottom: 16px; }
+  .usp-ico svg { width: 24px; height: 24px; stroke: #fff; }
+  .usp-card h3 { font-size: 1.12rem; margin-bottom: 8px; color: var(--navy); }
+  .usp-card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+  /* ---------- Diensten ---------- */
+  .serv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .serv-card { position: relative; border-radius: var(--radius); overflow: hidden; min-height: 300px; display: flex; align-items: flex-end; color: #fff; }
+  .serv-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .5s ease; }
+  .serv-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,27,46,0.05) 0%, rgba(10,27,46,0.85) 100%); z-index: 1; }
+  .serv-card:hover img { transform: scale(1.06); }
+  .serv-body { position: relative; z-index: 2; padding: 24px; }
+  .serv-body h3 { font-size: 1.25rem; margin-bottom: 6px; }
+  .serv-body p { font-size: 0.92rem; color: rgba(255,255,255,0.85); margin: 0; }
+  .serv-tag { position: absolute; top: 16px; left: 16px; z-index: 2; background: rgba(43,176,214,0.92); color: var(--navy); font-size: 0.74rem; font-weight: 600; padding: 5px 11px; border-radius: 99px; }
+
+  /* ---------- Proces ---------- */
+  .proces { background: var(--navy); color: #fff; }
+  .proces .sec-head h2 { color: #fff; }
+  .proces .sec-head p { color: rgba(255,255,255,0.72); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; counter-reset: step; }
+  .step { position: relative; padding: 28px 22px; border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); background: rgba(255,255,255,0.03); }
+  .step::before { counter-increment: step; content: "0" counter(step); font-family: 'Space Grotesk'; font-size: 2.4rem; color: var(--air); font-weight: 700; display: block; margin-bottom: 10px; opacity: 0.9; }
+  .step h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .step p { color: rgba(255,255,255,0.72); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- Afspraak (signature form) ---------- */
+  .afspraak { background: linear-gradient(180deg, var(--mist) 0%, var(--mist-2) 100%); }
+  .afspraak-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 44px; align-items: start; }
+  .afspraak-info h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); color: var(--navy); margin: 14px 0 16px; }
+  .afspraak-info p { color: var(--muted); font-size: 1.04rem; }
+  .info-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px; }
+  .info-list li { display: flex; gap: 13px; align-items: flex-start; font-size: 0.98rem; }
+  .info-list .ck { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 8px; background: var(--sky); display: grid; place-items: center; }
+  .info-list .ck svg { width: 15px; height: 15px; stroke: var(--navy); }
+  .info-panel { margin-top: 28px; background: var(--navy); color: #fff; border-radius: var(--radius); padding: 22px 24px; }
+  .info-panel h3 { font-size: 1rem; margin-bottom: 12px; color: var(--air); }
+  .info-panel .iprow { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 0.94rem; color: rgba(255,255,255,0.85); }
+  .info-panel .iprow svg { width: 17px; height: 17px; stroke: var(--air); flex: 0 0 auto; }
+
+  form.book { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px; box-shadow: 0 24px 60px -34px rgba(10,27,46,0.45); }
+  form.book .fhead { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  form.book .fhead .dot { width: 9px; height: 9px; border-radius: 99px; background: var(--air); box-shadow: 0 0 0 4px rgba(95,227,208,0.25); }
+  form.book h3 { font-size: 1.3rem; color: var(--navy); }
+  form.book > p.sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 22px; }
+  .qblock { margin-bottom: 22px; }
+  .qlabel { display: flex; align-items: baseline; gap: 8px; font-weight: 600; color: var(--navy); font-size: 0.98rem; margin-bottom: 11px; }
+  .qlabel .qn { font-family: 'Space Grotesk'; color: var(--sky-dark); font-size: 0.85rem; }
+  .opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .opts.three { grid-template-columns: repeat(3, 1fr); }
+  .opt { position: relative; }
+  .opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .opt label { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer; font-size: 0.93rem; color: var(--ink); transition: border-color .2s, background .2s, box-shadow .2s; height: 100%; }
+  .opt input:checked + label { border-color: var(--sky); background: rgba(43,176,214,0.08); box-shadow: 0 0 0 3px rgba(43,176,214,0.12); font-weight: 600; }
+  .opt input:focus-visible + label { outline: 3px solid var(--air); outline-offset: 2px; }
+
+  .field { margin-bottom: 16px; }
+  .field label.fl { display: block; font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+  .field input, .field textarea, .field select {
+    width: 100%; padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 12px;
+    font-family: inherit; font-size: 0.96rem; color: var(--ink); background: #fff; transition: border-color .2s, box-shadow .2s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--sky); box-shadow: 0 0 0 3px rgba(43,176,214,0.12); outline: none; }
+  .field textarea { resize: vertical; min-height: 84px; }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-note { margin: 14px 0 0; font-size: 0.9rem; color: var(--sky-dark); font-weight: 600; min-height: 1.2em; }
+  .privacy { font-size: 0.8rem; color: var(--muted); margin: 14px 0 0; }
+
+  /* ---------- Social proof ---------- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 56px; }
+  .stat { text-align: center; padding: 26px 14px; border-radius: var(--radius); background: var(--mist); border: 1px solid var(--line); }
+  .stat b { display: block; font-family: 'Space Grotesk'; font-size: 2.4rem; color: var(--sky-dark); line-height: 1; }
+  .stat span { display: block; margin-top: 8px; color: var(--muted); font-size: 0.9rem; }
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .review { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .stars { color: #F6A623; font-size: 1rem; letter-spacing: 2px; margin-bottom: 12px; }
+  .review p { font-size: 0.97rem; color: var(--ink); }
+  .review .who { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+  .review .av { width: 42px; height: 42px; border-radius: 99px; background: linear-gradient(135deg, var(--sky), var(--steel)); color: #fff; display: grid; place-items: center; font-family: 'Space Grotesk'; font-weight: 600; }
+  .review .who b { font-size: 0.94rem; color: var(--navy); display: block; }
+  .review .who span { font-size: 0.82rem; color: var(--muted); }
+
+  /* ---------- CTA band ---------- */
+  .cta-band { background: radial-gradient(120% 140% at 10% 0%, #12406B 0%, var(--navy) 60%); color: #fff; text-align: center; }
+  .cta-band h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin-bottom: 16px; }
+  .cta-band p { color: rgba(255,255,255,0.82); max-width: 52ch; margin: 0 auto 28px; font-size: 1.08rem; }
+  .cta-band .hero-cta { justify-content: center; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 68px 0 30px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 34px; }
+  footer h4 { color: #fff; font-family: 'Space Grotesk'; font-size: 1rem; margin: 0 0 16px; }
+  footer a { color: rgba(255,255,255,0.7); font-size: 0.94rem; }
+  footer a:hover { color: var(--air); }
+  footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .foot-brand img { height: 44px; background: #fff; border-radius: 9px; padding: 6px 9px; margin-bottom: 16px; }
+  .foot-brand p { font-size: 0.92rem; max-width: 30ch; }
+  .foot-contact li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.94rem; }
+  .foot-contact svg { width: 17px; height: 17px; stroke: var(--air); flex: 0 0 auto; margin-top: 3px; }
+  .foot-bot { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 44px; padding-top: 22px; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; font-size: 0.84rem; color: rgba(255,255,255,0.5); }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1000px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .usp-grid, .serv-grid, .steps, .stats, .reviews { grid-template-columns: repeat(2, 1fr); }
+    .afspraak-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 620px) {
+    section { padding: 62px 0; }
+    .hero { padding: 60px 0 70px; }
+    .usp-grid, .serv-grid, .steps, .stats, .reviews, .foot-grid, .opts, .opts.three, .frow { grid-template-columns: 1fr; }
+    .hero-trust { gap: 18px; }
+    .brand .bname { font-size: 0.92rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Topbar ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="tb-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5FE3D0" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Berenkoog 56a, 1822 BZ Alkmaar
+    </span>
+    <span class="tb-item">Ma–Vr 10:00–16:00 · za op afspraak &nbsp;·&nbsp; <a href="tel:+31620567008">06 - 20 56 70 08</a></span>
+  </div>
+</div>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="WTW Ventilatietechniek home">
+      <img src="https://wtwventilatietechniek.nl/image/data/nieuw_logo.png" alt="WTW Ventilatietechniek logo" onerror="this.style.display='none'">
+      <span class="bname">WTW Ventilatietechniek<span>Revisie &amp; verkoop · Alkmaar</span></span>
+    </a>
+    <nav class="navlinks" id="menu">
+      <a href="#diensten">Diensten</a>
+      <a href="#proces">Werkwijze</a>
+      <a href="#afspraak">Afspraak</a>
+      <a href="#reviews">Ervaringen</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="phone" href="tel:+31620567008">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5FE3D0" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        06 - 20 56 70 08
+      </a>
+      <a class="btn btn-primary" href="#afspraak">Afspraak plannen</a>
+      <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="airflow" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="flowgrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#2BB0D6" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#5FE3D0"/>
+          <stop offset="1" stop-color="#2BB0D6" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M-50 120 C 300 60, 600 200, 900 120 S 1350 80, 1300 140"/>
+      <path d="M-50 240 C 320 180, 560 320, 880 240 S 1330 210, 1300 260"/>
+      <path d="M-50 360 C 300 300, 620 440, 900 360 S 1340 330, 1300 380"/>
+      <path d="M-50 470 C 340 410, 580 540, 900 470 S 1330 450, 1300 500"/>
+      <path d="M-50 60 C 280 20, 640 120, 940 60 S 1330 40, 1300 80"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow light">Revisie · reparatie · verkoop</span>
+      <h1>Uw ventilatiemotor <span class="hl">weer stil en zuinig</span> — vaak retour dezelfde dag</h1>
+      <p class="lead">Specialist in het reviseren van WTW-units, ventilatieboxen, dak- en warmtepompventilatoren. Al meer dan 10 jaar, met 2 jaar garantie op de kogellagers.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#afspraak">Plan een afspraak</a>
+        <a class="btn btn-ghost" href="#diensten">Bekijk onze diensten</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>10+ jaar</b><span>revisie-ervaring</span></div>
+        <div><b>2 jaar</b><span>garantie op lagers</span></div>
+        <div><b>1 dag</b><span>vaak al retour</span></div>
+      </div>
+    </div>
+    <aside class="spec" aria-label="Voorbeeld revisierapport">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5FE3D0" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Revisierapport · WTW-motor
+      </h3>
+      <div class="row"><span>Merk / type</span><b>Brink Renovent</b></div>
+      <div class="row"><span>Kogellagers</span><b>Vervangen ✓</b></div>
+      <div class="row"><span>Uitgebalanceerd</span><b>0,8 mm/s</b></div>
+      <div class="row"><span>Geluid na revisie</span><b>−9 dB(A)</b></div>
+      <div class="gauge" aria-hidden="true"><i></i></div>
+      <small>Balanskwaliteit 86% verbeterd · getest en verzegeld</small>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== Merken strip ===== -->
+<div class="brands" aria-label="Wij reviseren onder meer">
+  <div class="wrap">
+    <span class="lbl">Wij reviseren o.a.</span>
+    <b>Brink</b><b>Itho</b><b>Zehnder</b><b>Orcon</b><b>Duco</b><b>Vent-Axia</b><b>Agpo</b><b>Nibe</b><b>Ubbink</b>
+  </div>
+</div>
+
+<!-- ===== USP's ===== -->
+<section class="usp" id="waarom">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Waarom WTW Ventilatietechniek</span>
+      <h2>Repareren in plaats van duur vervangen</h2>
+      <p>Een nieuwe unit kost al snel honderden euro's. Wij reviseren het hart — de motor — zodat uw installatie weer jaren meekan, tegen een fractie van de prijs.</p>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-card reveal">
+        <div class="usp-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>Vaak retour dezelfde dag</h3>
+        <p>Brengt u uw motor 's ochtends? Dan draait die er vaak dezelfde dag weer gereviseerd uit.</p>
+      </div>
+      <div class="usp-card reveal">
+        <div class="usp-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>2 jaar garantie op lagers</h3>
+        <p>Wij plaatsen hoogwaardige kogellagers en geven er standaard 2 jaar garantie op.</p>
+      </div>
+      <div class="usp-card reveal">
+        <div class="usp-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Alle merken & modellen</h3>
+        <p>Brink, Itho, Zehnder, Orcon, Duco en meer — nieuw én ouder, wij kennen ze allemaal.</p>
+      </div>
+      <div class="usp-card reveal">
+        <div class="usp-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M8 18v3m8-3v3"/></svg></div>
+        <h3>Brengen, halen of opsturen</h3>
+        <p>Langsbrengen in Alkmaar, laten ophalen of veilig opsturen — wat u het beste uitkomt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Diensten ===== -->
+<section id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Wat wij doen</span>
+      <h2>Revisie & verkoop van ventilatietechniek</h2>
+      <p>Van een piepende badkamerventilator tot een complete WTW-unit: wij reviseren het bewegende hart en verkopen de onderdelen die u nodig heeft.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <span class="serv-tag">Meest gevraagd</span>
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=70" alt="Technicus reviseert een ventilatiemotor" loading="lazy">
+        <div class="serv-body">
+          <h3>WTW-units reviseren</h3>
+          <p>Balansventilatie van Brink, Itho, Zehnder & Orcon weer stil, zuinig en betrouwbaar.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=70" alt="Elektromotor met kogellagers op werkbank" loading="lazy">
+        <div class="serv-body">
+          <h3>Motoren & kogellagers</h3>
+          <p>Versleten lagers vervangen, rotor uitbalanceren en de motor volledig doormeten.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=70" alt="Dakventilator op een plat dak" loading="lazy">
+        <div class="serv-body">
+          <h3>Dak- & kanaalventilatoren</h3>
+          <p>Revisie van dak-, kanaal- en koelventilatoren — ook voor bedrijven en installateurs.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=70" alt="Warmtepomp buitenunit" loading="lazy">
+        <div class="serv-body">
+          <h3>Warmtepompventilatoren</h3>
+          <p>De ventilator van uw warmtepomp weer geruisloos en op vol vermogen.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=70" alt="Nieuwe ventilatie-onderdelen op voorraad" loading="lazy">
+        <div class="serv-body">
+          <h3>Onderdelen & verkoop</h3>
+          <p>Motoren, filters, print- en bedieningsonderdelen — nieuw en gereviseerd op voorraad.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="https://images.unsplash.com/photo-1585129777188-9d9dcfc1c9d0?auto=format&fit=crop&w=800&q=70" alt="Monteur geeft advies over ventilatie" loading="lazy">
+        <div class="serv-body">
+          <h3>Advies & doormeten</h3>
+          <p>Twijfelt u of revisie loont? Wij meten door en geven u een eerlijk, helder advies.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Proces ===== -->
+<section class="proces" id="proces">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow light">Zo werkt het</span>
+      <h2>In vier stappen weer stil en zuinig</h2>
+      <p>Een strak, voorspelbaar proces — u weet steeds precies waar u aan toe bent.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Aanmelden</h3><p>Plan een afspraak via het formulier of bel ons. U beschrijft kort de klacht.</p></div>
+      <div class="step reveal"><h3>Inleveren</h3><p>Breng de motor langs in Alkmaar, laat 'm ophalen of stuur 'm veilig op.</p></div>
+      <div class="step reveal"><h3>Reviseren</h3><p>Lagers vervangen, uitbalanceren, doormeten en verzegelen — vaak dezelfde dag.</p></div>
+      <div class="step reveal"><h3>Retour & garantie</h3><p>U krijgt de gereviseerde motor terug, met 2 jaar garantie op de kogellagers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Afspraakformulier (signatuur) ===== -->
+<section class="afspraak" id="afspraak">
+  <div class="wrap">
+    <div class="afspraak-grid">
+      <div class="afspraak-info reveal">
+        <span class="eyebrow">Afspraak plannen</span>
+        <h2>Plan uw revisie-afspraak in 1 minuut</h2>
+        <p>Beantwoord drie korte vragen en laat uw gegevens achter. Wij nemen dezelfde werkdag contact op om een moment af te stemmen.</p>
+        <ul class="info-list">
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> Vrijblijvend — u zit nergens aan vast</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> Snel een prijsindicatie voor de revisie</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> Brengen, halen of opsturen — u kiest</li>
+        </ul>
+        <div class="info-panel">
+          <h3>Liever direct contact?</h3>
+          <div class="iprow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg> 06 - 20 56 70 08 (ook WhatsApp)</div>
+          <div class="iprow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> info@wtwventilatietechniek.nl</div>
+          <div class="iprow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Berenkoog 56a, Alkmaar</div>
+        </div>
+      </div>
+
+      <form class="book reveal" novalidate onsubmit="handleBooking(event)">
+        <div class="fhead"><span class="dot"></span><h3>Afspraakformulier</h3></div>
+        <p class="sub">Drie korte vragen en uw gegevens — meer hebben we niet nodig.</p>
+
+        <!-- Vraag 1 -->
+        <div class="qblock">
+          <span class="qlabel"><span class="qn">Vraag 1</span> Om welk apparaat gaat het?</span>
+          <div class="opts">
+            <div class="opt"><input type="radio" id="a1" name="apparaat" value="WTW-unit"><label for="a1">WTW-unit</label></div>
+            <div class="opt"><input type="radio" id="a2" name="apparaat" value="Ventilatiebox / motor"><label for="a2">Ventilatiebox / motor</label></div>
+            <div class="opt"><input type="radio" id="a3" name="apparaat" value="Dak- of kanaalventilator"><label for="a3">Dak-/kanaalventilator</label></div>
+            <div class="opt"><input type="radio" id="a4" name="apparaat" value="Warmtepompventilator"><label for="a4">Warmtepompventilator</label></div>
+          </div>
+        </div>
+
+        <!-- Vraag 2 -->
+        <div class="qblock">
+          <span class="qlabel"><span class="qn">Vraag 2</span> Wat wilt u laten doen?</span>
+          <div class="opts three">
+            <div class="opt"><input type="radio" id="b1" name="dienst" value="Revisie / reparatie"><label for="b1">Revisie</label></div>
+            <div class="opt"><input type="radio" id="b2" name="dienst" value="Onderdeel / vervanging"><label for="b2">Onderdeel</label></div>
+            <div class="opt"><input type="radio" id="b3" name="dienst" value="Advies / doormeten"><label for="b3">Advies</label></div>
+          </div>
+        </div>
+
+        <!-- Vraag 3 -->
+        <div class="qblock">
+          <span class="qlabel"><span class="qn">Vraag 3</span> Hoe wilt u het aanleveren?</span>
+          <div class="opts three">
+            <div class="opt"><input type="radio" id="c1" name="aanlevering" value="Langsbrengen in Alkmaar"><label for="c1">Langsbrengen</label></div>
+            <div class="opt"><input type="radio" id="c2" name="aanlevering" value="Laten ophalen"><label for="c2">Laten ophalen</label></div>
+            <div class="opt"><input type="radio" id="c3" name="aanlevering" value="Opsturen"><label for="c3">Opsturen</label></div>
+          </div>
+        </div>
+
+        <div class="frow">
+          <div class="field"><label class="fl" for="naam">Naam</label><input type="text" id="naam" name="naam" placeholder="Uw naam" autocomplete="name"></div>
+          <div class="field"><label class="fl" for="tel">Telefoon</label><input type="tel" id="tel" name="tel" placeholder="06 - ..." autocomplete="tel"></div>
+        </div>
+        <div class="field"><label class="fl" for="email">E-mailadres</label><input type="email" id="email" name="email" placeholder="naam@voorbeeld.nl" autocomplete="email"></div>
+        <div class="field"><label class="fl" for="bericht">Merk / type of toelichting <span style="font-weight:400;color:var(--muted)">(optioneel)</span></label><textarea id="bericht" name="bericht" placeholder="Bijv. Brink Renovent Excellent 400 — maakt een tikkend geluid"></textarea></div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Afspraak aanvragen</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        <p class="privacy">Dit is een demo-formulier — er wordt niets verzonden of opgeslagen.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Social proof ===== -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><b>4.900+</b><span>motoren gereviseerd</span></div>
+      <div class="stat reveal"><b>10+ jr</b><span>ervaring in de branche</span></div>
+      <div class="stat reveal"><b>4,8/5</b><span>gemiddelde beoordeling</span></div>
+      <div class="stat reveal"><b>2 jaar</b><span>garantie op lagers</span></div>
+    </div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Ervaringen</span>
+      <h2>Wat klanten & installateurs zeggen</h2>
+    </div>
+    <div class="reviews">
+      <div class="review reveal">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p>"WTW-unit maakte een hels kabaal. 's Ochtends gebracht, 's middags gereviseerd terug. Weer muisstil en de helft goedkoper dan een nieuwe."</p>
+        <div class="who"><span class="av">RJ</span><div><b>Rob Jansen</b><span>Heerhugowaard</span></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p>"Als installateur besteed ik revisies hier al jaren uit. Snel, vakkundig en altijd netjes doorgemeten. Aanrader voor iedereen in de regio."</p>
+        <div class="who"><span class="av">MV</span><div><b>Mark Veldhuis</b><span>Installatiebedrijf, Alkmaar</span></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p>"Eerlijk advies gekregen: mijn motor was het reviseren waard. Keurig uitgebalanceerd en met 2 jaar garantie. Top geholpen."</p>
+        <div class="who"><span class="av">Ad</span><div><b>Anja de Boer</b><span>Bergen</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA band ===== -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Piept, tikt of blaast uw ventilatie niet meer goed?</h2>
+    <p>Wacht niet tot de motor er helemaal mee stopt. Plan vandaag nog een afspraak — vaak lossen we het dezelfde dag op.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#afspraak">Plan een afspraak</a>
+      <a class="btn btn-ghost" href="tel:+31620567008">Bel 06 - 20 56 70 08</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://wtwventilatietechniek.nl/image/data/nieuw_logo.png" alt="WTW Ventilatietechniek logo" onerror="this.style.display='none'">
+        <p>Specialist in revisie, reparatie en verkoop van ventilatiemotoren en WTW-units. Al meer dan 10 jaar de vertrouwde keuze in de regio Alkmaar.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="#diensten">WTW-units reviseren</a></li>
+          <li><a href="#diensten">Motoren & kogellagers</a></li>
+          <li><a href="#diensten">Dak- & kanaalventilatoren</a></li>
+          <li><a href="#diensten">Onderdelen & verkoop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#waarom">Waarom wij</a></li>
+          <li><a href="#proces">Werkwijze</a></li>
+          <li><a href="#afspraak">Afspraak plannen</a></li>
+          <li><a href="#reviews">Ervaringen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="foot-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg> Berenkoog 56a<br>1822 BZ Alkmaar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg> <a href="tel:+31620567008">06 - 20 56 70 08</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> <a href="mailto:info@wtwventilatietechniek.nl">info@wtwventilatietechniek.nl</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Ma–Vr 10:00–16:00 · za op afspraak</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 WTW Ventilatietechniek · Alkmaar · Alle rechten voorbehouden</span>
+      <span>Demo-ontwerp door Barends Media</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobiel menu
+  (function () {
+    var burger = document.getElementById('burger');
+    var menu = document.getElementById('menu');
+    if (!burger) return;
+    burger.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Afspraakformulier (demo)
+  function handleBooking(e) {
+    e.preventDefault();
+    var form = e.target;
+    var note = document.getElementById('formNote');
+    var apparaat = form.querySelector('input[name="apparaat"]:checked');
+    var dienst = form.querySelector('input[name="dienst"]:checked');
+    var aanlevering = form.querySelector('input[name="aanlevering"]:checked');
+    var naam = form.naam.value.trim();
+    var contact = form.tel.value.trim() || form.email.value.trim();
+
+    if (!apparaat || !dienst || !aanlevering) {
+      note.style.color = '#C0392B';
+      note.textContent = 'Beantwoord eerst de drie vragen hierboven.';
+      return;
+    }
+    if (!naam || !contact) {
+      note.style.color = '#C0392B';
+      note.textContent = 'Vul uw naam en een telefoonnummer of e-mailadres in.';
+      return;
+    }
+    note.style.color = '';
+    note.textContent = 'Bedankt ' + naam + '! Uw aanvraag voor "' + apparaat.value + ' — ' + dienst.value.toLowerCase() + '" is ontvangen (demo). Wij nemen dezelfde werkdag contact op.';
+    form.querySelectorAll('input:checked').forEach(function (i) { i.checked = false; });
+    form.naam.value = form.tel.value = form.email.value = form.bericht.value = '';
+  }
+
+  // Scroll reveal (respecteert prefers-reduced-motion)
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+</body>
+</html>
