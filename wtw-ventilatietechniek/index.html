@@ -120,16 +120,28 @@
   .navlinks a:hover { color: var(--air); }
   .nav-cta { display: flex; align-items: center; gap: 14px; }
   .nav-cta .phone { color: var(--white); font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 7px; }
-  .burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
-  .burger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; transition: .3s; }
+  .burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+  .burger span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; transition: transform .3s, opacity .3s; }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-cta { display: none; }
 
   @media (max-width: 940px) {
-    .navlinks, .nav-cta .phone { display: none; }
+    .navlinks, .nav-cta .phone, .nav-cta .btn-primary { display: none; }
+    .nav .wrap { gap: 12px; }
     .burger { display: block; }
     .navlinks.open {
-      display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
+      display: flex; flex-direction: column; align-items: stretch; gap: 4px;
       position: absolute; top: 100%; left: 0; right: 0; background: var(--navy);
-      padding: 22px 24px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 14px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 40px -22px rgba(0,0,0,0.6);
+    }
+    .navlinks.open a { padding: 13px 6px; font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .navlinks.open a:hover { color: var(--air); }
+    .navlinks.open .nav-mobile-cta {
+      display: inline-flex; margin-top: 12px; border-bottom: 0; padding: 15px 28px;
+      color: var(--navy); justify-content: center;
     }
   }
 
@@ -341,6 +353,7 @@
       <a href="#afspraak">Afspraak</a>
       <a href="#reviews">Ervaringen</a>
       <a href="#contact">Contact</a>
+      <a class="btn btn-primary nav-mobile-cta" href="#afspraak">Afspraak plannen</a>
     </nav>
     <div class="nav-cta">
       <a class="phone" href="tel:+31620567008">
