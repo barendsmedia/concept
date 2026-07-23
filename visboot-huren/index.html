@@ -329,6 +329,7 @@
     .contact-grid{grid-template-columns:1fr}
     .boatpanel{grid-template-columns:1fr}
     .boatpanel .visual{min-height:250px}
+    .fgrid{grid-template-columns:1fr 1fr;gap:28px}
     nav.menu{display:none}
     .burger{display:flex}
     nav.menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
@@ -338,9 +339,15 @@
     .usps .grid{grid-template-columns:1fr}
     .steps,.fish,.statsrow,.compare,.two{grid-template-columns:1fr}
     .segment{width:100%;flex-wrap:nowrap}
-    .segment button{flex:1;justify-content:center;padding:12px 10px}
+    .segment button{flex:1;flex-direction:column;justify-content:center;gap:2px;
+      padding:11px 8px;font-size:.9rem;text-align:center}
+    .segment button small{font-size:.72rem}
     .hero-stats{gap:20px}
-    .topbar .note span{display:none}
+    .topbar .note{display:none}
+    .topbar .wrap{justify-content:center}
+    .nav-actions .btn-primary{display:none}
+    .fgrid{grid-template-columns:1fr;gap:30px}
+    .fbottom{justify-content:flex-start}
     .sec{padding:64px 0}
     .boatpanel .info{padding:26px 22px}
   }
