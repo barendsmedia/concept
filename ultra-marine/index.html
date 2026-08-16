@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ultra Marine — Aluminium boten, gebouwd voor het echte water</title>
+<meta name="description" content="Ultra Marine bouwt al 20+ jaar aluminium boten op maat voor vissen, recreatie en werk op het water. Kies uit meer dan 10 series.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --abyss:#07131B;
+    --hull:#0D2331;
+    --steel:#16394C;
+    --ice:#38A7DE;
+    --ice-2:#7FD6F7;
+    --alu:#B9C7CF;
+    --frost:#EEF4F7;
+    --ink:#04101A;
+    --white:#FFFFFF;
+    --line:rgba(185,199,207,.16);
+    --radius:14px;
+    --maxw:1240px;
+    --ease:cubic-bezier(.16,.84,.44,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    background:var(--abyss);
+    color:var(--frost);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.05;font-weight:800;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(92%,var(--maxw));margin-inline:auto}
+  .eyebrow{
+    font-family:'Sora',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:.28em;font-size:.72rem;color:var(--ice);display:inline-flex;
+    align-items:center;gap:.6rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--ice)}
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;font-family:'Sora',sans-serif;
+    font-weight:700;font-size:.95rem;padding:.95rem 1.7rem;border-radius:999px;
+    cursor:pointer;border:1px solid transparent;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;
+    white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(120deg,var(--ice),var(--ice-2));color:var(--ink);box-shadow:0 10px 30px -8px rgba(56,167,222,.6)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px -10px rgba(56,167,222,.75)}
+  .btn-ghost{border-color:var(--line);color:var(--white);background:rgba(255,255,255,.02)}
+  .btn-ghost:hover{border-color:var(--ice);color:var(--ice-2);transform:translateY(-3px)}
+  .btn svg{width:16px;height:16px}
+  :focus-visible{outline:3px solid var(--ice-2);outline-offset:3px;border-radius:6px}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+  header.nav.scrolled{background:rgba(7,19,27,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 0}
+  .nav-logo img{height:34px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--alu);transition:color .25s;position:relative}
+  .nav-links a:hover{color:var(--white)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--ice);transition:width .3s var(--ease)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-family:'Sora',sans-serif;font-weight:600;font-size:.9rem;color:var(--white)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:26px;height:2px;background:var(--white);transition:.3s}
+  .mobile-menu{position:fixed;inset:0;background:var(--abyss);z-index:55;display:flex;flex-direction:column;justify-content:center;gap:1.4rem;padding:2rem;transform:translateX(100%);transition:transform .45s var(--ease)}
+  .mobile-menu.open{transform:translateX(0)}
+  .mobile-menu a{font-family:'Sora',sans-serif;font-weight:700;font-size:1.6rem;color:var(--white)}
+  .mobile-menu .btn{margin-top:1rem}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero-bg{position:absolute;inset:-8% 0 0 0;z-index:0;will-change:transform}
+  .hero-bg img{width:100%;height:116%;object-fit:cover;object-position:center 40%}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(7,19,27,.55) 0%,rgba(7,19,27,.35) 42%,rgba(7,19,27,.92) 100%),
+    linear-gradient(90deg,rgba(7,19,27,.7) 0%,rgba(7,19,27,0) 55%)}
+  .hero-inner{position:relative;z-index:2;padding-bottom:6rem;padding-top:9rem;width:100%}
+  .hero h1{font-size:clamp(2.6rem,6.6vw,5.6rem);color:var(--white);max-width:16ch;margin:1.4rem 0 1.3rem}
+  .hero h1 .grad{background:linear-gradient(110deg,var(--ice-2),var(--ice));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(1.05rem,1.7vw,1.28rem);max-width:52ch;color:var(--alu)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem}
+  .hero-scroll{position:absolute;bottom:1.6rem;right:0;z-index:3;display:flex;align-items:center;gap:.7rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--alu)}
+  .hero-scroll .mouse{width:24px;height:38px;border:2px solid var(--alu);border-radius:14px;position:relative}
+  .hero-scroll .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;border-radius:2px;background:var(--ice);animation:scrolldot 1.6s infinite}
+  @keyframes scrolldot{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+
+  /* ---------- STAT BAR ---------- */
+  .statbar{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:4}
+  .statbar .grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:2.1rem 1.4rem;text-align:center;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .num{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.4vw,2.8rem);color:var(--white);line-height:1}
+  .stat .num span{color:var(--ice)}
+  .stat .lbl{font-size:.82rem;color:var(--alu);text-transform:uppercase;letter-spacing:.14em;margin-top:.5rem}
+
+  /* ---------- SECTION BASICS ---------- */
+  section{position:relative}
+  .pad{padding:clamp(4.5rem,9vw,8rem) 0}
+  .section-head{max-width:60ch}
+  .section-head h2{font-size:clamp(2rem,4.6vw,3.4rem);color:var(--white);margin:1.1rem 0 1rem}
+  .section-head p{color:var(--alu);font-size:1.08rem}
+  .light{background:var(--frost);color:var(--hull)}
+  .light .section-head h2{color:var(--hull)}
+  .light .section-head p{color:#3d5563}
+  .light .eyebrow{color:var(--steel)}
+  .light .eyebrow::before{background:var(--steel)}
+
+  /* ---------- USP ---------- */
+  .usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .usp{background:linear-gradient(160deg,var(--hull),var(--abyss));border:1px solid var(--line);border-radius:var(--radius);padding:2.1rem 1.9rem;transition:transform .4s var(--ease),border-color .4s}
+  .usp:hover{transform:translateY(-6px);border-color:rgba(56,167,222,.5)}
+  .usp .ico{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:rgba(56,167,222,.12);border:1px solid rgba(56,167,222,.3);margin-bottom:1.2rem}
+  .usp .ico svg{width:26px;height:26px;stroke:var(--ice-2)}
+  .usp h3{font-size:1.28rem;color:var(--white);margin-bottom:.55rem;font-weight:700}
+  .usp p{color:var(--alu);font-size:.97rem}
+
+  /* ---------- SERIES EXPLORER (signature) ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:2.2rem;margin-top:2.6rem;align-items:flex-start}
+  .filter-group{display:flex;flex-direction:column;gap:.75rem}
+  .filter-group .flabel{font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;color:var(--alu);font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:.55rem}
+  .chip{font-family:'Sora',sans-serif;font-weight:600;font-size:.85rem;padding:.5rem 1.05rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--alu);cursor:pointer;transition:.25s}
+  .chip:hover{border-color:var(--ice);color:var(--white)}
+  .chip.active{background:var(--ice);border-color:var(--ice);color:var(--ink)}
+  .series-count{margin-top:2rem;font-size:.92rem;color:var(--alu)}
+  .series-count b{color:var(--ice-2);font-family:'Sora',sans-serif}
+  .series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.4rem}
+  .card{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--hull);border:1px solid var(--line);transition:transform .45s var(--ease),opacity .45s,border-color .3s}
+  .card.hide{display:none}
+  .card:hover{transform:translateY(-6px);border-color:rgba(56,167,222,.5)}
+  .card .media{aspect-ratio:4/3;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--steel),var(--abyss))}
+  .card .media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+  .card:hover .media img{transform:scale(1.07)}
+  .card .badge{position:absolute;top:.9rem;left:.9rem;z-index:2;font-family:'Sora',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .7rem;border-radius:999px;background:rgba(7,19,27,.72);border:1px solid var(--line);color:var(--ice-2);backdrop-filter:blur(6px)}
+  .card .body{padding:1.3rem 1.4rem 1.5rem}
+  .card h3{font-size:1.35rem;color:var(--white);font-weight:700;display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+  .card h3 .len{font-family:'IBM Plex Sans';font-weight:500;font-size:.9rem;color:var(--ice-2)}
+  .card .desc{color:var(--alu);font-size:.93rem;margin:.5rem 0 1rem;min-height:2.6em}
+  .card .specs{display:flex;gap:1.3rem;border-top:1px solid var(--line);padding-top:.9rem}
+  .card .specs div{display:flex;flex-direction:column}
+  .card .specs .k{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--alu)}
+  .card .specs .v{font-family:'Sora',sans-serif;font-weight:600;color:var(--white);font-size:.98rem}
+  .noresult{display:none;grid-column:1/-1;text-align:center;padding:3rem;color:var(--alu)}
+
+  /* ---------- SERVICES / diensten ---------- */
+  .svc-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:1.4rem;margin-top:3rem}
+  .svc{border-radius:var(--radius);padding:2.2rem;background:var(--white);border:1px solid rgba(13,35,49,.1);box-shadow:0 20px 50px -30px rgba(13,35,49,.4);transition:transform .4s var(--ease)}
+  .svc:hover{transform:translateY(-5px)}
+  .svc.tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(165deg,var(--hull),var(--abyss));color:var(--frost)}
+  .svc.tall h3{color:var(--white)}
+  .svc h3{font-size:1.5rem;color:var(--hull);margin-bottom:.6rem;font-weight:700}
+  .svc p{color:#41596a;font-size:.98rem}
+  .svc.tall p{color:var(--alu)}
+  .svc .tag{font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ice);margin-bottom:1rem;display:block}
+  .svc.tall .svc-img{margin-top:1.6rem;border-radius:10px;overflow:hidden;aspect-ratio:16/10}
+  .svc.tall .svc-img img{width:100%;height:100%;object-fit:cover}
+
+  /* ---------- PROCES ---------- */
+  .proces-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem;counter-reset:step}
+  .step{position:relative;padding:2rem 1.5rem;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(160deg,var(--hull),var(--abyss))}
+  .step::before{counter-increment:step;content:"0" counter(step);font-family:'Sora',sans-serif;font-weight:800;font-size:2.6rem;color:rgba(56,167,222,.22);line-height:1;display:block;margin-bottom:.8rem}
+  .step h3{font-size:1.18rem;color:var(--white);margin-bottom:.45rem;font-weight:700}
+  .step p{color:var(--alu);font-size:.92rem}
+
+  /* ---------- SOCIAL PROOF ---------- */
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .quote{background:var(--white);border-radius:var(--radius);padding:2rem;border:1px solid rgba(13,35,49,.08);box-shadow:0 18px 44px -30px rgba(13,35,49,.4)}
+  .quote .stars{color:var(--ice);letter-spacing:.15em;margin-bottom:1rem;font-size:1.05rem}
+  .quote p{color:var(--hull);font-size:1.02rem;font-style:italic}
+  .quote .who{margin-top:1.3rem;display:flex;align-items:center;gap:.8rem}
+  .quote .who .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--ice),var(--steel));display:grid;place-items:center;font-family:'Sora';font-weight:700;color:var(--white)}
+  .quote .who b{display:block;color:var(--hull);font-size:.95rem}
+  .quote .who span{font-size:.82rem;color:#69808d}
+  .keurmerken{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2.4rem;margin-top:3.4rem;padding-top:2.4rem;border-top:1px solid rgba(13,35,49,.12)}
+  .keurmerken .km{font-family:'Sora',sans-serif;font-weight:700;color:var(--steel);font-size:.95rem;opacity:.75;display:flex;align-items:center;gap:.5rem}
+  .keurmerken .km svg{width:20px;height:20px;stroke:var(--ice)}
+
+  /* ---------- CTA ---------- */
+  .cta{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--hull),var(--abyss))}
+  .cta::before{content:"";position:absolute;top:-40%;right:-10%;width:60%;height:180%;background:radial-gradient(circle,rgba(56,167,222,.28),transparent 60%);filter:blur(20px)}
+  .cta-inner{position:relative;z-index:2;text-align:center;max-width:64ch;margin-inline:auto}
+  .cta h2{font-size:clamp(2.1rem,5vw,3.6rem);color:var(--white);margin-bottom:1.1rem}
+  .cta p{color:var(--alu);font-size:1.12rem;margin-bottom:2.2rem}
+  .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);border-top:1px solid var(--line);padding:4.5rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:2.4rem}
+  .foot-logo img{height:36px;margin-bottom:1.2rem}
+  .foot-col h4{font-family:'Sora';font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;color:var(--ice);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--alu);font-size:.94rem;margin-bottom:.65rem;transition:color .25s}
+  .foot-col a:hover{color:var(--white)}
+  .foot-brand p{color:var(--alu);font-size:.96rem;max-width:34ch}
+  .foot-contact b{color:var(--white)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-top:1.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--alu)}
+  .foot-bottom .socials{display:flex;gap:1rem}
+  .foot-bottom .socials a{width:34px;height:34px;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;transition:.25s}
+  .foot-bottom .socials a:hover{border-color:var(--ice);background:rgba(56,167,222,.1)}
+  .foot-bottom .socials svg{width:16px;height:16px;stroke:var(--alu)}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(34px)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:960px){
+    .nav-links,.nav-phone{display:none}
+    .burger{display:flex}
+    .usp-grid,.series-grid,.proof-grid{grid-template-columns:repeat(2,1fr)}
+    .svc-grid{grid-template-columns:1fr}
+    .svc.tall{grid-row:auto}
+    .proces-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .statbar .grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:0}
+    .stat{border-bottom:1px solid var(--line)}
+    .usp-grid,.series-grid,.proof-grid,.proces-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .hero-scroll{display:none}
+    .hero-inner{padding-bottom:4rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Ultra Marine home">
+      <img src="https://ultra-marine.nl/wp-content/uploads/2025/07/logo-white.svg" alt="Ultra Marine logo"
+           onerror="this.onerror=null;this.outerHTML='<span style=&quot;font-family:Sora;font-weight:800;letter-spacing:.14em;color:#fff;font-size:1.25rem&quot;>ULTRA<span style=&quot;color:#38A7DE&quot;>MARINE</span></span>'">
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#series">Onze boten</a>
+      <a href="#diensten">Diensten</a>
+      <a href="#proces">Werkwijze</a>
+      <a href="#over">Over ons</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+31850132504" class="nav-phone">+31 85 013 25 04</a>
+      <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+      <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#series">Onze boten</a>
+  <a href="#diensten">Diensten</a>
+  <a href="#proces">Werkwijze</a>
+  <a href="#over">Over ons</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg">
+    <img src="https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-640-JET-arctcic-9c99uz-1280x962-1-1024x770.jpg"
+         alt="Ultra Marine TRV 640 JET aluminium boot op het water"
+         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1600&auto=format&fit=crop'">
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Aluminium botenbouw sinds 2004</span>
+    <h1 class="reveal">Boten van aluminium, gebouwd voor <span class="grad">het echte water.</span></h1>
+    <p class="lead reveal">Ontworpen en gebouwd in de Benelux. Meer dan 20 jaar ervaring in vaartuigen op maat voor vissen, recreatie en werk op het water — sterk, licht en onverwoestbaar.</p>
+    <div class="hero-actions reveal">
+      <a href="#series" class="btn btn-primary">Bekijk alle series
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">Vraag advies aan</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="hero-scroll"><span>Scroll</span><div class="mouse"></div></div></div>
+</section>
+
+<!-- STAT BAR -->
+<div class="statbar">
+  <div class="wrap"><div class="grid">
+    <div class="stat"><div class="num" data-count="20">20<span>+</span></div><div class="lbl">Jaar ervaring</div></div>
+    <div class="stat"><div class="num" data-count="10">10<span>+</span></div><div class="lbl">Boot-series</div></div>
+    <div class="stat"><div class="num" data-count="100">100<span>%</span></div><div class="lbl">Maatwerk mogelijk</div></div>
+    <div class="stat"><div class="num" data-count="3">3<span>-9m</span></div><div class="lbl">Van compact tot RIB</div></div>
+  </div></div>
+</div>
+
+<!-- USP -->
+<section class="pad" id="over">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Waarom Ultra Marine</span>
+      <h2>Aluminium dat een leven meegaat</h2>
+      <p>Wij bouwen geen boten voor de folder, maar voor jaren intensief gebruik op de Noordzee, het IJsselmeer en de binnenwateren. Elk casco wordt met de hand gelast en op maat afgewerkt.</p>
+    </div>
+    <div class="usp-grid">
+      <div class="usp reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
+        <h3>Onverwoestbaar casco</h3>
+        <p>Gelast marine-aluminium dat niet rot, niet osmose krijgt en tegen een stootje kan. Minder onderhoud, meer vaaruren.</p>
+      </div>
+      <div class="usp reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+        <h3>Volledig op maat</h3>
+        <p>Van console-indeling tot motorisering (5 tot 900 pk). Wij bouwen de boot rond jóuw vaargebied en gebruik.</p>
+      </div>
+      <div class="usp reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 13a8 8 0 0 1 16 0M12 13v8M8 21h8M9 5a3 3 0 0 1 6 0"/></svg></div>
+        <h3>Eigen werf & advies</h3>
+        <p>Korte lijnen, ontwerp en productie onder één dak in Rijswijk. Persoonlijk contact van eerste schets tot tewaterlating.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERIES EXPLORER (signature) -->
+<section class="pad" id="series" style="background:linear-gradient(180deg,var(--abyss),var(--hull) 60%,var(--abyss))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">De collectie</span>
+      <h2>Vind jouw boot uit 10+ series</h2>
+      <p>Filter op gebruik en rompvorm en ontdek welke Ultra Marine bij jou past — van compacte visboot tot professionele RIB.</p>
+    </div>
+
+    <div class="filters reveal">
+      <div class="filter-group">
+        <span class="flabel">Gebruik</span>
+        <div class="chips" data-filter="use">
+          <button class="chip active" data-val="all">Alles</button>
+          <button class="chip" data-val="vissen">Vissen</button>
+          <button class="chip" data-val="recreatie">Recreatie</button>
+          <button class="chip" data-val="werk">Werk</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="flabel">Rompvorm</span>
+        <div class="chips" data-filter="hull">
+          <button class="chip active" data-val="all">Alles</button>
+          <button class="chip" data-val="diepvorm">Diepvorm</button>
+          <button class="chip" data-val="platbodem">Platbodem</button>
+          <button class="chip" data-val="multihull">Multihull</button>
+          <button class="chip" data-val="rib">RIB</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="series-count reveal"><b id="count">8</b> series gevonden</p>
+
+    <div class="series-grid" id="seriesGrid">
+      <!-- cards injected by JS -->
+    </div>
+    <div class="noresult" id="noresult">Geen series met deze combinatie — pas je filter aan.</div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section class="pad light" id="diensten">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Wat wij leveren</span>
+      <h2>Meer dan alleen een boot</h2>
+      <p>Van het eerste ontwerp tot onderhoud jaren later — Ultra Marine is uw partner op het water.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="tag">Nieuwbouw</span>
+        <h3>Boten op maat</h3>
+        <p>Elk vaartuig wordt ontworpen en gelast rond uw wensen: console, luifel, visuitrusting, motorisering en kleur. U kiest, wij bouwen.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="tag">Advies</span>
+        <h3>Persoonlijk vaaradvies</h3>
+        <p>Twijfelt u tussen diepvorm en platbodem, of tussen 90 en 250 pk? Wij denken mee op basis van uw vaargebied en ervaring.</p>
+      </div>
+      <div class="svc tall reveal">
+        <span class="tag">Service</span>
+        <h3>Onderhoud & refit</h3>
+        <p>Winterstalling, motorbeurten, aanpassingen en refits — ook jaren na aankoop houden wij uw Ultra Marine in topconditie.</p>
+        <div class="svc-img">
+          <img src="https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-600-CABIN-arctic-mbgqcc-1280x962-1-1024x770.jpg"
+               alt="Ultra Marine TRV 600 Cabin"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop'">
+        </div>
+      </div>
+      <div class="svc reveal">
+        <span class="tag">Maatwerk</span>
+        <h3>Professionele uitvoeringen</h3>
+        <p>Werk- en overheidsboten, patrouille-RIB's en visserij-uitvoeringen met de specificaties en certificering die uw werk vraagt.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="tag">Levering</span>
+        <h3>Sleutelklaar te water</h3>
+        <p>Wij leveren uw boot vaarklaar op, inclusief trailer, tuigage en een grondige instructie. U vaart direct weg.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="pad" id="proces">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Zo werken wij</span>
+      <h2>Van schets tot tewaterlating</h2>
+      <p>Een helder traject met korte lijnen — u weet altijd waar u aan toe bent.</p>
+    </div>
+    <div class="proces-grid">
+      <div class="step reveal"><h3>Kennismaking</h3><p>We bespreken uw vaargebied, gebruik en budget. Vrijblijvend en zonder verkooppraatjes.</p></div>
+      <div class="step reveal"><h3>Ontwerp op maat</h3><p>U kiest serie, indeling, motorisering en afwerking. Wij vertalen dat naar een concreet voorstel.</p></div>
+      <div class="step reveal"><h3>Bouw & lassen</h3><p>Uw casco wordt op onze eigen werf met de hand gelast en tot in detail afgewerkt.</p></div>
+      <div class="step reveal"><h3>Oplevering</h3><p>Vaarklaar te water met instructie, trailer en nazorg. Ook daarna blijven we uw aanspreekpunt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="pad light">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ervaringen</span>
+      <h2>Vaarders vertrouwen op Ultra Marine</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Al drie seizoenen intensief vissen op het IJsselmeer en de romp is nog als nieuw. Precies gebouwd zoals ik het wilde."</p>
+        <div class="who"><div class="av">JD</div><div><b>Jeroen de Wit</b><span>TRV 640 — Enkhuizen</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Persoonlijk advies van begin tot eind. Ze bouwden onze werkboot exact op onze specificaties. Vakwerk."</p>
+        <div class="who"><div class="av">MH</div><div><b>Marijke Hendriks</b><span>EX Werkuitvoering — Zeeland</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Licht, snel en ontzettend solide. De RIB doet precies wat we nodig hebben op open water. Aanrader."</p>
+        <div class="who"><div class="av">PV</div><div><b>Paul Vermeer</b><span>RIB 12.5 — Scheveningen</span></div></div>
+      </div>
+    </div>
+    <div class="keurmerken reveal">
+      <span class="km"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Marine-aluminium</span>
+      <span class="km"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg> CE-gecertificeerd</span>
+      <span class="km"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 15a3 3 0 100-6 3 3 0 000 6zM12 2v3M12 19v3M2 12h3M19 12h3"/></svg> Eigen werf Rijswijk</span>
+      <span class="km"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 13a8 8 0 0116 0M12 13v8M8 21h8"/></svg> 20+ jaar garantie op vakmanschap</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad cta" id="contact">
+  <div class="wrap cta-inner reveal">
+    <span class="eyebrow" style="justify-content:center">Klaar om te varen?</span>
+    <h2>Bouw jouw Ultra Marine</h2>
+    <p>Vraag vrijblijvend een offerte of adviesgesprek aan. Vertel ons over uw vaargebied en gebruik — wij denken met u mee en maken een voorstel op maat.</p>
+    <div class="cta-actions">
+      <a href="mailto:office@ultra-marine-benelux.com?subject=Offerteaanvraag%20Ultra%20Marine" class="btn btn-primary">Vraag gratis offerte aan
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="tel:+31850132504" class="btn btn-ghost">Bel +31 85 013 25 04</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <div class="foot-logo">
+          <img src="https://ultra-marine.nl/wp-content/uploads/2025/07/logo-white.svg" alt="Ultra Marine logo"
+               onerror="this.onerror=null;this.outerHTML='<span style=&quot;font-family:Sora;font-weight:800;letter-spacing:.14em;color:#fff;font-size:1.3rem&quot;>ULTRA<span style=&quot;color:#38A7DE&quot;>MARINE</span></span>'">
+        </div>
+        <p>Fabrikant van aluminium boten op maat. Ontworpen en gebouwd in de Benelux voor vissen, recreatie en werk op het water.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Boten</h4>
+        <a href="#series">TRV — Diepvorm</a>
+        <a href="#series">TRF — Platbodem</a>
+        <a href="#series">RIB</a>
+        <a href="#series">Alle series</a>
+      </div>
+      <div class="foot-col">
+        <h4>Bedrijf</h4>
+        <a href="#over">Over ons</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#proces">Werkwijze</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col foot-contact">
+        <h4>Contact</h4>
+        <p><b>Ultra Marine Benelux</b></p>
+        <p>Rijswijkseveldweg 1A<br>4023 CH Rijswijk (Gld.)</p>
+        <a href="tel:+31850132504">+31 85 013 25 04</a>
+        <a href="mailto:office@ultra-marine-benelux.com">office@ultra-marine-benelux.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="year">2026</span> Ultra Marine Benelux · KvK 96989238 · BTW NL867863444B01</div>
+      <div class="socials">
+        <a href="https://ultra-marine.nl/" aria-label="Website" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg></a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4zM8 11v5M8 8v.01M12 16v-3a2 2 0 014 0v3"/></svg></a>
+      </div>
+    </div>
+    <p style="margin-top:1.4rem;font-size:.76rem;color:#5b7180">Dit is een vrijblijvend concept-ontwerp gemaakt door Barends Media. Geen officiële uiting van Ultra Marine.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ---------- SERIES DATA ---------- */
+const SERIES=[
+  {name:"TRV",title:"TRV",tag:"Diepvorm",len:"5,5–9 m",pk:"65–600 pk",use:["vissen","recreatie","werk"],hull:"diepvorm",desc:"Onze bestseller: diepe V voor comfort en snelheid op ruw en open water.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-640-JET-arctcic-9c99uz-1280x962-1-1024x770.jpg"},
+  {name:"SH",title:"SH",tag:"Diepvorm",len:"5,9–7,5 m",pk:"60–250 pk",use:["recreatie","vissen"],hull:"diepvorm",desc:"Sportieve diepvorm-cruiser, strak gelijnd voor dagtochten en watersport.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-550-JET-arctcic-h3x5ox-1280x962-1-1024x770.jpg"},
+  {name:"TRXV",title:"TRXV",tag:"Multihull",len:"5,7–6,6 m",pk:"50–150 pk",use:["recreatie","vissen"],hull:"multihull",desc:"Stabiele multihull met veel dekruimte — vaste voet bij het hengelen.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-600-CABIN-arctic-mbgqcc-1280x962-1-1024x770.jpg"},
+  {name:"TRF",title:"TRF",tag:"Platbodem",len:"4,5–8 m",pk:"25–500 pk",use:["vissen","werk"],hull:"platbodem",desc:"Platbodem met minimale diepgang — ideaal voor ondiep en binnenwater.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-640-JET-arctcic-9c99uz-1280x962-1-1024x770.jpg"},
+  {name:"EX",title:"EX",tag:"Platbodem",len:"3–6 m",pk:"5–50 pk",use:["vissen","werk","recreatie"],hull:"platbodem",desc:"Compacte, wendbare platbodem. Licht te trailen en veelzijdig inzetbaar.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-550-JET-arctcic-h3x5ox-1280x962-1-1024x770.jpg"},
+  {name:"RIB",title:"RIB",tag:"RIB",len:"tot 12,5 m",pk:"300–900 pk",use:["werk","recreatie"],hull:"rib",desc:"Stijve romp met tubes: professionele patrouille- en werkboot voor open water.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-600-CABIN-arctic-mbgqcc-1280x962-1-1024x770.jpg"},
+  {name:"JET",title:"JET",tag:"Diepvorm",len:"3,5–4,2 m",pk:"120–350 pk",use:["recreatie"],hull:"diepvorm",desc:"Compacte V-vorm jetboot — pure snelheid en fun op het water.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-640-JET-arctcic-9c99uz-1280x962-1-1024x770.jpg"},
+  {name:"FishHawk",title:"FishHawk",tag:"Diepvorm",len:"4–5 m",pk:"25–90 pk",use:["vissen"],hull:"diepvorm",desc:"Toegewijde visboot: doordachte indeling, rustig in de golfslag.",img:"https://ultra-marine.nl/wp-content/uploads/2025/08/TRV-550-JET-arctcic-h3x5ox-1280x962-1-1024x770.jpg"}
+];
+
+const grid=document.getElementById('seriesGrid');
+const noresult=document.getElementById('noresult');
+const countEl=document.getElementById('count');
+let f={use:'all',hull:'all'};
+
+function render(){
+  grid.innerHTML='';
+  const list=SERIES.filter(s=>
+    (f.use==='all'||s.use.includes(f.use)) &&
+    (f.hull==='all'||s.hull===f.hull)
+  );
+  countEl.textContent=list.length;
+  noresult.style.display=list.length?'none':'block';
+  list.forEach((s,i)=>{
+    const c=document.createElement('article');
+    c.className='card';
+    c.innerHTML=`
+      <div class="media"><span class="badge">${s.tag}</span>
+        <img src="${s.img}" alt="Ultra Marine ${s.title}" loading="lazy"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1000&auto=format&fit=crop'"></div>
+      <div class="body">
+        <h3>${s.title} <span class="len">${s.len}</span></h3>
+        <p class="desc">${s.desc}</p>
+        <div class="specs">
+          <div><span class="k">Rompvorm</span><span class="v">${s.tag}</span></div>
+          <div><span class="k">Motorisering</span><span class="v">${s.pk}</span></div>
+        </div>
+      </div>`;
+    grid.appendChild(c);
+    if(window.gsap && !reduce){
+      gsap.fromTo(c,{opacity:0,y:24},{opacity:1,y:0,duration:.5,delay:i*.05,ease:'power2.out'});
+    }
+  });
+}
+
+document.querySelectorAll('.chips').forEach(group=>{
+  group.addEventListener('click',e=>{
+    const btn=e.target.closest('.chip'); if(!btn)return;
+    const type=group.dataset.filter;
+    group.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    f[type]=btn.dataset.val;
+    render();
+  });
+});
+
+/* ---------- NAV / MENU ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{
+  const open=mm.classList.toggle('open');
+  burger.setAttribute('aria-expanded',open);
+});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mm.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* ---------- MOTION ---------- */
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+render();
+
+if(window.gsap && !reduce){
+  gsap.registerPlugin(ScrollTrigger);
+  // hero intro (.reveal starts at opacity:0 / y:34 via CSS)
+  gsap.to('.hero .reveal',{opacity:1,y:0,duration:.9,stagger:.12,ease:'power3.out',delay:.15});
+  // hero parallax
+  gsap.to('#heroBg',{yPercent:14,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  // reveals
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    if(el.closest('.hero'))return;
+    gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power2.out',
+      scrollTrigger:{trigger:el,start:'top 86%'}});
+  });
+  // counters
+  gsap.utils.toArray('.num[data-count]').forEach(el=>{
+    const target=+el.dataset.count;
+    const suffix=el.querySelector('span')?el.querySelector('span').textContent:'';
+    const o={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>{
+      gsap.to(o,{v:target,duration:1.4,ease:'power2.out',
+        onUpdate:()=>{el.firstChild.textContent=Math.round(o.v)},
+        onComplete:()=>{el.firstChild.textContent=target}});
+    }});
+  });
+}else{
+  document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+}
+</script>
+</body>
+</html>
