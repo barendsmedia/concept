@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kozijnconfigurator — Rebu Kozijnen</title>
+<meta name="description" content="Stel online uw kozijn samen: type, materiaal, afmetingen, indeling, kleur en beglazing. Met live schaaltekening en directe richtprijs.">
+
+<!-- Open Graph / social sharing (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kozijnconfigurator — Rebu Kozijnen">
+<meta property="og:description" content="Stel uw kozijn samen in zes stappen en zie direct de schaaltekening én de richtprijs.">
+<meta property="og:url" content="https://barendsmedia.nl/concept/rebu-kozijnen-configurator/">
+<meta property="og:site_name" content="Rebu Kozijnen">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F7F5EF;
+    --paper-dim: #ECE8DD;
+    --surface: #FFFFFF;
+    --surface-2: #F1EEE4;
+    --line: #DAD4C4;
+    --line-strong: #B9B19B;
+    --ink: #23262A;
+    --ink-dim: #5B5F5A;
+    --ink-faint: #8A8B7F;
+
+    --green-900: #0E3B27;
+    --green-700: #1B6B45;
+    --green-600: #227A50;
+    --green-500: #2F8F63;
+    --green-100: #DCEAE1;
+
+    --glass-a: #E4EEF0;
+    --glass-b: #C9DDE2;
+
+    --focus: #2F8F63;
+
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --radius-l: 14px;
+
+    --shadow-card: 0 1px 2px rgba(35,38,42,0.06), 0 8px 20px -12px rgba(35,38,42,0.18);
+
+    --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    --font-body: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #14181A; --paper-dim: #191D1F; --surface: #1D2224; --surface-2: #23282A;
+      --line: #33393B; --line-strong: #454C4E;
+      --ink: #F1EFE8; --ink-dim: #B7BAB3; --ink-faint: #7C817C;
+      --green-900: #BFE7D2; --green-700: #4CBE87; --green-600: #3FAE78; --green-500: #3FAE78; --green-100: #1E332A;
+      --glass-a: #263539; --glass-b: #32474C;
+      --focus: #4CBE87;
+      --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 12px 26px -14px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #14181A; --paper-dim: #191D1F; --surface: #1D2224; --surface-2: #23282A;
+    --line: #33393B; --line-strong: #454C4E;
+    --ink: #F1EFE8; --ink-dim: #B7BAB3; --ink-faint: #7C817C;
+    --green-900: #BFE7D2; --green-700: #4CBE87; --green-600: #3FAE78; --green-500: #3FAE78; --green-100: #1E332A;
+    --glass-a: #263539; --glass-b: #32474C;
+    --focus: #4CBE87;
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 12px 26px -14px rgba(0,0,0,0.6);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ color-scheme: light dark; height: 100%; }
+  body{
+    margin:0; height:100%; overflow:hidden;
+    background: var(--paper); color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{ text-wrap: balance; margin:0; font-family: var(--font-display); font-weight: 800; letter-spacing: 0.01em; }
+  p{ margin:0; }
+  button{ font-family: inherit; color: inherit; }
+  img{ max-width:100%; }
+  [hidden]{ display:none !important; }
+  ::selection{ background: var(--green-100); }
+  :focus-visible{ outline: 2.5px solid var(--focus); outline-offset: 2px; }
+  .visually-hidden{ position:absolute; width:1px;height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  /* ---------- App shell ---------- */
+  .app{ height:100dvh; display:flex; flex-direction:column; }
+
+  .topbar{
+    flex: none;
+    display:flex; align-items:center; gap:20px;
+    height: 64px; padding: 0 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; flex:none; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
+  .brand-name{ font-family: var(--font-display); font-weight:900; font-size:17px; letter-spacing:0.04em; }
+  .brand-name b{ color: var(--green-700); }
+  .brand-sub{ font-size:10.5px; color: var(--ink-faint); letter-spacing:0.03em; margin-top:2px; }
+
+  .stepper{
+    flex:1; display:flex; align-items:center; justify-content:center; gap:0;
+    overflow-x:auto; min-width:0;
+  }
+  .stepper-item{
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    background:none; border:none; cursor:pointer; padding: 4px 14px; flex:none;
+    color: var(--ink-faint);
+  }
+  .stepper-dot{
+    width:22px; height:22px; border-radius:50%; border:2px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--font-mono); font-size:10.5px; font-weight:600; color: var(--ink-dim);
+    background: var(--surface);
+  }
+  .stepper-item.done .stepper-dot{ background: var(--green-700); border-color: var(--green-700); color:#fff; }
+  .stepper-item.active .stepper-dot{ border-color: var(--green-600); color: var(--green-700); box-shadow: 0 0 0 3px var(--green-100); }
+  .stepper-label{ font-size:10.5px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; white-space:nowrap; }
+  .stepper-item.active .stepper-label{ color: var(--ink); }
+  .stepper-line{ width:34px; height:1.5px; background: var(--line); flex:none; margin-top:-16px; }
+  .stepper-line.done{ background: var(--green-600); }
+
+  .reset-btn{
+    flex:none; display:flex; align-items:center; gap:6px;
+    border:1px solid var(--line); background: var(--surface-2); color: var(--ink-dim);
+    font-size:12px; font-weight:600; padding:7px 12px; border-radius:999px; cursor:pointer;
+  }
+  .reset-btn:hover{ border-color: var(--line-strong); color: var(--ink); }
+  .reset-btn svg{ width:13px; height:13px; }
+
+  /* ---------- Workbench ---------- */
+  .workbench{ flex:1; min-height:0; display:flex; }
+
+  .panel{
+    flex: none; width: 420px; min-height:0;
+    display:flex; flex-direction:column;
+    border-right: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .panel-head{ flex:none; padding: 20px 22px 16px; border-bottom: 1px solid var(--line); }
+  .panel-count{ font-family: var(--font-mono); font-size:11.5px; color: var(--green-700); font-weight:600; }
+  .panel-title{ font-size:21px; margin-top:4px; }
+  .panel-desc{ font-size:13px; color: var(--ink-dim); margin-top:6px; line-height:1.5; }
+
+  .panel-scroll{ flex:1; min-height:0; overflow-y:auto; padding: 18px 22px; }
+  .panel-block + .panel-block{ margin-top:22px; padding-top:20px; border-top:1px dashed var(--line); }
+  .panel-block-title{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color: var(--ink-dim); margin-bottom:10px; }
+
+  .panel-foot{
+    flex:none; padding: 12px 22px; border-top:1px solid var(--line);
+    font-size:11.5px; color: var(--ink-faint); line-height:1.5; font-style:italic;
+  }
+  .panel-nav{
+    flex:none; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding: 14px 22px 20px;
+  }
+  .nav-btn{
+    display:flex; align-items:center; gap:8px; border-radius:999px; padding:11px 18px;
+    font-size:13.5px; font-weight:700; cursor:pointer; border:1.5px solid transparent;
+  }
+  .nav-btn svg{ width:14px; height:14px; }
+  .nav-back{ background:none; border-color:var(--line); color: var(--ink-dim); }
+  .nav-back:hover{ border-color: var(--line-strong); color: var(--ink); }
+  .nav-next{ background: var(--green-700); color:#F7F5EF; margin-left:auto; }
+  .nav-next:hover{ background: var(--green-600); }
+
+  /* choice cards (reused across steps) */
+  .choice-row{ display:grid; gap:10px; }
+  .choice-row.cols-2{ grid-template-columns: repeat(2, 1fr); }
+  .choice-row.cols-3{ grid-template-columns: repeat(3, 1fr); }
+  .choice{
+    position:relative; border:1.5px solid var(--line); background: var(--surface-2);
+    border-radius: var(--radius-m); padding: 11px 11px 9px; cursor:pointer; text-align:left;
+    display:flex; flex-direction:column; gap:7px;
+  }
+  .choice:hover{ border-color: var(--line-strong); }
+  .choice[aria-checked="true"]{ border-color: var(--green-600); background: var(--green-100); }
+  .choice-icon{ width:30px; height:22px; color: var(--ink-dim); }
+  .choice[aria-checked="true"] .choice-icon{ color: var(--green-700); }
+  .choice-label{ font-size:13px; font-weight:600; }
+  .choice-meta{ font-size:11px; color: var(--ink-faint); font-family: var(--font-mono); }
+  .choice-check{
+    position:absolute; top:9px; right:9px; width:15px; height:15px; border-radius:50%;
+    border:1.5px solid var(--line-strong); background: var(--surface); display:flex; align-items:center; justify-content:center;
+  }
+  .choice[aria-checked="true"] .choice-check{ background: var(--green-600); border-color: var(--green-600); }
+  .choice-check svg{ width:9px; height:9px; color: var(--surface); opacity:0; }
+  .choice[aria-checked="true"] .choice-check svg{ opacity:1; }
+  .swatch{ width:100%; height:32px; border-radius: var(--radius-s); border:1px solid rgba(0,0,0,0.12); }
+
+  .material-row{ display:flex; flex-direction:column; gap:9px; }
+  .material-card{
+    display:flex; align-items:center; gap:12px; position:relative;
+    border:1.5px solid var(--line); background: var(--surface-2); border-radius: var(--radius-m);
+    padding: 11px 13px; cursor:pointer; text-align:left;
+  }
+  .material-card[aria-checked="true"]{ border-color: var(--green-600); background: var(--green-100); }
+  .material-swatch{ width:38px; height:38px; border-radius: var(--radius-s); flex:none; border:1px solid var(--line-strong); }
+  .material-text{ flex:1; }
+  .material-text b{ font-size:13.5px; display:block; }
+  .material-text span{ font-size:11.5px; color: var(--ink-dim); }
+  .material-card .choice-check{ position:static; margin-left:auto; }
+
+  .field-label{ display:flex; justify-content:space-between; align-items:baseline; font-size:11.5px; font-weight:600; color: var(--ink-dim); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em; }
+  .field-value{ font-family: var(--font-mono); color: var(--ink); font-size:13px; font-variant-numeric: tabular-nums; }
+  input[type="range"]{ width:100%; accent-color: var(--green-600); height:20px; }
+  .range-ends{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:10px; color: var(--ink-faint); margin-top:2px; }
+  .presets{ display:flex; gap:7px; flex-wrap:wrap; margin-top:12px; }
+  .preset-btn{ border:1px solid var(--line); background: var(--surface-2); color: var(--ink-dim); font-size:11.5px; padding:6px 10px; border-radius:999px; cursor:pointer; }
+  .preset-btn:hover{ border-color: var(--line-strong); color: var(--ink); }
+
+  .stepper-row{ display:flex; align-items:center; gap:14px; }
+  .qty-stepper{ display:flex; align-items:center; border:1.5px solid var(--line); border-radius:999px; overflow:hidden; }
+  .qty-stepper button{ width:32px; height:32px; border:none; background: var(--surface-2); color: var(--ink); font-size:16px; cursor:pointer; }
+  .qty-stepper button:hover{ background: var(--green-100); }
+  .qty-stepper button:disabled{ opacity:.35; cursor:not-allowed; }
+  .qty-stepper output{ width:36px; text-align:center; font-family: var(--font-mono); font-weight:600; font-size:14px; }
+  .qty-caption{ font-size:12px; color: var(--ink-dim); }
+
+  fieldset{ border:none; margin:0; padding:0; }
+  legend{ padding:0; }
+
+  .check-list{ display:flex; flex-direction:column; gap:9px; }
+  .check-item{ display:flex; align-items:flex-start; gap:10px; border:1px solid var(--line); background: var(--surface-2); border-radius: var(--radius-m); padding:10px 12px; cursor:pointer; }
+  .check-item input{ margin-top:3px; width:15px; height:15px; accent-color: var(--green-600); flex:none; }
+  .check-item-text b{ font-size:13px; font-weight:600; display:block; }
+  .check-item-text span{ font-size:11.5px; color: var(--ink-dim); }
+  .check-item-price{ margin-left:auto; font-family: var(--font-mono); font-size:12px; color: var(--ink-dim); white-space:nowrap; padding-left:8px; }
+
+  .glass-row{ display:flex; flex-direction:column; gap:9px; }
+  .glass-card{ display:flex; align-items:center; gap:12px; border:1.5px solid var(--line); background: var(--surface-2); border-radius: var(--radius-m); padding:10px 12px; cursor:pointer; }
+  .glass-card[aria-checked="true"]{ border-color: var(--green-600); background: var(--green-100); }
+  .glass-swatch{ width:40px; height:32px; border-radius: var(--radius-s); flex:none; background: linear-gradient(135deg, var(--glass-a), var(--glass-b)); border:1px solid var(--line-strong); position:relative; overflow:hidden; }
+  .glass-swatch::after{ content:""; position:absolute; inset:0; background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.55) 48%, transparent 56%); }
+  .glass-text{ flex:1; }
+  .glass-text b{ font-size:13px; }
+  .glass-text span{ display:block; font-size:11.5px; color: var(--ink-dim); margin-top:1px; }
+  .glass-uval{ font-family: var(--font-mono); font-size:11.5px; color: var(--ink-faint); white-space:nowrap; }
+
+  .swatch-row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .swatch-dot{ width:28px; height:28px; border-radius:50%; border:1.5px solid var(--line-strong); cursor:pointer; padding:0; position:relative; }
+  .swatch-dot[aria-checked="true"]{ box-shadow: 0 0 0 2.5px var(--surface), 0 0 0 4.5px var(--green-600); }
+  .inside-caption{ font-size:12px; color: var(--ink-dim); margin-top:9px; }
+  .inside-caption b{ color: var(--ink); }
+
+  /* ---------- Stage ---------- */
+  .stage{ flex:1; min-width:0; min-height:0; display:flex; flex-direction:column; background: var(--paper-dim); }
+  .stage-toolbar{ flex:none; display:flex; align-items:center; justify-content:space-between; padding: 12px 20px; border-bottom: 1px solid var(--line); }
+  .stage-toolbar h2{ font-size:13.5px; font-weight:700; letter-spacing:0.02em; }
+  .stage-toolbar .tag{ font-family: var(--font-mono); font-size:10.5px; color: var(--ink-faint); margin-top:2px; }
+
+  .segmented{ display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background: var(--surface); }
+  .segmented button{ border:none; background:none; color: var(--ink-dim); font-size:12px; font-weight:600; padding:7px 14px; cursor:pointer; }
+  .segmented button[aria-pressed="true"]{ background: var(--green-700); color:#F7F5EF; }
+
+  .stage-canvas{ flex:1; min-height:0; position:relative; }
+  #drawing{ width:100%; height:100%; display:block; }
+
+  .zoom-controls{
+    position:absolute; right:18px; bottom:18px; display:flex; flex-direction:column;
+    border:1px solid var(--line); border-radius: var(--radius-m); overflow:hidden; box-shadow: var(--shadow-card);
+    background: var(--surface);
+  }
+  .zoom-controls button{ width:36px; height:36px; border:none; background:none; color: var(--ink); font-size:17px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .zoom-controls button + button{ border-top:1px solid var(--line); }
+  .zoom-controls button:hover{ background: var(--green-100); }
+  .zoom-controls svg{ width:15px; height:15px; }
+
+  /* ---------- Bottom bar ---------- */
+  .bottombar{
+    flex:none; display:flex; align-items:center; gap:18px;
+    padding: 12px 22px; border-top: 1px solid var(--line); background: var(--surface);
+  }
+  .spec-chips{ display:flex; align-items:center; gap:0; overflow-x:auto; flex:1; min-width:0; }
+  .spec-chip{ display:flex; flex-direction:column; padding: 0 16px; flex:none; border-right: 1px solid var(--line); }
+  .spec-chip:first-child{ padding-left:0; }
+  .spec-chip span{ font-size:10px; text-transform:uppercase; letter-spacing:0.05em; color: var(--ink-faint); }
+  .spec-chip b{ font-family: var(--font-mono); font-size:12.5px; font-weight:600; margin-top:2px; white-space:nowrap; }
+
+  .price-block{ flex:none; text-align:right; padding-right:6px; }
+  .price-label{ font-size:10px; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; }
+  .price-value{ font-family: var(--font-display); font-weight:800; font-size:22px; line-height:1.1; font-variant-numeric: tabular-nums; }
+
+  .cta-row{ flex:none; display:flex; gap:9px; }
+  .btn{ border-radius: var(--radius-m); padding:11px 16px; font-size:13.5px; font-weight:700; cursor:pointer; border:1.5px solid transparent; display:flex; align-items:center; gap:7px; white-space:nowrap; }
+  .btn svg{ width:14px; height:14px; }
+  .btn-primary{ background: var(--green-700); color:#F7F5EF; }
+  .btn-primary:hover{ background: var(--green-600); }
+  .btn-secondary{ background: var(--surface-2); border-color: var(--line); color: var(--ink); }
+  .btn-secondary:hover{ border-color: var(--line-strong); }
+
+  .toast{
+    position:fixed; right:22px; bottom:78px; max-width:320px;
+    background: var(--ink); color: var(--paper); font-size:12.5px; line-height:1.5;
+    border-radius: var(--radius-m); padding:13px 15px; box-shadow: var(--shadow-card); z-index:20;
+  }
+  .toast a{ color: var(--green-500); font-weight:600; }
+  .toast[hidden]{ display:none; }
+
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
+
+  /* ---------- Mobile fallback: stacked, scrollable page ---------- */
+  @media (max-width: 900px){
+    html, body{ height:auto; overflow:visible; }
+    .app{ height:auto; min-height:100dvh; }
+    .topbar{ height:auto; padding:12px 16px; flex-wrap:wrap; }
+    .stepper{ order:3; flex:0 0 100%; width:100%; justify-content:flex-start; padding-top:6px; }
+    .stepper-item{ padding:4px 8px; }
+    .stepper-line{ width:16px; }
+    .stage-toolbar{ flex-wrap:wrap; gap:10px; }
+    .stage-toolbar .segmented{ flex:none; }
+    .workbench{ flex-direction:column; }
+    .panel{ width:100%; border-right:none; border-bottom:1px solid var(--line); }
+    .panel-scroll{ overflow-y:visible; }
+    .stage{ height:52vh; min-height:340px; }
+    .bottombar{ flex-wrap:wrap; }
+    .spec-chips{ order:2; width:100%; padding-top:8px; border-top:1px dashed var(--line); margin-top:8px; }
+    .price-block{ text-align:left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="27" height="27" rx="2" stroke="#1B6B45" stroke-width="2.4"/>
+        <rect x="9" y="9" width="12" height="12" rx="1" stroke="#2F8F63" stroke-width="2"/>
+        <line x1="1.5" y1="15" x2="9" y2="15" stroke="#1B6B45" stroke-width="2.4"/>
+        <line x1="21" y1="15" x2="28.5" y2="15" stroke="#1B6B45" stroke-width="2.4"/>
+        <line x1="15" y1="1.5" x2="15" y2="9" stroke="#1B6B45" stroke-width="2.4"/>
+        <line x1="15" y1="21" x2="15" y2="28.5" stroke="#1B6B45" stroke-width="2.4"/>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name"><b>REBU</b> KOZIJNEN</span>
+        <span class="brand-sub">Kozijnconfigurator</span>
+      </div>
+    </div>
+
+    <nav class="stepper" id="stepper" aria-label="Configuratiestappen"></nav>
+
+    <button class="reset-btn" id="btn-reset" type="button">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M16 5v4h-4M4 15v-4h4M4.5 8a5.8 5.8 0 0 1 10-2.7L16 7M15.5 12a5.8 5.8 0 0 1-10 2.7L4 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Opnieuw
+    </button>
+  </header>
+
+  <main class="workbench">
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-count" id="panel-count">01 / 06</div>
+        <h1 class="panel-title" id="panel-title">Type kozijn</h1>
+        <p class="panel-desc" id="panel-desc">Kies waar dit kozijn voor dient.</p>
+      </div>
+      <div class="panel-scroll" id="panel-scroll"></div>
+      <div class="panel-foot">Let op: deze configurator geeft een indicatie. Niet elke combinatie is direct leverbaar — voor maatwerk en de definitieve specificatie neemt Rebu Kozijnen contact met je op.</div>
+      <div class="panel-nav">
+        <button class="nav-btn nav-back" id="btn-back" type="button" hidden>
+          <svg viewBox="0 0 20 20" fill="none"><path d="M12 4 6 10l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Vorige
+        </button>
+        <button class="nav-btn nav-next" id="btn-next" type="button">
+          <span id="btn-next-label">Volgende stap</span>
+          <svg viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="stage-toolbar">
+        <div>
+          <h2>Schaaltekening</h2>
+          <div class="tag" id="scale-tag">live voorbeeld</div>
+        </div>
+        <div class="segmented" role="group" aria-label="Weergave" id="view-toggle"></div>
+      </div>
+      <div class="stage-canvas" id="stage-canvas">
+        <svg id="drawing" role="img" aria-labelledby="drawing-title"></svg>
+        <div id="drawing-title" class="visually-hidden">Live voorbeeld van het samengestelde kozijn</div>
+        <div class="zoom-controls">
+          <button type="button" id="zoom-in" aria-label="Inzoomen">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="M9 6.3v5.4M6.3 9h5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="13.8" y1="13.8" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+          <button type="button" id="zoom-out" aria-label="Uitzoomen">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="M6.3 9h5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><line x1="13.8" y1="13.8" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+          <button type="button" id="zoom-reset" aria-label="Weergave resetten">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5v4h-4M4 15v-4h4M4.5 8a5.8 5.8 0 0 1 10-2.7L16 7M15.5 12a5.8 5.8 0 0 1-10 2.7L4 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="toast" id="toast" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottombar">
+    <div class="spec-chips" id="spec-chips"></div>
+    <div class="price-block">
+      <div class="price-label">Richtprijs</div>
+      <div class="price-value" id="price-value">€ 0</div>
+    </div>
+    <div class="cta-row">
+      <button class="btn btn-secondary" id="btn-copy" type="button">
+        <svg viewBox="0 0 20 20" fill="none"><rect x="7" y="7" width="9" height="10" rx="1.2" stroke="currentColor" stroke-width="1.6"/><path d="M4 13V4.5A1.5 1.5 0 0 1 5.5 3H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Kopieer
+      </button>
+      <button class="btn btn-primary" id="btn-quote" type="button">
+        <svg viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 10h14M3 16h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Vraag offerte aan
+      </button>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- Data ---------------- */
+
+  var TYPES = [
+    { id:"vast",       label:"Vast raam",        meta:"niet te openen",  defPanels:1, sidelight:false, icon:"vast" },
+    { id:"draaikiep",  label:"Draaikiepraam",     meta:"te kantelen/draaien", defPanels:2, sidelight:false, icon:"draaikiep" },
+    { id:"openslaand", label:"Openslaande deur",  meta:"tuindeuren",      defPanels:2, sidelight:true,  icon:"openslaand" },
+    { id:"schuifpui",  label:"Schuifpui",         meta:"grote glaspartij", defPanels:3, sidelight:false, icon:"schuifpui" },
+    { id:"voordeur",   label:"Voordeur",          meta:"enkele deur",     defPanels:1, sidelight:true,  icon:"voordeur" }
+  ];
+
+  var MATERIALS = [
+    { id:"kunststof", label:"Kunststof", meta:"meest gekozen — onderhoudsarm", swatch:"#EDEAE0", ratePerM2:320, base:{vast:230,draaikiep:310,openslaand:560,schuifpui:790,voordeur:820} },
+    { id:"aluminium", label:"Aluminium", meta:"slank profiel, strak", swatch:"#B9BEC0", ratePerM2:430, base:{vast:300,draaikiep:400,openslaand:690,schuifpui:990,voordeur:960} },
+    { id:"hardhout",  label:"Hardhout",  meta:"natuurlijk, warm", swatch:"#9C6B3E", ratePerM2:470, base:{vast:320,draaikiep:430,openslaand:730,schuifpui:1030,voordeur:1040} }
+  ];
+
+  var COLORS = [
+    { id:"wit",       label:"Wit",           hex:"#FBFBF8" },
+    { id:"creme",     label:"Crème",         hex:"#EFE7CF" },
+    { id:"antraciet", label:"Antraciet",     hex:"#33383A", ral:"RAL 7016" },
+    { id:"oak",       label:"Golden Oak",    hex:"#C89A5F", wood:true },
+    { id:"teak",      label:"Teak",          hex:"#7C5231", wood:true }
+  ];
+
+  var GLASS = [
+    { id:"hrpp",      label:"HR++ glas",       spec:"U ≤ 1,2 W/m²K — standaard bij Rebu", add:0,   uval:"U 1.2" },
+    { id:"triple",    label:"Triple glas",     spec:"U ≤ 0,7 W/m²K — extra isolatie",     add:150, uval:"U 0.7" },
+    { id:"structuur", label:"Structuurglas",   spec:"Geribbeld, beperkt doorzicht",        add:60,  uval:"privacy" }
+  ];
+
+  var OPTIONS = [
+    { id:"drempel",  label:"Verlaagde onderdorpel", desc:"drempelvrije, rolstoeltoegankelijke overgang", price:120 },
+    { id:"ventilatie", label:"Ventilatierooster", desc:"geïntegreerd in het bovenprofiel", price:65 },
+    { id:"rvsKruk",  label:"RVS deurkruk", desc:"in plaats van standaard kunststof kruk", price:45 },
+    { id:"skg3",     label:"SKG3-sluitwerk", desc:"extra inbraakwerendheid boven SKG2-standaard", price:90 }
+  ];
+
+  var SIZE_LIMITS = {
+    vast:       { w:[400,2400], h:[400,2000] },
+    draaikiep:  { w:[500,1800], h:[500,2200] },
+    openslaand: { w:[1000,3000], h:[1800,2400] },
+    schuifpui:  { w:[1800,6000], h:[2000,2600] },
+    voordeur:   { w:[800,1400],  h:[2000,2400] }
+  };
+
+  var PRESETS = {
+    vast:       [ {l:"Klein",w:800,h:900}, {l:"Standaard",w:1200,h:1200}, {l:"Groot",w:1800,h:1600} ],
+    draaikiep:  [ {l:"Klein",w:700,h:1000}, {l:"Standaard",w:1000,h:1300}, {l:"Groot",w:1400,h:1600} ],
+    openslaand: [ {l:"Smal",w:1400,h:2200}, {l:"Standaard",w:1800,h:2200}, {l:"Breed",w:2400,h:2200} ],
+    schuifpui:  [ {l:"Compact",w:2400,h:2300}, {l:"Standaard",w:3600,h:2300}, {l:"Panorama",w:4800,h:2400} ],
+    voordeur:   [ {l:"Standaard",w:1000,h:2200}, {l:"Met zijlicht",w:1300,h:2200}, {l:"Riant",w:1400,h:2300} ]
+  };
+
+  var STEPS = [
+    { id:"type",     label:"Type",     title:"Type kozijn",    desc:"Kies waar dit kozijn voor dient. Dit bepaalt de standaardindeling." },
+    { id:"material", label:"Materiaal",title:"Materiaal",      desc:"Kunststof is bij Rebu de meest gekozen optie: onderhoudsarm en zeer isolerend." },
+    { id:"size",     label:"Formaat",  title:"Afmetingen",     desc:"Buitenmaat van het kozijn in millimeters (b × h)." },
+    { id:"layout",   label:"Indeling", title:"Indeling",       desc:"Aantal delen waarin het kozijn wordt verdeeld." },
+    { id:"color",    label:"Kleur",    title:"Kleur & glas",   desc:"Buiten- en binnenkleur van het profiel, en het glaspakket." },
+    { id:"options",  label:"Opties",   title:"Extra opties",   desc:"Aanvullende afwerking, zichtbaar in de samenvatting." }
+  ];
+
+  /* ---------------- State ---------------- */
+
+  var defaultState = function(){
+    return {
+      step: 0,
+      type: "draaikiep",
+      material: "kunststof",
+      color: "wit",
+      colorInside: "wit",
+      view: "buiten",
+      width: 1000,
+      height: 1300,
+      panels: 2,
+      sidelight: "none",
+      glass: "hrpp",
+      zoom: 1,
+      options: { drempel:false, ventilatie:false, rvsKruk:false, skg3:false }
+    };
+  };
+  var state = defaultState();
+
+  function typeOf(id){ for (var i=0;i<TYPES.length;i++){ if (TYPES[i].id===id) return TYPES[i]; } }
+  function materialOf(id){ for (var i=0;i<MATERIALS.length;i++){ if (MATERIALS[i].id===id) return MATERIALS[i]; } }
+  function colorOf(id){ for (var i=0;i<COLORS.length;i++){ if (COLORS[i].id===id) return COLORS[i]; } }
+  function glassOf(id){ for (var i=0;i<GLASS.length;i++){ if (GLASS[i].id===id) return GLASS[i]; } }
+
+  var fmtEUR = new Intl.NumberFormat("nl-NL", { style:"currency", currency:"EUR", maximumFractionDigits:0 });
+  var fmtMM  = new Intl.NumberFormat("nl-NL");
+
+  /* ---------------- Icons ---------------- */
+
+  function typeIconSvg(id){
+    var s = "currentColor";
+    if (id === "vast") return '<svg class="choice-icon" viewBox="0 0 34 26" fill="none"><rect x="2" y="2" width="30" height="22" rx="1" stroke="'+s+'" stroke-width="2"/></svg>';
+    if (id === "draaikiep") return '<svg class="choice-icon" viewBox="0 0 34 26" fill="none"><rect x="2" y="2" width="30" height="22" rx="1" stroke="'+s+'" stroke-width="2"/><path d="M4 4 17 13 4 22" stroke="'+s+'" stroke-width="1.3" stroke-dasharray="2.2 2.2"/></svg>';
+    if (id === "openslaand") return '<svg class="choice-icon" viewBox="0 0 34 26" fill="none"><rect x="2" y="2" width="14" height="22" rx="1" stroke="'+s+'" stroke-width="2"/><rect x="18" y="2" width="14" height="22" rx="1" stroke="'+s+'" stroke-width="2"/><path d="M16 3 5 13 16 23M18 3 29 13 18 23" stroke="'+s+'" stroke-width="1.1" stroke-dasharray="2 2"/></svg>';
+    if (id === "schuifpui") return '<svg class="choice-icon" viewBox="0 0 34 26" fill="none"><rect x="2" y="2" width="30" height="22" rx="1" stroke="'+s+'" stroke-width="2"/><line x1="12.5" y1="2" x2="12.5" y2="24" stroke="'+s+'" stroke-width="1.6"/><line x1="21.5" y1="2" x2="21.5" y2="24" stroke="'+s+'" stroke-width="1.6"/><path d="M23 21h6m0 0-2-2m2 2-2 2" stroke="'+s+'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if (id === "voordeur") return '<svg class="choice-icon" viewBox="0 0 34 26" fill="none"><rect x="9" y="2" width="16" height="22" rx="1" stroke="'+s+'" stroke-width="2"/><circle cx="21.5" cy="14" r="1.1" fill="'+s+'"/></svg>';
+    return "";
+  }
+  function checkIcon(){ return '<span class="choice-check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5.3 3.7 7.5 8.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'; }
+
+  /* ---------------- Stepper (top) ---------------- */
+
+  function renderStepper(){
+    var el = document.getElementById("stepper");
+    var parts = [];
+    STEPS.forEach(function(s, i){
+      var cls = "stepper-item" + (i === state.step ? " active" : "") + (i < state.step ? " done" : "");
+      parts.push('<button type="button" class="'+cls+'" data-step="'+i+'"><span class="stepper-dot">'+(i < state.step ? "✓" : (i+1))+'</span><span class="stepper-label">'+s.label+'</span></button>');
+      if (i < STEPS.length - 1) parts.push('<span class="stepper-line'+(i < state.step ? " done" : "")+'"></span>');
+    });
+    el.innerHTML = parts.join("");
+    Array.prototype.forEach.call(el.querySelectorAll(".stepper-item"), function(btn){
+      btn.addEventListener("click", function(){ goToStep(parseInt(btn.getAttribute("data-step"),10)); });
+    });
+  }
+
+  function goToStep(i){
+    state.step = Math.max(0, Math.min(STEPS.length-1, i));
+    renderAll();
+  }
+
+  /* ---------------- Panel: step content builders ---------------- */
+
+  function clampSize(){
+    var lim = SIZE_LIMITS[state.type];
+    state.width = Math.min(lim.w[1], Math.max(lim.w[0], state.width));
+    state.height = Math.min(lim.h[1], Math.max(lim.h[0], state.height));
+  }
+
+  function panelsCaption(n){ return n===1 ? "1 deel, geen stijl" : n + " delen naast elkaar"; }
+  function maxPanelsFor(type){ return type === "schuifpui" ? 5 : (type === "vast" ? 3 : 4); }
+
+  function buildTypeStep(){
+    return '<div class="choice-row cols-2" role="radiogroup" aria-label="Type kozijn" id="group-type">' +
+      TYPES.map(function(t){
+        return '<button type="button" class="choice" role="radio" aria-checked="'+(state.type===t.id)+'" data-type="'+t.id+'">'+
+          checkIcon() + typeIconSvg(t.icon) +
+          '<span class="choice-label">'+t.label+'</span>' +
+          '<span class="choice-meta">'+t.meta+'</span>' +
+        '</button>';
+      }).join("") +
+    '</div>';
+  }
+  function wireTypeStep(){
+    Array.prototype.forEach.call(document.querySelectorAll("#group-type .choice"), function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-type");
+        var t = typeOf(id);
+        state.type = id;
+        state.panels = t.defPanels;
+        if (!t.sidelight) state.sidelight = "none";
+        clampSize();
+        renderAll();
+      });
+    });
+  }
+
+  function buildMaterialStep(){
+    return '<div class="material-row" role="radiogroup" aria-label="Materiaal" id="group-material">' +
+      MATERIALS.map(function(m){
+        return '<button type="button" class="material-card" role="radio" aria-checked="'+(state.material===m.id)+'" data-material="'+m.id+'">'+
+          '<span class="material-swatch" style="background:'+m.swatch+';"></span>' +
+          '<span class="material-text"><b>'+m.label+'</b><span>'+m.meta+'</span></span>' +
+          checkIcon() +
+        '</button>';
+      }).join("") +
+    '</div>';
+  }
+  function wireMaterialStep(){
+    Array.prototype.forEach.call(document.querySelectorAll("#group-material .material-card"), function(btn){
+      btn.addEventListener("click", function(){ state.material = btn.getAttribute("data-material"); renderAll(); });
+    });
+  }
+
+  function buildSizeStep(){
+    var lim = SIZE_LIMITS[state.type];
+    return '' +
+      '<div>' +
+        '<div class="field-label"><span>Breedte</span><span class="field-value" id="val-width">'+fmtMM.format(state.width)+' mm</span></div>' +
+        '<input type="range" id="in-width" min="'+lim.w[0]+'" max="'+lim.w[1]+'" step="10" value="'+state.width+'">' +
+        '<div class="range-ends"><span>'+lim.w[0]+'</span><span>'+lim.w[1]+'</span></div>' +
+      '</div>' +
+      '<div style="margin-top:18px;">' +
+        '<div class="field-label"><span>Hoogte</span><span class="field-value" id="val-height">'+fmtMM.format(state.height)+' mm</span></div>' +
+        '<input type="range" id="in-height" min="'+lim.h[0]+'" max="'+lim.h[1]+'" step="10" value="'+state.height+'">' +
+        '<div class="range-ends"><span>'+lim.h[0]+'</span><span>'+lim.h[1]+'</span></div>' +
+      '</div>' +
+      '<div class="presets" id="size-presets">' +
+        PRESETS[state.type].map(function(p){ return '<button type="button" class="preset-btn" data-w="'+p.w+'" data-h="'+p.h+'">'+p.l+' · '+p.w+'×'+p.h+'</button>'; }).join("") +
+      '</div>';
+  }
+  function wireSizeStep(){
+    document.getElementById("in-width").addEventListener("input", function(e){
+      state.width = parseInt(e.target.value, 10);
+      document.getElementById("val-width").textContent = fmtMM.format(state.width) + " mm";
+      drawPreview(); renderBottomBar();
+    });
+    document.getElementById("in-height").addEventListener("input", function(e){
+      state.height = parseInt(e.target.value, 10);
+      document.getElementById("val-height").textContent = fmtMM.format(state.height) + " mm";
+      drawPreview(); renderBottomBar();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#size-presets .preset-btn"), function(btn){
+      btn.addEventListener("click", function(){
+        state.width = parseInt(btn.getAttribute("data-w"),10);
+        state.height = parseInt(btn.getAttribute("data-h"),10);
+        renderAll();
+      });
+    });
+  }
+
+  function buildLayoutStep(){
+    var t = typeOf(state.type);
+    var html = '' +
+      '<div class="stepper-row">' +
+        '<div class="qty-stepper">' +
+          '<button type="button" id="panels-minus" aria-label="Minder delen" '+(state.panels<=1?"disabled":"")+'>−</button>' +
+          '<output id="panels-out">'+state.panels+'</output>' +
+          '<button type="button" id="panels-plus" aria-label="Meer delen" '+(state.panels>=maxPanelsFor(state.type)?"disabled":"")+'>+</button>' +
+        '</div>' +
+        '<span class="qty-caption">'+panelsCaption(state.panels)+'</span>' +
+      '</div>';
+    if (t.sidelight){
+      html += '<div class="panel-block"><div class="panel-block-title">Vast zijlicht</div>' +
+        '<div class="choice-row cols-3" role="radiogroup" aria-label="Zijlicht" id="group-sidelight">' +
+        [{id:"none",label:"Geen"},{id:"left",label:"Links"},{id:"right",label:"Rechts"}].map(function(o){
+          return '<button type="button" class="choice" role="radio" aria-checked="'+(state.sidelight===o.id)+'" data-sidelight="'+o.id+'" style="padding-top:9px;">'+checkIcon()+'<span class="choice-label">'+o.label+'</span></button>';
+        }).join("") +
+        '</div></div>';
+    }
+    return html;
+  }
+  function wireLayoutStep(){
+    document.getElementById("panels-minus").addEventListener("click", function(){ if (state.panels>1){ state.panels--; renderAll(); } });
+    document.getElementById("panels-plus").addEventListener("click", function(){ if (state.panels<maxPanelsFor(state.type)){ state.panels++; renderAll(); } });
+    var sg = document.getElementById("group-sidelight");
+    if (sg){
+      Array.prototype.forEach.call(sg.querySelectorAll(".choice"), function(btn){
+        btn.addEventListener("click", function(){ state.sidelight = btn.getAttribute("data-sidelight"); renderAll(); });
+      });
+    }
+  }
+
+  function buildColorStep(){
+    var html = '<div class="panel-block" style="margin-top:0;padding-top:0;border-top:none;"><div class="panel-block-title">Buitenkleur</div><div class="choice-row cols-3" role="radiogroup" aria-label="Buitenkleur" id="group-color">' +
+      COLORS.map(function(c){
+        return '<button type="button" class="choice" role="radio" aria-checked="'+(state.color===c.id)+'" data-color="'+c.id+'" style="padding-top:9px;">'+
+          checkIcon() + '<span class="swatch" style="background:'+c.hex+';"></span>' +
+          '<span class="choice-label">'+c.label+'</span>' +
+          '<span class="choice-meta">'+(c.ral||(c.wood?"houtnerf":"structuurlak"))+'</span>' +
+        '</button>';
+      }).join("") +
+    '</div></div>';
+
+    html += '<div class="panel-block"><div class="panel-block-title">Binnenkleur</div>' +
+      '<div class="swatch-row" role="radiogroup" aria-label="Binnenkleur" id="group-color-inside">' +
+      COLORS.map(function(c){
+        return '<button type="button" class="swatch-dot" role="radio" aria-checked="'+(state.colorInside===c.id)+'" data-color-inside="'+c.id+'" style="background:'+c.hex+';" title="'+c.label+'"></button>';
+      }).join("") +
+      '</div>' +
+      '<p class="inside-caption">Gekozen: <b id="inside-caption-label">'+colorOf(state.colorInside).label+'</b> — vaak wit, ongeacht de buitenkleur.</p>' +
+    '</div>';
+
+    html += '<div class="panel-block"><div class="panel-block-title">Beglazing</div>' +
+      '<div class="glass-row" role="radiogroup" aria-label="Beglazing" id="group-glass">' +
+      GLASS.map(function(g){
+        return '<button type="button" class="glass-card" role="radio" aria-checked="'+(state.glass===g.id)+'" data-glass="'+g.id+'">' +
+          '<span class="glass-swatch"></span>' +
+          '<span class="glass-text"><b>'+g.label+'</b><span>'+g.spec+'</span></span>' +
+          '<span class="glass-uval">'+(g.add>0 ? "+"+fmtEUR.format(g.add) : "incl.")+'</span>' +
+        '</button>';
+      }).join("") +
+      '</div></div>';
+
+    return html;
+  }
+  function wireColorStep(){
+    Array.prototype.forEach.call(document.querySelectorAll("#group-color .choice"), function(btn){
+      btn.addEventListener("click", function(){ state.color = btn.getAttribute("data-color"); renderAll(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#group-color-inside .swatch-dot"), function(btn){
+      btn.addEventListener("click", function(){ state.colorInside = btn.getAttribute("data-color-inside"); renderAll(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#group-glass .glass-card"), function(btn){
+      btn.addEventListener("click", function(){ state.glass = btn.getAttribute("data-glass"); renderAll(); });
+    });
+  }
+
+  function buildOptionsStep(){
+    return '<div class="check-list" id="group-options">' +
+      OPTIONS.map(function(o){
+        return '<label class="check-item">' +
+          '<input type="checkbox" data-option="'+o.id+'" '+(state.options[o.id] ? "checked" : "")+'>' +
+          '<span class="check-item-text"><b>'+o.label+'</b><span>'+o.desc+'</span></span>' +
+          '<span class="check-item-price">+'+fmtEUR.format(o.price)+'</span>' +
+        '</label>';
+      }).join("") +
+    '</div>';
+  }
+  function wireOptionsStep(){
+    Array.prototype.forEach.call(document.querySelectorAll("#group-options input[type=checkbox]"), function(cb){
+      cb.addEventListener("change", function(){ state.options[cb.getAttribute("data-option")] = cb.checked; renderAll(); });
+    });
+  }
+
+  var STEP_BUILDERS = { type: buildTypeStep, material: buildMaterialStep, size: buildSizeStep, layout: buildLayoutStep, color: buildColorStep, options: buildOptionsStep };
+  var STEP_WIRERS   = { type: wireTypeStep, material: wireMaterialStep, size: wireSizeStep, layout: wireLayoutStep, color: wireColorStep, options: wireOptionsStep };
+
+  function renderPanel(){
+    clampSize();
+    var s = STEPS[state.step];
+    document.getElementById("panel-count").textContent = ("0"+(state.step+1)).slice(-2) + " / 0" + STEPS.length;
+    document.getElementById("panel-title").textContent = s.title;
+    document.getElementById("panel-desc").textContent = s.desc;
+    document.getElementById("panel-scroll").innerHTML = STEP_BUILDERS[s.id]();
+    STEP_WIRERS[s.id]();
+    document.getElementById("panel-scroll").scrollTop = 0;
+
+    document.getElementById("btn-back").hidden = state.step === 0;
+    document.getElementById("btn-next-label").textContent = state.step === STEPS.length-1 ? "Vraag offerte aan" : "Volgende stap";
+  }
+
+  document.getElementById("btn-back").addEventListener("click", function(){ goToStep(state.step-1); });
+  document.getElementById("btn-next").addEventListener("click", function(){
+    if (state.step === STEPS.length-1){ requestQuote(); return; }
+    goToStep(state.step+1);
+  });
+
+  /* ---------------- View toggle ---------------- */
+
+  function renderViewToggle(){
+    var el = document.getElementById("view-toggle");
+    el.innerHTML = '<button type="button" data-view="buiten" aria-pressed="'+(state.view==="buiten")+'">Buitenaanzicht</button>' +
+                    '<button type="button" data-view="binnen" aria-pressed="'+(state.view==="binnen")+'">Binnenaanzicht</button>';
+    Array.prototype.forEach.call(el.querySelectorAll("button"), function(btn){
+      btn.addEventListener("click", function(){ state.view = btn.getAttribute("data-view"); renderAll(); });
+    });
+  }
+
+  /* ---------------- Pricing & bottom bar ---------------- */
+
+  function computePrice(){
+    var m = materialOf(state.material);
+    var g = glassOf(state.glass);
+    var areaM2 = (state.width * state.height) / 1e6;
+    var base = m.base[state.type];
+    var panelsExtra = (state.panels - 1) * 90;
+    var sidelightAdd = state.sidelight === "none" ? 0 : 190;
+    var glassAdd = g.add;
+    var optionsSum = 0;
+    OPTIONS.forEach(function(o){ if (state.options[o.id]) optionsSum += o.price; });
+    var price = base + areaM2 * m.ratePerM2 + panelsExtra + sidelightAdd + glassAdd + optionsSum;
+    return Math.round(price / 10) * 10;
+  }
+
+  function renderBottomBar(){
+    var t = typeOf(state.type), m = materialOf(state.material), c = colorOf(state.color);
+    var areaM2 = (state.width * state.height) / 1e6;
+    var chips = [
+      ["Type", t.label],
+      ["Materiaal", m.label],
+      ["Maat", fmtMM.format(state.width)+"×"+fmtMM.format(state.height)+" mm"],
+      ["Opp.", areaM2.toFixed(1).replace(".",",")+" m²"],
+      ["Kleur", c.label]
+    ];
+    document.getElementById("spec-chips").innerHTML = chips.map(function(c2){
+      return '<div class="spec-chip"><span>'+c2[0]+'</span><b>'+c2[1]+'</b></div>';
+    }).join("");
+    var price = computePrice();
+    document.getElementById("price-value").textContent = fmtEUR.format(price) + "–" + fmtEUR.format(Math.round(price*1.08/10)*10);
+  }
+
+  /* ---------------- Drawing (fixed-size technical elevation) ---------------- */
+
+  var PAD = { l:70, t:46, r:34, b:56 };
+  var canvasSize = { w: 800, h: 600 };
+
+  function fitSVGToContainer(){
+    var host = document.getElementById("stage-canvas");
+    var w = Math.max(320, host.clientWidth);
+    var h = Math.max(260, host.clientHeight);
+    canvasSize.w = w; canvasSize.h = h;
+    var svg = document.getElementById("drawing");
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+  }
+
+  function panelKindForType(iconId){ return iconId; }
+
+  function drawPreview(){
+    var svg = document.getElementById("drawing");
+    var t = typeOf(state.type);
+    var activeColor = state.view === "binnen" ? colorOf(state.colorInside) : colorOf(state.color);
+
+    var W = canvasSize.w, H = canvasSize.h;
+    var availW = W - PAD.l - PAD.r;
+    var availH = H - PAD.t - PAD.b;
+    var ratio = state.width / state.height;
+    var dw, dh;
+    if (ratio > availW/availH){ dw = availW; dh = availW/ratio; } else { dh = availH; dw = availH*ratio; }
+    var x0 = PAD.l + (availW-dw)/2;
+    var y0 = PAD.t + (availH-dh)/2;
+    var cx = x0 + dw/2, cy = y0 + dh/2;
+
+    var frameColor = activeColor.hex;
+    var hexNo = frameColor.replace("#","");
+    var lum = parseInt(hexNo.substr(0,2),16)*0.299 + parseInt(hexNo.substr(2,2),16)*0.587 + parseInt(hexNo.substr(4,2),16)*0.114;
+    var mullionText = lum < 110 ? "rgba(255,255,255,0.55)" : "rgba(0,0,0,0.28)";
+    var frameStroke = "#23262A";
+    var profile = 11;
+
+    var parts = [];
+    parts.push('<defs>' +
+      '<pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="var(--line)" stroke-width="0.6"/></pattern>' +
+      '<linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--glass-a)"/><stop offset="1" stop-color="var(--glass-b)"/></linearGradient>' +
+    '</defs>');
+    parts.push('<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="url(#grid)"/>');
+
+    var group = [];
+
+    var sections = [];
+    var mainW = dw, sideW = 0;
+    if (t.sidelight && state.sidelight !== "none"){ sideW = dw*0.22; mainW = dw - sideW; }
+    var cursorX = x0;
+    if (t.sidelight && state.sidelight === "left"){ sections.push({x:cursorX,w:sideW,kind:"sidelight"}); cursorX += sideW; }
+    var n = state.panels, panelW = mainW/n;
+    for (var i=0;i<n;i++){ sections.push({x:cursorX,w:panelW,kind:"panel",index:i}); cursorX += panelW; }
+    if (t.sidelight && state.sidelight === "right"){ sections.push({x:cursorX,w:sideW,kind:"sidelight"}); cursorX += sideW; }
+
+    group.push('<rect x="'+x0+'" y="'+y0+'" width="'+dw+'" height="'+dh+'" fill="'+frameColor+'" stroke="'+frameStroke+'" stroke-width="1.4"/>');
+
+    var panelCount = sections.filter(function(s){return s.kind==="panel";}).length;
+    sections.forEach(function(sec, idx){
+      var ix = sec.x + profile/1.6;
+      var iy = y0 + profile/1.6;
+      var iw = sec.w - profile/1.6*2 - (idx < sections.length-1 ? profile/2.4 : 0);
+      var ih = dh - profile/1.6*2;
+      if (iw < 2) iw = 2;
+
+      if (sec.kind === "panel" && t.icon === "voordeur"){
+        var doorSplit = ih*0.34;
+        group.push('<rect x="'+ix+'" y="'+iy+'" width="'+iw+'" height="'+doorSplit+'" fill="url(#glassGrad)" stroke="'+frameStroke+'" stroke-width="0.9"/>');
+        var lowerY = iy+doorSplit+3, lowerH = ih-doorSplit-3;
+        group.push('<rect x="'+ix+'" y="'+lowerY+'" width="'+iw+'" height="'+lowerH+'" fill="'+frameColor+'" stroke="'+frameStroke+'" stroke-width="0.9"/>');
+        var pInset = Math.min(iw,lowerH)*0.14;
+        group.push('<rect x="'+(ix+pInset)+'" y="'+(lowerY+pInset*0.6)+'" width="'+(iw-pInset*2)+'" height="'+(lowerH*0.42)+'" fill="none" stroke="'+mullionText+'" stroke-width="1.1"/>');
+        group.push('<rect x="'+(ix+pInset)+'" y="'+(lowerY+lowerH*0.52)+'" width="'+(iw-pInset*2)+'" height="'+(lowerH*0.42)+'" fill="none" stroke="'+mullionText+'" stroke-width="1.1"/>');
+        group.push('<circle cx="'+(ix+iw*0.16)+'" cy="'+(lowerY+lowerH*0.5)+'" r="2.6" fill="'+mullionText+'"/>');
+      } else if (sec.kind === "panel" && t.icon === "openslaand"){
+        group.push('<rect x="'+ix+'" y="'+iy+'" width="'+iw+'" height="'+ih+'" fill="url(#glassGrad)" stroke="'+frameStroke+'" stroke-width="0.9"/>');
+        var railY = iy+ih*0.62;
+        group.push('<rect x="'+ix+'" y="'+(railY-3)+'" width="'+iw+'" height="6" fill="'+frameColor+'" stroke="'+frameStroke+'" stroke-width="0.7"/>');
+        var hingeLeft = sec.index === 0;
+        var hx = hingeLeft ? ix : ix+iw, tx = hingeLeft ? ix+iw : ix;
+        group.push('<path d="M'+hx+' '+iy+' L'+tx+' '+(iy+ih/2)+' L'+hx+' '+(iy+ih)+'" fill="none" stroke="'+mullionText+'" stroke-width="1" stroke-dasharray="4 3"/>');
+      } else if (sec.kind === "panel" && t.icon === "schuifpui"){
+        group.push('<rect x="'+ix+'" y="'+iy+'" width="'+iw+'" height="'+ih+'" fill="url(#glassGrad)" stroke="'+frameStroke+'" stroke-width="0.9"/>');
+        if (sec.index === panelCount-1){
+          var ay = iy+ih-14;
+          group.push('<path d="M'+(ix+iw*0.3)+' '+ay+' H'+(ix+iw*0.7)+' M'+(ix+iw*0.62)+' '+(ay-5)+' L'+(ix+iw*0.7)+' '+ay+' L'+(ix+iw*0.62)+' '+(ay+5)+'" fill="none" stroke="'+mullionText+'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>');
+        }
+      } else if (sec.kind === "panel" && t.icon === "draaikiep"){
+        group.push('<rect x="'+ix+'" y="'+iy+'" width="'+iw+'" height="'+ih+'" fill="url(#glassGrad)" stroke="'+frameStroke+'" stroke-width="0.9"/>');
+        group.push('<path d="M'+ix+' '+iy+' L'+(ix+iw/2)+' '+(iy+ih*0.42)+' L'+(ix+iw)+' '+iy+'" fill="none" stroke="'+mullionText+'" stroke-width="1" stroke-dasharray="4 3"/>');
+        group.push('<path d="M'+ix+' '+(iy+ih)+' L'+(ix+iw/2)+' '+(iy+ih*0.42)+' L'+(ix+iw)+' '+(iy+ih)+'" fill="none" stroke="'+mullionText+'" stroke-width="1" stroke-dasharray="4 3"/>');
+      } else {
+        group.push('<rect x="'+ix+'" y="'+iy+'" width="'+iw+'" height="'+ih+'" fill="url(#glassGrad)" stroke="'+frameStroke+'" stroke-width="0.9"/>');
+      }
+    });
+
+    var zoom = state.zoom;
+    parts.push('<g transform="translate('+cx+' '+cy+') scale('+zoom+') translate('+(-cx)+' '+(-cy)+')">' + group.join("") + '</g>');
+
+    parts.push(dimLine(x0, PAD.t-18, x0+dw, PAD.t-18, fmtMM.format(state.width) + " mm", "h"));
+    parts.push(dimLine(PAD.l-26, y0, PAD.l-26, y0+dh, fmtMM.format(state.height) + " mm", "v"));
+
+    svg.innerHTML = parts.join("");
+    document.getElementById("scale-tag").textContent = (state.view === "binnen" ? "binnenaanzicht" : "buitenaanzicht") + " · zoom " + Math.round(zoom*100) + "%";
+  }
+
+  function dimLine(x1,y1,x2,y2,label,orient){
+    var s = '<g stroke="var(--ink-faint)" stroke-width="1" fill="var(--ink-faint)">';
+    s += '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/>';
+    var tck = 4;
+    if (orient === "h"){
+      s += '<line x1="'+x1+'" y1="'+(y1-tck)+'" x2="'+x1+'" y2="'+(y1+tck)+'"/>';
+      s += '<line x1="'+x2+'" y1="'+(y2-tck)+'" x2="'+x2+'" y2="'+(y2+tck)+'"/>';
+      s += '<text x="'+((x1+x2)/2)+'" y="'+(y1-7)+'" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" stroke="none" fill="var(--ink-dim)">'+label+'</text>';
+    } else {
+      s += '<line x1="'+(x1-tck)+'" y1="'+y1+'" x2="'+(x1+tck)+'" y2="'+y1+'"/>';
+      s += '<line x1="'+(x2-tck)+'" y1="'+y2+'" x2="'+(x2+tck)+'" y2="'+y2+'"/>';
+      s += '<text x="'+(x1-9)+'" y="'+((y1+y2)/2)+'" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" stroke="none" fill="var(--ink-dim)" transform="rotate(-90 '+(x1-9)+' '+((y1+y2)/2)+')">'+label+'</text>';
+    }
+    s += '</g>';
+    return s;
+  }
+
+  document.getElementById("zoom-in").addEventListener("click", function(){ state.zoom = Math.min(2.2, +(state.zoom+0.2).toFixed(2)); drawPreview(); });
+  document.getElementById("zoom-out").addEventListener("click", function(){ state.zoom = Math.max(0.6, +(state.zoom-0.2).toFixed(2)); drawPreview(); });
+  document.getElementById("zoom-reset").addEventListener("click", function(){ state.zoom = 1; drawPreview(); });
+
+  /* ---------------- CTA actions ---------------- */
+
+  function summaryText(){
+    var t = typeOf(state.type), m = materialOf(state.material), c = colorOf(state.color), ci = colorOf(state.colorInside), g = glassOf(state.glass);
+    var lines = [
+      "Kozijnconfiguratie — Rebu Kozijnen",
+      "Type: " + t.label,
+      "Materiaal: " + m.label,
+      "Kleur buiten: " + c.label + (state.colorInside !== state.color ? " / binnen: " + ci.label : ""),
+      "Afmeting: " + state.width + " × " + state.height + " mm",
+      "Indeling: " + state.panels + (state.panels===1?" deel":" delen")
+    ];
+    if (t.sidelight && state.sidelight !== "none") lines.push("Zijlicht: " + (state.sidelight==="left"?"links":"rechts"));
+    lines.push("Beglazing: " + g.label);
+    var activeOptions = OPTIONS.filter(function(o){ return state.options[o.id]; }).map(function(o){ return o.label; });
+    if (activeOptions.length) lines.push("Opties: " + activeOptions.join(", "));
+    var price = computePrice();
+    lines.push("Richtprijs: " + fmtEUR.format(price) + " – " + fmtEUR.format(Math.round(price*1.08/10)*10));
+    return lines.join("\n");
+  }
+
+  var toastTimer = null;
+  function showToast(html){
+    var el = document.getElementById("toast");
+    el.innerHTML = html;
+    el.hidden = false;
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.hidden = true; }, 5500);
+  }
+
+  function requestQuote(){
+    showToast("Configuratie vastgelegd. Neem deze samenvatting mee naar <a href=\"https://rebukozijnen.nl/\" target=\"_blank\" rel=\"noopener\">rebukozijnen.nl</a> voor een bindende offerte binnen 20 uur, of kopieer hem hiernaast.");
+  }
+  document.getElementById("btn-quote").addEventListener("click", requestQuote);
+
+  document.getElementById("btn-copy").addEventListener("click", function(){
+    var text = summaryText();
+    function done(ok){ showToast(ok ? "Samenvatting gekopieerd naar het klembord." : "Kopiëren niet gelukt — noteer de samenvatting handmatig."); }
+    try{ navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); }); }
+    catch(e){ done(false); }
+  });
+
+  document.getElementById("btn-reset").addEventListener("click", function(){
+    state = defaultState();
+    renderAll();
+  });
+
+  /* ---------------- Orchestration ---------------- */
+
+  function renderAll(){
+    renderStepper();
+    renderPanel();
+    renderViewToggle();
+    fitSVGToContainer();
+    drawPreview();
+    renderBottomBar();
+  }
+
+  var resizeRaf = null;
+  function onHostResize(){
+    if (resizeRaf) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(function(){ fitSVGToContainer(); drawPreview(); });
+  }
+  if (window.ResizeObserver){
+    new ResizeObserver(onHostResize).observe(document.getElementById("stage-canvas"));
+  } else {
+    window.addEventListener("resize", onHostResize);
+  }
+
+  renderAll();
+})();
+</script>
+</body>
+</html>
