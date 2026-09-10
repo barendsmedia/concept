@@ -44,6 +44,20 @@ binnenkleur) en zoomknoppen. De richtprijs onderin loopt live mee als bandbreedt
   afbeeldingen en niets dat kan breken bij deployment.
 - Het logo in de topbalk is een tijdelijke SVG-markering (`REBU KOZIJNEN`) — te
   vervangen door het echte logobestand van Rebu.
+- `og.png` (1200×630) is de share-afbeelding voor WhatsApp/LinkedIn: dezelfde
+  papier-en-raster taal als de tool, met de kop "Stel uw kozijn samen en zie direct
+  de prijs", een schematisch draaikiepraam met maatlijnen en de richtprijs. Zelf
+  gegenereerd (rebukozijnen.nl heeft geen eigen og:image), dus bij een nieuwe kop of
+  kleur moet deze opnieuw worden gemaakt.
+
+## Credit
+"Demo door Barends Media" staat als chip in de **ondermarge van het tekenvlak** —
+de plek van het stempelveld op een echte werktekening. Dat is de enige plek in deze
+app-shell die structureel vrij blijft: `PAD.b` houdt onder de tekening altijd 56px
+open, en de zoomknoppen zitten rechtsonder. De chip heeft de achtergrondkleur van het
+tekenvlak plus een hairline, zodat hij in rust wegvalt maar leesbaar blijft wanneer de
+tekening bij inzoomen (tot 220%) eronder schuift. Gecontroleerd op alle vijf
+kozijntypes op maximale afmeting, in vijf viewports.
 
 ## Aandachtspunten
 - Alle prijzen, m²-tarieven, maatgrenzen en meerprijzen zijn **fictief** en dienen als

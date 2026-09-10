@@ -14,6 +14,11 @@
 <meta property="og:url" content="https://barendsmedia.nl/concept/rebu-kozijnen-configurator/">
 <meta property="og:site_name" content="Rebu Kozijnen">
 <meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://barendsmedia.nl/concept/rebu-kozijnen-configurator/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kozijnconfigurator van Rebu Kozijnen: schaaltekening van een draaikiepraam van 1.000 bij 1.300 mm met richtprijs.">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -274,6 +279,19 @@
   .zoom-controls button:hover{ background: var(--green-100); }
   .zoom-controls svg{ width:15px; height:15px; }
 
+  /* Credit in de ondermarge van het tekenvlak: PAD.b houdt daar bij zoom 100% altijd
+     56px leeg; de chip-achtergrond houdt hem leesbaar zodra de tekening eronder
+     schuift bij inzoomen. */
+  .stage-credit{
+    position:absolute; left:16px; bottom:14px; z-index:5;
+    font-family: var(--font-mono); font-size:10.5px; letter-spacing:0.05em;
+    color: var(--ink-faint); text-decoration:none; white-space:nowrap;
+    background: var(--paper-dim); border:1px solid var(--line);
+    border-radius:999px; padding:5px 11px;
+  }
+  .stage-credit b{ font-weight:600; color: var(--ink-dim); }
+  .stage-credit:hover{ color: var(--ink-dim); border-color: var(--line-strong); background: var(--surface); }
+
   /* ---------- Bottom bar ---------- */
   .bottombar{
     flex:none; display:flex; align-items:center; gap:18px;
@@ -397,6 +415,7 @@
             <svg viewBox="0 0 20 20" fill="none"><path d="M16 5v4h-4M4 15v-4h4M4.5 8a5.8 5.8 0 0 1 10-2.7L16 7M15.5 12a5.8 5.8 0 0 1-10 2.7L4 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
+        <a class="stage-credit" href="https://barendsmedia.nl" target="_blank" rel="noopener">Demo door <b>Barends&nbsp;Media</b></a>
         <div class="toast" id="toast" hidden></div>
       </div>
     </section>
