@@ -2,6 +2,9 @@ name: Deploy concepts
 on:
   push:
     branches: [main]
+  # Handmatig te starten via Actions > Deploy concepts > Run workflow.
+  # Nodig als de server-inhoud buiten Git om is gewijzigd of verwijderd.
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
