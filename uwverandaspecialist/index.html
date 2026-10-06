@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Uw Veranda Specialist – ontwerpconcept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<script>
+  // Afbeeldingen komen van de huidige site; valt er één weg, dan pakken we het volgende formaat of tonen we een houtstructuur.
+  function fb(img){
+    var alts=(img.getAttribute('data-alt')||'').split('|').filter(Boolean);
+    if(alts.length){img.setAttribute('data-alt',alts.slice(1).join('|'));img.src=alts[0];}
+    else{img.onerror=null;img.classList.add('img-failed');}
+  }
+</script>
+<style>
+:root{
+  --forest:#17302A;
+  --forest-2:#1F3D35;
+  --wood:#C99A5B;
+  --wood-deep:#9C6B33;
+  --chalk:#F2F1EC;
+  --paper:#FBFAF7;
+  --ink:#1B2420;
+  --moss:#5D6F63;
+  --line:rgba(27,36,32,.14);
+  --radius-l:22px;
+  --radius-s:10px;
+  --wrap:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--wood);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* Kop-typografie: smal en zwaar, als belettering op een bedrijfsbus */
+.display{font-stretch:72%;font-weight:850;line-height:.92;letter-spacing:-.01em}
+h2.display{font-size:clamp(2.6rem,6vw,4.6rem);margin:0 0 .35em}
+h3{font-stretch:88%;font-weight:750;font-size:1.35rem;line-height:1.2;margin:0 0 .4em}
+.lede{font-size:1.15rem;color:var(--moss);max-width:60ch;margin:0}
+
+/* Media met houtnerf als terugval */
+.media{position:relative;overflow:hidden;background:
+  repeating-linear-gradient(92deg,rgba(255,255,255,.05) 0 2px,transparent 2px 11px),
+  repeating-linear-gradient(88deg,rgba(0,0,0,.06) 0 1px,transparent 1px 23px),
+  linear-gradient(135deg,#B9874B,#8E5F2C)}
+.media img{width:100%;height:100%;object-fit:cover}
+.img-failed{visibility:hidden}
+
+/* Conceptbadge */
+.concept-badge{position:fixed;right:20px;bottom:20px;z-index:100;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:rgba(23,48,42,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--chalk);font-size:.84rem;font-weight:500;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25),inset 0 0 0 1px rgba(242,241,236,.12);transition:transform .2s,background .2s}
+.concept-badge b{font-weight:750;color:var(--wood)}
+.concept-badge:hover{transform:translateY(-2px);background:rgba(23,48,42,.97)}
+.cb-dot{width:8px;height:8px;border-radius:50%;background:var(--wood);box-shadow:0 0 0 4px rgba(201,154,91,.25)}
+@media (max-width:600px){.concept-badge{right:12px;bottom:12px;font-size:.78rem;padding:8px 13px 8px 10px}}
+
+/* Navigatie */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:74px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo img{height:44px;width:auto}
+.logo .wordmark{display:none;font-stretch:72%;font-weight:850;font-size:1.35rem;line-height:1;color:var(--forest)}
+.logo img.img-failed{display:none}
+.logo img.img-failed + .wordmark{display:block}
+.nav-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:550;font-size:.95rem}
+.nav-links a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{border-color:var(--wood)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:18px}
+.nav-phone{font-weight:650;text-decoration:none;font-size:.95rem;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:700;font-size:.98rem;text-decoration:none;border:0;border-radius:999px;padding:14px 24px;cursor:pointer;transition:background .2s,transform .2s}
+.btn-wood{background:var(--wood);color:var(--forest)}
+.btn-wood:hover{background:#D7AA6C}
+.btn-forest{background:var(--forest);color:var(--chalk)}
+.btn-forest:hover{background:var(--forest-2)}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.menu-toggle{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--forest)}
+@media (max-width:1060px){.nav-links{display:none}.nav-phone{display:none}}
+@media (max-width:1060px){.menu-toggle{display:block}}
+.nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 24px 20px}
+.nav-links.open a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+@media (max-width:520px){.nav .btn{padding:11px 16px;font-size:.88rem}}
+
+/* Hero: tekst links, diashow in een 'dakschuin' kader rechts */
+.hero{background:var(--forest);color:var(--chalk);padding:64px 0 56px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.hero h1{font-size:clamp(3.4rem,6.4vw,6.6rem);margin:0}
+.hero-copy p{margin:28px 0 34px;max-width:42ch;font-size:1.15rem;color:rgba(242,241,236,.78)}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-rev{display:inline-flex;align-items:center;gap:12px;margin-top:28px;text-decoration:none;font-size:.95rem;color:rgba(242,241,236,.75)}
+.hero-rev .stars{color:var(--wood);letter-spacing:2px}
+.hero-rev strong{color:var(--chalk)}
+.hero-rev:hover strong{text-decoration:underline}
+.hero-photo{position:relative;height:min(70vh,640px);min-height:440px;color:var(--chalk)}
+.hero-photo .slides{position:absolute;inset:0;border-radius:26px;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%,0 26%)}
+.slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.1s ease}
+.slide.is-on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.05);transform:scale(1.07);transition:transform 7s linear}
+.slide.is-on img{transform:scale(1)}
+.hero-photo .slides::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,30,26,0) 55%,rgba(14,30,26,.75) 100%)}
+.sl-cap{position:absolute;left:28px;bottom:66px;right:28px}
+.sl-cap strong{display:block;font-stretch:76%;font-weight:850;font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.05;animation:capIn .6s ease both}
+.sl-cap span{display:block;margin-top:4px;color:rgba(242,241,236,.8);animation:capIn .6s .08s ease both}
+.sl-cap.swap strong,.sl-cap.swap span{animation:none}
+@keyframes capIn{from{opacity:0;transform:translateY(8px)}}
+.sl-ctrl{position:absolute;left:28px;right:28px;bottom:26px;display:flex;align-items:center;gap:18px}
+.sl-count{font-size:.85rem;color:rgba(242,241,236,.75);white-space:nowrap}
+.sl-count b{color:var(--chalk)}
+.sl-bars{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.sl-dot{border:0;padding:10px 0;background:none;cursor:pointer}
+.sl-dot i{display:block;height:3px;border-radius:3px;background:rgba(242,241,236,.3);position:relative;overflow:hidden}
+.sl-dot i::after{content:"";position:absolute;inset:0;width:0;background:var(--wood)}
+.sl-dot.done i::after{width:100%}
+.sl-dot.is-on i::after{animation:slFill var(--dur,6s) linear forwards}
+.hero-photo.paused .sl-dot.is-on i::after{animation-play-state:paused}
+@keyframes slFill{to{width:100%}}
+@media (prefers-reduced-motion:reduce){.slide img{transform:none!important}}
+@media (max-width:960px){
+  .hero{padding-top:40px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-photo{height:420px;min-height:0}
+  .sl-cap{left:20px;right:20px;bottom:58px}.sl-ctrl{left:20px;right:20px;bottom:18px}
+}
+.facts-band{background:var(--forest);color:var(--chalk)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts div{padding:26px 20px 30px 0}
+.facts div+div{padding-left:20px;border-left:1px solid rgba(242,241,236,.14)}
+.facts strong{display:block;font-stretch:80%;font-weight:800;font-size:1.25rem;color:var(--wood)}
+.facts span{font-size:.92rem;color:rgba(242,241,236,.7)}
+@media (max-width:900px){
+  .hero{min-height:0}
+  .hero::before{background:linear-gradient(0deg,rgba(18,38,33,.96) 0%,rgba(18,38,33,.8) 45%,rgba(18,38,33,.35) 100%)}
+  .hero-inner{padding-top:120px}
+  .sl-nav{grid-template-columns:repeat(5,1fr);gap:8px}
+  .sl-dot strong,.sl-dot small{display:none}
+  .sl-dot.is-on strong{display:block;position:absolute;margin-top:4px;font-size:.88rem}
+  .sl-nav{position:relative;padding-bottom:26px}
+}
+@media (max-width:820px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(3){padding-left:0;border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid rgba(242,241,236,.14)}
+}
+
+/* Producten */
+section.block{padding:110px 0}
+@media (max-width:700px){section.block{padding:72px 0}}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -24px 28px;padding:4px 24px}
+.tabs::-webkit-scrollbar{display:none}
+@media (max-width:600px){.tabs{margin:0 -16px 24px;padding:4px 16px}}
+.tab{flex-shrink:0;font:inherit;font-weight:650;font-size:.96rem;border:0;cursor:pointer;padding:11px 18px;border-radius:999px;background:var(--chalk);color:var(--ink);display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.tab small{font-size:.78rem;font-weight:700;color:var(--moss);background:rgba(27,36,32,.07);padding:1px 8px;border-radius:999px;transition:inherit}
+.tab:hover{background:#E8E6DF}
+.tab[aria-selected=true]{background:var(--forest);color:var(--chalk)}
+.tab[aria-selected=true] small{background:var(--wood);color:var(--forest)}
+.cat-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.cat-bar p{margin:0;color:var(--moss)}
+.cat-bar a{font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border-bottom:2px solid var(--wood);padding-bottom:2px}
+.pgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:repeat(2,250px);gap:16px}
+.pgrid .pc:first-child{grid-row:span 2}
+.pgrid.n3{grid-template-columns:1.6fr 1fr}
+.pgrid.n2{grid-template-columns:1fr 1fr;grid-template-rows:440px}
+.pgrid.n2 .pc:first-child{grid-row:auto}
+.pc{position:relative;border-radius:var(--radius-l);overflow:hidden;color:var(--chalk);text-decoration:none;display:flex;align-items:flex-end;isolation:isolate;animation:pcIn .45s ease both}
+.pc .media{position:absolute;inset:0;z-index:-2}
+.pc .media img{transition:transform .7s ease}
+.pc:hover .media img{transform:scale(1.05)}
+.pc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 45%,rgba(14,30,26,.82))}
+.pc-body{padding:20px 22px;width:100%;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.pc h3{margin:0;font-stretch:78%;font-weight:800;font-size:1.35rem;line-height:1.05}
+.pc:first-child h3{font-size:clamp(1.8rem,3vw,2.6rem)}
+.pc .go{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(242,241,236,.18);backdrop-filter:blur(6px);display:grid;place-items:center;transition:background .2s,color .2s}
+.pc:hover .go{background:var(--wood);color:var(--forest)}
+.pc.more{background:var(--chalk);color:var(--ink);flex-direction:column;justify-content:space-between;align-items:flex-start;padding:22px}
+.pc.more::after{display:none}
+.pc.more strong{font-stretch:76%;font-weight:850;font-size:2.6rem;line-height:1;color:var(--wood-deep)}
+.pc.more span{font-weight:650}
+.pc.more:hover{background:#E8E6DF}
+@keyframes pcIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (max-width:860px){
+  .pgrid,.pgrid.n3,.pgrid.n2{grid-template-columns:1fr 1fr;grid-template-rows:280px;grid-auto-rows:190px;gap:12px}
+  .pgrid .pc:first-child{grid-column:span 2;grid-row:auto}
+  .pc-body{padding:14px}
+  .pc h3{font-size:1.1rem}
+  .pc:not(:first-child) .go{display:none}
+  .pc.more{padding:16px}.pc.more strong{font-size:2rem}.pc.more span{font-size:.92rem}
+}
+.shop-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.shop-foot p{margin:0;color:var(--moss)}
+.shop-foot p a{color:var(--ink);font-weight:650}
+
+/* Configurator-teaser */
+.cfg{background:var(--forest);color:var(--chalk);overflow:hidden}
+.cfg-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}
+@media (max-width:1000px){.cfg-grid{grid-template-columns:1fr;gap:48px}}
+.pill-new{display:inline-flex;align-items:center;gap:8px;background:rgba(201,154,91,.16);color:#F0CF9C;font-weight:650;font-size:.85rem;padding:6px 14px 6px 8px;border-radius:999px;margin-bottom:22px}
+.pill-new b{background:var(--wood);color:var(--forest);font-size:.75rem;padding:2px 8px;border-radius:999px}
+.cfg .lede{color:rgba(242,241,236,.75);margin-bottom:36px}
+.cfg-steps{list-style:none;margin:0 0 40px;padding:0;display:grid;gap:4px;counter-reset:c}
+.cfg-steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:16px 0;border-top:1px solid rgba(242,241,236,.12);counter-increment:c}
+.cfg-steps li::before{content:counter(c);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1.5px rgba(201,154,91,.6);color:var(--wood);font-weight:800;font-stretch:80%}
+.cfg-steps strong{display:block;font-weight:700;font-size:1.08rem}
+.cfg-steps span{color:rgba(242,241,236,.68);font-size:.96rem}
+.cfg-ctas{display:flex;gap:12px;flex-wrap:wrap}
+/* app-mockup */
+.app{position:relative;background:var(--paper);color:var(--ink);border-radius:22px;box-shadow:0 40px 90px rgba(0,0,0,.45);overflow:visible}
+.app-bar{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.app-dots{display:flex;gap:6px}.app-dots i{width:10px;height:10px;border-radius:50%;background:#D8D5CD}
+.app-title{font-weight:700;font-size:.9rem}
+.app-steps{margin-left:auto;display:flex;gap:6px;font-size:.78rem;font-weight:650}
+.app-steps span{padding:5px 10px;border-radius:999px;color:var(--moss);background:#EEECE6}
+.app-steps span.done{color:var(--forest);background:rgba(201,154,91,.25)}
+.app-steps span.on{background:var(--forest);color:var(--chalk)}
+.app-body{display:grid;grid-template-columns:minmax(0,1fr) 210px}
+.app-canvas{position:relative;background:radial-gradient(120% 90% at 40% 30%,#F4F2EC,#E6E3DA);border-bottom-left-radius:22px;overflow:hidden}
+.app-canvas svg{display:block;width:100%;height:auto}
+.app-canvas .dim{position:absolute;right:14px;top:14px;font-size:.8rem;font-weight:650;background:rgba(255,255,255,.8);padding:6px 10px;border-radius:8px}
+.app-side{padding:18px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:10px;font-size:.88rem}
+.app-side h4{margin:0 0 4px;font-size:.95rem;font-weight:750}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;box-shadow:inset 0 0 0 1px var(--line)}
+.opt i{width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #B8B4AA;flex-shrink:0}
+.opt.on{box-shadow:inset 0 0 0 2px var(--wood);background:rgba(201,154,91,.1);font-weight:650}
+.opt.on i{background:var(--wood);box-shadow:inset 0 0 0 4px var(--paper),0 0 0 1.5px var(--wood)}
+.app-side .next{margin-top:auto;background:var(--forest);color:var(--chalk);text-align:center;font-weight:700;padding:11px;border-radius:999px}
+.toast{position:absolute;left:-40px;top:96px;background:var(--paper);border-radius:14px;padding:12px 16px 12px 12px;display:flex;gap:12px;align-items:center;box-shadow:0 18px 40px rgba(0,0,0,.3);font-size:.88rem}
+.toast .ok{width:32px;height:32px;border-radius:50%;background:#2F6B4F;color:#fff;display:grid;place-items:center}
+.toast strong{display:block;font-weight:700}
+.toast span{color:var(--moss);font-size:.8rem}
+.summary-card{position:absolute;left:28px;bottom:-30px;background:var(--wood);color:var(--forest);border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px rgba(0,0,0,.3);display:flex;gap:22px}
+.summary-card span{display:block;font-size:.75rem;opacity:.75}
+.summary-card strong{font-stretch:80%;font-weight:850;font-size:1.15rem}
+@media (max-width:700px){
+  .app-body{grid-template-columns:1fr}.app-side{display:none}.app-steps{display:none}
+  .app-canvas{border-bottom-right-radius:22px}
+  .toast{left:10px;top:auto;bottom:70px}
+  .summary-card{right:12px;bottom:-24px}
+}
+
+/* Werkwijze: tijdlijn met meescrollend beeld */
+.how-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;margin-bottom:56px}
+@media (max-width:900px){.how-head{grid-template-columns:1fr;gap:16px;margin-bottom:32px}}
+.how-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps-line{position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:var(--line)}
+.steps-line span{display:block;width:100%;height:0;background:var(--wood);transition:height .5s ease}
+.step{position:relative;display:grid;grid-template-columns:56px 1fr;gap:24px;padding:26px 0;min-height:30vh;cursor:pointer}
+.step-num{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line);font-stretch:72%;font-weight:850;font-size:1.5rem;color:var(--moss);transition:background .35s,color .35s,box-shadow .35s,transform .35s}
+.step h3{font-size:clamp(1.4rem,2.2vw,1.9rem);font-stretch:78%;font-weight:800;margin:10px 0 8px;transition:color .35s}
+.step p{margin:0;color:var(--moss);max-width:46ch}
+.step-tag{display:inline-block;margin-top:14px;font-size:.85rem;font-weight:650;color:var(--wood-deep);background:rgba(201,154,91,.14);padding:5px 12px;border-radius:999px}
+.step .body{opacity:.45;transition:opacity .35s}
+.step.is-active .body{opacity:1}
+.step.is-active .step-num{background:var(--wood);color:var(--forest);box-shadow:0 0 0 6px rgba(201,154,91,.2);transform:scale(1.06)}
+.step-img{display:none}
+.how-media{position:sticky;top:104px}
+.how-frame{position:relative;height:min(calc(100vh - 160px),620px);border-radius:26px;overflow:hidden;background:var(--forest)}
+.how-img{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .6s ease}
+.how-img .media{position:absolute;inset:0}
+.how-img img{transform:scale(1.06);transition:transform 1.2s ease}
+.how-img.is-active{opacity:1}
+.how-img.is-active img{transform:scale(1)}
+.how-img figcaption{position:absolute;left:20px;bottom:20px;right:20px;display:flex;justify-content:space-between;align-items:end;gap:16px;color:var(--chalk)}
+.how-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,30,26,.75))}
+.how-img figcaption{z-index:1}
+.how-img figcaption strong{font-stretch:78%;font-weight:800;font-size:1.3rem}
+.how-img figcaption span{font-size:.85rem;background:rgba(242,241,236,.16);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;white-space:nowrap}
+@media (max-width:900px){
+  .how-grid{grid-template-columns:1fr}
+  .how-media{display:none}
+  .step{min-height:0}
+  .step .body{opacity:1}
+  .step-img{display:block;margin-top:18px;border-radius:18px;aspect-ratio:3/2}
+}
+
+/* Projecten: rail die rechts uit beeld loopt */
+.projects{background:var(--chalk);overflow:hidden}
+.rail-ctrl{display:flex;gap:10px;align-items:center}
+.arrow{width:52px;height:52px;border-radius:50%;border:0;background:transparent;box-shadow:inset 0 0 0 2px var(--forest);color:var(--forest);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.arrow:hover{background:var(--forest);color:var(--chalk)}
+.arrow:disabled{opacity:.3;cursor:default;background:transparent;color:var(--forest)}
+.rail{--edge:max(16px,calc((100vw - var(--wrap))/2 + 24px));display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--edge);padding:6px var(--edge) 6px var(--edge);scrollbar-width:none;cursor:grab;outline:none}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.rail.dragging a{pointer-events:none}
+.card{position:relative;flex:0 0 auto;width:clamp(270px,28vw,400px);height:clamp(400px,42vw,560px);border-radius:24px;overflow:hidden;scroll-snap-align:start;color:var(--chalk);text-decoration:none;isolation:isolate;display:flex;align-items:flex-end}
+.card.wide{width:clamp(320px,44vw,660px)}
+.card .media{position:absolute;inset:0;z-index:-2}
+.card .media img{transition:transform .8s ease}
+.card:hover .media img{transform:scale(1.05)}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 50%,rgba(14,30,26,.82))}
+.card-body{padding:24px 26px;width:100%;display:flex;justify-content:space-between;align-items:end;gap:14px}
+.card-tag{display:inline-block;background:var(--wood);color:var(--forest);font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:10px}
+.card h3{font-stretch:76%;font-weight:850;font-size:clamp(1.6rem,2.4vw,2.2rem);margin:0;line-height:1}
+.card .place{display:block;margin-top:6px;color:rgba(242,241,236,.8);font-size:.95rem}
+.card .go{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:rgba(242,241,236,.18);backdrop-filter:blur(6px);display:grid;place-items:center;transition:background .2s,color .2s}
+.card:hover .go{background:var(--wood);color:var(--forest)}
+.card.end{background:var(--forest);flex-direction:column;justify-content:space-between;align-items:flex-start;padding:30px}
+.card.end::after{display:none}
+.card.end h3{font-size:clamp(2rem,3vw,2.8rem)}
+.card.end p{color:rgba(242,241,236,.75);margin:14px 0 0;max-width:26ch}
+.rail-progress{margin-top:28px;height:3px;background:var(--line);border-radius:3px;position:relative;overflow:hidden}
+.rail-progress span{position:absolute;top:0;bottom:0;left:0;width:30%;background:var(--forest);border-radius:3px;transition:left .15s linear}
+
+/* Reviews */
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+@media (max-width:900px){.reviews-grid{grid-template-columns:1fr}}
+.review{background:var(--chalk);border-radius:var(--radius-l);padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.review.feature{background:var(--wood);color:var(--forest)}
+.review blockquote{margin:0;font-size:1.22rem;line-height:1.45;font-weight:500}
+.review.feature blockquote{font-stretch:85%;font-weight:750;font-size:1.6rem;line-height:1.2}
+.review cite{font-style:normal;font-weight:650;font-size:.95rem}
+.review cite span{display:block;font-weight:400;opacity:.75}
+.stars{display:flex;gap:3px;color:var(--wood-deep)}
+.review.feature .stars{color:var(--forest)}
+
+/* Team */
+.team{position:relative;color:var(--chalk);isolation:isolate}
+.team .media{position:absolute;inset:0;z-index:-2}
+.team::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,30,26,.9) 0%,rgba(14,30,26,.65) 50%,rgba(14,30,26,.15) 100%)}
+.team .wrap{padding-top:130px;padding-bottom:130px}
+.team p{max-width:48ch;color:rgba(242,241,236,.88);font-size:1.12rem}
+.team .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* Showroom */
+.visit{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+@media (max-width:900px){.visit{grid-template-columns:1fr}}
+.visit-card{background:var(--forest);color:var(--chalk);border-radius:var(--radius-l);padding:44px}
+@media (max-width:600px){.visit-card{padding:28px}}
+.visit-card p{color:rgba(242,241,236,.8);max-width:46ch}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;margin:28px 0;font-size:.98rem}
+.hours dt{color:rgba(242,241,236,.65)}
+.hours dd{margin:0;font-weight:650}
+.visit .media{border-radius:var(--radius-l);min-height:380px}
+.visit-card .btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Footer */
+footer{background:#10231E;color:rgba(242,241,236,.75);padding:72px 0 32px;font-size:.95rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+@media (max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+footer h4{color:var(--chalk);font-weight:700;margin:0 0 12px;font-size:1rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--wood)}
+.foot-brand{font-stretch:72%;font-weight:850;font-size:2rem;line-height:1;color:var(--chalk);margin-bottom:12px}
+.foot-bottom{margin-top:56px;padding-top:24px;border-top:1px solid rgba(242,241,236,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Uw Veranda Specialist, naar boven">
+      <img src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/09/uw-veranda-specialist-logo.png" alt="Uw Veranda Specialist" onerror="fb(this)">
+      <span class="wordmark">Uw Veranda<br>Specialist</span>
+    </a>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#producten">Producten</a></li>
+      <li><a href="#ontwerp">Ontwerp je veranda</a></li>
+      <li><a href="#werkwijze">Werkwijze</a></li>
+      <li><a href="#projecten">Projecten</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#showroom">Showroom</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+31226753255">0226 753 255</a>
+      <a class="btn btn-forest" href="#showroom">Plan adviesgesprek</a>
+      <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="navlinks" onclick="var l=document.getElementById('navlinks');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="display">Het hele jaar buiten.</h1>
+        <p>Veranda's, tuinkamers en kapschuren van massief Douglas hout. Op maat getekend, gezaagd in onze eigen werkplaats en gebouwd door onze eigen timmermannen.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-wood" href="#ontwerp">Stel je veranda samen</a>
+          <a class="btn btn-ghost" href="#projecten">Bekijk projecten</a>
+        </div>
+        <a class="hero-rev" href="#reviews">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span><strong>229 reviews</strong> van klanten door heel Nederland</span>
+        </a>
+      </div>
+      <div class="hero-photo">
+        <div class="media slides">
+          <figure class="slide is-on" data-t="Veranda aan huis" data-s="Douglas hout met glaspui">
+            <img src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/veranda-aan-huis-8.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/veranda-aan-huis-8-1024x683.jpg" alt="Veranda aan huis" onerror="fb(this)" fetchpriority="high">
+          </figure>
+          <figure class="slide" data-t="Luxe tuinkamer" data-s="Het hele jaar te gebruiken">
+            <img src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Luxe-tuinkamer-1.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Luxe-tuinkamer-1-1024x683.jpg" alt="Luxe tuinkamer" onerror="fb(this)" loading="lazy">
+          </figure>
+          <figure class="slide" data-t="Overkapping met glazen schuifwand" data-s="Open of dicht, jij kiest">
+            <img src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Overkapping-met-glazen-schuifwand-5.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Overkapping-met-glazen-schuifwand-5-1024x683.jpg" alt="Overkapping met glazen schuifwand" onerror="fb(this)" loading="lazy">
+          </figure>
+          <figure class="slide" data-t="Houten kapschuur" data-s="Overkapping en berging in één">
+            <img src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Houten-kapschuur-1.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Houten-kapschuur-1-1024x683.jpg" alt="Houten kapschuur" onerror="fb(this)" loading="lazy">
+          </figure>
+          <figure class="slide" data-t="Veranda met lichtstraat" data-s="Licht in huis, droog buiten">
+            <img src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/06/Veranda-met-lichtstraat.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/06/Veranda-met-lichtstraat-1024x683.jpg" alt="Veranda met lichtstraat" onerror="fb(this)" loading="lazy">
+          </figure>
+        </div>
+        <div class="sl-cap" aria-live="polite">
+          <strong id="slT">Veranda aan huis</strong>
+          <span id="slS">Douglas hout met glaspui</span>
+        </div>
+        <div class="sl-ctrl">
+          <span class="sl-count"><b id="slN">1</b> / 5</span>
+          <div class="sl-bars" role="group" aria-label="Projecten in beeld"><button class="sl-dot is-on" aria-label="Toon Veranda aan huis"><i></i></button><button class="sl-dot" aria-label="Toon Luxe tuinkamer"><i></i></button><button class="sl-dot" aria-label="Toon Overkapping met glazen schuifwand"><i></i></button><button class="sl-dot" aria-label="Toon Houten kapschuur"><i></i></button><button class="sl-dot" aria-label="Toon Veranda met lichtstraat"><i></i></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="facts-band">
+  <div class="wrap facts">
+    <div><strong>100% maatwerk</strong><span>Elk ontwerp begint bij jouw tuin</span></div>
+    <div><strong>Eigen werkplaats</strong><span>Voorbereid in Obdam, kort bij jou thuis</span></div>
+    <div><strong>10 jaar garantie</strong><span>Op constructie en vakwerk</span></div>
+    <div><strong>FSC &amp; PEFC</strong><span>Gecertificeerd hout uit verantwoorde bossen</span></div>
+  </div>
+</div>
+
+<section class="block" id="producten">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 class="display">Wat we bouwen</h2>
+        <p class="lede">37 modellen als startpunt. Elk ontwerp passen we aan op jouw huis, tuin en wensen.</p>
+      </div>
+      <a class="btn btn-forest" href="https://www.uwverandaspecialist.nl/winkel/">Alle 37 modellen</a>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Productcategorieën" id="tabs"></div>
+    <div id="catPanel" role="tabpanel">
+      <div class="cat-bar"><p id="catIntro"></p><a id="catLink" href="#"></a></div>
+      <div class="pgrid" id="pgrid"></div>
+    </div>
+    <div class="shop-foot">
+      <p>Liever thuis werken? Kijk ook bij onze <a href="https://www.uwtuinkantoorspecialist.nl">Tuinkantoor Specialist</a>.</p>
+      <a class="btn btn-ghost" style="color:var(--forest)" href="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/06/Brochure-Uw-Veranda-Specialist-2025.pdf">Download de folder</a>
+    </div>
+  </div>
+</section>
+
+<section class="block cfg" id="ontwerp">
+  <div class="wrap cfg-grid">
+    <div>
+      <span class="pill-new"><b>Nieuw</b> Veranda-configurator</span>
+      <h2 class="display">Stel je eigen veranda samen</h2>
+      <p class="lede">Ontwerp stap voor stap je veranda, tuinkamer of kapschuur en zie direct hoe hij eruitziet. Je ontwerp gaat rechtstreeks naar onze tekenaar.</p>
+      <ol class="cfg-steps">
+        <li><div><strong>Kies je basis</strong><span>Veranda, tuinkamer of kapschuur. Aan huis of vrij in de tuin.</span></div></li>
+        <li><div><strong>Maak hem van jou</strong><span>Afmeting, dak, lichtstraten, glazen wanden, verlichting en houtkachel.</span></div></li>
+        <li><div><strong>Ontvang je tekening</strong><span>Binnen een week een uitgewerkte tekening en offerte, op basis van jouw ontwerp.</span></div></li>
+      </ol>
+      <div class="cfg-ctas">
+        <a class="btn btn-wood" href="#configurator">Start de configurator</a>
+        <a class="btn btn-ghost" href="#showroom">Liever persoonlijk advies</a>
+      </div>
+    </div>
+    <div class="app" aria-hidden="true">
+      <div class="app-bar">
+        <div class="app-dots"><i></i><i></i><i></i></div>
+        <span class="app-title">Veranda-configurator</span>
+        <div class="app-steps"><span class="done">Type</span><span class="done">Maat</span><span class="done">Dak</span><span class="on">Wanden</span><span>Extra's</span></div>
+      </div>
+      <div class="app-body">
+        <div class="app-canvas">
+          <svg viewBox="4 -66 533 496" preserveAspectRatio="xMidYMid meet"><polygon points="208.4,126.0 513.3,302.0 333.1,406.0 28.3,230.0" fill="#A7BC94" /><polygon points="239.6,144.0 475.2,280.0 329.7,364.0 94.1,228.0" fill="#D9D4CA" /><line x1="250.0" y1="150.0" x2="104.5" y2="234.0" stroke="#C6C0B4" stroke-width="1" /><line x1="270.8" y1="162.0" x2="125.3" y2="246.0" stroke="#C6C0B4" stroke-width="1" /><line x1="291.6" y1="174.0" x2="146.1" y2="258.0" stroke="#C6C0B4" stroke-width="1" /><line x1="312.4" y1="186.0" x2="166.9" y2="270.0" stroke="#C6C0B4" stroke-width="1" /><line x1="333.1" y1="198.0" x2="187.6" y2="282.0" stroke="#C6C0B4" stroke-width="1" /><line x1="353.9" y1="210.0" x2="208.4" y2="294.0" stroke="#C6C0B4" stroke-width="1" /><line x1="374.7" y1="222.0" x2="229.2" y2="306.0" stroke="#C6C0B4" stroke-width="1" /><line x1="395.5" y1="234.0" x2="250.0" y2="318.0" stroke="#C6C0B4" stroke-width="1" /><line x1="416.3" y1="246.0" x2="270.8" y2="330.0" stroke="#C6C0B4" stroke-width="1" /><line x1="437.1" y1="258.0" x2="291.6" y2="342.0" stroke="#C6C0B4" stroke-width="1" /><line x1="457.8" y1="270.0" x2="312.4" y2="354.0" stroke="#C6C0B4" stroke-width="1" /><line x1="239.6" y1="144.0" x2="475.2" y2="280.0" stroke="#C6C0B4" stroke-width="1" /><line x1="218.8" y1="156.0" x2="454.4" y2="292.0" stroke="#C6C0B4" stroke-width="1" /><line x1="198.0" y1="168.0" x2="433.6" y2="304.0" stroke="#C6C0B4" stroke-width="1" /><line x1="177.3" y1="180.0" x2="412.8" y2="316.0" stroke="#C6C0B4" stroke-width="1" /><line x1="156.5" y1="192.0" x2="392.0" y2="328.0" stroke="#C6C0B4" stroke-width="1" /><line x1="135.7" y1="204.0" x2="371.2" y2="340.0" stroke="#C6C0B4" stroke-width="1" /><line x1="114.9" y1="216.0" x2="350.5" y2="352.0" stroke="#C6C0B4" stroke-width="1" /><line x1="94.1" y1="228.0" x2="329.7" y2="364.0" stroke="#C6C0B4" stroke-width="1" /><polygon points="208.4,126.0 513.3,302.0 513.3,134.0 208.4,-42.0" fill="#E8E2D6" /><line x1="208.4" y1="117.2" x2="513.3" y2="293.2" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="108.4" x2="513.3" y2="284.4" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="99.6" x2="513.3" y2="275.6" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="90.8" x2="513.3" y2="266.8" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="82.0" x2="513.3" y2="258.0" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="73.2" x2="513.3" y2="249.2" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="64.4" x2="513.3" y2="240.4" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="55.6" x2="513.3" y2="231.6" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="46.8" x2="513.3" y2="222.8" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="38.0" x2="513.3" y2="214.0" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="29.2" x2="513.3" y2="205.2" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="20.4" x2="513.3" y2="196.4" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="11.6" x2="513.3" y2="187.6" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="2.8" x2="513.3" y2="178.8" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="-6.0" x2="513.3" y2="170.0" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="-14.8" x2="513.3" y2="161.2" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="-23.6" x2="513.3" y2="152.4" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="-32.4" x2="513.3" y2="143.6" stroke="#DCD5C7" stroke-width="1" /><line x1="208.4" y1="-41.2" x2="513.3" y2="134.8" stroke="#DCD5C7" stroke-width="1" /><polygon points="284.6,170.0 357.4,212.0 357.4,118.0 284.6,76.0" fill="#F6F3EC" /><polygon points="288.1,170.0 319.3,188.0 319.3,100.0 288.1,82.0" fill="#33433F" /><polygon points="322.7,190.0 353.9,208.0 353.9,120.0 322.7,102.0" fill="#33433F" /><polygon points="392.0,196.0 444.0,226.0 444.0,172.0 392.0,142.0" fill="#F6F3EC" /><polygon points="395.5,194.0 440.5,220.0 440.5,174.0 395.5,148.0" fill="#33433F" /><line x1="295.0" y1="100.0" x2="308.9" y2="136.0" stroke="rgba(255,255,255,.25)" stroke-width="2" /><line x1="333.1" y1="122.0" x2="347.0" y2="158.0" stroke="rgba(255,255,255,.2)" stroke-width="2" /><polygon points="240.3,46.8 455.1,170.8 455.1,162.0 240.3,38.0" fill="#C08A4A" /><polygon points="461.3,167.2 455.1,170.8 455.1,162.0 461.3,158.4" fill="#9E6C33" /><polygon points="246.5,34.4 461.3,158.4 455.1,162.0 240.3,38.0" fill="#D4A466" /><polygon points="222.3,186.0 288.1,224.0 288.1,207.2 222.3,169.2" fill="#5B665F" /><polygon points="312.4,210.0 288.1,224.0 288.1,207.2 312.4,193.2" fill="#4E5852" /><polygon points="246.5,155.2 312.4,193.2 288.1,207.2 222.3,169.2" fill="#6F7B74" /><polygon points="237.9,160.2 303.7,198.2 303.7,181.0 237.9,143.0" fill="#66716B" /><polygon points="312.4,193.2 303.7,198.2 303.7,181.0 312.4,176.0" fill="#59635D" /><polygon points="246.5,138.0 312.4,176.0 303.7,181.0 237.9,143.0" fill="#7C8881" /><polygon points="267.3,228.8 308.9,252.8 308.9,250.0 267.3,226.0" fill="#C08A4A" /><polygon points="336.6,236.8 308.9,252.8 308.9,250.0 336.6,234.0" fill="#9E6C33" /><polygon points="295.0,210.0 336.6,234.0 308.9,250.0 267.3,226.0" fill="#D4A466" /><polygon points="292.3,245.6 295.0,247.2 295.0,220.0 292.3,218.4" fill="#C08A4A" /><polygon points="297.8,245.6 295.0,247.2 295.0,220.0 297.8,218.4" fill="#9E6C33" /><polygon points="295.0,216.8 297.8,218.4 295.0,220.0 292.3,218.4" fill="#D4A466" /><polygon points="325.2,264.6 327.9,266.2 327.9,239.0 325.2,237.4" fill="#C08A4A" /><polygon points="330.7,264.6 327.9,266.2 327.9,239.0 330.7,237.4" fill="#9E6C33" /><polygon points="327.9,235.8 330.7,237.4 327.9,239.0 325.2,237.4" fill="#D4A466" /><polygon points="273.2,256.6 276.0,258.2 276.0,231.0 273.2,229.4" fill="#C08A4A" /><polygon points="278.8,256.6 276.0,258.2 276.0,231.0 278.8,229.4" fill="#9E6C33" /><polygon points="276.0,227.8 278.8,229.4 276.0,231.0 273.2,229.4" fill="#D4A466" /><polygon points="306.1,275.6 308.9,277.2 308.9,250.0 306.1,248.4" fill="#C08A4A" /><polygon points="311.7,275.6 308.9,277.2 308.9,250.0 311.7,248.4" fill="#9E6C33" /><polygon points="308.9,246.8 311.7,248.4 308.9,250.0 306.1,248.4" fill="#D4A466" /><polygon points="376.4,261.0 393.8,271.0 393.8,237.0 376.4,227.0" fill="#2C2E2C" /><polygon points="409.3,262.0 393.8,271.0 393.8,237.0 409.3,228.0" fill="#252725" /><polygon points="392.0,218.0 409.3,228.0 393.8,237.0 376.4,227.0" fill="#3B3D3A" /><polygon points="379.2,256.6 391.0,263.4 391.0,247.4 379.2,240.6" fill="#E58A3A" /><polygon points="390.3,227.0 393.8,229.0 393.8,153.0 390.3,151.0" fill="#2C2E2C" /><polygon points="397.2,227.0 393.8,229.0 393.8,153.0 397.2,151.0" fill="#252725" /><polygon points="393.8,149.0 397.2,151.0 393.8,153.0 390.3,151.0" fill="#3B3D3A" /><polygon points="452.6,273.0 333.1,342.0 333.1,245.2 452.6,176.2" fill="rgba(170,205,200,.42)" stroke="#E9EEEC" stroke-width="1.5"/><line x1="422.8" y1="290.2" x2="422.8" y2="193.4" stroke="#E9EEEC" stroke-width="2" /><line x1="392.9" y1="307.5" x2="392.9" y2="210.7" stroke="#E9EEEC" stroke-width="2" /><line x1="363.0" y1="324.8" x2="363.0" y2="227.9" stroke="#E9EEEC" stroke-width="2" /><line x1="437.1" y1="206.0" x2="419.7" y2="256.0" stroke="rgba(255,255,255,.55)" stroke-width="2.5" /><line x1="381.6" y1="242.0" x2="367.8" y2="278.0" stroke="rgba(255,255,255,.4)" stroke-width="2.5" /><polygon points="452.6,273.0 333.1,342.0 333.1,340.0 452.6,271.0" fill="#9AA39F" /><polygon points="125.3,222.0 130.8,225.2 130.8,128.4 125.3,125.2" fill="#C08A4A" /><polygon points="136.4,222.0 130.8,225.2 130.8,128.4 136.4,125.2" fill="#9E6C33" /><polygon points="130.8,122.0 136.4,125.2 130.8,128.4 125.3,125.2" fill="#D4A466" /><polygon points="226.4,280.4 232.0,283.6 232.0,186.8 226.4,183.6" fill="#C08A4A" /><polygon points="237.5,280.4 232.0,283.6 232.0,186.8 237.5,183.6" fill="#9E6C33" /><polygon points="232.0,180.4 237.5,183.6 232.0,186.8 226.4,183.6" fill="#D4A466" /><polygon points="327.6,338.8 333.1,342.0 333.1,245.2 327.6,242.0" fill="#C08A4A" /><polygon points="338.7,338.8 333.1,342.0 333.1,245.2 338.7,242.0" fill="#9E6C33" /><polygon points="333.1,238.8 338.7,242.0 333.1,245.2 327.6,242.0" fill="#D4A466" /><line x1="130.8" y1="151.2" x2="149.9" y2="139.4" stroke="#C08A4A" stroke-width="7" stroke-linecap="square"/><line x1="226.4" y1="206.4" x2="207.4" y2="172.6" stroke="#C08A4A" stroke-width="7" stroke-linecap="square"/><line x1="232.0" y1="209.6" x2="251.0" y2="197.8" stroke="#C08A4A" stroke-width="7" stroke-linecap="square"/><line x1="327.6" y1="264.8" x2="308.5" y2="231.0" stroke="#C08A4A" stroke-width="7" stroke-linecap="square"/><polygon points="123.6,124.2 334.9,246.2 334.9,236.6 123.6,114.6" fill="#C08A4A" /><polygon points="341.1,242.6 334.9,246.2 334.9,236.6 341.1,233.0" fill="#9E6C33" /><polygon points="129.8,111.0 341.1,233.0 334.9,236.6 123.6,114.6" fill="#D4A466" /><polygon points="327.6,242.0 333.1,245.2 333.1,235.6 327.6,232.4" fill="#C08A4A" /><polygon points="451.6,176.8 333.1,245.2 333.1,235.6 451.6,167.2" fill="#9E6C33" /><polygon points="446.1,164.0 451.6,167.2 333.1,235.6 327.6,232.4" fill="#D4A466" /><polygon points="107.3,124.4 330.7,253.4 330.7,245.4 107.3,116.4" fill="#C08A4A" /><polygon points="466.5,163.8 330.7,253.4 330.7,245.4 466.5,155.8" fill="#9E6C33" /><polygon points="243.1,26.8 466.5,155.8 330.7,245.4 107.3,116.4" fill="#3A403D" /><polygon points="258.7,54.3 289.8,72.3 185.9,140.9 154.7,122.9" fill="#9FC3C0" stroke="#E9EEEC" stroke-width="1.5"/><line x1="175.5" y1="117.3" x2="256.9" y2="78.6" stroke="rgba(255,255,255,.6)" stroke-width="2" /><polygon points="324.5,92.3 355.7,110.3 251.7,178.9 220.6,160.9" fill="#9FC3C0" stroke="#E9EEEC" stroke-width="1.5"/><line x1="241.3" y1="155.3" x2="322.7" y2="116.6" stroke="rgba(255,255,255,.6)" stroke-width="2" /><polygon points="390.3,130.3 421.5,148.3 317.5,216.9 286.4,198.9" fill="#9FC3C0" stroke="#E9EEEC" stroke-width="1.5"/><line x1="307.2" y1="193.3" x2="388.6" y2="154.6" stroke="rgba(255,255,255,.6)" stroke-width="2" /><polygon points="330.7,255.4 335.9,258.4 335.9,250.4 330.7,247.4" fill="#B3B8B6" /><polygon points="341.1,255.4 335.9,258.4 335.9,250.4 341.1,247.4" fill="#A3A8A6" /><polygon points="335.9,244.4 341.1,247.4 335.9,250.4 330.7,247.4" fill="#C9CDCB" /><polygon points="332.8,353.4 335.9,355.2 335.9,257.2 332.8,255.4" fill="#B3B8B6" /><polygon points="339.0,353.4 335.9,355.2 335.9,257.2 339.0,255.4" fill="#A3A8A6" /><polygon points="335.9,253.6 339.0,255.4 335.9,257.2 332.8,255.4" fill="#C9CDCB" /></svg>
+          <span class="dim">6,0 × 3,6 m</span>
+        </div>
+        <div class="app-side">
+          <h4>Zijwand rechts</h4>
+          <div class="opt"><i></i>Open</div>
+          <div class="opt on"><i></i>Glazen schuifwand</div>
+          <div class="opt"><i></i>Dichte wand, rabat</div>
+          <div class="opt"><i></i>Halfhoge wand</div>
+          <div class="next">Volgende: extra's</div>
+        </div>
+      </div>
+      <div class="toast"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><div><strong>Glazen schuifwand</strong><span>Toegevoegd aan je ontwerp</span></div></div>
+      <div class="summary-card"><div><span>Type</span><strong>Veranda aan huis</strong></div><div><span>Opties</span><strong>4 gekozen</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block how" id="werkwijze">
+  <div class="wrap">
+    <div class="how-head">
+      <h2 class="display" style="margin:0">Van schets tot sleutel</h2>
+      <p class="lede">Alles onder één dak: verkoop, tekenwerk, werkplaats en bouw. Zo weet je bij elke stap met wie je te maken hebt.</p>
+    </div>
+    <div class="how-grid">
+      <ol class="steps" id="steps">
+        <span class="steps-line" aria-hidden="true"><span id="stepsFill"></span></span>
+        <li class="step is-active" data-step="0">
+          <span class="step-num">1</span>
+          <div class="body"><h3>Kom kijken in onze Verandatuin</h3><p>Loop door de modellen in Obdam, of we komen bij je thuis. We brengen je wensen en je tuin in kaart.</p><span class="step-tag">Showroom in Obdam</span>
+            <div class="step-img media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05361-1024x683.jpg" alt="Bij ons in Obdam" onerror="fb(this)"></div>
+          </div>
+        </li>
+        <li class="step" data-step="1">
+          <span class="step-num">2</span>
+          <div class="body"><h3>Tekening en offerte binnen een week</h3><p>Onze tekenaar maakt een plattegrond, gevelaanzichten en een 3D-beeld. Een paar dagen later bellen we je na.</p><span class="step-tag">Binnen 1 week</span>
+            <div class="step-img media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05414-1024x683.jpg" alt="Tekenwerk en voorbereiding" onerror="fb(this)"></div>
+          </div>
+        </li>
+        <li class="step" data-step="2">
+          <span class="step-num">3</span>
+          <div class="body"><h3>Voorbereid in onze eigen werkplaats</h3><p>We zagen en prefabriceren alles vooraf, zodat de bouw bij jou thuis zo kort mogelijk duurt.</p><span class="step-tag">Eigen werkplaats</span>
+            <div class="step-img media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05494-1024x683.jpg" alt="Gezaagd en geboord in Obdam" onerror="fb(this)"></div>
+          </div>
+        </li>
+        <li class="step" data-step="3">
+          <span class="step-num">4</span>
+          <div class="body"><h3>Eén vast bouwteam</h3><p>Onze timmermannen werken in vaste koppels. Hetzelfde team bouwt jouw project van begin tot eind.</p><span class="step-tag">Vaste koppels</span>
+            <div class="step-img media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05781-1024x683.jpg" alt="Ons team aan het werk" onerror="fb(this)"></div>
+          </div>
+        </li>
+        <li class="step" data-step="4">
+          <span class="step-num">5</span>
+          <div class="body"><h3>Oplevering met 10 jaar garantie</h3><p>We lopen samen alles na. Daarna geniet jij, en staan wij klaar als er iets is.</p><span class="step-tag">10 jaar garantie</span>
+            <div class="step-img media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Beemster.jpg" alt="Klaar om van te genieten" onerror="fb(this)"></div>
+          </div>
+        </li>
+      </ol>
+      <div class="how-media">
+        <div class="how-frame">
+          <figure class="how-img is-active" data-step="0">
+            <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05361-1024x683.jpg" alt="Bij ons in Obdam" onerror="fb(this)"></div>
+            <figcaption><strong>Bij ons in Obdam</strong><span>Stap 1 van 5</span></figcaption>
+          </figure>
+          <figure class="how-img" data-step="1">
+            <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05414-1024x683.jpg" alt="Tekenwerk en voorbereiding" onerror="fb(this)"></div>
+            <figcaption><strong>Tekenwerk en voorbereiding</strong><span>Stap 2 van 5</span></figcaption>
+          </figure>
+          <figure class="how-img" data-step="2">
+            <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05494-1024x683.jpg" alt="Gezaagd en geboord in Obdam" onerror="fb(this)"></div>
+            <figcaption><strong>Gezaagd en geboord in Obdam</strong><span>Stap 3 van 5</span></figcaption>
+          </figure>
+          <figure class="how-img" data-step="3">
+            <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05781-1024x683.jpg" alt="Ons team aan het werk" onerror="fb(this)"></div>
+            <figcaption><strong>Ons team aan het werk</strong><span>Stap 4 van 5</span></figcaption>
+          </figure>
+          <figure class="how-img" data-step="4">
+            <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Beemster.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Beemster-1024x683.jpg" alt="Klaar om van te genieten" onerror="fb(this)"></div>
+            <figcaption><strong>Klaar om van te genieten</strong><span>Stap 5 van 5</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block projects" id="projecten">
+  <div class="wrap section-head">
+    <div>
+      <h2 class="display">Gebouwd bij klanten</h2>
+      <p class="lede">Een greep uit honderden projecten in Noord-Holland en ver daarbuiten.</p>
+    </div>
+    <div class="rail-ctrl">
+      <button class="arrow" id="railPrev" aria-label="Vorige projecten"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="arrow" id="railNext" aria-label="Volgende projecten"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+  <div class="rail" id="rail" aria-label="Projecten">
+    <a class="card wide" href="https://www.uwverandaspecialist.nl/veranda/veranda-aan-huis/">
+      <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Beemster.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Beemster-1024x683.jpg" alt="Veranda aan huis, Beemster" onerror="fb(this)"></div>
+      <div class="card-body"><div><span class="card-tag">Veranda</span><h3>Veranda aan huis</h3><span class="place">Beemster</span></div><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+    <a class="card " href="https://www.uwverandaspecialist.nl/kapschuur/houten-kapschuur/">
+      <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Kapschuur-Wognum-1-1024x683.jpg" alt="Houten kapschuur, Wognum" onerror="fb(this)"></div>
+      <div class="card-body"><div><span class="card-tag">Kapschuur</span><h3>Houten kapschuur</h3><span class="place">Wognum</span></div><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+    <a class="card wide" href="https://www.uwverandaspecialist.nl/veranda/veranda-met-kleine-berging/">
+      <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-met-kleine-berging-Alkmaar.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-met-kleine-berging-Alkmaar-300x300.jpg" alt="Veranda met berging, Alkmaar" onerror="fb(this)"></div>
+      <div class="card-body"><div><span class="card-tag">Veranda</span><h3>Veranda met berging</h3><span class="place">Alkmaar</span></div><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+    <a class="card " href="https://www.uwverandaspecialist.nl/veranda/veranda-met-houtkachel/">
+      <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/12/Uw-Verandaspecialist_Tuinkamer_de-Jong_06-scaled.jpg" data-alt="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/12/Uw-Verandaspecialist_Tuinkamer_de-Jong_06-scaled-300x300.jpg" alt="Veranda met houtkachel, Voor alle seizoenen" onerror="fb(this)"></div>
+      <div class="card-body"><div><span class="card-tag">Tuinkamer</span><h3>Veranda met houtkachel</h3><span class="place">Voor alle seizoenen</span></div><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+    <a class="card wide" href="https://www.uwverandaspecialist.nl/veranda/">
+      <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/veranda-aan-huis-8-1024x683.jpg" alt="Glas en Douglas, Veranda aan huis" onerror="fb(this)"></div>
+      <div class="card-body"><div><span class="card-tag">Veranda</span><h3>Glas en Douglas</h3><span class="place">Veranda aan huis</span></div><span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+    </a>
+    <a class="card end" href="https://www.uwverandaspecialist.nl/portfolio/">
+      <span class="card-tag">Portfolio</span>
+      <div><h3>25 klantverhalen met foto en video</h3><p>Uitgezocht uit honderden projecten. Bekijk ze allemaal.</p></div>
+      <span class="btn btn-wood">Alle klantverhalen</span>
+    </a>
+  </div>
+  <div class="wrap"><div class="rail-progress" aria-hidden="true"><span id="railBar"></span></div></div>
+</section>
+
+<section class="block" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 class="display">229 klanten gingen je voor</h2>
+        <p class="lede">Wat ze het vaakst noemen: het vakmanschap van de bouwers en hoe netjes de tuin achterblijft.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://www.uwverandaspecialist.nl/reviews/" style="color:var(--forest)">Lees alle reviews</a>
+    </div>
+    <div class="reviews-grid">
+      <figure class="review feature" style="margin:0">
+        <div class="stars" aria-label="5 sterren">★★★★★</div>
+        <blockquote>“We genieten enorm van deze extra woonkamer in onze achtertuin.”</blockquote>
+        <cite>Sanne<span>Heiloo, tuinkamer</span></cite>
+      </figure>
+      <figure class="review" style="margin:0">
+        <div class="stars" aria-label="5 sterren">★★★★★</div>
+        <blockquote>“Ik ben zelf bouwkundige en direct viel op dat het hier om kwaliteit gaat.”</blockquote>
+        <cite>Martijn<span>Westzaan, veranda</span></cite>
+      </figure>
+      <figure class="review" style="margin:0">
+        <div class="stars" aria-label="5 sterren">★★★★★</div>
+        <blockquote>“Precies zo als wij het in gedachten hadden. Vakwerk van het begin tot het eind.”</blockquote>
+        <cite>Bob<span>Grootebroek, klassieke veranda</span></cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2024/09/%C2%A9Richard-Rood-HR2-Uw-Veranda-specialist-groepsfoto-07655-2-1024x422.jpg" alt="Het team van Uw Veranda Specialist" onerror="fb(this)"></div>
+  <div class="wrap">
+    <h2 class="display">Twintig vakmensen.<br>Eén team.</h2>
+    <p>Verkoop, werkvoorbereiding, tekenaar, werkplaats en bouwploegen zitten bij ons onder één dak in Obdam. Ben jij timmerman met liefde voor hout? We zoeken versterking.</p>
+    <div class="btns">
+      <a class="btn btn-wood" href="https://www.uwverandaspecialist.nl/category/vacatures/">Bekijk vacatures</a>
+      <a class="btn btn-ghost" href="https://www.uwverandaspecialist.nl/over-ons/">Over ons</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="showroom">
+  <div class="wrap visit">
+    <div class="visit-card">
+      <h2 class="display">Loop door onze Verandatuin</h2>
+      <p>Zie het hout, voel het glas en zit even onder een overkapping. Plan een adviesgesprek, dan nemen we de tijd voor jouw plannen.</p>
+      <dl class="hours">
+        <dt>Adres</dt><dd>Braken 37, 1713 GC Obdam</dd>
+        <dt>Ma t/m vr</dt><dd>09:30 – 17:00</dd>
+        <dt>Zaterdag</dt><dd>10:00 – 16:00</dd>
+        <dt>Telefoon</dt><dd><a href="tel:+31226753255">0226 753 255</a></dd>
+      </dl>
+      <div class="btns">
+        <a class="btn btn-wood" href="https://www.uwverandaspecialist.nl/afspraak-inplannen/">Plan adviesgesprek</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Braken+37+Obdam">Route plannen</a>
+      </div>
+    </div>
+    <div class="media"><img loading="lazy" src="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/04/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-zaak-01-11-2022-05361-1024x683.jpg" alt="Showroom van Uw Veranda Specialist in Obdam" onerror="fb(this)"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Uw Veranda<br>Specialist</div>
+        <p style="max-width:34ch">Maatwerk veranda's en overkappingen van FSC- en PEFC-gecertificeerd hout.</p>
+      </div>
+      <div>
+        <h4>Producten</h4>
+        <ul>
+          <li><a href="https://www.uwverandaspecialist.nl/veranda/">Veranda</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/tuinkamer/">Tuinkamer</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/kapschuur/">Kapschuur</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/terrasoverkapping/">Terrasoverkapping</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/tuinhuis/">Tuinhuis</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/carport/">Carport</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Meer weten</h4>
+        <ul>
+          <li><a href="https://www.uwverandaspecialist.nl/inspiratie/">Inspiratie</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/wat-kost-een-veranda-dit-bepaalt-de-prijs-van-jouw-veranda-in-2026/">Wat kost een veranda?</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/wp-content/uploads/2025/06/Brochure-Uw-Veranda-Specialist-2025.pdf">Download de folder</a></li>
+          <li><a href="https://www.uwverandaspecialist.nl/category/vacatures/">Vacatures</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Braken 37</li>
+          <li>1713 GC Obdam</li>
+          <li><a href="tel:+31226753255">0226 753 255</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Uw Veranda Specialist</span>
+      <span>Ontwerpconcept door <a href="https://www.barendsmedia.nl" style="color:var(--wood)">Barends Media</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var box=document.querySelector('.hero-photo');if(!box)return;
+  var slides=[].slice.call(box.querySelectorAll('.slide')),dots=[].slice.call(box.querySelectorAll('.sl-dot'));
+  var T=document.getElementById('slT'),S=document.getElementById('slS'),N=document.getElementById('slN'),cap=box.querySelector('.sl-cap');
+  var DUR=6000,cur=0,t=null,left=DUR,start=0;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  box.style.setProperty('--dur',DUR+'ms');
+  function go(i,first){
+    cur=(i+slides.length)%slides.length;
+    slides.forEach(function(s,k){s.classList.toggle('is-on',k===cur)});
+    dots.forEach(function(d,k){d.classList.remove('is-on');d.classList.toggle('done',k<cur)});
+    void box.offsetWidth; dots[cur].classList.add('is-on');
+    if(!first){cap.classList.add('swap');T.textContent=slides[cur].dataset.t;S.textContent=slides[cur].dataset.s;void cap.offsetWidth;cap.classList.remove('swap')}
+    N.textContent=cur+1;
+    [cur,(cur+1)%slides.length].forEach(function(k){var im=slides[k].querySelector('img');if(im.loading==='lazy')im.loading='eager'});
+    sched(DUR);
+  }
+  function sched(ms){clearTimeout(t);if(reduce)return;left=ms;start=Date.now();t=setTimeout(function(){go(cur+1)},ms)}
+  dots.forEach(function(d,k){d.addEventListener('click',function(){go(k)})});
+  box.addEventListener('mouseenter',function(){clearTimeout(t);left-=Date.now()-start;box.classList.add('paused')});
+  box.addEventListener('mouseleave',function(){box.classList.remove('paused');sched(Math.max(left,400))});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(t);else sched(DUR)});
+  go(0,true);
+})();
+</script>
+<script>
+(function(){
+  var CATS=[{"id": "veranda", "name": "Veranda", "url": "https://www.uwverandaspecialist.nl/veranda/", "intro": "Overdekt buiten zitten, tegen de gevel of vrij in de tuin.", "items": [{"t": "Veranda aan huis", "u": "https://www.uwverandaspecialist.nl/veranda/veranda-aan-huis/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Beemster-1024x683.jpg"}, {"t": "Veranda met houtkachel", "u": "https://www.uwverandaspecialist.nl/veranda/veranda-met-houtkachel/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/12/Uw-Verandaspecialist_Tuinkamer_de-Jong_06-scaled.jpg"}, {"t": "Veranda met lichtstraat", "u": "https://www.uwverandaspecialist.nl/veranda/veranda-met-lichtstraat/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/06/Veranda-met-lichtstraat-1024x683.jpg"}, {"t": "Veranda met schuur", "u": "https://www.uwverandaspecialist.nl/veranda/veranda-met-schuur/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-aan-huis-Venhuizen-1024x683.jpg"}, {"t": "Moderne veranda", "u": "https://www.uwverandaspecialist.nl/veranda/moderne-veranda/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/01/Veranda-zuidootbeemster-2-1024x683.jpg"}, {"t": "Scandinavische veranda", "u": "https://www.uwverandaspecialist.nl/veranda/scandinavische-veranda/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/01/Veranda-purmerend-3-1024x683.jpg"}, {"t": "Veranda met kleine berging", "u": "https://www.uwverandaspecialist.nl/veranda/veranda-met-kleine-berging/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-met-kleine-berging-Alkmaar-1024x683.jpg"}, {"t": "Veranda overkapping", "u": "https://www.uwverandaspecialist.nl/veranda/veranda-overkapping/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/02/Veranda-overkapping-1024x683.jpg"}]}, {"id": "tuinkamer", "name": "Tuinkamer", "url": "https://www.uwverandaspecialist.nl/tuinkamer/", "intro": "Een extra woonkamer in je tuin, het hele jaar te gebruiken.", "items": [{"t": "Luxe tuinkamer", "u": "https://www.uwverandaspecialist.nl/tuinkamer/luxe-tuinkamer/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Luxe-tuinkamer-1-1024x683.jpg"}, {"t": "Tuinkamer met glazen wand", "u": "https://www.uwverandaspecialist.nl/tuinkamer/tuinkamer-met-glazen-wand/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/%C2%A9Richard-Rood-HR2-Uw-veranda-specialist-17-09-2020--1024x683.jpg"}, {"t": "Vrijstaande tuinkamer", "u": "https://www.uwverandaspecialist.nl/tuinkamer/vrijstaande-tuinkamer/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Vrijstaande-tuinkamer-6-1024x683.jpg"}, {"t": "Moderne tuinkamer", "u": "https://www.uwverandaspecialist.nl/tuinkamer/moderne-tuinkamer/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Moderne-tuinkamer-3-scaled.jpg"}, {"t": "Houten tuinkamer", "u": "https://www.uwverandaspecialist.nl/tuinkamer/houten-tuinkamer/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Houten-tuinkamer-1-1024x683.jpg"}, {"t": "Tuinkamer op maat", "u": "https://www.uwverandaspecialist.nl/tuinkamer/tuinkamer-op-maat/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Tuinkamer-op-maat-1-1024x683.jpg"}, {"t": "Scandinavische tuinkamer met berging", "u": "https://www.uwverandaspecialist.nl/tuinkamer/scandinavische-tuinkamer-met-berging/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/01/Veranda-purmerend-3-1024x683.jpg"}, {"t": "Strakke tuinkamer", "u": "https://www.uwverandaspecialist.nl/tuinkamer/strakke-tuinkamer/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/01/Veranda-zuidootbeemster-2-1024x683.jpg"}]}, {"id": "kapschuur", "name": "Kapschuur", "url": "https://www.uwverandaspecialist.nl/kapschuur/", "intro": "Overkapping en berging onder één zadeldak.", "items": [{"t": "Houten kapschuur", "u": "https://www.uwverandaspecialist.nl/kapschuur/houten-kapschuur/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Houten-kapschuur-1-1024x683.jpg"}, {"t": "Kapschuur met berging", "u": "https://www.uwverandaspecialist.nl/kapschuur/kapschuur-met-berging/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Kapschuur-met-berging-1-1024x683.jpg"}, {"t": "Kapschuur Douglas", "u": "https://www.uwverandaspecialist.nl/kapschuur/kapschuur-douglas/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Douglas-kapschuur-2-1024x683.jpg"}, {"t": "Boeren kapschuur", "u": "https://www.uwverandaspecialist.nl/kapschuur/boeren-kapschuur/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Boeren-kapschuur-2-1024x477.jpg"}, {"t": "Kapschuur overkapping", "u": "https://www.uwverandaspecialist.nl/kapschuur/kapschuur-overkapping/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Kapschuur-met-berging-1024x683.jpg"}]}, {"id": "overkapping", "name": "Terrasoverkapping", "url": "https://www.uwverandaspecialist.nl/terrasoverkapping/", "intro": "Open en licht, droog buiten zitten.", "items": [{"t": "Overkapping met glazen schuifwand", "u": "https://www.uwverandaspecialist.nl/terrasoverkapping/overkapping-met-glazen-schuifwand/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Overkapping-met-glazen-schuifwand-5-1024x683.jpg"}, {"t": "Overkapping met buitenkeuken", "u": "https://www.uwverandaspecialist.nl/terrasoverkapping/overkapping-met-buitenkeuken/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Overkapping-met-buitenkeuken-1-1024x683.jpg"}, {"t": "Overkapping in tuin", "u": "https://www.uwverandaspecialist.nl/terrasoverkapping/overkapping-in-tuin/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Overkapping-in-tuin-3-1024x683.jpg"}, {"t": "Overkapping aan huis", "u": "https://www.uwverandaspecialist.nl/terrasoverkapping/overkapping-aan-huis/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/04/Veranda-aan-huis-12-1024x683.jpg"}, {"t": "Overkapping met schuur", "u": "https://www.uwverandaspecialist.nl/terrasoverkapping/overkapping-met-schuur/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/%C2%A9Richard-Rood-HR2-Uw-Veranda-Specialist-15-06-2022-10-1024x683.jpg"}, {"t": "Strakke terrasoverkapping (poolhouse)", "u": "https://www.uwverandaspecialist.nl/terrasoverkapping/strakke-terrasoverkapping/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/01/Veranda-zuidootbeemster-2-1024x683.jpg"}]}, {"id": "tuinhuis", "name": "Tuinhuis", "url": "https://www.uwverandaspecialist.nl/tuinhuis/", "intro": "Opslag, hobbyruimte of wellness op maat.", "items": [{"t": "Tuinhuis met veranda", "u": "https://www.uwverandaspecialist.nl/tuinhuis/tuinhuis-met-veranda/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Tuinhuis-met-veranda-1-1024x683.jpg"}, {"t": "Tuinhuis met sauna", "u": "https://www.uwverandaspecialist.nl/tuinhuis/tuinhuis-met-sauna/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Tuinhuis-met-sauna-2-1024x683.jpg"}, {"t": "Luxe tuinhuis", "u": "https://www.uwverandaspecialist.nl/tuinhuis/luxe-tuinhuis/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Luxe-tuinhuis-1-1024x683.jpg"}, {"t": "Modern tuinhuis", "u": "https://www.uwverandaspecialist.nl/tuinhuis/modern-tuinhuis/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Modern-tuinhuis-1-1024x683.jpg"}, {"t": "Tuinhuis met overkapping", "u": "https://www.uwverandaspecialist.nl/tuinhuis/tuinhuis-met-overkapping/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/05/Tuinhuis-met-overkapping-1-1024x683.jpg"}]}, {"id": "carport", "name": "Carport", "url": "https://www.uwverandaspecialist.nl/carport/", "intro": "Droog parkeren in de stijl van je huis.", "items": [{"t": "Landelijke carport", "u": "https://www.uwverandaspecialist.nl/carport/landelijke-carport/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/11/Klassiek-losstaand-1024x747.jpeg"}, {"t": "Moderne carport", "u": "https://www.uwverandaspecialist.nl/carport/moderne-carport/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/11/Carport-Scandinavisch-1024x747.jpeg"}, {"t": "Carport met strak overstek", "u": "https://www.uwverandaspecialist.nl/carport/carport-met-strak-overstek/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2025/11/Carport-strak-model-V2-1024x683.jpeg"}]}, {"id": "overig", "name": "Buitenleven", "url": "https://www.uwverandaspecialist.nl/winkel/", "intro": "De extra's die je tuin compleet maken.", "items": [{"t": "Houten buitenkeuken", "u": "https://www.uwverandaspecialist.nl/overig/houten-buitenkeuken/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/06/houten-buitenkeuken-1024x400.jpg"}, {"t": "Houten hottub", "u": "https://www.uwverandaspecialist.nl/overig/houten-hottub/", "i": "https://www.uwverandaspecialist.nl/wp-content/uploads/2024/06/houten-hottub-1024x576.jpg"}]}];
+  var ARROW='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+  var tabs=document.getElementById('tabs'),grid=document.getElementById('pgrid');
+  var intro=document.getElementById('catIntro'),link=document.getElementById('catLink');
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+  CATS.forEach(function(c,i){
+    var b=document.createElement('button');
+    b.className='tab';b.type='button';b.setAttribute('role','tab');b.id='tab-'+c.id;
+    b.setAttribute('aria-controls','catPanel');
+    b.innerHTML=esc(c.name)+' <small>'+c.items.length+'</small>';
+    b.addEventListener('click',function(){show(i)});
+    tabs.appendChild(b);
+  });
+  tabs.addEventListener('keydown',function(e){
+    var bs=[].slice.call(tabs.children),k=bs.indexOf(document.activeElement);if(k<0)return;
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=(k+(e.key==='ArrowRight'?1:-1)+bs.length)%bs.length;bs[n].focus();show(n)}
+  });
+  function show(i){
+    var c=CATS[i];
+    [].forEach.call(tabs.children,function(b,k){b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});
+    document.getElementById('catPanel').setAttribute('aria-labelledby','tab-'+c.id);
+    intro.textContent=c.intro;
+    link.href=c.url;link.innerHTML='Alle '+c.items.length+' '+esc(c.name.toLowerCase())+' modellen '+ARROW.replace(/18/g,'16');
+    var over=c.items.length>5, shown=c.items.slice(0,over?4:5), h='';
+    shown.forEach(function(p,k){
+      h+='<a class="pc" style="animation-delay:'+(k*60)+'ms" href="'+p.u+'"><div class="media"><img loading="lazy" src="'+p.i+'" alt="'+esc(p.t)+'" onerror="fb(this)"></div>'+
+         '<div class="pc-body"><h3>'+esc(p.t)+'</h3><span class="go" aria-hidden="true">'+ARROW+'</span></div></a>';
+    });
+    if(over){
+      h+='<a class="pc more" style="animation-delay:240ms" href="'+c.url+'"><strong>+'+(c.items.length-4)+'</strong><span>Meer '+esc(c.name.toLowerCase())+' modellen bekijken</span></a>';
+    }
+    var n=Math.min(c.items.length,5);
+    grid.className='pgrid'+(n===3?' n3':n===2?' n2':'');
+    grid.innerHTML=h;
+  }
+  show(0);
+})();
+</script>
+
+<a class="concept-badge" href="https://www.barendsmedia.nl/" target="_blank" rel="noopener" aria-label="Ontwerpconcept door Barends Media">
+  <span class="cb-dot" aria-hidden="true"></span>
+  <span>Ontwerpconcept door <b>Barends Media</b></span>
+</a>
+
+
+<script>
+(function(){
+  // Werkwijze: actieve stap volgt het scrollen
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var imgs=[].slice.call(document.querySelectorAll('.how-img'));
+  var fill=document.getElementById('stepsFill');
+  function setStep(i){
+    steps.forEach(function(s,k){s.classList.toggle('is-active',k===i)});
+    imgs.forEach(function(f,k){f.classList.toggle('is-active',k===i)});
+    fill.style.height=(i/(steps.length-1)*100)+'%';
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting)setStep(+e.target.dataset.step)});
+    },{rootMargin:'-45% 0px -50% 0px'});
+    steps.forEach(function(s){io.observe(s)});
+  }
+  steps.forEach(function(s,i){s.addEventListener('click',function(){setStep(i)})});
+
+  // Projecten: pijlen, voortgangsbalk en slepen met de muis
+  var rail=document.getElementById('rail'),bar=document.getElementById('railBar');
+  var prev=document.getElementById('railPrev'),next=document.getElementById('railNext');
+  function upd(){
+    var max=rail.scrollWidth-rail.clientWidth, f=rail.clientWidth/rail.scrollWidth;
+    bar.style.width=(f*100)+'%';
+    bar.style.left=(max>0?rail.scrollLeft/max*(100-f*100):0)+'%';
+    prev.disabled=rail.scrollLeft<4; next.disabled=rail.scrollLeft>max-4;
+  }
+  function step(dir){var c=rail.querySelector('.card');rail.scrollBy({left:dir*(c.offsetWidth+20),behavior:'smooth'})}
+  prev.addEventListener('click',function(){step(-1)});
+  next.addEventListener('click',function(){step(1)});
+  rail.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  var down=false,sx=0,sl=0,moved=false;
+  rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=rail.scrollLeft});
+  window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;rail.classList.add('dragging')}rail.scrollLeft=sl-dx});
+  window.addEventListener('pointerup',function(){if(!down)return;down=false;setTimeout(function(){rail.classList.remove('dragging')},0)});
+  rail.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false}},true);
+  rail.addEventListener('dragstart',function(e){e.preventDefault()});
+  upd();
+})();
+</script>
+</body>
+</html>
