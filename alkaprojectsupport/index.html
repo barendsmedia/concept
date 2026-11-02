@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALKA Project Support — Certified offshore &amp; onshore project support</title>
+<meta name="description" content="Scaffolding, rope access, logistics, industrial coating and rental equipment for maritime, offshore and industrial projects. ISO 9001, ISO 14001 and VCA certified.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0E1B2A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1B2A; --navy-deep:#091320; --steel:#1E2D3D;
+  --orange:#F0671A; --orange-dark:#D8560F;
+  --white:#ffffff; --grey-bg:#F3F5F7; --line:#D5DBE1;
+  --muted:#5B6B7B; --muted-dark:#9FB0C0; --text-dark-soft:#C5D0DB;
+  --display:'Inter Tight',system-ui,sans-serif; --body:Inter,system-ui,sans-serif;
+  --container:1328px; --pad:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--body);color:var(--navy);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;margin:0}
+p{margin:0}
+.container{max-width:var(--container);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px}
+.eyebrow.light{color:var(--muted-dark)}
+.eyebrow .bar{display:inline-block;width:28px;height:2px;background:var(--orange)}
+h2{font-size:clamp(30px,3.2vw,40px);line-height:1.08}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15px;padding:17px 28px;border-radius:2px;border:1px solid transparent;cursor:pointer;font-family:var(--body);transition:background .2s,color .2s,border-color .2s;min-height:44px}
+.btn-orange{background:var(--orange);color:var(--navy)}
+.btn-orange:hover{background:var(--orange-dark)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:var(--white)}
+.btn-ghost:hover{border-color:var(--white)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--steel)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+/* top bar */
+.topbar{background:var(--navy-deep);color:var(--muted-dark);font-size:13px}
+.topbar .container{height:40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.topbar a{display:inline-flex;align-items:center;gap:8px}
+.topbar a:hover{color:var(--white)}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:24px}
+.topbar .certs{letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+.topbar .lang a.active{color:var(--white)}
+@media (max-width:760px){.topbar .certs,.topbar-left a:nth-child(2){display:none}}
+
+/* nav */
+.nav{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:50}
+.nav .container{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--white)}
+.brand .mark{width:10px;height:34px;background:var(--orange)}
+.brand .word{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.14em;line-height:1}
+.brand .sub{display:block;font-family:var(--body);font-weight:500;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-dark);margin-top:4px}
+.menu{display:flex;align-items:center;gap:36px}
+.menu a{color:var(--white);font-size:14px;font-weight:500;letter-spacing:.02em}
+.menu a:hover{color:var(--orange)}
+.menu .btn{padding:14px 22px;font-size:14px}
+.menu .btn:hover{color:var(--navy)}
+.nav-toggle{display:none;width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:2px;color:var(--white);cursor:pointer;align-items:center;justify-content:center}
+@media (max-width:960px){
+  .nav-toggle{display:inline-flex}
+  .menu{display:none;position:absolute;left:0;right:0;top:76px;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:12px var(--pad) 24px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .menu.open{display:flex}
+  .menu a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:17px}
+  .menu a.btn{margin-top:16px;border:0;text-align:center}
+}
+
+/* hero */
+.hero{background:var(--navy);color:var(--white)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;padding-top:clamp(48px,7vw,96px);align-items:end}
+.hero-copy{grid-column:span 6;display:flex;flex-direction:column;gap:32px;padding-bottom:clamp(48px,7vw,96px)}
+.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.02;color:var(--white)}
+.hero p{font-size:clamp(16px,1.3vw,18px);color:var(--text-dark-soft);max-width:520px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-img{grid-column:span 6}
+.hero-img img{width:100%;height:560px;object-fit:cover}
+.cert-strip{border-top:1px solid rgba(255,255,255,.12);padding:28px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cert-strip .label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dark)}
+.cert-strip .list{display:flex;gap:clamp(20px,3vw,44px);flex-wrap:wrap;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.06em}
+@media (max-width:960px){
+  .hero-copy,.hero-img{grid-column:span 12}
+  .hero-copy{padding-bottom:0}
+  .hero-img img{height:340px}
+  .hero-actions .btn{flex:1 1 220px}
+}
+
+/* sections */
+.section{padding:clamp(72px,9vw,128px) 0}
+.grid12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px}
+.about-head{grid-column:span 4;display:flex;flex-direction:column;gap:16px}
+.about-head img{width:100%;height:420px;object-fit:cover;margin-top:24px}
+.about-body{grid-column:6/span 7;display:flex;flex-direction:column;gap:28px}
+.about-body .lead{font-size:clamp(18px,1.5vw,20px)}
+.about-body .sub{font-size:17px;color:var(--muted);line-height:1.7}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;border-top:1px solid var(--line);padding-top:28px;margin-top:8px}
+.facts strong{display:block;font-family:var(--display);font-weight:600;font-size:32px;letter-spacing:-.02em;margin-bottom:6px}
+.facts span{font-size:13px;color:var(--muted);line-height:1.4}
+@media (max-width:960px){.about-head,.about-body{grid-column:span 12}.about-head img{height:300px}}
+@media (max-width:600px){.facts{grid-template-columns:1fr 1fr}}
+
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:56px}
+.section-head .title{display:flex;flex-direction:column;gap:16px;max-width:600px}
+.section-head .intro{max-width:420px;font-size:16px;color:var(--muted)}
+
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.service{background:var(--white);padding:32px;display:flex;flex-direction:column;gap:20px;transition:background .2s}
+.service:hover{background:var(--grey-bg)}
+.service img{width:100%;height:200px;object-fit:cover}
+.service .num{font-size:12px;letter-spacing:.14em;color:var(--orange);font-weight:600}
+.service h3{font-size:24px;letter-spacing:-.01em}
+.service p{font-size:15px;color:var(--muted)}
+@media (max-width:960px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.services{grid-template-columns:1fr}}
+
+.advantages{background:var(--grey-bg)}
+.adv-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px}
+.adv{display:flex;flex-direction:column;gap:16px;border-top:2px solid var(--navy);padding-top:20px}
+.adv h3{font-size:20px}
+.adv p{font-size:14px;color:var(--muted)}
+.adv svg{width:28px;height:28px}
+.cert-links{display:flex;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px;margin-top:56px;font-size:14px}
+.cert-links span{color:var(--muted)}
+.cert-links a{font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.cert-links a:hover{color:var(--orange)}
+@media (max-width:1100px){.adv-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.adv-grid{grid-template-columns:1fr 1fr}}
+
+.projects{background:var(--navy);color:var(--white)}
+.projects h2{color:var(--white)}
+.projects .intro{color:var(--muted-dark)}
+.proj-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.proj-main{grid-column:span 7}
+.proj-main img{width:100%;height:460px;object-fit:cover}
+.proj-side{grid-column:span 5;display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:24px}
+.proj-side img{width:100%;height:218px;object-fit:cover}
+.proj-captions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px;font-size:14px;color:var(--muted-dark)}
+.proj-captions strong{display:block;color:var(--white);font-weight:600;margin-bottom:6px}
+@media (max-width:960px){
+  .proj-main,.proj-side{grid-column:span 12}
+  .proj-main img{height:320px}
+  .proj-side{grid-template-rows:none;grid-template-columns:1fr 1fr}
+  .proj-side img{height:180px}
+}
+@media (max-width:600px){.proj-captions{grid-template-columns:1fr}.proj-side{grid-template-columns:1fr}}
+
+.contact-info{grid-column:span 5;display:flex;flex-direction:column;gap:28px}
+.contact-list{display:flex;flex-direction:column;gap:18px;font-size:17px;border-top:1px solid var(--line);padding-top:28px}
+.contact-list a,.contact-list span{display:flex;gap:14px;align-items:center;font-weight:500}
+.contact-list a:hover{color:var(--orange)}
+.contact-list span{color:var(--muted);font-size:15px;font-weight:400}
+.contact-list svg{width:18px;height:18px;flex:none}
+.badges{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.badges img{height:96px;width:auto}
+.form{grid-column:7/span 6;background:var(--grey-bg);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:span 2}
+.field label{font-size:13px;font-weight:500}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--white);padding:0 14px;font:15px var(--body);border-radius:2px;color:var(--navy);width:100%}
+.field input,.field select{height:48px}
+.field textarea{padding:12px 14px;resize:vertical;min-height:130px}
+.form-foot{grid-column:span 2;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.form-foot small{font-size:13px;color:var(--muted)}
+@media (max-width:960px){.contact-info,.form{grid-column:span 12}}
+@media (max-width:600px){.form{grid-template-columns:1fr}.field.full,.form-foot{grid-column:span 1}.form-foot .btn{width:100%}}
+
+footer{background:var(--navy-deep);color:var(--muted-dark);padding:64px 0 40px;font-size:14px}
+footer a:hover{color:var(--white)}
+.foot-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px}
+.foot-brand{grid-column:span 4;display:flex;flex-direction:column;gap:16px}
+.foot-brand p{max-width:320px}
+.foot-col{display:flex;flex-direction:column;gap:12px}
+.foot-col h4{margin:0;color:var(--white);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.foot-col:nth-of-type(2),.foot-col:nth-of-type(3){grid-column:span 2}
+.foot-col:nth-of-type(4){grid-column:10/span 3}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;margin-top:48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.foot-bottom div{display:flex;gap:24px;flex-wrap:wrap}
+@media (max-width:960px){
+  .foot-brand{grid-column:span 12}
+  .foot-col:nth-of-type(2),.foot-col:nth-of-type(3),.foot-col:nth-of-type(4){grid-column:span 4}
+}
+@media (max-width:600px){.foot-col:nth-of-type(2),.foot-col:nth-of-type(3),.foot-col:nth-of-type(4){grid-column:span 12}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px)}
+.no-js .reveal,.reduced .reveal{opacity:1;transform:none}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <a href="tel:+31852129952"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+31 (0)85 212 99 52</a>
+      <a href="mailto:info@alkaprojectsupport.nl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>info@alkaprojectsupport.nl</a>
+    </div>
+    <div class="topbar-right">
+      <span class="certs">ISO 9001 · ISO 14001 · VCA</span>
+      <a href="https://www.linkedin.com/company/alka-project-support-bv/" target="_blank" rel="noopener" aria-label="ALKA on LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2.5 9h3v12h-3zM9 9h2.9v1.7h.1c.4-.8 1.4-1.9 3.3-1.9 3.5 0 4.2 2.3 4.2 5.3V21h-3v-5.8c0-1.4 0-3.2-1.9-3.2s-2.2 1.5-2.2 3.1V21H9z"/></svg></a>
+      <span class="lang"><a href="#" class="active" aria-current="true">EN</a> <span style="opacity:.5">/</span> <a href="#">NL</a></span>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container">
+    <a href="#top" class="brand" aria-label="ALKA Project Support — home">
+      <span class="mark" aria-hidden="true"></span>
+      <span><span class="word">ALKA</span><span class="sub">Project Support BV</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#advantages">Why ALKA</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-orange">Request a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow light"><span class="bar"></span>Offshore · Maritime · Industrial</div>
+        <h1>Certified support for offshore and onshore projects.</h1>
+        <p>Scaffolding, rope access, logistics, industrial coating and rental equipment — delivered by certified professionals, to international standards, wherever the project is.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-orange">Our services</a>
+          <a href="#contact" class="btn btn-ghost">Request a free quote</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="img/hero-worker.jpg" alt="ALKA scaffolder in orange coverall working on a scaffold at dusk" width="1800" height="1350" fetchpriority="high">
+      </div>
+    </div>
+    <div class="cert-strip">
+      <span class="label">Certified to</span>
+      <div class="list"><span>ISO 9001</span><span>ISO 14001</span><span>VCA</span><span>IRATA</span><span>GWO</span><span>DNV</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container grid12">
+    <div class="about-head reveal">
+      <div class="eyebrow">01 — About</div>
+      <h2>Built on the deck, not behind a desk.</h2>
+      <img src="img/scaffold-dusk.jpg" alt="Tall scaffolding structure on a quayside at dusk" width="1200" height="1600" loading="lazy">
+    </div>
+    <div class="about-body reveal">
+      <p class="lead">ALKA Project Support was founded in 2023 by Aron Post. His career started in scaffolding in 2013 and grew into rope access and coating — hands-on experience that now shapes how every project is planned, staffed and delivered.</p>
+      <p class="sub">We provide flexible, tailored solutions worldwide with certified professionals who work to international standards. Quality, safety and sustainability are not add-ons: they are ISO-certified and part of every job we take on.</p>
+      <div class="facts">
+        <div><strong>2013</strong><span>Founder active in scaffolding, rope access and coating</span></div>
+        <div><strong>2023</strong><span>ALKA Project Support BV established</span></div>
+        <div><strong>ISO</strong><span>9001 quality and 14001 environmental certification</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="title">
+        <div class="eyebrow">02 — Services</div>
+        <h2>Six disciplines. One certified team.</h2>
+      </div>
+      <p class="intro">From temporary access to heavy lifting and corrosion protection — for drydock, offshore and industrial installations.</p>
+    </div>
+    <div class="services">
+      <a href="#contact" class="service reveal">
+        <img src="img/scaffold-dusk.jpg" alt="Scaffolding on an industrial installation" loading="lazy">
+        <span class="num">01</span><h3>Scaffolding</h3>
+        <p>Certified temporary scaffolding for construction, repair and maintenance on maritime, offshore and industrial installations.</p>
+      </a>
+      <a href="#contact" class="service reveal">
+        <img src="img/rope-access-bow.jpg" alt="Rope access technicians on the bow of a tanker" loading="lazy">
+        <span class="num">02</span><h3>Rope Access</h3>
+        <p>IRATA-certified specialists for inspection, maintenance and repair in hard-to-reach places — on vessels and offshore.</p>
+      </a>
+      <a href="#contact" class="service reveal">
+        <img src="img/cruise-lift.jpg" alt="Container lifted by crane alongside a cruise ship during refit" loading="lazy">
+        <span class="num">03</span><h3>Logistic Services</h3>
+        <p>Handling heavy loads during drydock and offshore operations with rigging and specialised lifting equipment.</p>
+      </a>
+      <a href="#contact" class="service reveal">
+        <img src="img/painting-hull.jpg" alt="Rope access painter working on a red ship hull" loading="lazy">
+        <span class="num">04</span><h3>Painting &amp; Coating</h3>
+        <p>Surface preparation, coating application and corrosion protection for onshore, offshore and maritime environments.</p>
+      </a>
+      <a href="#contact" class="service reveal">
+        <img src="img/rigging-crate.jpg" alt="Crate with lifting hooks and rigging gear" loading="lazy">
+        <span class="num">05</span><h3>Rental Equipment</h3>
+        <p>Lifting gear, rigging tools and heavy machinery on flexible terms — for the duration of your project.</p>
+      </a>
+      <a href="#contact" class="service reveal">
+        <img src="img/container-laundry.jpg" alt="Sea container fitted out as a laundry unit" loading="lazy">
+        <span class="num">06</span><h3>Special Projects</h3>
+        <p>Custom rigging, container fit-outs and large-scale installations for non-standard work that doesn't fit a template.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section advantages" id="advantages">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:56px">
+      <div class="title" style="max-width:640px">
+        <div class="eyebrow">03 — Why ALKA</div>
+        <h2>Safe, fast and flexible — with the certificates to prove it.</h2>
+      </div>
+    </div>
+    <div class="adv-grid">
+      <div class="adv reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>Certified safety</h3><p>Staff certified to VCA, DNV, IRATA and GWO standards.</p>
+      </div>
+      <div class="adv reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16"/></svg>
+        <h3>Flexibility</h3><p>Tailored solutions and responsive planning, in the Netherlands and abroad.</p>
+      </div>
+      <div class="adv reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>
+        <h3>Speed &amp; efficiency</h3><p>Fast project delivery with minimal downtime for your installation.</p>
+      </div>
+      <div class="adv reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg>
+        <h3>Quality</h3><p>ISO 9001:2015 certified quality management on every job.</p>
+      </div>
+      <div class="adv reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20c0-8 5-13 16-16-1 11-6 16-14 16"/><path d="M4 20c3-5 7-8 11-10"/></svg>
+        <h3>Sustainability</h3><p>ISO 14001 certified environmental management.</p>
+      </div>
+    </div>
+    <div class="cert-links reveal">
+      <span>Download certificates:</span>
+      <a href="#">ISO 9001:2015</a><a href="#">ISO 14001</a><a href="#">VCA</a>
+    </div>
+  </div>
+</section>
+
+<section class="section projects" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="title" style="max-width:640px">
+        <div class="eyebrow light">04 — Projects</div>
+        <h2>From platform maintenance to complex port lifting operations.</h2>
+      </div>
+      <a href="#contact" class="btn btn-ghost">All projects</a>
+    </div>
+    <div class="proj-grid reveal">
+      <div class="proj-main"><img src="img/crane-scaffold.jpg" alt="Multi-level scaffolding around a deck crane on a vessel" loading="lazy"></div>
+      <div class="proj-side">
+        <img src="img/cruise-lift.jpg" alt="Container lift during a cruise ship refit" loading="lazy">
+        <img src="img/night-scaffold.jpg" alt="Scaffolder working at night on a quayside structure" loading="lazy">
+      </div>
+    </div>
+    <div class="proj-captions reveal">
+      <div><strong>Scaffolding on crane vessel</strong>Multi-level access scaffolding around a deck crane — [LOCATION / CLIENT]</div>
+      <div><strong>Cruise ship refit logistics</strong>Container lifts and material handling alongside — [LOCATION / CLIENT]</div>
+      <div><strong>Night shift scaffolding</strong>Round-the-clock access work in port — [LOCATION / CLIENT]</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container grid12">
+    <div class="contact-info reveal">
+      <div class="eyebrow">05 — Contact</div>
+      <h2>Tell us about your project. We'll send a free quote.</h2>
+      <div class="contact-list">
+        <a href="tel:+31852129952"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+31 (0)85 212 99 52</a>
+        <a href="mailto:info@alkaprojectsupport.nl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>info@alkaprojectsupport.nl</a>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>[STREET, POSTAL CODE CITY] · The Netherlands</span>
+      </div>
+      <div class="badges">
+        <img src="img/badge-iso9001.png" alt="EBN ISO 9001 certified" loading="lazy">
+        <img src="img/badge-vca.png" alt="EBN VCA certified" loading="lazy">
+        <img src="img/badge-iso14001.png" alt="EBN ISO 14001 certified" loading="lazy">
+      </div>
+    </div>
+    <form class="form reveal" action="#" onsubmit="event.preventDefault();this.querySelector('.form-foot small').textContent='Thank you — this is a demo, nothing was sent.';">
+      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+      <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      <div class="field"><label for="f-service">Service</label>
+        <select id="f-service" name="service">
+          <option>Scaffolding</option><option>Rope access</option><option>Logistic services</option><option>Painting &amp; coating</option><option>Rental equipment</option><option>Special project</option>
+        </select>
+      </div>
+      <div class="field full"><label for="f-msg">Project description</label><textarea id="f-msg" name="message" rows="5"></textarea></div>
+      <div class="form-foot">
+        <small>We respond within one working day.</small>
+        <button type="submit" class="btn btn-navy">Send request</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand" aria-label="ALKA Project Support — home"><span class="mark" aria-hidden="true" style="width:8px;height:28px"></span><span><span class="word" style="font-size:18px">ALKA</span></span></a>
+        <p>Certified offshore and onshore solutions for maritime and industrial projects.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Scaffolding</a><a href="#services">Rope access</a><a href="#services">Logistic services</a><a href="#services">Painting &amp; coating</a><a href="#services">Rental equipment</a><a href="#services">Special projects</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#about">About</a><a href="#advantages">Why ALKA</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a href="#">Careers</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+31852129952">+31 (0)85 212 99 52</a>
+        <a href="mailto:info@alkaprojectsupport.nl">info@alkaprojectsupport.nl</a>
+        <a href="https://www.linkedin.com/company/alka-project-support-bv/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ALKA Project Support BV. All rights reserved.</span>
+      <div><a href="#">Privacy policy</a><a href="#">Terms &amp; conditions</a><a href="#">Certificates</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  // mobile menu
+  var toggle=document.querySelector('.nav-toggle'),menu=document.getElementById('menu');
+  toggle.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open);
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');});});
+
+  // scroll reveals
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced||!window.gsap){document.body.classList.add('reduced');return;}
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+})();
+</script>
+</body>
+</html>
