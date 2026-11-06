@@ -34,6 +34,18 @@ Topbar met contact + certificeringen → sticky navy nav met oranje CTA → hero
 in een 1px-grid) · 03 Why ALKA (5 voordelen op lichtgrijs + certificaat-downloads) · 04 Projects (donker,
 1 groot + 2 klein) · 05 Contact (gegevens + EBN-badges + formulier) → footer. 12-koloms grid, 2px radius.
 
+## Logo — "De A als sluiting"
+
+Nieuw logo (Barends Media, nov 2026), ter vervanging van de tijdelijke wordmark.
+- Woordmerk: **Archivo Expanded SemiBold** (wdth 125, wght 650), omgezet naar vectoren; tagline
+  "PROJECT SUPPORT" in Archivo Expanded Medium, uitgelijnd op de breedte van ALKA. Open Font License.
+- Beeldmerk: de eerste A is een harpsluiting. De dwarsbalk is vervangen door een oranje pen
+  (`#F0671A`) met ronde kop links en zeskantmoer rechts. Verhaal: ALKA is de schakel die mensen en
+  materieel aan het project koppelt.
+- Gebruik op de site: volledig logo in de nav (desktop) en footer; compact (alleen ALKA) in de mobiele nav.
+  Favicons zijn het losse beeldmerk op navy.
+- Op oranje ondergrond wordt de pen wit.
+
 ## Signatuur-element
 
 De certificeringsstrip direct onder de hero (ISO 9001 · ISO 14001 · VCA · IRATA · GWO · DNV) plus de
@@ -47,8 +59,8 @@ scheepsboeg, containerhijs bij een cruiseschip, hijsmateriaal, containerinrichti
 ## Aannames om te checken
 
 - Taal: Engels, net als de huidige site (internationaal werkgebied). NL-variant via taalswitch in de topbar.
-- Logo: tijdelijk een eigen wordmark (oranje balk + ALKA); het huidige logo moet nog worden aangeleverd
-  en getest op de donkere navy achtergrond.
+- Logo: nieuw voorstel van Barends Media (zie boven) in plaats van het kompaslogo en Bobby's concept 01;
+  bij akkoord de vector-master en een logo-pakket (SVG/PNG/PDF) opleveren.
 - Adres ontbreekt op de huidige site → placeholder in het contactblok en de footer.
 - Projectbijschriften (locatie/klant) zijn placeholders. Op de cruiseschip-foto is "Disney Dream" leesbaar;
   checken of dat project genoemd mag worden.
